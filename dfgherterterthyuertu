@@ -1,0 +1,1699 @@
+_G.GrimSpam = false
+_G.AirWalk = false
+_G.AntiJoin = false
+_G.TorsoCbring = false
+_G.KillHits = false
+_G.BaseProtect = false
+_G.TargetOthers = false
+_G.KillTarget = false
+_G.Diamond = false
+_G.RemoveMe = false
+game.Lighting.ClockTime = "12"
+game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+
+
+local function ChGui()
+	local CHGui = Instance.new("ScreenGui")
+	local DragFrame = Instance.new("Frame")
+	local OutlineFrame = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Page1Frame = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local _1 = Instance.new("TextLabel")
+	local MadeByAnon = Instance.new("TextLabel")
+	local Next1 = Instance.new("TextButton")
+	local UICorner_3 = Instance.new("UICorner")
+	local CBring = Instance.new("TextButton")
+	local UICorner_4 = Instance.new("UICorner")
+	local FTI = Instance.new("TextButton")
+	local UICorner_5 = Instance.new("UICorner")
+	local Others = Instance.new("TextButton")
+	local UICorner_6 = Instance.new("UICorner")
+	local Diamond = Instance.new("TextButton")
+	local UICorner_7 = Instance.new("UICorner")
+	local InsertTarget = Instance.new("TextButton")
+	local UICorner_8 = Instance.new("UICorner")
+	local RemoveTarget = Instance.new("TextButton")
+	local UICorner_9 = Instance.new("UICorner")
+	local TargetName = Instance.new("TextBox")
+	local UICorner_10 = Instance.new("UICorner")
+	local UnDiamond = Instance.new("TextButton")
+	local UICorner_11 = Instance.new("UICorner")
+	local UnFTI = Instance.new("TextButton")
+	local UICorner_12 = Instance.new("UICorner")
+	local UnCBring = Instance.new("TextButton")
+	local UICorner_13 = Instance.new("UICorner")
+	local UnOthers = Instance.new("TextButton")
+	local UICorner_14 = Instance.new("UICorner")
+	local X = Instance.new("TextButton")
+	local UICorner_15 = Instance.new("UICorner")
+	local Page4Frame = Instance.new("Frame")
+	local UICorner_16 = Instance.new("UICorner")
+	local _4 = Instance.new("TextLabel")
+	local Prev3 = Instance.new("TextButton")
+	local UICorner_17 = Instance.new("UICorner")
+	local AirWalk = Instance.new("TextButton")
+	local UICorner_18 = Instance.new("UICorner")
+	local ClickTP = Instance.new("TextButton")
+	local UICorner_19 = Instance.new("UICorner")
+	local GrimSpam = Instance.new("TextButton")
+	local UICorner_20 = Instance.new("UICorner")
+	local Crash = Instance.new("TextButton")
+	local UICorner_21 = Instance.new("UICorner")
+	local ReturnToDeath = Instance.new("TextButton")
+	local UICorner_22 = Instance.new("UICorner")
+	local UnAirWalk = Instance.new("TextButton")
+	local UICorner_23 = Instance.new("UICorner")
+	local UnGrimSpam = Instance.new("TextButton")
+	local UICorner_24 = Instance.new("UICorner")
+	local Page2Frame = Instance.new("Frame")
+	local UICorner_25 = Instance.new("UICorner")
+	local _2 = Instance.new("TextLabel")
+	local Next2 = Instance.new("TextButton")
+	local UICorner_26 = Instance.new("UICorner")
+	local Prev1 = Instance.new("TextButton")
+	local UICorner_27 = Instance.new("UICorner")
+	local Speed = Instance.new("TextButton")
+	local UICorner_28 = Instance.new("UICorner")
+	local WalkSpeed = Instance.new("TextBox")
+	local UICorner_29 = Instance.new("UICorner")
+	local Jump = Instance.new("TextButton")
+	local UICorner_30 = Instance.new("UICorner")
+	local JumpHeight = Instance.new("TextBox")
+	local UICorner_31 = Instance.new("UICorner")
+	local TimeChange = Instance.new("TextButton")
+	local UICorner_32 = Instance.new("UICorner")
+	local PlayerName = Instance.new("TextBox")
+	local UICorner_33 = Instance.new("UICorner")
+	local ToPlayer = Instance.new("TextButton")
+	local UICorner_34 = Instance.new("UICorner")
+	local TimeSet = Instance.new("TextBox")
+	local UICorner_35 = Instance.new("UICorner")
+	local Page3Frame = Instance.new("Frame")
+	local UICorner_36 = Instance.new("UICorner")
+	local _3 = Instance.new("TextLabel")
+	local Next3 = Instance.new("TextButton")
+	local UICorner_37 = Instance.new("UICorner")
+	local Prev2 = Instance.new("TextButton")
+	local UICorner_38 = Instance.new("UICorner")
+	local Whitelist = Instance.new("TextButton")
+	local UICorner_39 = Instance.new("UICorner")
+	local WhitelistUser = Instance.new("TextBox")
+	local UICorner_40 = Instance.new("UICorner")
+	local InsertWhitelist = Instance.new("TextButton")
+	local UICorner_41 = Instance.new("UICorner")
+	local RemoveWhitelist = Instance.new("TextButton")
+	local UICorner_42 = Instance.new("UICorner")
+	local UnHitlist = Instance.new("TextButton")
+	local UICorner_43 = Instance.new("UICorner")
+	local BaseProtect = Instance.new("TextButton")
+	local UICorner_44 = Instance.new("UICorner")
+	local GodMode = Instance.new("TextButton")
+	local UICorner_45 = Instance.new("UICorner")
+	local DeleteMe = Instance.new("TextButton")
+	local UICorner_46 = Instance.new("UICorner")
+	local Anchor = Instance.new("TextButton")
+	local UICorner_47 = Instance.new("UICorner")
+	local AntiWater = Instance.new("TextButton")
+	local UICorner_48 = Instance.new("UICorner")
+	local RemoveWalls = Instance.new("TextButton")
+	local UICorner_49 = Instance.new("UICorner")
+	local AntiVoid = Instance.new("TextButton")
+	local UICorner_50 = Instance.new("UICorner")
+	local UnWhitelist = Instance.new("TextButton")
+	local UICorner_51 = Instance.new("UICorner")
+	local Hitlist = Instance.new("TextButton")
+	local UICorner_52 = Instance.new("UICorner")
+	local UnBaseProtect = Instance.new("TextButton")
+	local UICorner_53 = Instance.new("UICorner")
+	local UnDeleteMe = Instance.new("TextButton")
+	local UICorner_54 = Instance.new("UICorner")
+	local UnAnchor = Instance.new("TextButton")
+	local UICorner_55 = Instance.new("UICorner")
+
+	--Properties:
+
+	CHGui.Name = "CHGui"
+	CHGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	DragFrame.Name = "DragFrame"
+	DragFrame.Parent = CHGui
+	DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	DragFrame.BackgroundTransparency = 1.000
+	DragFrame.LayoutOrder = 1000000
+	DragFrame.Position = UDim2.new(0.427172571, 0, 0.146757677, 0)
+	DragFrame.Size = UDim2.new(0, 348, 0, 221)
+
+	OutlineFrame.Name = "OutlineFrame"
+	OutlineFrame.Parent = DragFrame
+	OutlineFrame.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	OutlineFrame.LayoutOrder = 2
+	OutlineFrame.Position = UDim2.new(0.0502301827, 0, 0.0676018223, 0)
+	OutlineFrame.Size = UDim2.new(0, 313, 0, 190)
+
+	UICorner.CornerRadius = UDim.new(0, 10)
+	UICorner.Parent = OutlineFrame
+
+	Page1Frame.Name = "Page1Frame"
+	Page1Frame.Parent = OutlineFrame
+	Page1Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
+	Page1Frame.LayoutOrder = 100
+	Page1Frame.Position = UDim2.new(0.0223642178, 0, 0.042105265, 0)
+	Page1Frame.Size = UDim2.new(0, 298, 0, 174)
+
+	UICorner_2.CornerRadius = UDim.new(0, 10)
+	UICorner_2.Parent = Page1Frame
+
+	_1.Name = "1"
+	_1.Parent = Page1Frame
+	_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	_1.BackgroundTransparency = 1.000
+	_1.Position = UDim2.new(0.832214773, 0, 0.890804589, 0)
+	_1.Size = UDim2.new(0, 67, 0, 13)
+	_1.Font = Enum.Font.SourceSans
+	_1.Text = "1"
+	_1.TextColor3 = Color3.fromRGB(42, 2, 74)
+	_1.TextScaled = true
+	_1.TextSize = 14.000
+	_1.TextWrapped = true
+
+	MadeByAnon.Name = "MadeByAnon"
+	MadeByAnon.Parent = Page1Frame
+	MadeByAnon.BackgroundColor3 = Color3.fromRGB(57, 57, 55)
+	MadeByAnon.BackgroundTransparency = 1.000
+	MadeByAnon.Position = UDim2.new(0.171140939, 0, 0.890804589, 0)
+	MadeByAnon.Size = UDim2.new(0, 197, 0, 13)
+	MadeByAnon.Font = Enum.Font.SourceSans
+	MadeByAnon.Text = "Made By:Anon"
+	MadeByAnon.TextColor3 = Color3.fromRGB(42, 2, 74)
+	MadeByAnon.TextScaled = true
+	MadeByAnon.TextSize = 14.000
+	MadeByAnon.TextStrokeColor3 = Color3.fromRGB(240, 240, 240)
+	MadeByAnon.TextWrapped = true
+
+	Next1.Name = "Next1"
+	Next1.Parent = Page1Frame
+	Next1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Next1.BackgroundTransparency = 1.000
+	Next1.Position = UDim2.new(0.900958478, 0, 0.415789634, 0)
+	Next1.Size = UDim2.new(0, 23, 0, 30)
+	Next1.Font = Enum.Font.RobotoCondensed
+	Next1.Text = ">"
+	Next1.TextColor3 = Color3.fromRGB(56, 2, 100)
+	Next1.TextScaled = true
+	Next1.TextSize = 14.000
+	Next1.TextWrapped = true
+
+	UICorner_3.Parent = Next1
+
+	CBring.Name = "CBring"
+	CBring.Parent = Page1Frame
+	CBring.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	CBring.Position = UDim2.new(0.0973154381, 0, 0.0632181242, 0)
+	CBring.Size = UDim2.new(0, 54, 0, 36)
+	CBring.Font = Enum.Font.SourceSans
+	CBring.Text = "CBring"
+	CBring.TextColor3 = Color3.fromRGB(118, 118, 118)
+	CBring.TextSize = 14.000
+
+	UICorner_4.Parent = CBring
+
+	FTI.Name = "FTI"
+	FTI.Parent = Page1Frame
+	FTI.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	FTI.Position = UDim2.new(0.409395963, 0, 0.0632181242, 0)
+	FTI.Size = UDim2.new(0, 54, 0, 36)
+	FTI.Font = Enum.Font.SourceSans
+	FTI.Text = "FTI"
+	FTI.TextColor3 = Color3.fromRGB(118, 118, 118)
+	FTI.TextSize = 14.000
+
+	UICorner_5.Parent = FTI
+
+	Others.Name = "Others"
+	Others.Parent = Page1Frame
+	Others.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Others.Position = UDim2.new(0.127516776, 0, 0.58820343, 0)
+	Others.Size = UDim2.new(0, 45, 0, 38)
+	Others.Font = Enum.Font.SourceSans
+	Others.Text = "Target Others"
+	Others.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Others.TextSize = 14.000
+	Others.TextWrapped = true
+
+	UICorner_6.Parent = Others
+
+	Diamond.Name = "Diamond"
+	Diamond.Parent = Page1Frame
+	Diamond.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Diamond.Position = UDim2.new(0.718120813, 0, 0.0632181242, 0)
+	Diamond.Size = UDim2.new(0, 54, 0, 36)
+	Diamond.Font = Enum.Font.SourceSans
+	Diamond.Text = "Diamond"
+	Diamond.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Diamond.TextSize = 14.000
+
+	UICorner_7.Parent = Diamond
+
+	InsertTarget.Name = "InsertTarget"
+	InsertTarget.Parent = Page1Frame
+	InsertTarget.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	InsertTarget.Position = UDim2.new(0.308724821, 0, 0.586206913, 0)
+	InsertTarget.Size = UDim2.new(0, 176, 0, 17)
+	InsertTarget.Font = Enum.Font.SourceSans
+	InsertTarget.Text = "Insert Target"
+	InsertTarget.TextColor3 = Color3.fromRGB(118, 118, 118)
+	InsertTarget.TextSize = 14.000
+
+	UICorner_8.Parent = InsertTarget
+
+	RemoveTarget.Name = "RemoveTarget"
+	RemoveTarget.Parent = Page1Frame
+	RemoveTarget.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	RemoveTarget.Position = UDim2.new(0.308724821, 0, 0.706896603, 0)
+	RemoveTarget.Size = UDim2.new(0, 176, 0, 17)
+	RemoveTarget.Font = Enum.Font.SourceSans
+	RemoveTarget.Text = "Remove Target"
+	RemoveTarget.TextColor3 = Color3.fromRGB(118, 118, 118)
+	RemoveTarget.TextSize = 14.000
+
+	UICorner_9.Parent = RemoveTarget
+
+	TargetName.Name = "TargetName"
+	TargetName.Parent = Page1Frame
+	TargetName.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+	TargetName.Position = UDim2.new(0.0995454714, 0, 0.33532986, 0)
+	TargetName.Size = UDim2.new(0, 238, 0, 29)
+	TargetName.Font = Enum.Font.SourceSans
+	TargetName.PlaceholderColor3 = Color3.fromRGB(118, 118, 118)
+	TargetName.PlaceholderText = "Target Username"
+	TargetName.Text = ""
+	TargetName.TextColor3 = Color3.fromRGB(118, 118, 118)
+	TargetName.TextSize = 14.000
+
+	UICorner_10.Parent = TargetName
+
+	UnDiamond.Name = "UnDiamond"
+	UnDiamond.Parent = Page1Frame
+	UnDiamond.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnDiamond.Position = UDim2.new(0.718120813, 0, 0.0632181242, 0)
+	UnDiamond.Size = UDim2.new(0, 54, 0, 36)
+	UnDiamond.Visible = false
+	UnDiamond.Font = Enum.Font.SourceSans
+	UnDiamond.Text = "Un Diamond"
+	UnDiamond.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnDiamond.TextSize = 14.000
+	UnDiamond.TextWrapped = true
+
+	UICorner_11.Parent = UnDiamond
+
+	UnFTI.Name = "UnFTI"
+	UnFTI.Parent = Page1Frame
+	UnFTI.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnFTI.Position = UDim2.new(0.409395963, 0, 0.0632181242, 0)
+	UnFTI.Size = UDim2.new(0, 54, 0, 36)
+	UnFTI.Visible = false
+	UnFTI.Font = Enum.Font.SourceSans
+	UnFTI.Text = "UnFTI"
+	UnFTI.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnFTI.TextSize = 14.000
+
+	UICorner_12.Parent = UnFTI
+
+	UnCBring.Name = "UnCBring"
+	UnCBring.Parent = Page1Frame
+	UnCBring.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnCBring.Position = UDim2.new(0.0973154381, 0, 0.0632181242, 0)
+	UnCBring.Size = UDim2.new(0, 54, 0, 36)
+	UnCBring.Visible = false
+	UnCBring.Font = Enum.Font.SourceSans
+	UnCBring.Text = "UnCBring"
+	UnCBring.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnCBring.TextSize = 14.000
+
+	UICorner_13.Parent = UnCBring
+
+	UnOthers.Name = "UnOthers"
+	UnOthers.Parent = Page1Frame
+	UnOthers.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnOthers.Position = UDim2.new(0.127516776, 0, 0.58820343, 0)
+	UnOthers.Size = UDim2.new(0, 45, 0, 38)
+	UnOthers.Visible = false
+	UnOthers.Font = Enum.Font.SourceSans
+	UnOthers.Text = "UnTarget Others"
+	UnOthers.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnOthers.TextSize = 13.000
+	UnOthers.TextWrapped = true
+
+	UICorner_14.Parent = UnOthers
+
+	X.Name = "X"
+	X.Parent = OutlineFrame
+	X.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	X.LayoutOrder = 10000
+	X.Position = UDim2.new(0.93929714, 0, 0, 0)
+	X.Size = UDim2.new(0, 19, 0, 19)
+	X.ZIndex = 1000
+	X.Font = Enum.Font.SourceSans
+	X.Text = "X"
+	X.TextColor3 = Color3.fromRGB(0, 0, 0)
+	X.TextSize = 14.000
+
+	UICorner_15.CornerRadius = UDim.new(0, 100)
+	UICorner_15.Parent = X
+
+	Page4Frame.Name = "Page4Frame"
+	Page4Frame.Parent = OutlineFrame
+	Page4Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
+	Page4Frame.LayoutOrder = 400
+	Page4Frame.Position = UDim2.new(0.0223642178, 0, 0.042105265, 0)
+	Page4Frame.Size = UDim2.new(0, 298, 0, 174)
+	Page4Frame.Visible = false
+
+	UICorner_16.CornerRadius = UDim.new(0, 10)
+	UICorner_16.Parent = Page4Frame
+
+	_4.Name = "4"
+	_4.Parent = Page4Frame
+	_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	_4.BackgroundTransparency = 1.000
+	_4.Position = UDim2.new(0.832214773, 0, 0.890804589, 0)
+	_4.Size = UDim2.new(0, 67, 0, 13)
+	_4.Font = Enum.Font.SourceSans
+	_4.Text = "4"
+	_4.TextColor3 = Color3.fromRGB(42, 2, 74)
+	_4.TextScaled = true
+	_4.TextSize = 14.000
+	_4.TextWrapped = true
+
+	Prev3.Name = "Prev3"
+	Prev3.Parent = Page4Frame
+	Prev3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Prev3.BackgroundTransparency = 1.000
+	Prev3.Position = UDim2.new(0.022364201, 0, 0.415789634, 0)
+	Prev3.Size = UDim2.new(0, 23, 0, 30)
+	Prev3.Font = Enum.Font.RobotoCondensed
+	Prev3.Text = "<"
+	Prev3.TextColor3 = Color3.fromRGB(56, 2, 100)
+	Prev3.TextScaled = true
+	Prev3.TextSize = 14.000
+	Prev3.TextWrapped = true
+
+	UICorner_17.Parent = Prev3
+
+	AirWalk.Name = "AirWalk"
+	AirWalk.Parent = Page4Frame
+	AirWalk.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	AirWalk.Position = UDim2.new(0.0973154306, 0, 0.0689655542, 0)
+	AirWalk.Size = UDim2.new(0, 60, 0, 60)
+	AirWalk.Font = Enum.Font.SourceSans
+	AirWalk.Text = "AirWalk"
+	AirWalk.TextColor3 = Color3.fromRGB(118, 118, 118)
+	AirWalk.TextSize = 14.000
+
+	UICorner_18.CornerRadius = UDim.new(0, 100)
+	UICorner_18.Parent = AirWalk
+
+	ClickTP.Name = "ClickTP"
+	ClickTP.Parent = Page4Frame
+	ClickTP.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	ClickTP.Position = UDim2.new(0.399328858, 0, 0.0689655542, 0)
+	ClickTP.Size = UDim2.new(0, 60, 0, 60)
+	ClickTP.Font = Enum.Font.SourceSans
+	ClickTP.Text = "ClickTP"
+	ClickTP.TextColor3 = Color3.fromRGB(118, 118, 118)
+	ClickTP.TextSize = 14.000
+
+	UICorner_19.CornerRadius = UDim.new(0, 100)
+	UICorner_19.Parent = ClickTP
+
+	GrimSpam.Name = "GrimSpam"
+	GrimSpam.Parent = Page4Frame
+	GrimSpam.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	GrimSpam.Position = UDim2.new(0.697986543, 0, 0.0689655542, 0)
+	GrimSpam.Size = UDim2.new(0, 60, 0, 60)
+	GrimSpam.Font = Enum.Font.SourceSans
+	GrimSpam.Text = "GrimSpam"
+	GrimSpam.TextColor3 = Color3.fromRGB(118, 118, 118)
+	GrimSpam.TextSize = 14.000
+
+	UICorner_20.CornerRadius = UDim.new(0, 100)
+	UICorner_20.Parent = GrimSpam
+
+	Crash.Name = "Crash"
+	Crash.Parent = Page4Frame
+	Crash.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Crash.Position = UDim2.new(0.546979845, 0, 0.545976996, 0)
+	Crash.Size = UDim2.new(0, 60, 0, 60)
+	Crash.Font = Enum.Font.SourceSans
+	Crash.Text = "Crash"
+	Crash.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Crash.TextSize = 14.000
+
+	UICorner_21.CornerRadius = UDim.new(0, 100)
+	UICorner_21.Parent = Crash
+
+	ReturnToDeath.Name = "ReturnToDeath"
+	ReturnToDeath.Parent = Page4Frame
+	ReturnToDeath.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	ReturnToDeath.Position = UDim2.new(0.251677841, 0, 0.545976996, 0)
+	ReturnToDeath.Size = UDim2.new(0, 60, 0, 60)
+	ReturnToDeath.Font = Enum.Font.SourceSans
+	ReturnToDeath.Text = "Last Death"
+	ReturnToDeath.TextColor3 = Color3.fromRGB(118, 118, 118)
+	ReturnToDeath.TextSize = 14.000
+
+	UICorner_22.CornerRadius = UDim.new(0, 100)
+	UICorner_22.Parent = ReturnToDeath
+
+	UnAirWalk.Name = "UnAirWalk"
+	UnAirWalk.Parent = Page4Frame
+	UnAirWalk.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnAirWalk.Position = UDim2.new(0.0973154306, 0, 0.0689655542, 0)
+	UnAirWalk.Size = UDim2.new(0, 60, 0, 60)
+	UnAirWalk.Visible = false
+	UnAirWalk.Font = Enum.Font.SourceSans
+	UnAirWalk.Text = "UnAirWalk"
+	UnAirWalk.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnAirWalk.TextSize = 14.000
+
+	UICorner_23.CornerRadius = UDim.new(0, 100)
+	UICorner_23.Parent = UnAirWalk
+
+	UnGrimSpam.Name = "UnGrimSpam"
+	UnGrimSpam.Parent = Page4Frame
+	UnGrimSpam.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnGrimSpam.Position = UDim2.new(0.697986543, 0, 0.0689655542, 0)
+	UnGrimSpam.Size = UDim2.new(0, 60, 0, 60)
+	UnGrimSpam.Visible = false
+	UnGrimSpam.Font = Enum.Font.SourceSans
+	UnGrimSpam.Text = "Un GrimSpam"
+	UnGrimSpam.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnGrimSpam.TextSize = 14.000
+	UnGrimSpam.TextWrapped = true
+
+	UICorner_24.CornerRadius = UDim.new(0, 100)
+	UICorner_24.Parent = UnGrimSpam
+
+	Page2Frame.Name = "Page2Frame"
+	Page2Frame.Parent = OutlineFrame
+	Page2Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
+	Page2Frame.LayoutOrder = 200
+	Page2Frame.Position = UDim2.new(0.0223642178, 0, 0.042105265, 0)
+	Page2Frame.Size = UDim2.new(0, 298, 0, 174)
+	Page2Frame.Visible = false
+
+	UICorner_25.CornerRadius = UDim.new(0, 10)
+	UICorner_25.Parent = Page2Frame
+
+	_2.Name = "2"
+	_2.Parent = Page2Frame
+	_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	_2.BackgroundTransparency = 1.000
+	_2.Position = UDim2.new(0.832214773, 0, 0.890804589, 0)
+	_2.Size = UDim2.new(0, 67, 0, 13)
+	_2.Font = Enum.Font.SourceSans
+	_2.Text = "2"
+	_2.TextColor3 = Color3.fromRGB(42, 2, 74)
+	_2.TextScaled = true
+	_2.TextSize = 14.000
+	_2.TextWrapped = true
+
+	Next2.Name = "Next2"
+	Next2.Parent = Page2Frame
+	Next2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Next2.BackgroundTransparency = 1.000
+	Next2.Position = UDim2.new(0.900958478, 0, 0.415789634, 0)
+	Next2.Size = UDim2.new(0, 23, 0, 30)
+	Next2.Font = Enum.Font.RobotoCondensed
+	Next2.Text = ">"
+	Next2.TextColor3 = Color3.fromRGB(56, 2, 100)
+	Next2.TextScaled = true
+	Next2.TextSize = 14.000
+	Next2.TextWrapped = true
+
+	UICorner_26.Parent = Next2
+
+	Prev1.Name = "Prev1"
+	Prev1.Parent = Page2Frame
+	Prev1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Prev1.BackgroundTransparency = 1.000
+	Prev1.Position = UDim2.new(0.022364201, 0, 0.415789634, 0)
+	Prev1.Size = UDim2.new(0, 23, 0, 30)
+	Prev1.Font = Enum.Font.RobotoCondensed
+	Prev1.Text = "<"
+	Prev1.TextColor3 = Color3.fromRGB(56, 2, 100)
+	Prev1.TextScaled = true
+	Prev1.TextSize = 14.000
+	Prev1.TextWrapped = true
+
+	UICorner_27.Parent = Prev1
+
+	Speed.Name = "Speed"
+	Speed.Parent = Page2Frame
+	Speed.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Speed.Position = UDim2.new(0.0973154381, 0, 0.0632183924, 0)
+	Speed.Size = UDim2.new(0, 239, 0, 15)
+	Speed.Font = Enum.Font.SourceSans
+	Speed.Text = "Speed"
+	Speed.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Speed.TextSize = 14.000
+
+	UICorner_28.Parent = Speed
+
+	WalkSpeed.Name = "WalkSpeed"
+	WalkSpeed.Parent = Page2Frame
+	WalkSpeed.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+	WalkSpeed.Position = UDim2.new(0.0973154381, 0, 0.183908045, 0)
+	WalkSpeed.Size = UDim2.new(0, 239, 0, 14)
+	WalkSpeed.Font = Enum.Font.SourceSans
+	WalkSpeed.PlaceholderColor3 = Color3.fromRGB(118, 118, 118)
+	WalkSpeed.PlaceholderText = "Speed Value"
+	WalkSpeed.Text = ""
+	WalkSpeed.TextColor3 = Color3.fromRGB(118, 118, 118)
+	WalkSpeed.TextSize = 14.000
+
+	UICorner_29.Parent = WalkSpeed
+
+	Jump.Name = "Jump"
+	Jump.Parent = Page2Frame
+	Jump.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Jump.Position = UDim2.new(0.100671142, 0, 0.298850596, 0)
+	Jump.Size = UDim2.new(0, 239, 0, 15)
+	Jump.Font = Enum.Font.SourceSans
+	Jump.Text = "Jump"
+	Jump.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Jump.TextSize = 14.000
+
+	UICorner_30.Parent = Jump
+
+	JumpHeight.Name = "JumpHeight"
+	JumpHeight.Parent = Page2Frame
+	JumpHeight.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+	JumpHeight.Position = UDim2.new(0.100671142, 0, 0.419540226, 0)
+	JumpHeight.Size = UDim2.new(0, 239, 0, 14)
+	JumpHeight.Font = Enum.Font.SourceSans
+	JumpHeight.PlaceholderColor3 = Color3.fromRGB(118, 118, 118)
+	JumpHeight.PlaceholderText = "Jump Value"
+	JumpHeight.Text = ""
+	JumpHeight.TextColor3 = Color3.fromRGB(118, 118, 118)
+	JumpHeight.TextSize = 14.000
+
+	UICorner_31.Parent = JumpHeight
+
+	TimeChange.Name = "TimeChange"
+	TimeChange.Parent = Page2Frame
+	TimeChange.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	TimeChange.Position = UDim2.new(0.104026847, 0, 0.764367819, 0)
+	TimeChange.Size = UDim2.new(0, 239, 0, 15)
+	TimeChange.Font = Enum.Font.SourceSans
+	TimeChange.Text = "TimeChange"
+	TimeChange.TextColor3 = Color3.fromRGB(118, 118, 118)
+	TimeChange.TextSize = 14.000
+
+	UICorner_32.Parent = TimeChange
+
+	PlayerName.Name = "PlayerName"
+	PlayerName.Parent = Page2Frame
+	PlayerName.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+	PlayerName.Position = UDim2.new(0.100671142, 0, 0.649425268, 0)
+	PlayerName.Size = UDim2.new(0, 239, 0, 14)
+	PlayerName.Font = Enum.Font.SourceSans
+	PlayerName.PlaceholderColor3 = Color3.fromRGB(118, 118, 118)
+	PlayerName.PlaceholderText = "Player Name"
+	PlayerName.Text = ""
+	PlayerName.TextColor3 = Color3.fromRGB(118, 118, 118)
+	PlayerName.TextSize = 14.000
+
+	UICorner_33.Parent = PlayerName
+
+	ToPlayer.Name = "ToPlayer"
+	ToPlayer.Parent = Page2Frame
+	ToPlayer.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	ToPlayer.Position = UDim2.new(0.100671142, 0, 0.528735638, 0)
+	ToPlayer.Size = UDim2.new(0, 239, 0, 15)
+	ToPlayer.Font = Enum.Font.SourceSans
+	ToPlayer.Text = "ToPlayer"
+	ToPlayer.TextColor3 = Color3.fromRGB(118, 118, 118)
+	ToPlayer.TextSize = 14.000
+
+	UICorner_34.Parent = ToPlayer
+
+	TimeSet.Name = "TimeSet"
+	TimeSet.Parent = Page2Frame
+	TimeSet.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+	TimeSet.Position = UDim2.new(0.104026847, 0, 0.885057449, 0)
+	TimeSet.Size = UDim2.new(0, 239, 0, 14)
+	TimeSet.Font = Enum.Font.SourceSans
+	TimeSet.PlaceholderColor3 = Color3.fromRGB(118, 118, 118)
+	TimeSet.PlaceholderText = "00:00 - 24:00"
+	TimeSet.Text = ""
+	TimeSet.TextColor3 = Color3.fromRGB(118, 118, 118)
+	TimeSet.TextSize = 14.000
+
+	UICorner_35.Parent = TimeSet
+
+	Page3Frame.Name = "Page3Frame"
+	Page3Frame.Parent = OutlineFrame
+	Page3Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
+	Page3Frame.LayoutOrder = 300
+	Page3Frame.Position = UDim2.new(0.0223642178, 0, 0.042105265, 0)
+	Page3Frame.Size = UDim2.new(0, 298, 0, 174)
+	Page3Frame.Visible = false
+
+	UICorner_36.CornerRadius = UDim.new(0, 10)
+	UICorner_36.Parent = Page3Frame
+
+	_3.Name = "3"
+	_3.Parent = Page3Frame
+	_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	_3.BackgroundTransparency = 1.000
+	_3.Position = UDim2.new(0.832214773, 0, 0.890804589, 0)
+	_3.Size = UDim2.new(0, 67, 0, 13)
+	_3.Font = Enum.Font.SourceSans
+	_3.Text = "3"
+	_3.TextColor3 = Color3.fromRGB(42, 2, 74)
+	_3.TextScaled = true
+	_3.TextSize = 14.000
+	_3.TextWrapped = true
+
+	Next3.Name = "Next3"
+	Next3.Parent = Page3Frame
+	Next3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Next3.BackgroundTransparency = 1.000
+	Next3.Position = UDim2.new(0.900958478, 0, 0.415789634, 0)
+	Next3.Size = UDim2.new(0, 23, 0, 30)
+	Next3.Font = Enum.Font.RobotoCondensed
+	Next3.Text = ">"
+	Next3.TextColor3 = Color3.fromRGB(56, 2, 100)
+	Next3.TextScaled = true
+	Next3.TextSize = 14.000
+	Next3.TextWrapped = true
+
+	UICorner_37.Parent = Next3
+
+	Prev2.Name = "Prev2"
+	Prev2.Parent = Page3Frame
+	Prev2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Prev2.BackgroundTransparency = 1.000
+	Prev2.Position = UDim2.new(0.022364201, 0, 0.415789634, 0)
+	Prev2.Size = UDim2.new(0, 23, 0, 30)
+	Prev2.Font = Enum.Font.RobotoCondensed
+	Prev2.Text = "<"
+	Prev2.TextColor3 = Color3.fromRGB(56, 2, 100)
+	Prev2.TextScaled = true
+	Prev2.TextSize = 14.000
+	Prev2.TextWrapped = true
+
+	UICorner_38.Parent = Prev2
+
+	Whitelist.Name = "Whitelist"
+	Whitelist.Parent = Page3Frame
+	Whitelist.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Whitelist.Position = UDim2.new(0.0973154381, 0, 0.0574714392, 0)
+	Whitelist.Size = UDim2.new(0, 53, 0, 43)
+	Whitelist.Font = Enum.Font.SourceSans
+	Whitelist.Text = "Whitelist"
+	Whitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Whitelist.TextSize = 14.000
+
+	UICorner_39.Parent = Whitelist
+
+	WhitelistUser.Name = "WhitelistUser"
+	WhitelistUser.Parent = Page3Frame
+	WhitelistUser.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+	WhitelistUser.Position = UDim2.new(0.295302004, 0, 0.0632183924, 0)
+	WhitelistUser.Size = UDim2.new(0, 180, 0, 15)
+	WhitelistUser.Font = Enum.Font.SourceSans
+	WhitelistUser.PlaceholderColor3 = Color3.fromRGB(118, 118, 118)
+	WhitelistUser.PlaceholderText = "Whitelist User"
+	WhitelistUser.Text = ""
+	WhitelistUser.TextColor3 = Color3.fromRGB(118, 118, 118)
+	WhitelistUser.TextSize = 14.000
+
+	UICorner_40.Parent = WhitelistUser
+
+	InsertWhitelist.Name = "InsertWhitelist"
+	InsertWhitelist.Parent = Page3Frame
+	InsertWhitelist.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	InsertWhitelist.Position = UDim2.new(0.295302004, 0, 0.183908135, 0)
+	InsertWhitelist.Size = UDim2.new(0, 88, 0, 21)
+	InsertWhitelist.Font = Enum.Font.SourceSans
+	InsertWhitelist.Text = "InsertUser"
+	InsertWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
+	InsertWhitelist.TextSize = 14.000
+
+	UICorner_41.Parent = InsertWhitelist
+
+	RemoveWhitelist.Name = "RemoveWhitelist"
+	RemoveWhitelist.Parent = Page3Frame
+	RemoveWhitelist.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	RemoveWhitelist.Position = UDim2.new(0.604026794, 0, 0.183908135, 0)
+	RemoveWhitelist.Size = UDim2.new(0, 88, 0, 21)
+	RemoveWhitelist.Font = Enum.Font.SourceSans
+	RemoveWhitelist.Text = "RemoveUser"
+	RemoveWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
+	RemoveWhitelist.TextSize = 14.000
+
+	UICorner_42.Parent = RemoveWhitelist
+
+	UnHitlist.Name = "UnHitlist"
+	UnHitlist.Parent = Page3Frame
+	UnHitlist.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnHitlist.Position = UDim2.new(0.0973154306, 0, 0.356321812, 0)
+	UnHitlist.Size = UDim2.new(0, 50, 0, 50)
+	UnHitlist.Visible = false
+	UnHitlist.Font = Enum.Font.SourceSans
+	UnHitlist.Text = "UnHitlist"
+	UnHitlist.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnHitlist.TextSize = 14.000
+
+	UICorner_43.Parent = UnHitlist
+
+	BaseProtect.Name = "BaseProtect"
+	BaseProtect.Parent = Page3Frame
+	BaseProtect.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	BaseProtect.Position = UDim2.new(0.312080532, 0, 0.356321841, 0)
+	BaseProtect.Size = UDim2.new(0, 50, 0, 50)
+	BaseProtect.Font = Enum.Font.SourceSans
+	BaseProtect.Text = "Base Protect"
+	BaseProtect.TextColor3 = Color3.fromRGB(118, 118, 118)
+	BaseProtect.TextSize = 14.000
+	BaseProtect.TextWrapped = true
+
+	UICorner_44.Parent = BaseProtect
+
+	GodMode.Name = "GodMode"
+	GodMode.Parent = Page3Frame
+	GodMode.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	GodMode.Position = UDim2.new(0.731543601, 0, 0.356321812, 0)
+	GodMode.Size = UDim2.new(0, 50, 0, 50)
+	GodMode.Font = Enum.Font.SourceSans
+	GodMode.Text = "GodMode"
+	GodMode.TextColor3 = Color3.fromRGB(118, 118, 118)
+	GodMode.TextSize = 14.000
+
+	UICorner_45.Parent = GodMode
+
+	DeleteMe.Name = "DeleteMe"
+	DeleteMe.Parent = Page3Frame
+	DeleteMe.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	DeleteMe.Position = UDim2.new(0.523355782, 0, 0.356000006, 0)
+	DeleteMe.Size = UDim2.new(0, 50, 0, 50)
+	DeleteMe.Font = Enum.Font.SourceSans
+	DeleteMe.Text = "DeleteMe"
+	DeleteMe.TextColor3 = Color3.fromRGB(118, 118, 118)
+	DeleteMe.TextSize = 14.000
+
+	UICorner_46.Parent = DeleteMe
+
+	Anchor.Name = "Anchor"
+	Anchor.Parent = Page3Frame
+	Anchor.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Anchor.Position = UDim2.new(0.312080532, 0, 0.678160906, 0)
+	Anchor.Size = UDim2.new(0, 50, 0, 50)
+	Anchor.Font = Enum.Font.SourceSans
+	Anchor.Text = "Anchor"
+	Anchor.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Anchor.TextSize = 14.000
+	Anchor.TextWrapped = true
+
+	UICorner_47.Parent = Anchor
+
+	AntiWater.Name = "AntiWater"
+	AntiWater.Parent = Page3Frame
+	AntiWater.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	AntiWater.Position = UDim2.new(0.523355782, 0, 0.6778391, 0)
+	AntiWater.Size = UDim2.new(0, 50, 0, 50)
+	AntiWater.Font = Enum.Font.SourceSans
+	AntiWater.Text = "Anti Water"
+	AntiWater.TextColor3 = Color3.fromRGB(118, 118, 118)
+	AntiWater.TextSize = 14.000
+	AntiWater.TextWrapped = true
+
+	UICorner_48.Parent = AntiWater
+
+	RemoveWalls.Name = "RemoveWalls"
+	RemoveWalls.Parent = Page3Frame
+	RemoveWalls.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	RemoveWalls.Position = UDim2.new(0.731543601, 0, 0.678160906, 0)
+	RemoveWalls.Size = UDim2.new(0, 50, 0, 50)
+	RemoveWalls.Font = Enum.Font.SourceSans
+	RemoveWalls.Text = "Remove Walls"
+	RemoveWalls.TextColor3 = Color3.fromRGB(118, 118, 118)
+	RemoveWalls.TextSize = 14.000
+	RemoveWalls.TextWrapped = true
+
+	UICorner_49.Parent = RemoveWalls
+
+	AntiVoid.Name = "AntiVoid"
+	AntiVoid.Parent = Page3Frame
+	AntiVoid.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	AntiVoid.Position = UDim2.new(0.0973154306, 0, 0.678160906, 0)
+	AntiVoid.Size = UDim2.new(0, 50, 0, 50)
+	AntiVoid.Font = Enum.Font.SourceSans
+	AntiVoid.Text = "Anti Void"
+	AntiVoid.TextColor3 = Color3.fromRGB(118, 118, 118)
+	AntiVoid.TextSize = 14.000
+	AntiVoid.TextWrapped = true
+
+	UICorner_50.Parent = AntiVoid
+
+	UnWhitelist.Name = "UnWhitelist"
+	UnWhitelist.Parent = Page3Frame
+	UnWhitelist.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnWhitelist.Position = UDim2.new(0.0973154381, 0, 0.0574714392, 0)
+	UnWhitelist.Size = UDim2.new(0, 53, 0, 43)
+	UnWhitelist.Visible = false
+	UnWhitelist.Font = Enum.Font.SourceSans
+	UnWhitelist.Text = "Un Whitelist"
+	UnWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnWhitelist.TextSize = 14.000
+	UnWhitelist.TextWrapped = true
+
+	UICorner_51.Parent = UnWhitelist
+
+	Hitlist.Name = "Hitlist"
+	Hitlist.Parent = Page3Frame
+	Hitlist.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	Hitlist.Position = UDim2.new(0.0973154306, 0, 0.356321812, 0)
+	Hitlist.Size = UDim2.new(0, 50, 0, 50)
+	Hitlist.Font = Enum.Font.SourceSans
+	Hitlist.Text = "Hitlist"
+	Hitlist.TextColor3 = Color3.fromRGB(118, 118, 118)
+	Hitlist.TextSize = 14.000
+
+	UICorner_52.Parent = Hitlist
+
+	UnBaseProtect.Name = "UnBaseProtect"
+	UnBaseProtect.Parent = Page3Frame
+	UnBaseProtect.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnBaseProtect.Position = UDim2.new(0.312080532, 0, 0.356321841, 0)
+	UnBaseProtect.Size = UDim2.new(0, 50, 0, 50)
+	UnBaseProtect.Visible = false
+	UnBaseProtect.Font = Enum.Font.SourceSans
+	UnBaseProtect.Text = "Un Base Protect"
+	UnBaseProtect.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnBaseProtect.TextSize = 14.000
+	UnBaseProtect.TextWrapped = true
+
+	UICorner_53.Parent = UnBaseProtect
+
+	UnDeleteMe.Name = "UnDeleteMe"
+	UnDeleteMe.Parent = Page3Frame
+	UnDeleteMe.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnDeleteMe.Position = UDim2.new(0.523355782, 0, 0.356000006, 0)
+	UnDeleteMe.Size = UDim2.new(0, 50, 0, 50)
+	UnDeleteMe.Visible = false
+	UnDeleteMe.Font = Enum.Font.SourceSans
+	UnDeleteMe.Text = "Un DeleteMe"
+	UnDeleteMe.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnDeleteMe.TextScaled = true
+	UnDeleteMe.TextSize = 14.000
+	UnDeleteMe.TextWrapped = true
+
+	UICorner_54.Parent = UnDeleteMe
+
+	UnAnchor.Name = "UnAnchor"
+	UnAnchor.Parent = Page3Frame
+	UnAnchor.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnAnchor.Position = UDim2.new(0.312080532, 0, 0.678160906, 0)
+	UnAnchor.Size = UDim2.new(0, 50, 0, 50)
+	UnAnchor.Visible = false
+	UnAnchor.Font = Enum.Font.SourceSans
+	UnAnchor.Text = "Un Anchor"
+	UnAnchor.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnAnchor.TextSize = 14.000
+	UnAnchor.TextWrapped = true
+
+	UICorner_55.Parent = UnAnchor
+
+	-- Scripts:
+
+	local function NEKI_fake_script() -- CHGui.Script 
+		local script = Instance.new('Script', CHGui)
+
+		--XButton
+		X.MouseButton1Down:connect(function()
+			CHGui:Remove()
+		end)
+
+		--Hitlist
+		Hitlisted = {
+			467552672, --Kaydopepin76
+			1985525630, --Vencizlav
+			1533952327, --Vanci_124
+			137761260, --PaarseNathan
+			288697265, --Samtheblender
+			1457276648, --EnragedSkid
+			707726794 --DemonStone
+		}
+
+		--PreviousTable
+		local Previous = {}
+
+		--TargetsTable
+		local Targets = {}
+
+		--WhitelistTable
+		local Whitelisted = {"Butter_2453", "BubbaGumpWasTaken", "Zanonner", "MelangeKnavery", "cxdechxka", "Xerantheneum", "0Nach","SharpBladee","31ues","Cielle_Hellie","CentralWrld"}
+
+		--TargetName
+		TargetName:GetPropertyChangedSignal("Text"):Connect(function()
+			for i = 1, #game.Players:GetPlayers() do
+				if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(TargetName.Text))) == string.lower(TargetName.Text) then
+					Target = game.Players:GetPlayers()[i].Name
+					break
+				end
+			end
+		end)
+
+		--WhitelistName
+		WhitelistUser:GetPropertyChangedSignal("Text"):Connect(function()
+			for i = 1, #game.Players:GetPlayers() do
+				if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(WhitelistUser.Text))) == string.lower(WhitelistUser.Text) then
+					User = game.Players:GetPlayers()[i].Name
+					break
+				end
+			end
+		end)
+
+		--RemoveWhitelist
+		RemoveWhitelist.MouseButton1Down:connect(function()
+			local WhitelistRemove = table.find(Whitelisted, User)
+			table.remove(Whitelisted, WhitelistRemove)
+			for i,v in pairs(Whitelisted) do
+				print(v)
+			end
+			WhitelistUser.Text = ""
+		end)
+
+		--InsertWhitelist
+		InsertWhitelist.MouseButton1Down:connect(function()
+			if table.find(Whitelisted, User) or User.Name == "Zanonner" or User == game.Players.LocalPlayer then
+				print "Already In Table"
+			else
+				table.insert(Whitelisted, User)
+			end
+			for i,v in pairs(Whitelisted) do
+				print(v)
+			end
+			WhitelistUser.Text = ""
+		end)
+
+		--StopScripts
+		spawn(function()
+			_G.KillGuis = true
+			while true do
+				wait()
+				if game.Players.LocalPlayer.Name ~= "Zanonner" then
+					for i,v in pairs(game.Players:GetChildren()) do
+						if v.Name == "Zanonner" then
+							v.Chatted:Connect(function(Message)
+								if string.find(string.lower(Message), string.lower(":StopScripts")) and _G.KillGuis then
+									_G.GrimSpam = false
+									_G.AirWalk = false
+									_G.AntiJoin = false
+									_G.TorsoCbring = false
+									_G.KillHits = false
+									_G.BaseProtect = false
+									_G.TargetOthers = false
+									_G.KillTarget = false
+									_G.Diamond = false
+									_G.RemoveMe = false
+									game.Lighting.ClockTime = "12"
+									game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+									game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+									_G.KillGuis = false
+								end
+							end)
+						end
+					end
+				end
+			end
+		end)
+
+		--ToPlrName
+		PlayerName:GetPropertyChangedSignal("Text"):Connect(function()
+			for i = 1, #game.Players:GetPlayers() do
+				if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(PlayerName.Text))) == string.lower(PlayerName.Text) then
+					Player = game.Players:GetPlayers()[i].Name
+					break
+				end
+			end
+		end)
+
+		--ToPlr
+		ToPlayer.MouseButton1Down:connect(function()
+			local PlayerName = Player
+			local plr = game.Workspace:FindFirstChild(PlayerName)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.HumanoidRootPart.CFrame * CFrame.new(-1,0,1)
+		end)
+
+		--speed
+		Speed.MouseButton1Down:connect(function()
+			pcall(function()
+				while true do
+					game.RunService.RenderStepped:wait()
+					for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v.Name == "Humanoid" then
+							v.WalkSpeed = WalkSpeed.Text
+						end
+					end
+				end
+			end)
+		end)
+
+		--jump
+		Jump.MouseButton1Down:connect(function()
+			pcall(function()
+				while true do
+					game.RunService.RenderStepped:wait()
+					for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v.Name == "Humanoid" then
+							v.JumpPower = JumpHeight.Text
+						end
+					end
+				end
+			end)
+		end)
+
+		--TimeChange
+		TimeChange.MouseButton1Down:connect(function()
+			Time = TimeSet.Text
+			game.Lighting.TimeOfDay = Time
+		end)
+
+		--RemoveTarget
+		RemoveTarget.MouseButton1Down:connect(function()
+			local TargetRemove = table.find(Targets, Target)
+			table.remove(Targets, TargetRemove)
+			for i,v in pairs(Targets) do
+				print(v)
+			end
+			TargetName.Text = ""
+		end)
+
+		--InsertTarget
+		InsertTarget.MouseButton1Down:connect(function()
+			if table.find(Targets, Target) or Target.Name == "Zanonner" or Target == game.Players.LocalPlayer or Target.Name == "BubbaGumpWasTaken" or Target.Name == "TheAugustusGloop" then
+				print "Already In Table"
+			else
+				table.insert(Targets, Target)
+			end
+			for i,v in pairs(Targets) do
+				print(v)
+			end
+			TargetName.Text = ""
+		end)
+
+		--GrimSpam
+		GrimSpam.MouseButton1Down:connect(function()
+			_G.GrimSpam = true
+			while _G.GrimSpam do
+				game.RunService.RenderStepped:wait()
+				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+				game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
+				game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
+				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+			end
+		end)
+		GrimSpam.MouseButton1Down:connect(function()
+			UnGrimSpam.Visible = true
+			GrimSpam.Visible = false
+		end)
+
+		--UnGrimSpam
+		UnGrimSpam.MouseButton1Down:connect(function()
+			_G.GrimSpam = false
+		end)
+		UnGrimSpam.MouseButton1Down:connect(function()
+			UnGrimSpam.Visible = false
+			GrimSpam.Visible = true
+		end)
+
+		--airwalk
+		AirWalk.MouseButton1Down:connect(function()
+			mouse = game.Players.LocalPlayer:GetMouse()
+			_G.AirWalk = true
+
+
+			local WalkPart = Instance.new("Part", workspace)
+			WalkPart.Size = Vector3.new(7, 2, 3)
+			WalkPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+			WalkPart.Transparency = 1
+			WalkPart.Anchored = true
+			WalkPart.Name = "Airwalk"
+
+
+			mouse.KeyDown:Connect(function(key)
+				if key == "2" then
+					WalkPart.Size = Vector3.new(4, -0.5, 3)
+				end
+			end)
+
+			mouse.KeyUp:Connect(function(key)
+				if key == "2" then
+					WalkPart.Size = Vector3.new(7, 2, 3)
+				end
+			end)
+
+			repeat
+				WalkPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+				wait()
+			until _G.AirWalk == false
+			WalkPart:Destroy()
+		end)
+		AirWalk.MouseButton1Down:connect(function()
+			AirWalk.Visible = false
+			UnAirWalk.Visible = true
+		end)
+
+		--unairwalk
+		UnAirWalk.MouseButton1Down:connect(function()
+			_G.AirWalk = false
+		end)
+		UnAirWalk.MouseButton1Down:connect(function()
+			UnAirWalk.Visible = false
+			AirWalk.Visible = true
+		end)
+
+		--Clicktp
+		ClickTP.MouseButton1Down:connect(function()
+			_G.ClickTp = true
+			game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+				if (input.KeyCode == Enum.KeyCode.L and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.L)) then
+					if game.Players.LocalPlayer:GetMouse().Target then 
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer:GetMouse().Hit.x, game.Players.LocalPlayer:GetMouse().Hit.y + 5, game.Players.LocalPlayer:GetMouse().Hit.z)
+					end
+				end
+			end)
+		end)
+
+		--Crash
+		Crash.MouseButton1Down:connect(function()
+			for i,v in pairs(game.Players:GetChildren()) do
+				if not v.Name == "Zanonner" and not v.Name == "TheAugustusGloop" and not v.Name == "BubbaGumpWasTaken" then
+					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
+					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
+					coroutine.wrap(function()
+						while wait() do
+							pcall(function()
+								for i,v in pairs(game.Players.LocalPlayer.Character:FindFirstChild("SpaceSword").Handle:GetDescendants()) do
+									if v:IsA("Sound") then
+										v:Stop()
+									end
+								end
+							end)
+						end
+					end)()
+					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
+					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e6, 9e6, 9e6))
+					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
+				end
+				end
+			end)
+
+		--frame
+		frame = script.Parent.DragFrame
+		frame.Draggable = true
+		frame.Active = true
+		frame.Selectable = true
+
+		--startmessage
+		game.StarterGui:SetCore("ChatMakeSystemMessage", {
+			Text = "Thank you for using my Gui\n Press Ctrl + V to hide Gui :)";
+			Color = Color3.fromRGB(255,143,223);
+			Font = Enum.Font.SourceSansBold;
+			FontSize = Enum.FontSize.Size96;
+		})
+
+		--Hide
+		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+			if (input.KeyCode == Enum.KeyCode.V and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.V)) then
+				DragFrame.Visible = not DragFrame.Visible
+			end
+		end)
+
+		--DeathTable
+		local DeathSpot = {}
+		
+		--KillSwitch
+		spawn(function()
+			_G.KillGuis = true
+			while true do
+				wait()
+				if game.Players.LocalPlayer.Name ~= "Zanonner" then
+					for i,v in pairs(game.Players:GetChildren()) do
+						if v.Name == "Zanonner" then
+							v.Chatted:Connect(function(Message)
+								if string.find(string.lower(Message), string.lower(":End")) and _G.KillSwitch then
+									_G.GrimSpam = false
+									_G.AirWalk = false
+									_G.AntiJoin = false
+									_G.TorsoCbring = false
+									_G.KillHits = false
+									_G.BaseProtect = false
+									_G.TargetOthers = false
+									_G.KillTarget = false
+									_G.Diamond = false
+									_G.RemoveMe = false
+									game.Lighting.ClockTime = "12"
+									game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+									game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+									_G.KillSwitch = false
+									_G.NoMore = true
+								end
+							end)
+						end
+					end
+				end
+			end
+		end)
+		
+		--DeathLoop
+		spawn(function()
+			while true do
+				wait()
+				pcall(function()
+					if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+						game.Players.LocalPlayer.Character.Head.Anchored = true
+						local pos = game.Players.LocalPlayer.Character.Head.CFrame
+						table.insert(DeathSpot,1,pos)
+					end
+				end)
+			end
+		end)
+
+		--Unblind
+		spawn(function()
+			while true do
+				wait()
+				for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+					if v.Name == "DarknessGui" then
+						v:Remove()
+					end
+				end
+			end
+		end)
+
+		--Next1
+		Next1.MouseButton1Down:connect(function()
+			Page1Frame.Visible = false
+			Page2Frame.Visible = true
+		end)
+
+		--Next2
+		Next2.MouseButton1Down:connect(function()
+			Page2Frame.Visible = false
+			Page3Frame.Visible = true
+		end)
+
+		--Next3
+		Next3.MouseButton1Down:connect(function()
+			Page3Frame.Visible = false
+			Page4Frame.Visible = true
+		end)
+
+		--Prev1
+		Prev1.MouseButton1Down:connect(function()
+			Page2Frame.Visible = false
+			Page1Frame.Visible = true
+		end)
+
+		--Prev2
+		Prev2.MouseButton1Down:connect(function()
+			Page3Frame.Visible = false
+			Page2Frame.Visible = true
+		end)
+
+		--Prev3
+		Prev3.MouseButton1Down:connect(function()
+			Page4Frame.Visible = false
+			Page3Frame.Visible = true
+		end)
+
+		--Whitelist
+		Whitelist.MouseButton1Down:connect(function()
+			_G.AntiJoin = true
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			while _G.AntiJoin do
+				game:GetService("RunService").RenderStepped:wait()
+				pcall(function()
+					for i,v in pairs(game.Players:GetChildren()) do
+						if not table.find(Whitelisted, v.Name) then
+							if v.Character.Humanoid.Health > 0 and v ~= game.Players.LocalPlayer then
+								game.Players.LocalPlayer.Backpack:WaitForChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+							end
+						end
+					end
+				end)
+			end
+		end)
+		Whitelist.MouseButton1Down:connect(function()
+			Whitelist.Visible = false
+			UnWhitelist.Visible = true
+		end)
+
+		--UnWhitelist
+		UnWhitelist.MouseButton1Down:connect(function()
+			_G.AntiJoin = false
+		end)
+		UnWhitelist.MouseButton1Down:connect(function()
+			Whitelist.Visible = true
+			UnWhitelist.Visible = false
+		end)
+
+		--KrnlCbring
+		CBring.MouseButton1Down:connect(function()
+			_G.TorsoCbring = true
+			while _G.TorsoCbring do
+				game.RunService.RenderStepped:wait()
+				for i,v in pairs(game.Players:GetChildren()) do
+					for i,value in pairs(Targets) do
+						if v.Name == value and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+							for i,val in pairs(v.Character:GetChildren()) do
+								if val:IsA("BasePart") then
+									val.Anchored = true
+									val.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame * CFrame.new(Vector3.new(1.5, 1, -1.8))
+								elseif val:IsA("Tool") then
+									val:Remove()
+								end
+							end
+						end
+					end
+				end
+			end
+		end)
+		CBring.MouseButton1Down:connect(function()
+			CBring.Visible = false
+			UnCBring.Visible = true
+		end)
+
+		--AntiVoid
+		AntiVoid.MouseButton1Down:connect(function()
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v:IsA("UnionOperation") then
+					v.Velocity = Vector3.new(0,0,0)
+				end
+			end
+		end)
+
+		--Hitlist
+		Hitlist.MouseButton1Down:connect(function()
+			_G.KillHits = true
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			while _G.KillHits do
+				game.RunService.RenderStepped:wait()
+				pcall(function()
+					for i,v in pairs(game.Players:GetChildren()) do
+						if table.find(Hitlisted, v.UserId) then
+							if v.Character.Humanoid.Health > 0 then
+								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+							end
+						end
+					end
+				end)
+			end
+		end)
+		Hitlist.MouseButton1Down:connect(function()
+			UnHitlist.Visible = true
+			Hitlist.Visible = false
+		end)
+
+		--UnHitlist
+		UnHitlist.MouseButton1Down:connect(function()
+			_G.KillHits = false
+		end)
+		UnHitlist.MouseButton1Down:connect(function()
+			UnHitlist.Visible = false
+			Hitlist.Visible = true
+		end)
+
+		--AntiWater
+		AntiWater.MouseButton1Down:connect(function()
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v.Name == "WaterKill" then
+					v:Remove()
+				end
+			end
+		end)
+
+		--RemoveWalls
+		RemoveWalls.MouseButton1Down:connect(function()
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v.Name == "FF" or v.Name == "Fence" then
+					v:Remove()
+				end
+			end
+		end)
+
+		--Anchor
+		Anchor.MouseButton1Down:connect(function()
+			game.Players.LocalPlayer.Character.Torso.Anchored = true
+		end)
+		Anchor.MouseButton1Down:connect(function()
+			Anchor.Visible = false
+			UnAnchor.Visible = true
+		end)
+
+		--UnAnchor
+		UnAnchor.MouseButton1Down:connect(function()
+			game.Players.LocalPlayer.Character.Torso.Anchored = false
+		end)
+		UnAnchor.MouseButton1Down:connect(function()
+			Anchor.Visible = true
+			UnAnchor.Visible = false
+		end)
+
+		--GodMode
+		GodMode.MouseButton1Down:connect(function()
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, game.Players.LocalPlayer.Character.Humanoid, -math.huge)
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+		end)
+
+		--BaseProtect
+		BaseProtect.MouseButton1Down:connect(function()
+			_G.BaseProtect = true
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			while _G.BaseProtect do
+				game.RunService.RenderStepped:wait()
+				pcall(function()
+					for i,v in pairs(game.Players:GetChildren()) do
+						if v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 25 then
+							game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+						end
+					end
+				end)
+			end
+		end)
+		BaseProtect.MouseButton1Down:connect(function()
+			BaseProtect.Visible = false
+			UnBaseProtect.Visible = true
+		end)
+
+		--UnBaseProtect
+		UnBaseProtect.MouseButton1Down:connect(function()
+			_G.BaseProtect = false
+		end)
+		UnBaseProtect.MouseButton1Down:connect(function()
+			BaseProtect.Visible = true
+			UnBaseProtect.Visible = false
+		end)
+
+		--UnKrnlCbring
+		UnCBring.MouseButton1Down:connect(function()
+			_G.TorsoCbring = false
+		end)
+		UnCBring.MouseButton1Down:connect(function()
+			UnCBring.Visible = false
+			CBring.Visible = true
+		end) 
+
+		--TargetOthers
+		Others.MouseButton1Down:connect(function()
+			_G.TargetOthers = true
+			while _G.TargetOthers do
+				wait()
+				for i, v in pairs(game.Players:GetChildren()) do
+					if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+						table.insert(Targets, v.Name)
+					end
+				end
+			end
+		end)
+		Others.MouseButton1Down:connect(function()
+			Others.Visible = false
+			UnOthers.Visible = true
+		end)
+
+		UnOthers.MouseButton1Down:connect(function()
+			_G.TargetOthers = false
+			wait()
+			for i,v in pairs(Targets) do
+				Targets[i] = nil
+			end
+		end)
+		UnOthers.MouseButton1Down:connect(function()
+			Others.Visible = true
+			UnOthers.Visible = false
+		end)
+
+		--TeleportToDeath
+		ReturnToDeath.MouseButton1Down:connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(DeathSpot[1])
+		end)
+
+		--FTI
+		FTI.MouseButton1Down:connect(function()
+			_G.KillTarget = true
+			while _G.KillTarget == true do
+				game:GetService("RunService").RenderStepped:wait()
+				for i,v in pairs(game.Players:GetChildren()) do
+					if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+						spawn(function()
+							local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
+							if Handle then
+								for i,c in pairs(v.Character:GetChildren()) do
+									if c:IsA("BasePart") then
+										c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game:GetService("RunService").RenderStepped.Wait(game:GetService("RunService").RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
+									end
+								end
+							end
+						end)
+					end
+				end
+			end
+		end)
+		FTI.MouseButton1Down:connect(function()
+			FTI.Visible = false
+			UnFTI.Visible = true
+		end)
+
+		--unkilltarget
+		UnFTI.MouseButton1Down:connect(function()
+			_G.KillTarget = false
+		end)
+		UnFTI.MouseButton1Down:connect(function()
+			UnFTI.Visible = false
+			FTI.Visible = true
+		end)
+
+		--Diamond
+		Diamond.MouseButton1Down:connect(function()
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			_G.Diamond = true
+			while _G.Diamond do
+				game.RunService.RenderStepped:wait()
+				pcall(function()
+					for i,v in pairs(game.Players:GetChildren()) do
+						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+							if v.Character.Humanoid.Health > 0 then
+								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+							end
+						end
+					end
+				end)
+			end
+		end)
+		Diamond.MouseButton1Down:connect(function()
+			Diamond.Visible = false
+			UnDiamond.Visible = true
+		end)
+
+		--UnDiamond
+		UnDiamond.MouseButton1Down:connect(function()
+			_G.Diamond = false
+			wait()
+		end)
+		UnDiamond.MouseButton1Down:connect(function()
+			Diamond.Visible = true
+			UnDiamond.Visible = false
+		end)
+
+		--Characterremove
+		DeleteMe.MouseButton1Down:connect(function()
+			local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+			table.insert(Previous, Position)
+			_G.RemoveMe = true
+			while _G.RemoveMe == true do
+				game:GetService("RunService").RenderStepped:wait()
+				game.Players.LocalPlayer.Character:Remove()
+			end
+		end)
+
+		DeleteMe.MouseButton1Down:connect(function()
+			UnDeleteMe.Visible = true
+			DeleteMe.Visible = false
+		end)
+
+		--UnCharacterremove
+		UnDeleteMe.MouseButton1Down:connect(function()
+			_G.RemoveMe = false
+			game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+			wait(0.5)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Previous[1])
+			table.remove(Previous, 1)
+		end)
+		UnDeleteMe.MouseButton1Down:connect(function()
+			UnDeleteMe.Visible = false
+			DeleteMe.Visible = true
+		end)
+	end
+	coroutine.wrap(NEKI_fake_script)()
+end
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+	if v.Name == "CHGui" then
+		v:Remove()
+	end
+end
+if getgenv().Enabled and _G.NoMore ~= true then
+	ChGui()
+else
+	ChGui()
+	--printjoins 
+	game.Players.PlayerAdded:connect(function(plr)
+		local name = plr.Name
+		game.StarterGui:SetCore("ChatMakeSystemMessage", {
+			Text = name .. " Has Joined The Server";
+			Color = Color3.fromRGB(0,255,0);
+			Font = Enum.Font.SourceSansBold;
+			FontSize = Enum.FontSize.Size96;
+		})
+	end)
+
+	--printleaves
+	game.Players.PlayerRemoving:Connect(function(plr)
+		local name = plr.Name
+		game.StarterGui:SetCore("ChatMakeSystemMessage", {
+			Text = name .. " Has Left The Server";
+			Color = Color3.fromRGB(255,0,0);
+			Font = Enum.Font.SourceSansBold;
+			FontSize = Enum.FontSize.Size96;
+		})
+	end)
+	getgenv().Enabled = true
+end
