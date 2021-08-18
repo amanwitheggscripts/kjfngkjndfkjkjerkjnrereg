@@ -1118,7 +1118,6 @@ local function ChGui()
 			while _G.GrimSpam do
 				game.RunService.RenderStepped:wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
-                game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
 				game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
 				game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
