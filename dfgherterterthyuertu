@@ -1224,7 +1224,7 @@ local function ChGui()
 		--startmessage
 		game.StarterGui:SetCore("ChatMakeSystemMessage", {
 			Text = "Thank you for using my Gui\n Press Ctrl + V to hide Gui :)";
-			Color = Color3.fromRGB(255,143,223);
+			Color = Color3.fromRGB(98,71,161);
 			Font = Enum.Font.SourceSansBold;
 			FontSize = Enum.FontSize.Size96;
 		})
