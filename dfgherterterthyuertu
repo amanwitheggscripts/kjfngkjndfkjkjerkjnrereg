@@ -1192,21 +1192,13 @@ local function ChGui()
 
 		--Crash
 		Crash.MouseButton1Down:connect(function()
-		_G.Zanonner = true
-			for i,v in pairs(game.Players:GetChildren()) do
-				if v.Name ~= "Zanonner" and v.Name ~= "TheAugustusGloop" and v.Name ~= "BubbaGumpWasTaken" then
-                    			_G.Zanonner = false
-				end
-			end
-			if _G.Zanonner then
-			    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
-				wait()
-				game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
-				game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
-				game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e6, 9e6, 9e6))
-				game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
-			end
+			game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+			game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
+			wait()
+			game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
+			game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
+			game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e6, 9e6, 9e6))
+			game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
 		end)
 
 		--frame
@@ -1217,7 +1209,7 @@ local function ChGui()
 
 		--startmessage
 		game.StarterGui:SetCore("ChatMakeSystemMessage", {
-			Text = "Thank you for using my Gui\n Press Ctrl + V to hide Gui :)";
+			Text = "Thank you for using my Gui\n Press Ctrl + B to hide Gui :)";
 			Color = Color3.fromRGB(98,71,161);
 			Font = Enum.Font.SourceSansBold;
 			FontSize = Enum.FontSize.Size96;
@@ -1225,7 +1217,7 @@ local function ChGui()
 
 		--Hide
 		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-			if (input.KeyCode == Enum.KeyCode.V and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.V)) then
+			if (input.KeyCode == Enum.KeyCode.B and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.B)) then
 				DragFrame.Visible = not DragFrame.Visible
 			end
 		end)
