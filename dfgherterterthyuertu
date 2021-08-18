@@ -1192,12 +1192,13 @@ local function ChGui()
 
 		--Crash
 		Crash.MouseButton1Down:connect(function()
+		_G.Zanonner = true
 			for i,v in pairs(game.Players:GetChildren()) do
 				if v.Name ~= "Zanonner" and v.Name ~= "TheAugustusGloop" and v.Name ~= "BubbaGumpWasTaken" then
-                    _G.Zanonner = true
+                    			_G.Zanonner = false
 				end
 			end
-			if not _G.Zanonner then
+			if _G.Zanonner then
 			    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
 				wait()
