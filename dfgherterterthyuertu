@@ -1485,7 +1485,7 @@ local function ChGui()
 				game.RunService.RenderStepped:wait()
 				pcall(function()
 					for i,v in pairs(game.Players:GetChildren()) do
-						if v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 25 then
+						if v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 40 then
 							game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 						end
 					end
