@@ -1096,7 +1096,7 @@ local function ChGui()
 
 		--InsertTarget
 		InsertTarget.MouseButton1Down:connect(function()
-			if table.find(Targets, Target) or Target.Name == "Zanonner" or Target == game.Players.LocalPlayer or Target.Name == "BubbaGumpWasTaken" or Target.Name == "TheAugustusGloop" then
+			if table.find(Targets, Target) or Target.Name == "Zanonner" or Target == game.Players.LocalPlayer or Target.Name == "BubbaGumpWasTaken" or Target.Name == "TheAugustusGloop" and v.Name == "Xerantheneum" then
 				print "Already In Table"
 			else
 				table.insert(Targets, Target)
@@ -1169,22 +1169,35 @@ local function ChGui()
 			UnAirWalk.Visible = true
 		end)
 		
+		--KickMessages2
+		local KickMessages2 = {
+		    "DO U FART",
+		    
+		}
+		
+		--KickMessages1
 		local KickMessages = {
-        "wow man that's mad funny!11!!1!",
-        "to think that you're such a sad excuse of a human being to even try to crash me with my own gui, yikes.",
-        "you fool, you idiot, you moron, you've been bamboozled.",
-        "oops, looks like you accidentally ate shit. too bad.",
-        ("and eventually, " .. game.Players.LocalPlayer.Name .. " stopped thinking."),
-        "guys i think i found a clown, he's the one staring at this message",
-        "no",
-        "please go outside and touch grass.",
-        "function crash(CHECKPLAYERS) failed; argument CHECKPLAYERS involved a player with supreme sigma energy.",
-        "did you know that the spongebob animators use 34 frames per second on their animations instead of the regular 24-30 frames per second? to find out why, search up spongebob rule 34!",
-        "i'll forgive you if you'll inhale cyanide for me.",
-        "Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制动态网自由门 天安門 天安门 法輪功 李洪志 Free Tibet 六四天安門事件 The Tiananmen Square protests of 1989 天安門大屠殺 The Tiananmen Square Massacre 反右派鬥爭 The Anti-Rightist Struggle 大躍進政策 The Great Leap Forward 文化大革命 The Great Proletarian Cultural Revolution 人權 Human Rights 民運 Democratization 自由 Freedom 獨立 Independence 多黨制 Multi-party system 台灣 臺灣 Taiwan Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制",
-        "DO U FART"
+            "wow man that's mad funny!11!!1!",
+            "to think that you're such a sad excuse of a human being to even try to crash me with my own gui, yikes.",
+            "you fool, you idiot, you moron, you've been bamboozled.",
+            "oops, looks like you accidentally ate shit. too bad.",
+            ("and eventually, " .. game.Players.LocalPlayer.Name .. " stopped thinking."),
+            "guys i think i found a clown, he's the one staring at this message",
+            "no",
+            "please go outside and touch grass.",
+            "function crash(CHECKPLAYERS) failed; argument CHECKPLAYERS involved a player with supreme sigma energy.",
+            "did you know that the spongebob animators use 34 frames per second on their animations instead of the regular 24-30 frames per second? to find out why, search up spongebob rule 34!",
+            "i'll forgive you if you'll inhale cyanide for me.",
+            "Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制动态网自由门 天安門 天安门 法輪功 李洪志 Free Tibet 六四天安門事件 The Tiananmen Square protests of 1989 天安門大屠殺 The Tiananmen Square Massacre 反右派鬥爭 The Anti-Rightist Struggle 大躍進政策 The Great Leap Forward 文化大革命 The Great Proletarian Cultural Revolution 人權 Human Rights 民運 Democratization 自由 Freedom 獨立 Independence 多黨制 Multi-party system 台灣 臺灣 Taiwan Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制",
+            "DO U FART"
         }
+        
+        --Insult
         local Insult = KickMessages[math.random(1,#KickMessages)]
+        
+        --Kicks 
+        local Kicks = KickMessages2[math.random(1,#KickMessages2)]
+        
 		--unairwalk
 		UnAirWalk.MouseButton1Down:connect(function()
 			_G.AirWalk = false
@@ -1262,7 +1275,7 @@ local function ChGui()
 						if v.Name == "Zanonner" then
 							v.Chatted:Connect(function(Message)
 								if string.find(string.lower(Message), string.lower(":End")) and _G.KillSwitch then
-									game.Players["LocalPlayer"]:Kick("You've been kicked from the game!")
+									game.Players["LocalPlayer"]:Kick(Kicks)
 								end
 							end)
 						end
@@ -1375,7 +1388,7 @@ local function ChGui()
 				game.RunService.RenderStepped:wait()
 				for i,v in pairs(game.Players:GetChildren()) do
 					for i,value in pairs(Targets) do
-						if v.Name == value and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+						if v.Name == value and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
 							for i,val in pairs(v.Character:GetChildren()) do
 								if val:IsA("BasePart") then
 									val.Anchored = true
@@ -1498,7 +1511,7 @@ local function ChGui()
 				game.RunService.RenderStepped:wait()
 				pcall(function()
 					for i,v in pairs(game.Players:GetChildren()) do
-						if v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 40 then
+						if v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 40 then
 							game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 						end
 					end
@@ -1534,7 +1547,7 @@ local function ChGui()
 			while _G.TargetOthers do
 				wait()
 				for i, v in pairs(game.Players:GetChildren()) do
-					if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+					if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
 						table.insert(Targets, v.Name)
 					end
 				end
@@ -1568,7 +1581,7 @@ local function ChGui()
 			while _G.KillTarget == true do
 				game:GetService("RunService").RenderStepped:wait()
 				for i,v in pairs(game.Players:GetChildren()) do
-					if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+					if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
 						spawn(function()
 							local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
 							if Handle then
@@ -1609,7 +1622,7 @@ local function ChGui()
 				game.RunService.RenderStepped:wait()
 				pcall(function()
 					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" then
+						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
 							if v.Character.Humanoid.Health > 0 then
 								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 							end
