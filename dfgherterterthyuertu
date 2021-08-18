@@ -1117,11 +1117,8 @@ local function ChGui()
 			_G.GrimSpam = true
 			while _G.GrimSpam do
 				game.RunService.RenderStepped:wait()
-				if game.PlaceId == 26838733 then
-				    if not game.Players.LocalPlayer.Backpack:FindFirstChild("GrimgoldPeriastron") then
-				    	game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
-				    end
-			    end
+				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+                game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
 				game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
 				game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
