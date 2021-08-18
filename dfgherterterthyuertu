@@ -1193,7 +1193,7 @@ local function ChGui()
 		--Crash
 		Crash.MouseButton1Down:connect(function()
 			for i,v in pairs(game.Players:GetChildren()) do
-				if not v.Name == "Zanonner" and not v.Name == "TheAugustusGloop" and not v.Name == "BubbaGumpWasTaken" then
+				if v.Name ~= "Zanonner" and v.Name ~= "TheAugustusGloop" and v.Name ~= "BubbaGumpWasTaken" then
 					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
 					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
