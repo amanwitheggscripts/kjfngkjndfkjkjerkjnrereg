@@ -1196,7 +1196,9 @@ local function ChGui()
 				if v.Name ~= "Zanonner" and v.Name ~= "TheAugustusGloop" and v.Name ~= "BubbaGumpWasTaken" then
 					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
+					wait()
 					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
+					wait()
 					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
 					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e6, 9e6, 9e6))
 					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
