@@ -1197,17 +1197,6 @@ local function ChGui()
 					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
 					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
-					coroutine.wrap(function()
-						while wait() do
-							pcall(function()
-								for i,v in pairs(game.Players.LocalPlayer.Character:FindFirstChild("SpaceSword").Handle:GetDescendants()) do
-									if v:IsA("Sound") then
-										v:Stop()
-									end
-								end
-							end)
-						end
-					end)()
 					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
 					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e6, 9e6, 9e6))
 					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
