@@ -1649,7 +1649,7 @@ for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
 		v:Remove()
 	end
 end
-if getgenv().Enabled and _G.Access then
+if getgenv().Enabled then
 	ChGui()
 else
 	ChGui()
