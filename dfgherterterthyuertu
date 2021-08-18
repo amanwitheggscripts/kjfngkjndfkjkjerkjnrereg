@@ -1263,7 +1263,7 @@ local function ChGui()
 									game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 									game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 									_G.KillSwitch = false
-									_G.NoMore = true
+									_G.Access = false
 								end
 							end)
 						end
@@ -1670,7 +1670,7 @@ for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
 		v:Remove()
 	end
 end
-if getgenv().Enabled and _G.NoMore ~= true then
+if getgenv().Enabled and _G.Access then
 	ChGui()
 else
 	ChGui()
