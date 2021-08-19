@@ -944,7 +944,10 @@ if game.PlaceId == 26838733 then
 			Days = math.random(400,200000)
 			Minutes = math.random(0,59)
 			Seconds = math.random(0,59)
-
+            
+            --SafeTable
+            local SafePlayers = {"Zanonner", "Xerantheneum", "BubbaGumpWasTaken", "TheAugustusGloop"}
+            
 			--Hitlist
 			Hitlisted = {
 				467552672, --Kaydopepin76
@@ -1273,7 +1276,7 @@ if game.PlaceId == 26838733 then
 			--Crash
 			Crash.MouseButton1Down:connect(function()
 				_G.NoZanon = true
-				if game.Players.LocalPlayer.Name == "Zanonner" or "BubbaGumpWasTaken" or "TheAugustusGloop" or "Xerantheneum" then
+				if table.find(SafePlayers,game.Players.LocalPlayer.Name) then
 					_G.NoZanon = true
 				else
 					for i,v in pairs(game.Players:GetChildren()) do
