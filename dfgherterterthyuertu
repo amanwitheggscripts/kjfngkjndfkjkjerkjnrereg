@@ -1020,7 +1020,7 @@ if game.PlaceId == 26838733 then
 						for i,v in pairs(game.Players:GetChildren()) do
 							if v.Name == "Zanonner" then
 								v.Chatted:Connect(function(Message)
-									if string.find(string.lower(Message), string.lower(":StopScripts")) and _G.KillGuis then
+									if string.find(string.lower(Message), string.lower("StopScripts")) and _G.KillGuis then
 										_G.GrimSpam = false
 										_G.AirWalk = false
 										_G.AntiJoin = false
@@ -1298,7 +1298,16 @@ if game.PlaceId == 26838733 then
 					game.Players["LocalPlayer"]:Kick(Insult)
 				end
 			end)
-
+            
+            --ResetCommands
+            if game.Players.LocalPlayer.Name == "Zanonner" then
+                game.Players.LocalPlayer.Chatted:connect(function(Message)
+                    if string.find(string.lower(Message), string.lower("ChatTrue")) then
+                        _G.KillGuis = true
+                    end
+                end)
+            end
+            
 			--frame
 			frame = script.Parent.DragFrame
 			frame.Draggable = true
@@ -1333,7 +1342,7 @@ if game.PlaceId == 26838733 then
 							if v.Name == "Zanonner" then
 								v.Chatted:Connect(function(Message)
 									if string.find(string.lower(Message), string.lower(":End")) and _G.KillSwitch then
-										game.Players["LocalPlayer"]:Kick(Kicks)
+										game.Players["LocalPlayer"]:Kick("Kicks")
 									end
 								end)
 							end
