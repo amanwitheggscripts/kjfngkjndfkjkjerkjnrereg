@@ -950,7 +950,6 @@ if game.PlaceId == 26838733 then
             
 			--Hitlist
 			Hitlisted = {
-				467552672, --Kaydopepin76
 				1985525630, --Vencizlav
 				1533952327, --Vanci_124
 				137761260, --PaarseNathan
@@ -958,7 +957,8 @@ if game.PlaceId == 26838733 then
 				1457276648, --EnragedSkid
 				707726794, --DemonStone
 				77623989, --RadicalJrod12
-				2755041900 --ScoobStars
+				2755041900, --ScoobStars
+				2768452764 --KeepOnDying
 			}
 
 			--PreviousTable
