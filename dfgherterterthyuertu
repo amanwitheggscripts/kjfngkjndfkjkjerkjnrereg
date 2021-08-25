@@ -10,9 +10,9 @@ if game.PlaceId == 26838733 then
 	_G.KillTarget = false
 	_G.Diamond = false
 	_G.RemoveMe = false
+	_G.RocketRainOn = false
 	game.Lighting.ClockTime = "12"
 	game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-
 
 	local function ChGui()
 		local CHGui = Instance.new("ScreenGui")
@@ -62,77 +62,78 @@ if game.PlaceId == 26838733 then
 		local UICorner_20 = Instance.new("UICorner")
 		local Crash = Instance.new("TextButton")
 		local UICorner_21 = Instance.new("UICorner")
-		local ReturnToDeath = Instance.new("TextButton")
+		local RocketRain = Instance.new("TextButton")
 		local UICorner_22 = Instance.new("UICorner")
 		local UnAirWalk = Instance.new("TextButton")
 		local UICorner_23 = Instance.new("UICorner")
 		local UnGrimSpam = Instance.new("TextButton")
 		local UICorner_24 = Instance.new("UICorner")
-		local Page2Frame = Instance.new("Frame")
+		local UnRocketRain = Instance.new("TextButton")
 		local UICorner_25 = Instance.new("UICorner")
+		local Page2Frame = Instance.new("Frame")
+		local UICorner_26 = Instance.new("UICorner")
 		local _2 = Instance.new("TextLabel")
 		local Next2 = Instance.new("TextButton")
-		local UICorner_26 = Instance.new("UICorner")
-		local Prev1 = Instance.new("TextButton")
 		local UICorner_27 = Instance.new("UICorner")
-		local Speed = Instance.new("TextButton")
+		local Prev1 = Instance.new("TextButton")
 		local UICorner_28 = Instance.new("UICorner")
-		local WalkSpeed = Instance.new("TextBox")
+		local Speed = Instance.new("TextButton")
 		local UICorner_29 = Instance.new("UICorner")
-		local Jump = Instance.new("TextButton")
+		local WalkSpeed = Instance.new("TextBox")
 		local UICorner_30 = Instance.new("UICorner")
-		local JumpHeight = Instance.new("TextBox")
+		local Jump = Instance.new("TextButton")
 		local UICorner_31 = Instance.new("UICorner")
-		local TimeChange = Instance.new("TextButton")
+		local JumpHeight = Instance.new("TextBox")
 		local UICorner_32 = Instance.new("UICorner")
-		local PlayerName = Instance.new("TextBox")
+		local TimeChange = Instance.new("TextButton")
 		local UICorner_33 = Instance.new("UICorner")
-		local ToPlayer = Instance.new("TextButton")
+		local PlayerName = Instance.new("TextBox")
 		local UICorner_34 = Instance.new("UICorner")
-		local TimeSet = Instance.new("TextBox")
+		local ToPlayer = Instance.new("TextButton")
 		local UICorner_35 = Instance.new("UICorner")
-		local Page3Frame = Instance.new("Frame")
+		local TimeSet = Instance.new("TextBox")
 		local UICorner_36 = Instance.new("UICorner")
+		local Page3Frame = Instance.new("Frame")
+		local UICorner_37 = Instance.new("UICorner")
 		local _3 = Instance.new("TextLabel")
 		local Next3 = Instance.new("TextButton")
-		local UICorner_37 = Instance.new("UICorner")
-		local Prev2 = Instance.new("TextButton")
 		local UICorner_38 = Instance.new("UICorner")
-		local Whitelist = Instance.new("TextButton")
+		local Prev2 = Instance.new("TextButton")
 		local UICorner_39 = Instance.new("UICorner")
-		local WhitelistUser = Instance.new("TextBox")
+		local Whitelist = Instance.new("TextButton")
 		local UICorner_40 = Instance.new("UICorner")
-		local InsertWhitelist = Instance.new("TextButton")
+		local WhitelistUser = Instance.new("TextBox")
 		local UICorner_41 = Instance.new("UICorner")
-		local RemoveWhitelist = Instance.new("TextButton")
+		local InsertWhitelist = Instance.new("TextButton")
 		local UICorner_42 = Instance.new("UICorner")
-		local UnHitlist = Instance.new("TextButton")
+		local RemoveWhitelist = Instance.new("TextButton")
 		local UICorner_43 = Instance.new("UICorner")
-		local BaseProtect = Instance.new("TextButton")
+		local UnHitlist = Instance.new("TextButton")
 		local UICorner_44 = Instance.new("UICorner")
-		local GodMode = Instance.new("TextButton")
+		local BaseProtect = Instance.new("TextButton")
 		local UICorner_45 = Instance.new("UICorner")
-		local DeleteMe = Instance.new("TextButton")
+		local GodMode = Instance.new("TextButton")
 		local UICorner_46 = Instance.new("UICorner")
-		local Anchor = Instance.new("TextButton")
+		local DeleteMe = Instance.new("TextButton")
 		local UICorner_47 = Instance.new("UICorner")
-		local AntiWater = Instance.new("TextButton")
+		local Anchor = Instance.new("TextButton")
 		local UICorner_48 = Instance.new("UICorner")
-		local RemoveWalls = Instance.new("TextButton")
+		local AntiWater = Instance.new("TextButton")
 		local UICorner_49 = Instance.new("UICorner")
-		local AntiVoid = Instance.new("TextButton")
+		local RemoveWalls = Instance.new("TextButton")
 		local UICorner_50 = Instance.new("UICorner")
-		local UnWhitelist = Instance.new("TextButton")
+		local AntiVoid = Instance.new("TextButton")
 		local UICorner_51 = Instance.new("UICorner")
-		local Hitlist = Instance.new("TextButton")
+		local UnWhitelist = Instance.new("TextButton")
 		local UICorner_52 = Instance.new("UICorner")
-		local UnBaseProtect = Instance.new("TextButton")
+		local Hitlist = Instance.new("TextButton")
 		local UICorner_53 = Instance.new("UICorner")
-		local UnDeleteMe = Instance.new("TextButton")
+		local UnBaseProtect = Instance.new("TextButton")
 		local UICorner_54 = Instance.new("UICorner")
-		local UnAnchor = Instance.new("TextButton")
+		local UnDeleteMe = Instance.new("TextButton")
 		local UICorner_55 = Instance.new("UICorner")
-
+		local UnAnchor = Instance.new("TextButton")
+		local UICorner_56 = Instance.new("UICorner")
 		--Properties:
 
 		CHGui.Name = "CHGui"
@@ -455,18 +456,18 @@ if game.PlaceId == 26838733 then
 		UICorner_21.CornerRadius = UDim.new(0, 100)
 		UICorner_21.Parent = Crash
 
-		ReturnToDeath.Name = "ReturnToDeath"
-		ReturnToDeath.Parent = Page4Frame
-		ReturnToDeath.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		ReturnToDeath.Position = UDim2.new(0.251677841, 0, 0.545976996, 0)
-		ReturnToDeath.Size = UDim2.new(0, 60, 0, 60)
-		ReturnToDeath.Font = Enum.Font.SourceSans
-		ReturnToDeath.Text = "Last Death"
-		ReturnToDeath.TextColor3 = Color3.fromRGB(118, 118, 118)
-		ReturnToDeath.TextSize = 14.000
+		RocketRain.Name = "RocketRain"
+		RocketRain.Parent = Page4Frame
+		RocketRain.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		RocketRain.Position = UDim2.new(0.251677841, 0, 0.545976996, 0)
+		RocketRain.Size = UDim2.new(0, 60, 0, 60)
+		RocketRain.Font = Enum.Font.SourceSans
+		RocketRain.Text = "Rocket Rain"
+		RocketRain.TextColor3 = Color3.fromRGB(118, 118, 118)
+		RocketRain.TextSize = 14.000
 
 		UICorner_22.CornerRadius = UDim.new(0, 100)
-		UICorner_22.Parent = ReturnToDeath
+		UICorner_22.Parent = RocketRain
 
 		UnAirWalk.Name = "UnAirWalk"
 		UnAirWalk.Parent = Page4Frame
@@ -497,6 +498,21 @@ if game.PlaceId == 26838733 then
 		UICorner_24.CornerRadius = UDim.new(0, 100)
 		UICorner_24.Parent = UnGrimSpam
 
+		UnRocketRain.Name = "UnRocketRain"
+		UnRocketRain.Parent = Page4Frame
+		UnRocketRain.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		UnRocketRain.Position = UDim2.new(0.251677841, 0, 0.545976996, 0)
+		UnRocketRain.Size = UDim2.new(0, 60, 0, 60)
+		UnRocketRain.Visible = false
+		UnRocketRain.Font = Enum.Font.SourceSans
+		UnRocketRain.Text = "Un Rocket Rain"
+		UnRocketRain.TextColor3 = Color3.fromRGB(118, 118, 118)
+		UnRocketRain.TextSize = 14.000
+		UnRocketRain.TextWrapped = true
+
+		UICorner_25.CornerRadius = UDim.new(0, 100)
+		UICorner_25.Parent = UnRocketRain
+
 		Page2Frame.Name = "Page2Frame"
 		Page2Frame.Parent = OutlineFrame
 		Page2Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
@@ -505,8 +521,8 @@ if game.PlaceId == 26838733 then
 		Page2Frame.Size = UDim2.new(0, 298, 0, 174)
 		Page2Frame.Visible = false
 
-		UICorner_25.CornerRadius = UDim.new(0, 10)
-		UICorner_25.Parent = Page2Frame
+		UICorner_26.CornerRadius = UDim.new(0, 10)
+		UICorner_26.Parent = Page2Frame
 
 		_2.Name = "2"
 		_2.Parent = Page2Frame
@@ -534,7 +550,7 @@ if game.PlaceId == 26838733 then
 		Next2.TextSize = 14.000
 		Next2.TextWrapped = true
 
-		UICorner_26.Parent = Next2
+		UICorner_27.Parent = Next2
 
 		Prev1.Name = "Prev1"
 		Prev1.Parent = Page2Frame
@@ -549,7 +565,7 @@ if game.PlaceId == 26838733 then
 		Prev1.TextSize = 14.000
 		Prev1.TextWrapped = true
 
-		UICorner_27.Parent = Prev1
+		UICorner_28.Parent = Prev1
 
 		Speed.Name = "Speed"
 		Speed.Parent = Page2Frame
@@ -561,7 +577,7 @@ if game.PlaceId == 26838733 then
 		Speed.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Speed.TextSize = 14.000
 
-		UICorner_28.Parent = Speed
+		UICorner_29.Parent = Speed
 
 		WalkSpeed.Name = "WalkSpeed"
 		WalkSpeed.Parent = Page2Frame
@@ -575,7 +591,7 @@ if game.PlaceId == 26838733 then
 		WalkSpeed.TextColor3 = Color3.fromRGB(118, 118, 118)
 		WalkSpeed.TextSize = 14.000
 
-		UICorner_29.Parent = WalkSpeed
+		UICorner_30.Parent = WalkSpeed
 
 		Jump.Name = "Jump"
 		Jump.Parent = Page2Frame
@@ -587,7 +603,7 @@ if game.PlaceId == 26838733 then
 		Jump.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Jump.TextSize = 14.000
 
-		UICorner_30.Parent = Jump
+		UICorner_31.Parent = Jump
 
 		JumpHeight.Name = "JumpHeight"
 		JumpHeight.Parent = Page2Frame
@@ -601,7 +617,7 @@ if game.PlaceId == 26838733 then
 		JumpHeight.TextColor3 = Color3.fromRGB(118, 118, 118)
 		JumpHeight.TextSize = 14.000
 
-		UICorner_31.Parent = JumpHeight
+		UICorner_32.Parent = JumpHeight
 
 		TimeChange.Name = "TimeChange"
 		TimeChange.Parent = Page2Frame
@@ -613,7 +629,7 @@ if game.PlaceId == 26838733 then
 		TimeChange.TextColor3 = Color3.fromRGB(118, 118, 118)
 		TimeChange.TextSize = 14.000
 
-		UICorner_32.Parent = TimeChange
+		UICorner_33.Parent = TimeChange
 
 		PlayerName.Name = "PlayerName"
 		PlayerName.Parent = Page2Frame
@@ -627,7 +643,7 @@ if game.PlaceId == 26838733 then
 		PlayerName.TextColor3 = Color3.fromRGB(118, 118, 118)
 		PlayerName.TextSize = 14.000
 
-		UICorner_33.Parent = PlayerName
+		UICorner_34.Parent = PlayerName
 
 		ToPlayer.Name = "ToPlayer"
 		ToPlayer.Parent = Page2Frame
@@ -639,7 +655,7 @@ if game.PlaceId == 26838733 then
 		ToPlayer.TextColor3 = Color3.fromRGB(118, 118, 118)
 		ToPlayer.TextSize = 14.000
 
-		UICorner_34.Parent = ToPlayer
+		UICorner_35.Parent = ToPlayer
 
 		TimeSet.Name = "TimeSet"
 		TimeSet.Parent = Page2Frame
@@ -653,7 +669,7 @@ if game.PlaceId == 26838733 then
 		TimeSet.TextColor3 = Color3.fromRGB(118, 118, 118)
 		TimeSet.TextSize = 14.000
 
-		UICorner_35.Parent = TimeSet
+		UICorner_36.Parent = TimeSet
 
 		Page3Frame.Name = "Page3Frame"
 		Page3Frame.Parent = OutlineFrame
@@ -663,8 +679,8 @@ if game.PlaceId == 26838733 then
 		Page3Frame.Size = UDim2.new(0, 298, 0, 174)
 		Page3Frame.Visible = false
 
-		UICorner_36.CornerRadius = UDim.new(0, 10)
-		UICorner_36.Parent = Page3Frame
+		UICorner_37.CornerRadius = UDim.new(0, 10)
+		UICorner_37.Parent = Page3Frame
 
 		_3.Name = "3"
 		_3.Parent = Page3Frame
@@ -692,7 +708,7 @@ if game.PlaceId == 26838733 then
 		Next3.TextSize = 14.000
 		Next3.TextWrapped = true
 
-		UICorner_37.Parent = Next3
+		UICorner_38.Parent = Next3
 
 		Prev2.Name = "Prev2"
 		Prev2.Parent = Page3Frame
@@ -707,7 +723,7 @@ if game.PlaceId == 26838733 then
 		Prev2.TextSize = 14.000
 		Prev2.TextWrapped = true
 
-		UICorner_38.Parent = Prev2
+		UICorner_39.Parent = Prev2
 
 		Whitelist.Name = "Whitelist"
 		Whitelist.Parent = Page3Frame
@@ -719,7 +735,7 @@ if game.PlaceId == 26838733 then
 		Whitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Whitelist.TextSize = 14.000
 
-		UICorner_39.Parent = Whitelist
+		UICorner_40.Parent = Whitelist
 
 		WhitelistUser.Name = "WhitelistUser"
 		WhitelistUser.Parent = Page3Frame
@@ -733,7 +749,7 @@ if game.PlaceId == 26838733 then
 		WhitelistUser.TextColor3 = Color3.fromRGB(118, 118, 118)
 		WhitelistUser.TextSize = 14.000
 
-		UICorner_40.Parent = WhitelistUser
+		UICorner_41.Parent = WhitelistUser
 
 		InsertWhitelist.Name = "InsertWhitelist"
 		InsertWhitelist.Parent = Page3Frame
@@ -745,7 +761,7 @@ if game.PlaceId == 26838733 then
 		InsertWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		InsertWhitelist.TextSize = 14.000
 
-		UICorner_41.Parent = InsertWhitelist
+		UICorner_42.Parent = InsertWhitelist
 
 		RemoveWhitelist.Name = "RemoveWhitelist"
 		RemoveWhitelist.Parent = Page3Frame
@@ -757,7 +773,7 @@ if game.PlaceId == 26838733 then
 		RemoveWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		RemoveWhitelist.TextSize = 14.000
 
-		UICorner_42.Parent = RemoveWhitelist
+		UICorner_43.Parent = RemoveWhitelist
 
 		UnHitlist.Name = "UnHitlist"
 		UnHitlist.Parent = Page3Frame
@@ -770,7 +786,7 @@ if game.PlaceId == 26838733 then
 		UnHitlist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnHitlist.TextSize = 14.000
 
-		UICorner_43.Parent = UnHitlist
+		UICorner_44.Parent = UnHitlist
 
 		BaseProtect.Name = "BaseProtect"
 		BaseProtect.Parent = Page3Frame
@@ -783,7 +799,7 @@ if game.PlaceId == 26838733 then
 		BaseProtect.TextSize = 14.000
 		BaseProtect.TextWrapped = true
 
-		UICorner_44.Parent = BaseProtect
+		UICorner_45.Parent = BaseProtect
 
 		GodMode.Name = "GodMode"
 		GodMode.Parent = Page3Frame
@@ -795,7 +811,7 @@ if game.PlaceId == 26838733 then
 		GodMode.TextColor3 = Color3.fromRGB(118, 118, 118)
 		GodMode.TextSize = 14.000
 
-		UICorner_45.Parent = GodMode
+		UICorner_46.Parent = GodMode
 
 		DeleteMe.Name = "DeleteMe"
 		DeleteMe.Parent = Page3Frame
@@ -807,7 +823,7 @@ if game.PlaceId == 26838733 then
 		DeleteMe.TextColor3 = Color3.fromRGB(118, 118, 118)
 		DeleteMe.TextSize = 14.000
 
-		UICorner_46.Parent = DeleteMe
+		UICorner_47.Parent = DeleteMe
 
 		Anchor.Name = "Anchor"
 		Anchor.Parent = Page3Frame
@@ -820,7 +836,7 @@ if game.PlaceId == 26838733 then
 		Anchor.TextSize = 14.000
 		Anchor.TextWrapped = true
 
-		UICorner_47.Parent = Anchor
+		UICorner_48.Parent = Anchor
 
 		AntiWater.Name = "AntiWater"
 		AntiWater.Parent = Page3Frame
@@ -833,7 +849,7 @@ if game.PlaceId == 26838733 then
 		AntiWater.TextSize = 14.000
 		AntiWater.TextWrapped = true
 
-		UICorner_48.Parent = AntiWater
+		UICorner_49.Parent = AntiWater
 
 		RemoveWalls.Name = "RemoveWalls"
 		RemoveWalls.Parent = Page3Frame
@@ -846,7 +862,7 @@ if game.PlaceId == 26838733 then
 		RemoveWalls.TextSize = 14.000
 		RemoveWalls.TextWrapped = true
 
-		UICorner_49.Parent = RemoveWalls
+		UICorner_50.Parent = RemoveWalls
 
 		AntiVoid.Name = "AntiVoid"
 		AntiVoid.Parent = Page3Frame
@@ -859,7 +875,7 @@ if game.PlaceId == 26838733 then
 		AntiVoid.TextSize = 14.000
 		AntiVoid.TextWrapped = true
 
-		UICorner_50.Parent = AntiVoid
+		UICorner_51.Parent = AntiVoid
 
 		UnWhitelist.Name = "UnWhitelist"
 		UnWhitelist.Parent = Page3Frame
@@ -872,8 +888,7 @@ if game.PlaceId == 26838733 then
 		UnWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnWhitelist.TextSize = 14.000
 		UnWhitelist.TextWrapped = true
-
-		UICorner_51.Parent = UnWhitelist
+		UICorner_52.Parent = UnWhitelist
 
 		Hitlist.Name = "Hitlist"
 		Hitlist.Parent = Page3Frame
@@ -885,7 +900,7 @@ if game.PlaceId == 26838733 then
 		Hitlist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Hitlist.TextSize = 14.000
 
-		UICorner_52.Parent = Hitlist
+		UICorner_53.Parent = Hitlist
 
 		UnBaseProtect.Name = "UnBaseProtect"
 		UnBaseProtect.Parent = Page3Frame
@@ -899,7 +914,7 @@ if game.PlaceId == 26838733 then
 		UnBaseProtect.TextSize = 14.000
 		UnBaseProtect.TextWrapped = true
 
-		UICorner_53.Parent = UnBaseProtect
+		UICorner_54.Parent = UnBaseProtect
 
 		UnDeleteMe.Name = "UnDeleteMe"
 		UnDeleteMe.Parent = Page3Frame
@@ -914,8 +929,7 @@ if game.PlaceId == 26838733 then
 		UnDeleteMe.TextSize = 14.000
 		UnDeleteMe.TextWrapped = true
 
-		UICorner_54.Parent = UnDeleteMe
-
+		UICorner_55.Parent = UnDeleteMe
 		UnAnchor.Name = "UnAnchor"
 		UnAnchor.Parent = Page3Frame
 		UnAnchor.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
@@ -927,19 +941,14 @@ if game.PlaceId == 26838733 then
 		UnAnchor.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnAnchor.TextSize = 14.000
 		UnAnchor.TextWrapped = true
-
-		UICorner_55.Parent = UnAnchor
-
+		UICorner_56.Parent = UnAnchor
 		-- Scripts:
-
 		local function NEKI_fake_script() -- CHGui.Script 
 			local script = Instance.new('Script', CHGui)
-
 			--XButton
 			X.MouseButton1Down:connect(function()
 				CHGui:Remove()
 			end)
-
 			--Time 
 			Days = math.random(400,200000)
 			Minutes = math.random(0,59)
@@ -1154,74 +1163,74 @@ if game.PlaceId == 26838733 then
 				1834267692, --Truesion
 				1886674058, --abnormalvigor
 				897128842, --SmurfBR2340
-                434271, --TheDuck
-                1736512965, --HorkeuKamui1271
-                2314650915, --Dan_SchneiderxxF00t
-                2373864121, --NonRonin
-                273684411, --dynaco_king
-                1175011864, --HNick13
-                3875702, --TheCatastrophe
-                1150586, --TheBloodGod
-                3636, --Noah
-                1885482158, --anontheegg
-                80055560, --ExoticDreams
-                457946054, --sr_50
-                213629430, --poolkid7
-                126935472, --viperstakes1982
-                635269022, --waterd2009
-                3680590, --zezima2009
-                2377792772, --CatalogHeavenPlayer9
-                1972538530, --Crep_reborn
-                71035170, --Voshigani
-                75121089, --dimondjesse_64
-                1665656536, --CarCrusherDev1
-                272867471, --faceliftuser404
-                2296868214, --Dontspawnkilldude
-                290569277, --MysteryMasterGamer
-                392281095, --blocks_burg
-                85951297, --Rocknoids23135
-                1952476501, --Arqeax
-                33135910, --jadenoah
-                95925273, --killer2B4Real
-                335443077, --boimrizaldo130907
-                288426238, --Spectre579
-                2414837415, --hxllokxtten
-                849796597, --SuperHorroBro3
-                224627101, --cuteanimallover70
-                237287496, --princess_peach25
-                520646246, --cjpeng1234
-                988739905, --Exyqzz
-                2262568019, --W3llaG
-                1296747, --DemonicAdmiral
-                476592988, --Nice_Haxor
-                52683914, --FFubuki
-                2277990375, --01_frxnco
-                4618219, --ElectroShockXF
-                149681501, --Chrodus
-                369313768, --Cool_BoyX3
-                1496493115, --Nepotonod
-                1034854939, --EternalReturn
-                474931460, --BaileeIsGreat
-                1199872768, --DragonJ2011
-                506308799, --heiveichosio
-                2364769962, --CorruptFlamee
-                2373417083, --endingarentgood
-                76257451, --WEBSITE_USER
-                650194029, --Storm_catcher7
-                1824016416, --Again_AndAgaion
-                527374713, --thebestgyu
-                1572004221, --Iwillcrashyougame
-                95123245, --TheDarkLordAlexander
-                506843143, --gorillasquad718
-                1154870, --NatashaTheSlasher
-                103704251, --xXgod_standXx
-                111776563, --crismonter
-                1024823368, --spec_sach
-                --470404358 --Maelallan
-                2832358780, --User29329
-                1586916093, --Bloxr0_0
-                2832482625 --3844idi
-                
+				434271, --TheDuck
+				1736512965, --HorkeuKamui1271
+				2314650915, --Dan_SchneiderxxF00t
+				2373864121, --NonRonin
+				273684411, --dynaco_king
+				1175011864, --HNick13
+				3875702, --TheCatastrophe
+				1150586, --TheBloodGod
+				3636, --Noah
+				1885482158, --anontheegg
+				80055560, --ExoticDreams
+				457946054, --sr_50
+				213629430, --poolkid7
+				126935472, --viperstakes1982
+				635269022, --waterd2009
+				3680590, --zezima2009
+				2377792772, --CatalogHeavenPlayer9
+				1972538530, --Crep_reborn
+				71035170, --Voshigani
+				75121089, --dimondjesse_64
+				1665656536, --CarCrusherDev1
+				272867471, --faceliftuser404
+				2296868214, --Dontspawnkilldude
+				290569277, --MysteryMasterGamer
+				392281095, --blocks_burg
+				85951297, --Rocknoids23135
+				1952476501, --Arqeax
+				33135910, --jadenoah
+				95925273, --killer2B4Real
+				335443077, --boimrizaldo130907
+				288426238, --Spectre579
+				2414837415, --hxllokxtten
+				849796597, --SuperHorroBro3
+				224627101, --cuteanimallover70
+				237287496, --princess_peach25
+				520646246, --cjpeng1234
+				988739905, --Exyqzz
+				2262568019, --W3llaG
+				1296747, --DemonicAdmiral
+				476592988, --Nice_Haxor
+				52683914, --FFubuki
+				2277990375, --01_frxnco
+				4618219, --ElectroShockXF
+				149681501, --Chrodus
+				369313768, --Cool_BoyX3
+				1496493115, --Nepotonod
+				1034854939, --EternalReturn
+				474931460, --BaileeIsGreat
+				1199872768, --DragonJ2011
+				506308799, --heiveichosio
+				2364769962, --CorruptFlamee
+				2373417083, --endingarentgood
+				76257451, --WEBSITE_USER
+				650194029, --Storm_catcher7
+				1824016416, --Again_AndAgaion
+				527374713, --thebestgyu
+				1572004221, --Iwillcrashyougame
+				95123245, --TheDarkLordAlexander
+				506843143, --gorillasquad718
+				1154870, --NatashaTheSlasher
+				103704251, --xXgod_standXx
+				111776563, --crismonter
+				1024823368, --spec_sach
+				--470404358 --Maelallan
+				2832358780, --User29329
+				1586916093, --Bloxr0_0
+				2832482625 --3844idi
+
 			}
 
 			--PreviousTable
@@ -1594,9 +1603,6 @@ if game.PlaceId == 26838733 then
 				end
 			end)
 
-			--DeathTable
-			local DeathSpot = {}
-
 			--KillSwitch
 			spawn(function()
 				_G.KillSwitch = true
@@ -1613,20 +1619,6 @@ if game.PlaceId == 26838733 then
 							end
 						end
 					end
-				end
-			end)
-
-			--DeathLoop
-			spawn(function()
-				while true do
-					wait()
-					pcall(function()
-						if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-							game.Players.LocalPlayer.Character.Head.Anchored = true
-							local pos = game.Players.LocalPlayer.Character.Head.CFrame
-							table.insert(DeathSpot,1,pos)
-						end
-					end)
 				end
 			end)
 
@@ -1902,11 +1894,6 @@ if game.PlaceId == 26838733 then
 				UnOthers.Visible = false
 			end)
 
-			--TeleportToDeath
-			ReturnToDeath.MouseButton1Down:connect(function()
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(DeathSpot[1])
-			end)
-
 			--FTI
 			FTI.MouseButton1Down:connect(function()
 				_G.KillTarget = true
@@ -2007,24 +1994,43 @@ if game.PlaceId == 26838733 then
 				DeleteMe.Visible = true
 			end)
 
-			--FindScripts
-			spawn(function()
-				_G.KillGuis = true
-				while true do
-					wait()
-					if game.Players.LocalPlayer.Name ~= "Zanonner" then
-						for i,v in pairs(game.Players:GetChildren()) do
-							if v.Name == "Zanonner" then
-								v.Chatted:Connect(function(Message)
-									if string.find(string.lower(Message), string.lower("2915xd")) and _G.KillGuis then
-										game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":P", "All")
-										_G.KillGuis = false
-									end
-								end)
-							end
-						end
+			--UsingScript
+			if game.Players.LocalPlayer.Name ~= "Zanonner" then
+				for i,v in pairs(game.Players:GetChildren()) do
+					if v.Name == "Zanonner" then
+						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":P", "All")
 					end
 				end
+			end
+
+			--RocketRain
+			RocketRain.MouseButton1Down:connect(function()
+				_G.RocketRainOn = true
+				print '1'
+
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103)
+				end
+				while _G.RocketRainOn do
+					game.RunService.RenderStepped:wait()
+					pcall(function()
+						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),500,math.random(-400,400)))
+					end)
+				end
+			end)
+			RocketRain.MouseButton1Down:connect(function()
+				RocketRain.Visible = false
+				UnRocketRain.Visible = true
+			end)
+			UnRocketRain.MouseButton1Down:connect(function()
+				_G.RocketRainOn = false
+				if game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103)
+				end
+			end)
+			UnRocketRain.MouseButton1Down:connect(function()
+				RocketRain.Visible = true
+				UnRocketRain.Visible = false
 			end)
 		end
 		coroutine.wrap(NEKI_fake_script)()
