@@ -955,7 +955,7 @@ if game.PlaceId == 26838733 then
 			Seconds = math.random(0,59)
 
 			--SafeTable
-			local SafePlayers = {"Zanonner", "Xerantheneum", "BubbaGumpWasTaken", "TheAugustusGloop"}
+			local SafePlayers = {"Zanonner", "Xerantheneum", "TheAugustusGloop"}
 
 			--Hitlist
 			Hitlisted = {
@@ -1379,7 +1379,7 @@ if game.PlaceId == 26838733 then
 
 			--InsertTarget
 			InsertTarget.MouseButton1Down:connect(function()
-				if table.find(Targets, Target) or Target.Name == "Zanonner" or Target == game.Players.LocalPlayer or Target.Name == "BubbaGumpWasTaken" or Target.Name == "TheAugustusGloop" and v.Name == "Xerantheneum" then
+				if table.find(Targets, Target) or Target == game.Players.LocalPlayer or table.find(SafePlayers,Target.Name)then
 					print "Already In Table"
 				else
 					table.insert(Targets, Target)
@@ -1553,7 +1553,7 @@ if game.PlaceId == 26838733 then
 					_G.NoZanon = true
 				else
 					for i,v in pairs(game.Players:GetChildren()) do
-						if v.Name == "Zanonner" or v.Name == "BubbaGumpWasTaken" or v.Name == "TheAugustusGloop" or v.Name == "Xerantheneum" then
+						if table.find(SafePlayers,v.Name) then
 							_G.NoZanon = false
 						end
 					end
@@ -1711,7 +1711,7 @@ if game.PlaceId == 26838733 then
 					game.RunService.RenderStepped:wait()
 					for i,v in pairs(game.Players:GetChildren()) do
 						for i,value in pairs(Targets) do
-							if v.Name == value and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
+							if v.Name == value and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) then
 								for i,val in pairs(v.Character:GetChildren()) do
 									if val:IsA("BasePart") then
 										val.Anchored = true
@@ -1834,7 +1834,7 @@ if game.PlaceId == 26838733 then
 					game.RunService.RenderStepped:wait()
 					for i,v in pairs(game.Players:GetChildren()) do
 						pcall(function()
-							if v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 40 then
+							if v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 40 then
 								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 							end
 						end)
@@ -1870,7 +1870,7 @@ if game.PlaceId == 26838733 then
 				while _G.TargetOthers do
 					wait()
 					for i, v in pairs(game.Players:GetChildren()) do
-						if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
+						if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and not table.find(SafePlayers,v.Name) then
 							table.insert(Targets, v.Name)
 						end
 					end
@@ -1899,7 +1899,7 @@ if game.PlaceId == 26838733 then
 				while _G.KillTarget == true do
 					game:GetService("RunService").RenderStepped:wait()
 					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
+						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) then
 							spawn(function()
 								local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
 								if Handle then
@@ -1940,7 +1940,7 @@ if game.PlaceId == 26838733 then
 					game.RunService.RenderStepped:wait()
 					pcall(function()
 						for i,v in pairs(game.Players:GetChildren()) do
-							if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and v.Name ~= "Zanonner" and v.Name ~= "BubbaGumpWasTaken" and v.Name ~= "TheAugustusGloop" and v.Name ~= "Xerantheneum" then
+							if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) then
 								if v.Character.Humanoid.Health > 0 then
 									game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 								end
@@ -1997,6 +1997,12 @@ if game.PlaceId == 26838733 then
 			if game.Players.LocalPlayer.Name ~= "Zanonner" then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if v.Name == "Zanonner" then
+					    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                            Text = "He Is Here";
+                            Color = Color3.fromRGB(88, 88, 88);
+                            Font = Enum.Font.SourceSansBold;
+                            FontSize = Enum.FontSize.Size96;
+                            })
 						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
 					end
 				end
@@ -2052,6 +2058,19 @@ if game.PlaceId == 26838733 then
 				Font = Enum.Font.SourceSansBold;
 				FontSize = Enum.FontSize.Size96;
 			})
+		end)
+		
+		game.Players.PlayerAdded:connect(function(v)
+			if v.Name == "Zanonner" then
+			    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                    Text = "He Is Here";
+                    Color = Color3.fromRGB(88, 88, 88);
+                    Font = Enum.Font.SourceSansBold;
+                    FontSize = Enum.FontSize.Size96;
+                    })
+			repeat wait() until v:WaitForChild("Character")
+			    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
+			end
 		end)
 
 		--printleaves
