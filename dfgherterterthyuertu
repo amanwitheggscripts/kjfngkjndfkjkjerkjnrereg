@@ -1225,8 +1225,7 @@ if game.PlaceId == 26838733 then
 				1154870, --NatashaTheSlasher
 				103704251, --xXgod_standXx
 				111776563, --crismonter
-				1024823368, --spec_sach
-				--470404358 --Maelallan
+				1024823368, --spec_slach
 				2832358780, --User29329
 				1586916093, --Bloxr0_0
 				2832482625, --3844idi
@@ -1998,7 +1997,7 @@ if game.PlaceId == 26838733 then
 			if game.Players.LocalPlayer.Name ~= "Zanonner" then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if v.Name == "Zanonner" then
-						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":P", "All")
+						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
 					end
 				end
 			end
