@@ -1276,7 +1276,7 @@ if game.PlaceId == 26838733 then
 
 			--InsertWhitelist
 			InsertWhitelist.MouseButton1Down:connect(function()
-				if table.find(Whitelisted, User) or User.Name == "Zanonner" or User == game.Players.LocalPlayer then
+				if table.find(Whitelisted, User) or User == game.Players.LocalPlayer then
 					print "Already In Table"
 				else
 					table.insert(Whitelisted, User)
@@ -1685,7 +1685,7 @@ if game.PlaceId == 26838733 then
 					pcall(function()
 						for i,v in pairs(game.Players:GetChildren()) do
 							if not table.find(Whitelisted, v.Name) then
-								if v.Character.Humanoid.Health > 0 and v ~= game.Players.LocalPlayer then
+								if v.Character.Humanoid.Health >= 1 and v ~= game.Players.LocalPlayer then
 									game.Players.LocalPlayer.Backpack:WaitForChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 								end
 							end
