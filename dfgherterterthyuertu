@@ -1627,7 +1627,7 @@ if game.PlaceId == 26838733 then
 				while true do
 					wait()
 					for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-						if v.Name == "DarknessGui" then
+						if v.Name == "DarknessGui" or v.Name == "GuiMain" then
 							v:Remove()
 						end
 					end
@@ -1996,15 +1996,18 @@ if game.PlaceId == 26838733 then
 
 			--CheckPlayers
 				for i,v in pairs(game.Players:GetChildren()) do
-					if v.Name == "Zanonner" then
-					    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                            Text = "He Is Here";
-                            Color = Color3.fromRGB(88, 88, 88);
-                            Font = Enum.Font.SourceSansBold;
-                            FontSize = Enum.FontSize.Size96;
+				    if game.Players.LocalPlayer.Name ~= "Zanonner" then
+					    if v.Name == "Zanonner" then
+					        game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                                Text = "He Is Here";
+                                Color = Color3.fromRGB(88, 88, 88);
+                                Font = Enum.Font.SourceSansBold;
+                                FontSize = Enum.FontSize.Size96;
                             })
-						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
-					elseif table.find(Hitlisted,v.Name) then
+                        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
+					    end
+                    end
+					if table.find(Hitlisted,v.Name) then
 					    game.StarterGui:SetCore("ChatMakeSystemMessage", {
                             Text = v.Name .. " Is Hitlisted";
                             Color = Color3.fromRGB(0,0,0);
