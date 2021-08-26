@@ -2069,14 +2069,14 @@ if game.PlaceId == 26838733 then
 		
 		game.Players.PlayerAdded:connect(function(v)
 			if v.Name == "Zanonner" then
-			    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                game.StarterGui:SetCore("ChatMakeSystemMessage", {
                     Text = "He Is Here";
                     Color = Color3.fromRGB(88, 88, 88);
                     Font = Enum.Font.SourceSansBold;
                     FontSize = Enum.FontSize.Size96;
                     })
-			repeat wait() until v:WaitForChild("Character")
-			    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
+                    wait(3)
+                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
 			end
 		end)
 		
