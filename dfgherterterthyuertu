@@ -1993,7 +1993,7 @@ if game.PlaceId == 26838733 then
 				DeleteMe.Visible = true
 			end)
 
-			--UsingScript
+			--CheckPlayers
 			if game.Players.LocalPlayer.Name ~= "Zanonner" then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if v.Name == "Zanonner" then
@@ -2004,7 +2004,14 @@ if game.PlaceId == 26838733 then
                             FontSize = Enum.FontSize.Size96;
                             })
 						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
-					end
+					elseif table.find(Hitlisted,v.Name) then
+					    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                            Text = v.Name .. " Is Hitlisted";
+                            Color = Color3.fromRGB(0,0,0);
+                            Font = Enum.Font.SourceSansBold;
+                            FontSize = Enum.FontSize.Size96;
+                            })
+                    end
 				end
 			end
 
@@ -2070,6 +2077,28 @@ if game.PlaceId == 26838733 then
                     })
 			repeat wait() until v:WaitForChild("Character")
 			    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w Zanonner :P", "All")
+			end
+		end)
+		
+		game.Players.PlayerAdded:connect(function(v)
+			if table.find(SafePlayers,v.Name) then
+			    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                    Text = "A Good Friend Has Joined";
+                    Color = Color3.fromRGB(244, 218, 138);
+                    Font = Enum.Font.SourceSansBold;
+                    FontSize = Enum.FontSize.Size96;
+                    })
+			end
+		end)
+		
+		game.Players.PlayerAdded:connect(function(v)
+			if table.find(Hitlisted,v.Name) then
+			    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                    Text = v.Name .. " Is Hitlisted";
+                    Color = Color3.fromRGB(0,0,0);
+                    Font = Enum.Font.SourceSansBold;
+                    FontSize = Enum.FontSize.Size96;
+                    })
 			end
 		end)
 
