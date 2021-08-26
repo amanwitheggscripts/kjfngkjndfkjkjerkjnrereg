@@ -1995,7 +1995,6 @@ if game.PlaceId == 26838733 then
 			end)
 
 			--CheckPlayers
-			if game.Players.LocalPlayer.Name ~= "Zanonner" then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if v.Name == "Zanonner" then
 					    game.StarterGui:SetCore("ChatMakeSystemMessage", {
@@ -2011,10 +2010,9 @@ if game.PlaceId == 26838733 then
                             Color = Color3.fromRGB(0,0,0);
                             Font = Enum.Font.SourceSansBold;
                             FontSize = Enum.FontSize.Size96;
-                            })
+                        })
                     end
 				end
-			end
 
 			--RocketRain
 			RocketRain.MouseButton1Down:connect(function()
