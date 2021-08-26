@@ -957,7 +957,7 @@ if game.PlaceId == 26838733 then
 			--SafeTable
 			local SafePlayers = {"Zanonner", "Xerantheneum", "TheAugustusGloop"}
 
-			--Hitlist
+			--[[Hitlist
 			Hitlisted = {
 				1985525630, --Vencizlav
 				1533952327, --Vanci_124
@@ -1231,7 +1231,8 @@ if game.PlaceId == 26838733 then
 				2832482625, --3844idi
                 48521320, --powerj99
                 2422124124 --JadedSkill
-			}
+			}]]--
+			Hitlisted = game.HttpService:JSONDecode(game:HttpGet('https://cielle.cat/Hitlist.json'))
 
 			--PreviousTable
 			local Previous = {}
