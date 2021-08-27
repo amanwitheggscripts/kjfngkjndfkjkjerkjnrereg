@@ -1,4 +1,303 @@
 repeat wait() until game:IsLoaded()
+
+--SafeTable
+local SafePlayers = {
+    415744081, --Zanonner
+    281851240, --Xerantheneum
+    894458609, --TheAugustusGloop
+    2422124124, --JadedSkill
+    1489437710, --EndowedCrow
+    2587704753, --BubbaGumpWasTaken
+    2009418204, --UnidentifiedGlitcher
+    1985647039, --ToasterGarlicBread
+    2563776569, --16_BitTemp
+    320237504, --SharpBladee
+    54246540, --31ues
+    14512908, --Ayhoiwi
+    531914070, --CentralWrld
+    166786785, --0Nach
+    2733519015 --Cielle_Hellie
+}
+
+--Hitlist
+Hitlisted = {
+	1985525630, --Vencizlav
+	1533952327, --Vanci_124
+	137761260, --PaarseNathan
+	288697265, --Samtheblender
+	1457276648, --EnragedSkid
+	707726794, --DemonStone
+	77623989, --RadicalJrod12
+	2755041900, --ScoobStars
+	2768452764, --KeepOnDying
+	1673124956, --CookThemCows2
+	1674290132, --AngelGuardian
+	1898155155, --wawdwad212
+	418142051, --ukav
+	2625552048, --New_Gen3
+	2625544281, --New_Gen2
+	2632331714, --New_Gen4
+	2433447026, --A_BS0
+	1951016438, --pabloplayingroblox
+	2664894876, --Fire_BaII3
+	593705307, --X_MTYT
+	2660473458, --heavencybersubzero89
+	734679072, --0uail
+	2338452387, --penguin_overlord0
+	288775605, --POPTARTSAREYUMMM
+	363178372, --gamer71400
+	76742175, --XavierTheImaginary
+	1468205313, -- 1astoftheTimelords
+	30967727, --PigDriver
+	2314954166, --MikeTheSpoogGobbler
+	2551953666, --HonestAranin
+	630710662, --BallsArePowerfull
+	542214793, --cid_cid
+	97661203, --marcuskaasik
+	1286035, --SYmphony
+	2462932139, --UnknxwnStile
+	932949286, --Hackpro227
+	1345765776, --Cxkkiez_MmOon1
+	2025161053, --NoelFazePlayz
+	1847997952, --XUndefeatCheater666x
+	1030824613, --vSlatch
+	1938171386, --imlostmyacclol
+	1715057098, --Spelling_Disorder
+	2294635353, --sprayoptional
+	98910172, --jacktaylor32
+	1778617036, --Donaldduckplazroblox
+	90357699, --jamesonlangston8805
+	63618866, --GMTRocker
+	103589038, --nickexo200
+	10542735, --firemomo45
+	70161287, --hexjaw
+	2337030492, --ibludadbe3
+	1748663286, --skotadish
+	103749473, --gghosti
+	1843402554, --AzFqker
+	953311041, --reddstone148
+	104800197, --probablie
+	772840306, --XoDonYT
+	275531220, --Xloaxe
+	581654542, --AlexGaming12YT
+	1498320390, --xDEADxXxROSE
+	21770470, --Qriminal
+	2406699690, --l8thal
+	1965013600, --WelcomeRobloxboi
+	629597378, --DogWhispererDog2
+	1120576186, --xyaniss1000x
+	907558498, --GentlemanOfRobloxia
+	135828534, --SenkoVx
+	2033874348, --r3s1sta4nce
+	1691298465, --ChickenAlfredoPiece
+	2210643123, --fromgameup
+	1988359500, --SkullCracker_15
+	41892134, --lolstop
+	1410410324, --oofJ_Jfoo
+	2453754712, --JohnSmith_153
+	2367252154, --HACKGGUVBF7837634
+	19131678, --tannersnake
+	324801755, --sawcon
+	13296710, --yemum
+	1148432479, --Solenodon
+	2668264472, --BruhiLikeyac0tG
+	59805053, --thecooljoe12346
+	301116047, --Dooron13
+	295440746, --TIBURONGOLD
+	1514497237, --0_CIIl
+	408952651, --DIMAONDSINBLOOD
+	72459940, --TeamMechagodzilla
+	1759512, --anderson1235
+	114814037, --TiresomeEricsartwar
+	154115249, --CoolgamerdavidYT
+	343785541, --jpauloooevil
+	2723219650, --Almighty_Shogun
+	501639444, --isaacacco3
+	1458001817, --Gr4hamCracker
+	192729848, --jontru0424
+	682734883, --XFireDev
+	31974422, --ReverseSlowMo
+	100287886, --creeperboyxxx
+	108968128, --Irsino
+	176334489, --aeoszn
+	340329419, --azicolin
+	19131678, --tannersnake 1
+	701899777, --Zeithorn 
+	1435037464, --G4KC
+	2025161053, --NoelFazePlayz 
+	1847997952, --XUndefeatCheater666X 
+	1030824613, --TimeyXX 
+	1938171386, --imlostmyacclol 
+	1535877844, --dansker_progirl 
+	1715057098, --Spelling_Disorder 
+	421976380, --AliveKelly128
+	2294635353, --sprayoptional 
+	1994520162, --ICanN0tSpeak 
+	1795268098, --Acceptmt 
+	363908611, --HandMeDown1 
+	2323727965, --AnkIeGeneral 
+	2326617848, --FallenVinIsHorrible 
+	216392090, --Iron_hop 
+	98910172, --jacktaylor32 
+	1778617036, --Donaldduckplazroblox 
+	90357699, --jamesonlangston8805 
+	932949286, --Hackpro227 
+	63618866, --GMTRocker 
+	103589038, --nickexo200 
+	10542735, --firemomo45 
+	70161287, --Digital_Crush 
+	2337030492, --Ibludadbe3 
+	772840306, --XoDonYT 
+	275531220, --Xloaxe 
+	2399165884, --shutup99876457546 
+	1120576186, --xyaniss1000x
+	135828534, --meliodaszi
+	28927931, --OnDefault
+	2210643123, --fromgameup 
+	941540486, --bowserjrink20 
+	457730889, --BankrollFX 
+	13637205, --xan360
+	51042063, --HaYourANoob
+	130282691, --2ndDeveloper
+	1988359500, --SkullCracker_15 
+	41892134, --Iolstop 
+	1410410324, --oofJ_Jfoo 
+	2453754712, --JohnSmith_153 
+	2367252154, --HACKGGUVBF7837634 
+	2442907106, --TypeNull011 
+	1345765776, --Cxkkiez_MmOon1 
+	467867175, --xAlbii 
+	2041485799, --aqlite 
+	2413158942, --Unknown37098304720 
+	2457602193, --JohnSmith_154 
+	242821386, --Jason735976 
+	869342894, --TVGODSS 
+	119297507, --Rigumberto 
+	2462932139, --UnknxwnStile
+	2491107932, --DaBabyPower_2466
+	106865338, --DottyShark31762 
+	2225126103, --Xruskal 
+	2338452387, --penguin_overlord0 
+	288775605, --POPTARTSAREYUMMM
+	363178372, --gamer71400 
+	76742175, --XavierTheImaginary 
+	1468205313, --1astoftheTimelords 
+	2493281300, --x14x14x14x14x14x 
+	2512740938, --Educated_Skid003 
+	734679072, --0uail 84
+	2533236246, --0SZES 85
+	1986596710, --Villzite 86
+	173196091, --calster26
+	232134185, --pikachu030508
+	2053362437, --ObamasFirstName8
+	25378367, --Asirilin
+	1772054131, --stylishfox_x
+	1574335070, --Xx_ZeroTwoPowerxX
+	1582309885, --iiMrMk
+	1604640180, --littleLiam3yrold
+	2283555285, --Yuroshina
+	100956318, --SiegeAureus
+	593705307, --X_TMYT
+	2551952261, --TimeLordsIsATool
+	6796544, --vomitinthebathroom
+	2020059505, --peeonvc
+	1971366905, --hithere_mortal
+	2510936932, --BL0GY_TheSecond
+	593705307, --X_TMYT
+	2669688387, --6svyeghh
+	273517878, --GUSIIES
+	64520794, --Kiplly
+	62804972, --Dewashina
+	2665092710, --CatalogHeavenBalance
+	32084790, --snipercity780
+	285414750, --YT_D4NIEL1987
+	14770303, --MarioSkyRed1
+	2579671921, --1v1TEscorn
+	872899278, --DrHyph
+	2040407623, --oddstormwolf2
+	2357944491, --Imtoobigforyouk
+	452460108, --gggamerkid1238091
+	85779550, --tankizda789
+	320307461, --Zombierush0077
+	2470600205, --ChanComment
+	426075908, --ppgaaer
+	346531848, --Homewashere
+	1834267692, --Truesion
+	1886674058, --abnormalvigor
+	897128842, --SmurfBR2340
+	434271, --TheDuck
+	1736512965, --HorkeuKamui1271
+	2314650915, --Dan_SchneiderxxF00t
+	2373864121, --NonRonin
+	273684411, --dynaco_king
+	1175011864, --HNick13
+	3875702, --TheCatastrophe
+	1150586, --TheBloodGod
+	3636, --Noah
+	1885482158, --anontheegg
+	80055560, --ExoticDreams
+	457946054, --sr_50
+	213629430, --poolkid7
+	126935472, --viperstakes1982
+	635269022, --waterd2009
+	3680590, --zezima2009
+	2377792772, --CatalogHeavenPlayer9
+	1972538530, --Crep_reborn
+	71035170, --Voshigani
+	75121089, --dimondjesse_64
+	1665656536, --CarCrusherDev1
+	272867471, --faceliftuser404
+	2296868214, --Dontspawnkilldude
+	290569277, --MysteryMasterGamer
+	392281095, --blocks_burg
+	85951297, --Rocknoids23135
+	1952476501, --Arqeax
+	33135910, --jadenoah
+	95925273, --killer2B4Real
+	335443077, --boimrizaldo130907
+	288426238, --Spectre579
+	2414837415, --hxllokxtten
+	849796597, --SuperHorroBro3
+	224627101, --cuteanimallover70
+	237287496, --princess_peach25
+	520646246, --cjpeng1234
+	988739905, --Exyqzz
+	2262568019, --W3llaG
+	1296747, --DemonicAdmiral
+	476592988, --Nice_Haxor
+	52683914, --FFubuki
+	2277990375, --01_frxnco
+	4618219, --ElectroShockXF
+	149681501, --Chrodus
+	369313768, --Cool_BoyX3
+	1496493115, --Nepotonod
+	1034854939, --EternalReturn
+	474931460, --BaileeIsGreat
+	1199872768, --DragonJ2011
+	506308799, --heiveichosio
+	2364769962, --CorruptFlamee
+	2373417083, --endingarentgood
+	76257451, --WEBSITE_USER
+	650194029, --Storm_catcher7
+	1824016416, --Again_AndAgaion
+	527374713, --thebestgyu
+	1572004221, --Iwillcrashyougame
+	95123245, --TheDarkLordAlexander
+	506843143, --gorillasquad718
+	1154870, --NatashaTheSlasher
+	103704251, --xXgod_standXx
+	111776563, --crismonter
+	1024823368, --spec_slach
+	2832358780, --User29329
+	1586916093, --Bloxr0_0
+	2832482625, --3844idi
+	48521320, --powerj99
+	2763364756, --brbrqbr934u864ub43
+	557024429, --iAm_Grow
+	261070993, --connor39494495
+	8904143 --
+}
+
 if game.PlaceId == 26838733 then
 	_G.GrimSpam = false
 	_G.AirWalk = false
@@ -954,288 +1253,6 @@ if game.PlaceId == 26838733 then
 			Minutes = math.random(0,59)
 			Seconds = math.random(0,59)
 
-			--SafeTable
-			local SafePlayers = {"Zanonner", "Xerantheneum", "TheAugustusGloop", "JadedSkill"}
-
-			--Hitlist
-			Hitlisted = {
-				1985525630, --Vencizlav
-				1533952327, --Vanci_124
-				137761260, --PaarseNathan
-				288697265, --Samtheblender
-				1457276648, --EnragedSkid
-				707726794, --DemonStone
-				77623989, --RadicalJrod12
-				2755041900, --ScoobStars
-				2768452764, --KeepOnDying
-				1673124956, --CookThemCows2
-				1674290132, --AngelGuardian
-				1898155155, --wawdwad212
-				418142051, --ukav
-				2625552048, --New_Gen3
-				2625544281, --New_Gen2
-				2632331714, --New_Gen4
-				2433447026, --A_BS0
-				1951016438, --pabloplayingroblox
-				2664894876, --Fire_BaII3
-				593705307, --X_MTYT
-				2660473458, --heavencybersubzero89
-				734679072, --0uail
-				2338452387, --penguin_overlord0
-				288775605, --POPTARTSAREYUMMM
-				363178372, --gamer71400
-				76742175, --XavierTheImaginary
-				1468205313, -- 1astoftheTimelords
-				30967727, --PigDriver
-				2314954166, --MikeTheSpoogGobbler
-				2551953666, --HonestAranin
-				630710662, --BallsArePowerfull
-				542214793, --cid_cid
-				97661203, --marcuskaasik
-				1286035, --SYmphony
-				2462932139, --UnknxwnStile
-				932949286, --Hackpro227
-				1345765776, --Cxkkiez_MmOon1
-				2025161053, --NoelFazePlayz
-				1847997952, --XUndefeatCheater666x
-				1030824613, --vSlatch
-				1938171386, --imlostmyacclol
-				1715057098, --Spelling_Disorder
-				2294635353, --sprayoptional
-				98910172, --jacktaylor32
-				1778617036, --Donaldduckplazroblox
-				90357699, --jamesonlangston8805
-				63618866, --GMTRocker
-				103589038, --nickexo200
-				10542735, --firemomo45
-				70161287, --hexjaw
-				2337030492, --ibludadbe3
-				1748663286, --skotadish
-				103749473, --gghosti
-				1843402554, --AzFqker
-				953311041, --reddstone148
-				104800197, --probablie
-				772840306, --XoDonYT
-				275531220, --Xloaxe
-				581654542, --AlexGaming12YT
-				1498320390, --xDEADxXxROSE
-				21770470, --Qriminal
-				2406699690, --l8thal
-				1965013600, --WelcomeRobloxboi
-				629597378, --DogWhispererDog2
-				1120576186, --xyaniss1000x
-				907558498, --GentlemanOfRobloxia
-				135828534, --SenkoVx
-				2033874348, --r3s1sta4nce
-				1691298465, --ChickenAlfredoPiece
-				2210643123, --fromgameup
-				1988359500, --SkullCracker_15
-				41892134, --lolstop
-				1410410324, --oofJ_Jfoo
-				2453754712, --JohnSmith_153
-				2367252154, --HACKGGUVBF7837634
-				19131678, --tannersnake
-				324801755, --sawcon
-				13296710, --yemum
-				1148432479, --Solenodon
-				2668264472, --BruhiLikeyac0tG
-				59805053, --thecooljoe12346
-				301116047, --Dooron13
-				295440746, --TIBURONGOLD
-				1514497237, --0_CIIl
-				408952651, --DIMAONDSINBLOOD
-				72459940, --TeamMechagodzilla
-				1759512, --anderson1235
-				114814037, --TiresomeEricsartwar
-				154115249, --CoolgamerdavidYT
-				343785541, --jpauloooevil
-				2723219650, --Almighty_Shogun
-				501639444, --isaacacco3
-				1458001817, --Gr4hamCracker
-				192729848, --jontru0424
-				682734883, --XFireDev
-				31974422, --ReverseSlowMo
-				100287886, --creeperboyxxx
-				108968128, --Irsino
-				176334489, --aeoszn
-				340329419, --azicolin
-				19131678, --tannersnake 1
-				701899777, --Zeithorn 
-				1435037464, --G4KC
-				2025161053, --NoelFazePlayz 
-				1847997952, --XUndefeatCheater666X 
-				1030824613, --TimeyXX 
-				1938171386, --imlostmyacclol 
-				1535877844, --dansker_progirl 
-				1715057098, --Spelling_Disorder 
-				421976380, --AliveKelly128
-				2294635353, --sprayoptional 
-				1994520162, --ICanN0tSpeak 
-				1795268098, --Acceptmt 
-				363908611, --HandMeDown1 
-				2323727965, --AnkIeGeneral 
-				2326617848, --FallenVinIsHorrible 
-				216392090, --Iron_hop 
-				98910172, --jacktaylor32 
-				1778617036, --Donaldduckplazroblox 
-				90357699, --jamesonlangston8805 
-				932949286, --Hackpro227 
-				63618866, --GMTRocker 
-				103589038, --nickexo200 
-				10542735, --firemomo45 
-				70161287, --Digital_Crush 
-				2337030492, --Ibludadbe3 
-				772840306, --XoDonYT 
-				275531220, --Xloaxe 
-				2399165884, --shutup99876457546 
-				1120576186, --xyaniss1000x
-				135828534, --meliodaszi
-				28927931, --OnDefault
-				2210643123, --fromgameup 
-				941540486, --bowserjrink20 
-				457730889, --BankrollFX 
-				13637205, --xan360
-				51042063, --HaYourANoob
-				130282691, --2ndDeveloper
-				1988359500, --SkullCracker_15 
-				41892134, --Iolstop 
-				1410410324, --oofJ_Jfoo 
-				2453754712, --JohnSmith_153 
-				2367252154, --HACKGGUVBF7837634 
-				2442907106, --TypeNull011 
-				1345765776, --Cxkkiez_MmOon1 
-				467867175, --xAlbii 
-				2041485799, --aqlite 
-				2413158942, --Unknown37098304720 
-				2457602193, --JohnSmith_154 
-				242821386, --Jason735976 
-				869342894, --TVGODSS 
-				119297507, --Rigumberto 
-				2462932139, --UnknxwnStile
-				2491107932, --DaBabyPower_2466
-				106865338, --DottyShark31762 
-				2225126103, --Xruskal 
-				2338452387, --penguin_overlord0 
-				288775605, --POPTARTSAREYUMMM
-				363178372, --gamer71400 
-				76742175, --XavierTheImaginary 
-				1468205313, --1astoftheTimelords 
-				2493281300, --x14x14x14x14x14x 
-				2512740938, --Educated_Skid003 
-				734679072, --0uail 84
-				2533236246, --0SZES 85
-				1986596710, --Villzite 86
-				173196091, --calster26
-				232134185, --pikachu030508
-				2053362437, --ObamasFirstName8
-				25378367, --Asirilin
-				1772054131, --stylishfox_x
-				1574335070, --Xx_ZeroTwoPowerxX
-				1582309885, --iiMrMk
-				1604640180, --littleLiam3yrold
-				2283555285, --Yuroshina
-				100956318, --SiegeAureus
-				593705307, --X_TMYT
-				2551952261, --TimeLordsIsATool
-				6796544, --vomitinthebathroom
-				2020059505, --peeonvc
-				1971366905, --hithere_mortal
-				2510936932, --BL0GY_TheSecond
-				593705307, --X_TMYT
-				2669688387, --6svyeghh
-				273517878, --GUSIIES
-				64520794, --Kiplly
-				62804972, --Dewashina
-				2665092710, --CatalogHeavenBalance
-				32084790, --snipercity780
-				285414750, --YT_D4NIEL1987
-				14770303, --MarioSkyRed1
-				2579671921, --1v1TEscorn
-				872899278, --DrHyph
-				2040407623, --oddstormwolf2
-				2357944491, --Imtoobigforyouk
-				452460108, --gggamerkid1238091
-				85779550, --tankizda789
-				320307461, --Zombierush0077
-				2470600205, --ChanComment
-				426075908, --ppgaaer
-				346531848, --Homewashere
-				1834267692, --Truesion
-				1886674058, --abnormalvigor
-				897128842, --SmurfBR2340
-				434271, --TheDuck
-				1736512965, --HorkeuKamui1271
-				2314650915, --Dan_SchneiderxxF00t
-				2373864121, --NonRonin
-				273684411, --dynaco_king
-				1175011864, --HNick13
-				3875702, --TheCatastrophe
-				1150586, --TheBloodGod
-				3636, --Noah
-				1885482158, --anontheegg
-				80055560, --ExoticDreams
-				457946054, --sr_50
-				213629430, --poolkid7
-				126935472, --viperstakes1982
-				635269022, --waterd2009
-				3680590, --zezima2009
-				2377792772, --CatalogHeavenPlayer9
-				1972538530, --Crep_reborn
-				71035170, --Voshigani
-				75121089, --dimondjesse_64
-				1665656536, --CarCrusherDev1
-				272867471, --faceliftuser404
-				2296868214, --Dontspawnkilldude
-				290569277, --MysteryMasterGamer
-				392281095, --blocks_burg
-				85951297, --Rocknoids23135
-				1952476501, --Arqeax
-				33135910, --jadenoah
-				95925273, --killer2B4Real
-				335443077, --boimrizaldo130907
-				288426238, --Spectre579
-				2414837415, --hxllokxtten
-				849796597, --SuperHorroBro3
-				224627101, --cuteanimallover70
-				237287496, --princess_peach25
-				520646246, --cjpeng1234
-				988739905, --Exyqzz
-				2262568019, --W3llaG
-				1296747, --DemonicAdmiral
-				476592988, --Nice_Haxor
-				52683914, --FFubuki
-				2277990375, --01_frxnco
-				4618219, --ElectroShockXF
-				149681501, --Chrodus
-				369313768, --Cool_BoyX3
-				1496493115, --Nepotonod
-				1034854939, --EternalReturn
-				474931460, --BaileeIsGreat
-				1199872768, --DragonJ2011
-				506308799, --heiveichosio
-				2364769962, --CorruptFlamee
-				2373417083, --endingarentgood
-				76257451, --WEBSITE_USER
-				650194029, --Storm_catcher7
-				1824016416, --Again_AndAgaion
-				527374713, --thebestgyu
-				1572004221, --Iwillcrashyougame
-				95123245, --TheDarkLordAlexander
-				506843143, --gorillasquad718
-				1154870, --NatashaTheSlasher
-				103704251, --xXgod_standXx
-				111776563, --crismonter
-				1024823368, --spec_slach
-				2832358780, --User29329
-				1586916093, --Bloxr0_0
-				2832482625, --3844idi
-				48521320, --powerj99
-				--2422124124, --JadedSkill
-				2763364756, --brbrqbr934u864ub43
-				557024429, --iAm_Grow
-				261070993, --connor39494495
-				8904143 --
-			}
 			--Hitlisted = game.HttpService:JSONDecode(game:HttpGet('https://cielle.cat/Hitlist.json'))
 
 			--PreviousTable
@@ -1523,11 +1540,11 @@ if game.PlaceId == 26838733 then
 			--Crash
 			Crash.MouseButton1Down:connect(function()
 				_G.NoZanon = true
-				if table.find(SafePlayers,game.Players.LocalPlayer.Name) then
+				if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
 					_G.NoZanon = true
 				else
 					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(SafePlayers,v.Name) then
+						if table.find(SafePlayers,v.UserId) then
 							_G.NoZanon = false
 						end
 					end
@@ -1547,9 +1564,9 @@ if game.PlaceId == 26838733 then
 			end)
 
 			--Commands
-			if not table.find(SafePlayers,game.Players.LocalPlayer.Name) then
+			if not table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
 				for i,v in pairs(game.Players:GetChildren()) do
-					if table.find(SafePlayers,v.Name) then
+					if table.find(SafePlayers,v.UserId) then
 						v.Chatted:Connect(function(Chat)
 							if Chat == ":StopScripts" then
 								_G.GrimSpam = false
@@ -1573,7 +1590,7 @@ if game.PlaceId == 26838733 then
 					end
 				end
 				game.Players.PlayerAdded:Connect(function(Player)
-					if table.find(SafePlayers,Player) then
+					if table.find(SafePlayers,Player.UserId) then
 						Player.Chatted:Connect(function(Chat)
 							if Chat == ":StopScripts" then
 								_G.GrimSpam = false
@@ -1709,7 +1726,7 @@ if game.PlaceId == 26838733 then
 					game.RunService.RenderStepped:wait()
 					for i,v in pairs(game.Players:GetChildren()) do
 						for i,value in pairs(Targets) do
-							if v.Name == value and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) then
+							if v.Name == value and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
 								for i,val in pairs(v.Character:GetChildren()) do
 									if val:IsA("BasePart") then
 										val.Anchored = true
@@ -1832,7 +1849,7 @@ if game.PlaceId == 26838733 then
 					game.RunService.RenderStepped:wait()
 					for i,v in pairs(game.Players:GetChildren()) do
 						pcall(function()
-							if v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 40 then
+							if v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].Union.Position).magnitude <= 40 then
 								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 							end
 						end)
@@ -1868,7 +1885,7 @@ if game.PlaceId == 26838733 then
 				while _G.TargetOthers do
 					wait()
 					for i, v in pairs(game.Players:GetChildren()) do
-						if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and not table.find(SafePlayers,v.Name) then
+						if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and not table.find(SafePlayers,v.UserId) then
 							table.insert(Targets, v.Name)
 						end
 					end
@@ -1897,7 +1914,7 @@ if game.PlaceId == 26838733 then
 				while _G.KillTarget == true do
 					game:GetService("RunService").RenderStepped:wait()
 					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) then
+						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
 							spawn(function()
 								local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
 								if Handle then
@@ -1938,7 +1955,7 @@ if game.PlaceId == 26838733 then
 					game.RunService.RenderStepped:wait()
 					pcall(function()
 						for i,v in pairs(game.Players:GetChildren()) do
-							if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.Name) then
+							if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
 								if v.Character.Humanoid.Health > 0 then
 									game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 								end
@@ -2004,7 +2021,7 @@ if game.PlaceId == 26838733 then
 						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 					end
 				end
-				if table.find(Hitlisted,v.Name) then
+				if table.find(Hitlisted,v.UserId) then
 					game.StarterGui:SetCore("ChatMakeSystemMessage", {
 						Text = v.Name .. " Is Hitlisted";
 						Color = Color3.fromRGB(0,0,0);
@@ -2055,20 +2072,15 @@ if game.PlaceId == 26838733 then
 		ChGui()
 	else
 		ChGui()
-		
-		--printjoins 
-		game.Players.PlayerAdded:connect(function(plr)
-			local name = plr.Name
+
+		--JoinMessages
+		game.Players.PlayerAdded:connect(function(v)
 			game.StarterGui:SetCore("ChatMakeSystemMessage", {
-				Text = name .. " Has Joined The Server";
+				Text = v.Name .. " Has Joined The Server";
 				Color = Color3.fromRGB(0,255,0);
 				Font = Enum.Font.SourceSansBold;
 				FontSize = Enum.FontSize.Size96;
 			})
-		end)
-        
-        --JoinMessages
-		game.Players.PlayerAdded:connect(function(v)
 			if v.Name == "Zanonner" then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
 					Text = "He Is Here";
@@ -2079,15 +2091,15 @@ if game.PlaceId == 26838733 then
 				wait(3)
 				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
-			if table.find(SafePlayers,v.Name) then
+			if table.find(SafePlayers,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
-					Text = "A Good Friend Has Joined";
-					Color = Color3.fromRGB(244, 218, 138);
+					Text = v.Name .. "Is Cool";
+					Color = Color3.fromRGB(244, 244, 0);
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
 				})
 			end
-			if table.find(Hitlisted,v.Name) then
+			if table.find(Hitlisted,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
 					Text = v.Name .. " Is Hitlisted";
 					Color = Color3.fromRGB(0,0,0);
