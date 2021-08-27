@@ -1547,7 +1547,7 @@ if game.PlaceId == 26838733 then
 			end)
 
 			--Commands
-			if not table.find(SafePlayers,game.Players.LocalPlayer) then
+			if not table.find(SafePlayers,game.Players.LocalPlayer.Name) then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if table.find(SafePlayers,v.Name) then
 						v.Chatted:Connect(function(Chat)
