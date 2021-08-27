@@ -955,7 +955,7 @@ if game.PlaceId == 26838733 then
 			Seconds = math.random(0,59)
 
 			--SafeTable
-			local SafePlayers = {"Zanonner", "Xerantheneum", "TheAugustusGloop"}
+			local SafePlayers = {"Zanonner", "Xerantheneum", "TheAugustusGloop", "JadedSkill"}
 
 			--Hitlist
 			Hitlisted = {
@@ -1230,8 +1230,11 @@ if game.PlaceId == 26838733 then
 				1586916093, --Bloxr0_0
 				2832482625, --3844idi
                 48521320, --powerj99
-                2422124124, --JadedSkill
-                2763364756 --brbrqbr934u864ub43
+                --2422124124, --JadedSkill
+                2763364756, --brbrqbr934u864ub43
+                557024429, --iAm_Grow
+                261070993, --connor39494495
+                8904143 --
 			}
 			--Hitlisted = game.HttpService:JSONDecode(game:HttpGet('https://cielle.cat/Hitlist.json'))
 
@@ -1387,7 +1390,7 @@ if game.PlaceId == 26838733 then
 				else
 					table.insert(Targets, Target)
 				end
-				for i,v in pairs(Targets) do
+				for i,v in pairs(Targets) do 
 					print(v)
 				end
 				TargetName.Text = ""
@@ -1754,7 +1757,7 @@ if game.PlaceId == 26838733 then
 					game.RunService.RenderStepped:wait()
 					pcall(function()
 						for i,v in pairs(game.Players:GetChildren()) do
-							if table.find(Hitlisted, v.UserId) then
+							if table.find(Hitlisted, v.UserId) and v ~= game.Players.LocalPlayer then
 								if v.Character.Humanoid.Health > 0 then
 									game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 								end
