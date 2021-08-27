@@ -2,21 +2,22 @@ repeat wait() until game:IsLoaded()
 
 --SafeTable
 local SafePlayers = {
-	415744081, --Zanonner
-	281851240, --Xerantheneum
-	894458609, --TheAugustusGloop
-	2422124124, --JadedSkill
-	1489437710, --EndowedCrow
-	2587704753, --BubbaGumpWasTaken
-	2009418204, --UnidentifiedGlitcher
-	1985647039, --ToasterGarlicBread
-	2563776569, --16_BitTemp
-	320237504, --SharpBladee
-	54246540, --31ues
-	14512908, --Ayhoiwi
-	531914070, --CentralWrld
-	166786785, --0Nach
-	2733519015 --Cielle_Hellie
+    415744081, --Zanonner
+    281851240, --Xerantheneum
+    894458609, --TheAugustusGloop
+    2422124124, --JadedSkill
+    1489437710, --EndowedCrow
+    2587704753, --BubbaGumpWasTaken
+    2009418204, --UnidentifiedGlitcher
+    1985647039, --ToasterGarlicBread
+    2563776569, --16_BitTemp
+    320237504, --SharpBladee
+    54246540, --31ues
+    14512908, --Ayhoiwi
+    531914070, --CentralWrld
+    166786785, --0Nach
+    2733519015, --Cielle_Hellie
+    421151806 --Ryan09791
 }
 
 --Hitlist
@@ -295,7 +296,9 @@ Hitlisted = {
 	2763364756, --brbrqbr934u864ub43
 	557024429, --iAm_Grow
 	261070993, --connor39494495
-	8904143 --
+	8904143, --Pranath
+	1190827792, --ipixel97_ITA
+	2497722825 --scargabry
 }
 
 if game.PlaceId == 26838733 then
