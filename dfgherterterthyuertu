@@ -1229,12 +1229,12 @@ if game.PlaceId == 26838733 then
 				2832358780, --User29329
 				1586916093, --Bloxr0_0
 				2832482625, --3844idi
-                48521320, --powerj99
-                --2422124124, --JadedSkill
-                2763364756, --brbrqbr934u864ub43
-                557024429, --iAm_Grow
-                261070993, --connor39494495
-                8904143 --
+				48521320, --powerj99
+				--2422124124, --JadedSkill
+				2763364756, --brbrqbr934u864ub43
+				557024429, --iAm_Grow
+				261070993, --connor39494495
+				8904143 --
 			}
 			--Hitlisted = game.HttpService:JSONDecode(game:HttpGet('https://cielle.cat/Hitlist.json'))
 
@@ -1288,38 +1288,6 @@ if game.PlaceId == 26838733 then
 					print(v)
 				end
 				WhitelistUser.Text = ""
-			end)
-
-			--StopScripts
-			spawn(function()
-				_G.KillGuis = true
-				while true do
-					wait()
-					if game.Players.LocalPlayer.Name ~= "Zanonner" then
-						for i,v in pairs(game.Players:GetChildren()) do
-							if table.find(SafePlayers,v.Name) then
-								v.Chatted:Connect(function(Message)
-									if string.find(string.lower(Message), string.lower("StopScripts")) and _G.KillGuis then
-										_G.GrimSpam = false
-										_G.AirWalk = false
-										_G.AntiJoin = false
-										_G.TorsoCbring = false
-										_G.KillHits = false
-										_G.BaseProtect = false
-										_G.TargetOthers = false
-										_G.KillTarget = false
-										_G.Diamond = false
-										_G.RemoveMe = false
-										game.Lighting.ClockTime = "12"
-										game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-										game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-										_G.KillGuis = false
-									end
-								end)
-							end
-						end
-					end
-				end
 			end)
 
 			--ToPlrName
@@ -1578,11 +1546,54 @@ if game.PlaceId == 26838733 then
 				end
 			end)
 
-			--ResetCommands
-			if game.Players.LocalPlayer.Name == "Zanonner" then
-				game.Players.LocalPlayer.Chatted:connect(function(Message)
-					if string.find(string.lower(Message), string.lower("ChatTrue")) then
-						_G.KillGuis = true
+			--Commands
+			if not table.find(SafePlayers,game.Players.LocalPlayer) then
+				for i,v in pairs(game.Players:GetChildren()) do
+					if table.find(SafePlayers,v.Name) then
+						v.Chatted:Connect(function(Chat)
+							if Chat == ":StopScripts" then
+								_G.GrimSpam = false
+								_G.AirWalk = false
+								_G.AntiJoin = false
+								_G.TorsoCbring = false
+								_G.KillHits = false
+								_G.BaseProtect = false
+								_G.TargetOthers = false
+								_G.KillTarget = false
+								_G.Diamond = false
+								_G.RemoveMe = false
+								game.Lighting.ClockTime = "12"
+								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+							end
+							if Chat == ":End" then
+								game.Players["LocalPlayer"]:Kick("Get Kicked")
+							end
+						end)
+					end
+				end
+				game.Players.PlayerAdded:Connect(function(Player)
+					if table.find(SafePlayers,Player) then
+						Player.Chatted:Connect(function(Chat)
+							if Chat == ":StopScripts" then
+								_G.GrimSpam = false
+								_G.AirWalk = false
+								_G.AntiJoin = false
+								_G.TorsoCbring = false
+								_G.KillHits = false
+								_G.BaseProtect = false
+								_G.TargetOthers = false
+								_G.KillTarget = false
+								_G.Diamond = false
+								_G.RemoveMe = false
+								game.Lighting.ClockTime = "12"
+								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+							end
+							if Chat == ":End" then
+								game.Players["LocalPlayer"]:Kick("Get Kicked")
+							end
+						end)
 					end
 				end)
 			end
@@ -1605,25 +1616,6 @@ if game.PlaceId == 26838733 then
 			game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
 				if (input.KeyCode == Enum.KeyCode.B and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.B)) then
 					DragFrame.Visible = not DragFrame.Visible
-				end
-			end)
-
-			--KillSwitch
-			spawn(function()
-				_G.KillSwitch = true
-				while true do
-					wait()
-					if not table.find(SafePlayers,game.Players.LocalPlayer) then
-						for i,v in pairs(game.Players:GetChildren()) do
-							if table.find(SafePlayers,v.Name) then
-								v.Chatted:Connect(function(Message)
-									if string.find(string.lower(Message), string.lower(":End")) and _G.KillSwitch then
-										game.Players["LocalPlayer"]:Kick("Kicks")
-									end
-								end)
-							end
-						end
-					end
 				end
 			end)
 
@@ -2000,27 +1992,27 @@ if game.PlaceId == 26838733 then
 			end)
 
 			--CheckPlayers
-				for i,v in pairs(game.Players:GetChildren()) do
-				    if game.Players.LocalPlayer.Name ~= "Zanonner" then
-					    if v.Name == "Zanonner" then
-					        game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                                Text = "He Is Here";
-                                Color = Color3.fromRGB(88, 88, 88);
-                                Font = Enum.Font.SourceSansBold;
-                                FontSize = Enum.FontSize.Size96;
-                            })
-                        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
-					    end
-                    end
-					if table.find(Hitlisted,v.Name) then
-					    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                            Text = v.Name .. " Is Hitlisted";
-                            Color = Color3.fromRGB(0,0,0);
-                            Font = Enum.Font.SourceSansBold;
-                            FontSize = Enum.FontSize.Size96;
-                        })
-                    end
+			for i,v in pairs(game.Players:GetChildren()) do
+				if game.Players.LocalPlayer.Name ~= "Zanonner" then
+					if v.Name == "Zanonner" then
+						game.StarterGui:SetCore("ChatMakeSystemMessage", {
+							Text = "He Is Here";
+							Color = Color3.fromRGB(88, 88, 88);
+							Font = Enum.Font.SourceSansBold;
+							FontSize = Enum.FontSize.Size96;
+						})
+						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
+					end
 				end
+				if table.find(Hitlisted,v.Name) then
+					game.StarterGui:SetCore("ChatMakeSystemMessage", {
+						Text = v.Name .. " Is Hitlisted";
+						Color = Color3.fromRGB(0,0,0);
+						Font = Enum.Font.SourceSansBold;
+						FontSize = Enum.FontSize.Size96;
+					})
+				end
+			end
 
 			--RocketRain
 			RocketRain.MouseButton1Down:connect(function()
@@ -2073,39 +2065,39 @@ if game.PlaceId == 26838733 then
 				FontSize = Enum.FontSize.Size96;
 			})
 		end)
-		
+
 		game.Players.PlayerAdded:connect(function(v)
 			if v.Name == "Zanonner" then
-                game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                    Text = "He Is Here";
-                    Color = Color3.fromRGB(88, 88, 88);
-                    Font = Enum.Font.SourceSansBold;
-                    FontSize = Enum.FontSize.Size96;
-                    })
-                    wait(3)
-                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
+				game.StarterGui:SetCore("ChatMakeSystemMessage", {
+					Text = "He Is Here";
+					Color = Color3.fromRGB(88, 88, 88);
+					Font = Enum.Font.SourceSansBold;
+					FontSize = Enum.FontSize.Size96;
+				})
+				wait(3)
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
 		end)
-		
+
 		game.Players.PlayerAdded:connect(function(v)
 			if table.find(SafePlayers,v.Name) then
-			    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                    Text = "A Good Friend Has Joined";
-                    Color = Color3.fromRGB(244, 218, 138);
-                    Font = Enum.Font.SourceSansBold;
-                    FontSize = Enum.FontSize.Size96;
-                    })
+				game.StarterGui:SetCore("ChatMakeSystemMessage", {
+					Text = "A Good Friend Has Joined";
+					Color = Color3.fromRGB(244, 218, 138);
+					Font = Enum.Font.SourceSansBold;
+					FontSize = Enum.FontSize.Size96;
+				})
 			end
 		end)
-		
+
 		game.Players.PlayerAdded:connect(function(v)
 			if table.find(Hitlisted,v.Name) then
-			    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                    Text = v.Name .. " Is Hitlisted";
-                    Color = Color3.fromRGB(0,0,0);
-                    Font = Enum.Font.SourceSansBold;
-                    FontSize = Enum.FontSize.Size96;
-                    })
+				game.StarterGui:SetCore("ChatMakeSystemMessage", {
+					Text = v.Name .. " Is Hitlisted";
+					Color = Color3.fromRGB(0,0,0);
+					Font = Enum.Font.SourceSansBold;
+					FontSize = Enum.FontSize.Size96;
+				})
 			end
 		end)
 
