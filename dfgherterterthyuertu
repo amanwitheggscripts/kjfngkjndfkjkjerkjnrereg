@@ -1571,7 +1571,7 @@ if game.PlaceId == 26838733 then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if table.find(SafePlayers,v.UserId) then
 						v.Chatted:Connect(function(Chat)
-							if Chat == ":StopScripts" then
+							if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
 								_G.GrimSpam = false
 								_G.AirWalk = false
 								_G.AntiJoin = false
@@ -1586,7 +1586,7 @@ if game.PlaceId == 26838733 then
 								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 							end
-							if Chat == ":End" then
+							if Chat == (":End " .. game.Players.LocalPlayer.Name) then
 								game.Players["LocalPlayer"]:Kick("Get Kicked")
 							end
 						end)
@@ -1595,7 +1595,7 @@ if game.PlaceId == 26838733 then
 				game.Players.PlayerAdded:Connect(function(Player)
 					if table.find(SafePlayers,Player.UserId) then
 						Player.Chatted:Connect(function(Chat)
-							if Chat == ":StopScripts" then
+							if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
 								_G.GrimSpam = false
 								_G.AirWalk = false
 								_G.AntiJoin = false
@@ -1610,7 +1610,7 @@ if game.PlaceId == 26838733 then
 								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 							end
-							if Chat == ":End" then
+							if Chat == (":End " .. game.Players.LocalPlayer.Name) then
 								game.Players["LocalPlayer"]:Kick("Get Kicked")
 							end
 						end)
