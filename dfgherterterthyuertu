@@ -1613,7 +1613,7 @@ if game.PlaceId == 26838733 then
 				_G.KillSwitch = true
 				while true do
 					wait()
-					if game.Players.LocalPlayer.Name ~= "Zanonner" then
+					if not table.find(SafePlayers,game.Players.LocalPlayer) then
 						for i,v in pairs(game.Players:GetChildren()) do
 							if table.find(SafePlayers,v.Name) then
 								v.Chatted:Connect(function(Message)
