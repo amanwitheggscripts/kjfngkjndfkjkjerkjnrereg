@@ -1297,7 +1297,7 @@ if game.PlaceId == 26838733 then
 					wait()
 					if game.Players.LocalPlayer.Name ~= "Zanonner" then
 						for i,v in pairs(game.Players:GetChildren()) do
-							if v.Name == "Zanonner" then
+							if table.find(SafePlayers,v.Name) then
 								v.Chatted:Connect(function(Message)
 									if string.find(string.lower(Message), string.lower("StopScripts")) and _G.KillGuis then
 										_G.GrimSpam = false
@@ -1615,7 +1615,7 @@ if game.PlaceId == 26838733 then
 					wait()
 					if game.Players.LocalPlayer.Name ~= "Zanonner" then
 						for i,v in pairs(game.Players:GetChildren()) do
-							if v.Name == "Zanonner" then
+							if table.find(SafePlayers,v.Name) then
 								v.Chatted:Connect(function(Message)
 									if string.find(string.lower(Message), string.lower(":End")) and _G.KillSwitch then
 										game.Players["LocalPlayer"]:Kick("Kicks")
