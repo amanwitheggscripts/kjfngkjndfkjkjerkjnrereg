@@ -2,21 +2,21 @@ repeat wait() until game:IsLoaded()
 
 --SafeTable
 local SafePlayers = {
-    415744081, --Zanonner
-    281851240, --Xerantheneum
-    894458609, --TheAugustusGloop
-    2422124124, --JadedSkill
-    1489437710, --EndowedCrow
-    2587704753, --BubbaGumpWasTaken
-    2009418204, --UnidentifiedGlitcher
-    1985647039, --ToasterGarlicBread
-    2563776569, --16_BitTemp
-    320237504, --SharpBladee
-    54246540, --31ues
-    14512908, --Ayhoiwi
-    531914070, --CentralWrld
-    166786785, --0Nach
-    2733519015 --Cielle_Hellie
+	415744081, --Zanonner
+	281851240, --Xerantheneum
+	894458609, --TheAugustusGloop
+	2422124124, --JadedSkill
+	1489437710, --EndowedCrow
+	2587704753, --BubbaGumpWasTaken
+	2009418204, --UnidentifiedGlitcher
+	1985647039, --ToasterGarlicBread
+	2563776569, --16_BitTemp
+	320237504, --SharpBladee
+	54246540, --31ues
+	14512908, --Ayhoiwi
+	531914070, --CentralWrld
+	166786785, --0Nach
+	2733519015 --Cielle_Hellie
 }
 
 --Hitlist
@@ -2093,7 +2093,7 @@ if game.PlaceId == 26838733 then
 			end
 			if table.find(SafePlayers,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
-					Text = v.Name .. "Is Cool";
+					Text = v.Name .. " Is Cool";
 					Color = Color3.fromRGB(244, 244, 0);
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
