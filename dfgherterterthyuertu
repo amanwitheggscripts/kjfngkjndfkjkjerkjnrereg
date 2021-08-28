@@ -2143,9 +2143,9 @@ if game.PlaceId == 26838733 then
 				while _G.RocketRainOn do
 					game.RunService.RenderStepped:wait()
 					pcall(function()
-						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),500,math.random(-400,400)))
-						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),500,math.random(-400,400)))
-						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),500,math.random(-400,400)))
+						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),600,math.random(-400,400)))
+						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),600,math.random(-400,400)))
+						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),600,math.random(-400,400)))
 					end)
 				end
 			end)
