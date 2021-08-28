@@ -316,7 +316,7 @@ if game.PlaceId == 26838733 then
 	_G.RocketRainOn = false
 	game.Lighting.ClockTime = "12"
 	game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-
+	
 	local function Sure()
 		local SureGui = Instance.new("ScreenGui")
 		local AreYouSure = Instance.new("Frame")
@@ -393,11 +393,6 @@ if game.PlaceId == 26838733 then
 			--Yes
 			Yes.MouseButton1Down:connect(function()
 				_G.NoZanon = true
-				for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-					if v.Name == "CHGui" or v.Name == "SureGui" then
-						v:Remove()
-					end
-				end
 				if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
 					_G.NoZanon = true
 				else
@@ -423,7 +418,7 @@ if game.PlaceId == 26838733 then
 		end
 		coroutine.wrap(YARUX_fake_script)()
 	end
-
+	
 	local function ChGui()
 		local CHGui = Instance.new("ScreenGui")
 		local DragFrame = Instance.new("Frame")
@@ -2126,6 +2121,15 @@ if game.PlaceId == 26838733 then
 						FontSize = Enum.FontSize.Size96;
 					})
 				end
+				if table.find(SafePlayers,v.UserId) then
+				    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+				    	Text = v.Name .. " Is Cool";
+				    	Color = Color3.fromRGB(244, 244, 0);
+				    	Font = Enum.Font.SourceSansBold;
+				    	FontSize = Enum.FontSize.Size96;
+				    })
+				    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
+			    end
 			end
 
 			--RocketRain
@@ -2195,6 +2199,7 @@ if game.PlaceId == 26838733 then
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
 				})
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
 			if table.find(Hitlisted,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
