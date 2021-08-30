@@ -317,6 +317,109 @@ if game.PlaceId == 26838733 then
 	_G.RocketRainOn = false
 	game.Lighting.ClockTime = "12"
 	game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+	
+	local function Sure()
+		local SureGui = Instance.new("ScreenGui")
+		local AreYouSure = Instance.new("Frame")
+		local UICorner = Instance.new("UICorner")
+		local YouSure = Instance.new("TextLabel")
+		local Yes = Instance.new("TextButton")
+		local UICorner_2 = Instance.new("UICorner")
+		local No = Instance.new("TextButton")
+		local UICorner_3 = Instance.new("UICorner")
+
+		--Properties:
+
+		SureGui.Name = "SureGui"
+		SureGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+		SureGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+		AreYouSure.Name = "AreYouSure"
+		AreYouSure.Parent = SureGui
+		AreYouSure.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
+		AreYouSure.Position = UDim2.new(0.431754261, 0, 0.437230706, 0)
+		AreYouSure.Size = UDim2.new(0, 222, 0, 110)
+
+		UICorner.Parent = AreYouSure
+
+		YouSure.Name = "YouSure"
+		YouSure.Parent = AreYouSure
+		YouSure.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		YouSure.BackgroundTransparency = 1.000
+		YouSure.Position = UDim2.new(0.0495495796, 0, -0.0090909088, 0)
+		YouSure.Size = UDim2.new(0, 200, 0, 50)
+		YouSure.Font = Enum.Font.SourceSans
+		YouSure.Text = "Are You Sure?"
+		YouSure.TextColor3 = Color3.fromRGB(56, 2, 100)
+		YouSure.TextSize = 14.000
+
+		Yes.Name = "Yes"
+		Yes.Parent = AreYouSure
+		Yes.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Yes.Position = UDim2.new(0.0990990996, 0, 0.454545379, 0)
+		Yes.Size = UDim2.new(0, 71, 0, 40)
+		Yes.Font = Enum.Font.SourceSans
+		Yes.Text = "Yes"
+		Yes.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Yes.TextSize = 14.000
+
+		UICorner_2.Parent = Yes
+
+		No.Name = "No"
+		No.Parent = AreYouSure
+		No.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		No.Position = UDim2.new(0.581081092, 0, 0.454545379, 0)
+		No.Size = UDim2.new(0, 71, 0, 40)
+		No.Font = Enum.Font.SourceSans
+		No.Text = "No"
+		No.TextColor3 = Color3.fromRGB(0, 0, 0)
+		No.TextSize = 14.000
+
+		UICorner_3.Parent = No
+
+		-- Scripts:
+
+		local function YARUX_fake_script() -- SureGui.Script 
+			local script = Instance.new('Script', SureGui)
+
+			--No
+			No.MouseButton1Down:connect(function()
+				AreYouSure.Visible = false
+			end)
+
+			--Yes
+			Yes.MouseButton1Down:connect(function()
+				_G.NoZanon = true
+				for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+					if v.Name == "CHGui" or v.Name == "SureGui" then
+						v:Remove()
+					end
+				end
+				if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
+					_G.NoZanon = true
+				else
+					for i,v in pairs(game.Players:GetChildren()) do
+						if table.find(SafePlayers,v.UserId) then
+							_G.NoZanon = false
+						end
+					end
+				end
+				if _G.NoZanon then
+					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
+					wait()
+					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
+					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
+					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e9, 9e9, 9e9))
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e6,-9e9)
+					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
+				else
+					game.Players["LocalPlayer"]:Kick(Insult)
+				end
+			end)
+		end
+		coroutine.wrap(YARUX_fake_script)()
+	end
 
 	local function ChGui()
 		local CHGui = Instance.new("ScreenGui")
@@ -438,15 +541,6 @@ if game.PlaceId == 26838733 then
 		local UICorner_55 = Instance.new("UICorner")
 		local UnAnchor = Instance.new("TextButton")
 		local UICorner_56 = Instance.new("UICorner")
-		local AreYouSureBorder = Instance.new("Frame")
-		local UICorner_57 = Instance.new("UICorner")
-		local AreYouSure = Instance.new("Frame")
-		local UICorner_58 = Instance.new("UICorner")
-		local YouSure = Instance.new("TextLabel")
-		local Yes = Instance.new("TextButton")
-		local UICorner_59 = Instance.new("UICorner")
-		local No = Instance.new("TextButton")
-		local UICorner_60 = Instance.new("UICorner")
 		--Properties:
 
 		CHGui.Name = "CHGui"
@@ -1201,7 +1295,6 @@ if game.PlaceId == 26838733 then
 		UnWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnWhitelist.TextSize = 14.000
 		UnWhitelist.TextWrapped = true
-
 		UICorner_52.Parent = UnWhitelist
 
 		Hitlist.Name = "Hitlist"
@@ -1244,7 +1337,6 @@ if game.PlaceId == 26838733 then
 		UnDeleteMe.TextWrapped = true
 
 		UICorner_55.Parent = UnDeleteMe
-
 		UnAnchor.Name = "UnAnchor"
 		UnAnchor.Parent = Page3Frame
 		UnAnchor.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
@@ -1256,60 +1348,7 @@ if game.PlaceId == 26838733 then
 		UnAnchor.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnAnchor.TextSize = 14.000
 		UnAnchor.TextWrapped = true
-
 		UICorner_56.Parent = UnAnchor
-
-		AreYouSureBorder.Name = "AreYouSureBorder"
-		AreYouSureBorder.Parent = CHGui
-		AreYouSureBorder.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		AreYouSureBorder.Position = UDim2.new(0.396255851, 0, 0.426621139, 0)
-		AreYouSureBorder.Size = UDim2.new(0, 240, 0, 129)
-		AreYouSureBorder.Visible = false
-
-		UICorner_57.Parent = AreYouSureBorder
-
-		AreYouSure.Name = "AreYouSure"
-		AreYouSure.Parent = AreYouSureBorder
-		AreYouSure.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
-		AreYouSure.Position = UDim2.new(0.0375000015, 0, 0.0697676763, 0)
-		AreYouSure.Size = UDim2.new(0, 222, 0, 110)
-
-		UICorner_58.Parent = AreYouSure
-
-		YouSure.Name = "YouSure"
-		YouSure.Parent = AreYouSure
-		YouSure.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		YouSure.BackgroundTransparency = 1.000
-		YouSure.Position = UDim2.new(0.0495495796, 0, 0, 0)
-		YouSure.Size = UDim2.new(0, 200, 0, 50)
-		YouSure.Font = Enum.Font.SourceSans
-		YouSure.Text = "Are You Sure?"
-		YouSure.TextColor3 = Color3.fromRGB(56, 2, 100)
-		YouSure.TextSize = 14.000
-
-		Yes.Name = "Yes"
-		Yes.Parent = AreYouSure
-		Yes.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		Yes.Position = UDim2.new(0.0990990996, 0, 0.454545379, 0)
-		Yes.Size = UDim2.new(0, 71, 0, 40)
-		Yes.Font = Enum.Font.SourceSans
-		Yes.Text = "Yes"
-		Yes.TextColor3 = Color3.fromRGB(0, 0, 0)
-		Yes.TextSize = 14.000
-
-		UICorner_59.Parent = Yes
-
-		No.Name = "No"
-		No.Parent = AreYouSure
-		No.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		No.Position = UDim2.new(0.581081092, 0, 0.454545379, 0)
-		No.Size = UDim2.new(0, 71, 0, 40)
-		No.Font = Enum.Font.SourceSans
-		No.Text = "No"
-		No.TextColor3 = Color3.fromRGB(0, 0, 0)
-		No.TextSize = 14.000
-
-		UICorner_60.Parent = No
 		-- Scripts:
 		local function NEKI_fake_script() -- CHGui.Script 
 			local script = Instance.new('Script', CHGui)
@@ -1536,47 +1575,47 @@ if game.PlaceId == 26838733 then
 				"we do a little bit of trolling",
 				"You have been banned from this experience for: " .. Days .. " days, " .. Minutes .. " minutes, " .. Seconds .. " seconds",
 				"https://nhentai.net/g/220787",
-	            [[here, have a really long space as a kick message.
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	            ]],
+            [[here, have a really long space as a kick message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ]],
 				"i forgor 💀 that i used this gui's crash function to someone who has immunity",
 				"don't forget your classes!",
 				"take a breather, then take a shower, you don't have to stink, ya know.",
 				"STOP POSTING ABOUT AMONG US! I'M TIRED OF SEEING IT! MY FRIENDS ON TIKTOK SEND ME MEMES, ON DISCORD IT'S FUCKING MEMES! I was in a server, right? and ALL OF THE CHANNELS were just among us stuff. I-I showed my champion underwear to my girlfriend and t-the logo I flipped it and I said hey babe, when the underwear is sus HAHA DING DING DING DING DING DING DING DI DI DING I fucking looked at a trashcan and said THAT'S A BIT SUSSY I looked at my penis I think of an astronauts helmet and I go PENIS? MORE LIKE PENSUS AAAAAAAAAAAAAAAA",
-	            [[Got ketchup mixed with lettuce cheese cuz every time
-	            I wake up in the morning I got burgers on my mind
-	            Ketchup, mustard, mayo, fries, lettuce it's Number Nine
-	            And all these yummy burgers tasty tryna'
-	            Get me off my grind, but I can't let 'em do it
-	            I got burgers on my mind
-	            Bitch I got burgers on my mind
-	            I got burgers on my mind
-	            I got burgers on my mind
-	            Burgers on my mind
-	            Burgers on my mind
-	            I got burgers on my mind]]
+            [[Got ketchup mixed with lettuce cheese cuz every time
+            I wake up in the morning I got burgers on my mind
+            Ketchup, mustard, mayo, fries, lettuce it's Number Nine
+            And all these yummy burgers tasty tryna'
+            Get me off my grind, but I can't let 'em do it
+            I got burgers on my mind
+            Bitch I got burgers on my mind
+            I got burgers on my mind
+            I got burgers on my mind
+            Burgers on my mind
+            Burgers on my mind
+            I got burgers on my mind]]
 			}
 
 			--Insult
@@ -1608,38 +1647,7 @@ if game.PlaceId == 26838733 then
 
 			--Crash
 			Crash.MouseButton1Down:connect(function()
-				AreYouSureBorder.Visible = true
-			end)
-
-			--No
-			No.MouseButton1Down:connect(function()
-				AreYouSureBorder.Visible = false
-			end)
-
-			--Yes
-			Yes.MouseButton1Down:connect(function()
-				_G.NoZanon = true
-				if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
-					_G.NoZanon = true
-				else
-					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(SafePlayers,v.UserId) then
-							_G.NoZanon = false
-						end
-					end
-				end
-				if _G.NoZanon then
-					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
-					wait()
-					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
-					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
-					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e9, 9e9, 9e9))
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e6,-9e9)
-					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
-				else
-					game.Players["LocalPlayer"]:Kick(Insult)
-				end
+				Sure()
 			end)
 
 			--Commands
@@ -2143,7 +2151,7 @@ if game.PlaceId == 26838733 then
 		coroutine.wrap(NEKI_fake_script)()
 	end
 	for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-		if v.Name == "CHGui" then
+		if v.Name == "CHGui" or v.Name == "SureGui" then
 			v:Remove()
 		end
 	end
