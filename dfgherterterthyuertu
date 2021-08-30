@@ -1,4 +1,3 @@
-
 repeat wait() until game:IsLoaded()
 
 --SafeTable
@@ -297,9 +296,11 @@ Hitlisted = {
 	2763364756, --brbrqbr934u864ub43
 	557024429, --iAm_Grow
 	261070993, --connor39494495
-	8904143, --Pranath
+	8904143, --Pranath_vir
 	1190827792, --ipixel97_ITA
-	2497722825 --scargabry
+	2497722825, --scargabry
+	1478389473, --HHenrique3227
+	1829985395 --hirmanst
 }
 
 if game.PlaceId == 26838733 then
@@ -316,109 +317,7 @@ if game.PlaceId == 26838733 then
 	_G.RocketRainOn = false
 	game.Lighting.ClockTime = "12"
 	game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-	
-	local function Sure()
-		local SureGui = Instance.new("ScreenGui")
-		local AreYouSure = Instance.new("Frame")
-		local UICorner = Instance.new("UICorner")
-		local YouSure = Instance.new("TextLabel")
-		local Yes = Instance.new("TextButton")
-		local UICorner_2 = Instance.new("UICorner")
-		local No = Instance.new("TextButton")
-		local UICorner_3 = Instance.new("UICorner")
 
-		--Properties:
-
-		SureGui.Name = "SureGui"
-		SureGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-		SureGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-		AreYouSure.Name = "AreYouSure"
-		AreYouSure.Parent = SureGui
-		AreYouSure.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
-		AreYouSure.Position = UDim2.new(0.431754261, 0, 0.437230706, 0)
-		AreYouSure.Size = UDim2.new(0, 222, 0, 110)
-
-		UICorner.Parent = AreYouSure
-
-		YouSure.Name = "YouSure"
-		YouSure.Parent = AreYouSure
-		YouSure.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		YouSure.BackgroundTransparency = 1.000
-		YouSure.Position = UDim2.new(0.0495495796, 0, -0.0090909088, 0)
-		YouSure.Size = UDim2.new(0, 200, 0, 50)
-		YouSure.Font = Enum.Font.SourceSans
-		YouSure.Text = "Are You Sure?"
-		YouSure.TextColor3 = Color3.fromRGB(56, 2, 100)
-		YouSure.TextSize = 14.000
-
-		Yes.Name = "Yes"
-		Yes.Parent = AreYouSure
-		Yes.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		Yes.Position = UDim2.new(0.0990990996, 0, 0.454545379, 0)
-		Yes.Size = UDim2.new(0, 71, 0, 40)
-		Yes.Font = Enum.Font.SourceSans
-		Yes.Text = "Yes"
-		Yes.TextColor3 = Color3.fromRGB(0, 0, 0)
-		Yes.TextSize = 14.000
-
-		UICorner_2.Parent = Yes
-
-		No.Name = "No"
-		No.Parent = AreYouSure
-		No.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		No.Position = UDim2.new(0.581081092, 0, 0.454545379, 0)
-		No.Size = UDim2.new(0, 71, 0, 40)
-		No.Font = Enum.Font.SourceSans
-		No.Text = "No"
-		No.TextColor3 = Color3.fromRGB(0, 0, 0)
-		No.TextSize = 14.000
-
-		UICorner_3.Parent = No
-
-		-- Scripts:
-
-		local function YARUX_fake_script() -- SureGui.Script 
-			local script = Instance.new('Script', SureGui)
-
-			--No
-			No.MouseButton1Down:connect(function()
-				for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-					if v.Name == "SureGui" then
-						v:Remove()
-					end
-				end
-			end)
-
-			--Yes
-			Yes.MouseButton1Down:connect(function()
-				_G.NoZanon = true
-				if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
-					_G.NoZanon = true
-				else
-					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(SafePlayers,v.UserId) then
-							_G.NoZanon = false
-						end
-					end
-				end
-				if _G.NoZanon then
-					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
-					wait()
-					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
-					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
-					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e9, 9e9, 9e9))
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e6,-9e9)
-					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
-				else
-					game.Players["LocalPlayer"]:Kick(Insult)
-				end
-			end)
-		end
-		coroutine.wrap(YARUX_fake_script)()
-	end
-	
 	local function ChGui()
 		local CHGui = Instance.new("ScreenGui")
 		local DragFrame = Instance.new("Frame")
@@ -539,7 +438,15 @@ if game.PlaceId == 26838733 then
 		local UICorner_55 = Instance.new("UICorner")
 		local UnAnchor = Instance.new("TextButton")
 		local UICorner_56 = Instance.new("UICorner")
-
+		local AreYouSureBorder = Instance.new("Frame")
+		local UICorner_57 = Instance.new("UICorner")
+		local AreYouSure = Instance.new("Frame")
+		local UICorner_58 = Instance.new("UICorner")
+		local YouSure = Instance.new("TextLabel")
+		local Yes = Instance.new("TextButton")
+		local UICorner_59 = Instance.new("UICorner")
+		local No = Instance.new("TextButton")
+		local UICorner_60 = Instance.new("UICorner")
 		--Properties:
 
 		CHGui.Name = "CHGui"
@@ -1352,11 +1259,60 @@ if game.PlaceId == 26838733 then
 
 		UICorner_56.Parent = UnAnchor
 
+		AreYouSureBorder.Name = "AreYouSureBorder"
+		AreYouSureBorder.Parent = CHGui
+		AreYouSureBorder.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		AreYouSureBorder.Position = UDim2.new(0.396255851, 0, 0.426621139, 0)
+		AreYouSureBorder.Size = UDim2.new(0, 240, 0, 129)
+		AreYouSureBorder.Visible = false
+
+		UICorner_57.Parent = AreYouSureBorder
+
+		AreYouSure.Name = "AreYouSure"
+		AreYouSure.Parent = AreYouSureBorder
+		AreYouSure.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
+		AreYouSure.Position = UDim2.new(0.0375000015, 0, 0.0697676763, 0)
+		AreYouSure.Size = UDim2.new(0, 222, 0, 110)
+
+		UICorner_58.Parent = AreYouSure
+
+		YouSure.Name = "YouSure"
+		YouSure.Parent = AreYouSure
+		YouSure.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		YouSure.BackgroundTransparency = 1.000
+		YouSure.Position = UDim2.new(0.0495495796, 0, 0, 0)
+		YouSure.Size = UDim2.new(0, 200, 0, 50)
+		YouSure.Font = Enum.Font.SourceSans
+		YouSure.Text = "Are You Sure?"
+		YouSure.TextColor3 = Color3.fromRGB(56, 2, 100)
+		YouSure.TextSize = 14.000
+
+		Yes.Name = "Yes"
+		Yes.Parent = AreYouSure
+		Yes.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Yes.Position = UDim2.new(0.0990990996, 0, 0.454545379, 0)
+		Yes.Size = UDim2.new(0, 71, 0, 40)
+		Yes.Font = Enum.Font.SourceSans
+		Yes.Text = "Yes"
+		Yes.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Yes.TextSize = 14.000
+
+		UICorner_59.Parent = Yes
+
+		No.Name = "No"
+		No.Parent = AreYouSure
+		No.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		No.Position = UDim2.new(0.581081092, 0, 0.454545379, 0)
+		No.Size = UDim2.new(0, 71, 0, 40)
+		No.Font = Enum.Font.SourceSans
+		No.Text = "No"
+		No.TextColor3 = Color3.fromRGB(0, 0, 0)
+		No.TextSize = 14.000
+
+		UICorner_60.Parent = No
 		-- Scripts:
-
-		local function NNJZPZR_fake_script() -- CHGui.Script 
+		local function NEKI_fake_script() -- CHGui.Script 
 			local script = Instance.new('Script', CHGui)
-
 			--XButton
 			X.MouseButton1Down:connect(function()
 				CHGui:Remove()
@@ -1652,7 +1608,38 @@ if game.PlaceId == 26838733 then
 
 			--Crash
 			Crash.MouseButton1Down:connect(function()
-				Sure()
+				AreYouSureBorder.Visible = true
+			end)
+
+			--No
+			No.MouseButton1Down:connect(function()
+				AreYouSureBorder.Visible = false
+			end)
+
+			--Yes
+			Yes.MouseButton1Down:connect(function()
+				_G.NoZanon = true
+				if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
+					_G.NoZanon = true
+				else
+					for i,v in pairs(game.Players:GetChildren()) do
+						if table.find(SafePlayers,v.UserId) then
+							_G.NoZanon = false
+						end
+					end
+				end
+				if _G.NoZanon then
+					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
+					wait()
+					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
+					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
+					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e9, 9e9, 9e9))
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e6,-9e9)
+					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
+				else
+					game.Players["LocalPlayer"]:Kick(Insult)
+				end
 			end)
 
 			--Commands
@@ -2121,15 +2108,6 @@ if game.PlaceId == 26838733 then
 						FontSize = Enum.FontSize.Size96;
 					})
 				end
-				if table.find(SafePlayers,v.UserId) then
-				    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-				    	Text = v.Name .. " Is Cool";
-				    	Color = Color3.fromRGB(244, 244, 0);
-				    	Font = Enum.Font.SourceSansBold;
-				    	FontSize = Enum.FontSize.Size96;
-				    })
-				    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
-			    end
 			end
 
 			--RocketRain
@@ -2143,9 +2121,7 @@ if game.PlaceId == 26838733 then
 				while _G.RocketRainOn do
 					game.RunService.RenderStepped:wait()
 					pcall(function()
-						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),600,math.random(-400,400)))
-						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),600,math.random(-400,400)))
-						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),600,math.random(-400,400)))
+						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),500,math.random(-400,400)))
 					end)
 				end
 			end)
@@ -2164,10 +2140,10 @@ if game.PlaceId == 26838733 then
 				UnRocketRain.Visible = false
 			end)
 		end
-		coroutine.wrap(NNJZPZR_fake_script)()
+		coroutine.wrap(NEKI_fake_script)()
 	end
 	for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-		if v.Name == "CHGui" or v.Name == "SureGui" then
+		if v.Name == "CHGui" then
 			v:Remove()
 		end
 	end
@@ -2201,7 +2177,6 @@ if game.PlaceId == 26838733 then
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
 				})
-				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
 			if table.find(Hitlisted,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
