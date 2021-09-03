@@ -1,5 +1,24 @@
 repeat wait() until game:IsLoaded()
 
+if syn then
+if isfolder('Folder') then
+    print "Folder already exists"
+else
+    makefolder('Folder')
+end
+if isfile('Folder/Lock.txt') then
+    print "Lock exists"
+else
+    writefile("Folder/Lock.txt", "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse") 
+end
+--[[if isfile('Folder/Ban.txt') then
+    print "Ban exists"
+else
+    writefile("Folder/Ban.txt", "false") 
+end
+Ban = readfile('Folder/Ban.txt')]]--
+end
+
 --SafeTable
 local SafePlayers = {
 	415744081, --Zanonner
@@ -303,8 +322,12 @@ Hitlisted = {
 	1829985395, --hirmanst
 	255208365 --Vision14457
 }
-
-if game.PlaceId == 26838733 then
+if not syn then
+    Lock = "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse"
+else
+    Lock = readfile('Folder/Lock.txt')
+end
+if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse" then
 	_G.GrimSpam = false
 	_G.AirWalk = false
 	_G.AntiJoin = false
@@ -1656,7 +1679,7 @@ if game.PlaceId == 26838733 then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if table.find(SafePlayers,v.UserId) then
 						v.Chatted:Connect(function(Chat)
-							if Chat == (":StopScripts " .. game.Players.LocalPlayer.DisplayName) then
+							if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
 								_G.GrimSpam = false
 								_G.AirWalk = false
 								_G.AntiJoin = false
@@ -1671,16 +1694,19 @@ if game.PlaceId == 26838733 then
 								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 							end
-							if Chat == (":Kick " .. game.Players.LocalPlayer.DisplayName) then
+							if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
 								game.Players["LocalPlayer"]:Kick("Get Kicked")
 							end
 						end)
 					end
 				end
-				game.Players.PlayerAdded:Connect(function(Player)
-					if table.find(SafePlayers,Player.UserId) then
-						Player.Chatted:Connect(function(Chat)
-							if Chat == (":StopScripts " .. game.Players.LocalPlayer.DisplayName) then
+			end
+			if syn then
+			if game.Players.LocalPlayer.UserId ~= 415744081 then
+				for i,v in pairs(game.Players:GetChildren()) do
+					if v.UserId == 415744081 then
+						v.Chatted:Connect(function(Chat)
+							if Chat == (":Break " .. game.Players.LocalPlayer.Name) then
 								_G.GrimSpam = false
 								_G.AirWalk = false
 								_G.AntiJoin = false
@@ -1694,14 +1720,67 @@ if game.PlaceId == 26838733 then
 								game.Lighting.ClockTime = "12"
 								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
 							end
-							if Chat == (":Kick " .. game.Players.LocalPlayer.DisplayName) then
-								game.Players["LocalPlayer"]:Kick("Get Kicked")
+							if Chat == (":UnBreak " .. game.Players.LocalPlayer.Name) then
+							    writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
 							end
 						end)
 					end
-				end)
+				end
 			end
+            end
+			game.Players.PlayerAdded:Connect(function(v)
+				if table.find(SafePlayers,v.UserId) then
+					Player.Chatted:Connect(function(Chat)
+						if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
+							_G.GrimSpam = false
+							_G.AirWalk = false
+							_G.AntiJoin = false
+							_G.TorsoCbring = false
+							_G.KillHits = false
+							_G.BaseProtect = false
+							_G.TargetOthers = false
+							_G.KillTarget = false
+							_G.Diamond = false
+							_G.RemoveMe = false
+							game.Lighting.ClockTime = "12"
+							game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+							game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+						end
+						if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
+							game.Players["LocalPlayer"]:Kick("Get Kicked")
+						end
+					end)
+				end
+				if syn then
+				if game.Players.LocalPlayer.UserId ~= 415744081 then
+					if v.UserId == 415744081 then
+						v.Chatted:Connect(function(Chat)
+							if Chat == (":Break " .. game.Players.LocalPlayer.Name) then
+								_G.GrimSpam = false
+								_G.AirWalk = false
+								_G.AntiJoin = false
+								_G.TorsoCbring = false
+								_G.KillHits = false
+								_G.BaseProtect = false
+								_G.TargetOthers = false
+								_G.KillTarget = false
+								_G.Diamond = false
+								_G.RemoveMe = false
+								game.Lighting.ClockTime = "12"
+								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
+							end
+							if Chat == (":UnBreak " .. game.Players.LocalPlayer.Name) then
+							    writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
+							end
+						end)
+					end
+				end
+				end
+			end)
 
 			--frame
 			frame = script.Parent.DragFrame
