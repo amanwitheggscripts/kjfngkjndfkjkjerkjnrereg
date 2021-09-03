@@ -300,7 +300,8 @@ Hitlisted = {
 	1190827792, --ipixel97_ITA
 	2497722825, --scargabry
 	1478389473, --HHenrique3227
-	1829985395 --hirmanst
+	1829985395, --hirmanst
+	255208365 --Vision14457
 }
 
 if game.PlaceId == 26838733 then
