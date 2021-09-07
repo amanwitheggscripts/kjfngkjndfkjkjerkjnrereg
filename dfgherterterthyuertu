@@ -321,7 +321,8 @@ Hitlisted = {
 	1478389473, --HHenrique3227
 	1829985395, --hirmanst
 	255208365, --Vision14457
-	133808206 --Hayznimhayz
+	133808206, --Hayznimhayz
+	348626312 --joshua11dudeISBACK
 }
 if not syn then
 	Lock = "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse"
@@ -2299,9 +2300,11 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 			_G.Heal = true
 			while _G.Heal do
 				game.RunService.RenderStepped:wait()
-				if hum.Health ~= hum.MaxHealth or hum.Health ~= math.huge then
-					plr.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7,hum,-(hum.MaxHealth - hum.Health))
-				end
+				pcall(function()
+				    if hum.Health ~= hum.MaxHealth or hum.Health ~= math.huge then
+				    	plr.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7,hum,-(hum.MaxHealth - hum.Health))
+				    end
+				end)
 			end
 		end)
 		Heal.MouseButton1Down:connect(function()
