@@ -2660,8 +2660,16 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 						Font = Enum.Font.SourceSansBold;
 						FontSize = Enum.FontSize.Size96;
 					})
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 				end
+			end
+			if table.find(SafePlayers,v.UserId) then
+				game.StarterGui:SetCore("ChatMakeSystemMessage", {
+					Text = v.Name .. " Is Cool";
+					Color = Color3.fromRGB(244, 244, 0);
+					Font = Enum.Font.SourceSansBold;
+					FontSize = Enum.FontSize.Size96;
+				})
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
 			if table.find(Hitlisted,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
@@ -2729,7 +2737,6 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 					FontSize = Enum.FontSize.Size96;
 				})
 				wait(3)
-				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
 			if table.find(SafePlayers,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
@@ -2738,6 +2745,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
 				})
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
 			if table.find(Hitlisted,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
