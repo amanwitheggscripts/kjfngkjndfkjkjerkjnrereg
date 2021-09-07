@@ -343,6 +343,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 	_G.GetId = false
 	_G.Heal = false
 	_G.AntiFF = false
+	_G.Martyrdom = false
 	for i=0,10 do
 		fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
 	end
@@ -1920,40 +1921,6 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 			Sure()
 		end)
 
-		--IdToggle
-		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-			if (input.KeyCode == Enum.KeyCode.Z and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Z)) then
-				if _G.GetId == true then
-					_G.GetId = false
-				else
-					_G.GetId = true
-				end
-				print(_G.GetId)
-			end
-		end)
-
-		--GetID
-		game.Players.LocalPlayer.Chatted:Connect(function(Chat)
-			if _G.GetId then
-				for i = 1 , #game.Players:GetPlayers() do
-					if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(Chat))) == string.lower(Chat) then
-						Id = game.Players:GetPlayers()[i].UserId
-						Name = game.Players:GetPlayers()[i].Name
-						Plr = game.Players:GetPlayers()[i]
-						print(Id)
-						game.StarterGui:SetCore("ChatMakeSystemMessage", {
-							Text = "Copied User Id";
-							Color = Color3.fromRGB(235,167,70);
-							Font = Enum.Font.SourceSansBold;
-							FontSize = Enum.FontSize.Size96;
-						})
-						setclipboard(Id .. " --" .. Name)
-						break
-					end
-				end
-			end
-		end)
-
 		--Commands
 		if not table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
 			for i,v in pairs(game.Players:GetChildren()) do
@@ -1970,12 +1937,20 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 							_G.KillTarget = false
 							_G.Diamond = false
 							_G.RemoveMe = false
+							_G.RocketRainOn = false
+							_G.GetId = false
+							_G.Heal = false
+							_G.AntiFF = false
+							_G.Martyrdom = false
+							for i=0,10 do
+								fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+							end
 							game.Lighting.ClockTime = "12"
 							game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 							game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 						end
 						if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
-							game.Players["LocalPlayer"]:Kick("Get Kicked")
+							game.Players["LocalPlayer"]:Kick("You Were Kicked For Unknown Reasons")
 						end
 					end)
 				end
@@ -1997,8 +1972,17 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 								_G.KillTarget = false
 								_G.Diamond = false
 								_G.RemoveMe = false
+								_G.RocketRainOn = false
+								_G.GetId = false
+								_G.Heal = false
+								_G.AntiFF = false
+								_G.Martyrdom = false
+								for i=0,10 do
+									fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+								end
 								game.Lighting.ClockTime = "12"
 								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+
 								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
 							end
@@ -2024,12 +2008,21 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 						_G.KillTarget = false
 						_G.Diamond = false
 						_G.RemoveMe = false
+						_G.RocketRainOn = false
+						_G.GetId = false
+						_G.Heal = false
+						_G.AntiFF = false
+						_G.Martyrdom = false
+						for i=0,10 do
+							fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+						end
 						game.Lighting.ClockTime = "12"
 						game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+
 						game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 					end
 					if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
-						game.Players["LocalPlayer"]:Kick("Get Kicked")
+						game.Players["LocalPlayer"]:Kick("You Were Kicked For Unknown Reasons")
 					end
 				end)
 			end
@@ -2048,8 +2041,17 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 								_G.KillTarget = false
 								_G.Diamond = false
 								_G.RemoveMe = false
+								_G.RocketRainOn = false
+								_G.GetId = false
+								_G.Heal = false
+								_G.AntiFF = false
+								_G.Martyrdom = false
+								for i=0,10 do
+									fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+								end
 								game.Lighting.ClockTime = "12"
 								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+
 								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
 								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
 							end
@@ -2753,6 +2755,39 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 				Font = Enum.Font.SourceSansBold;
 				FontSize = Enum.FontSize.Size96;
 			})
+		end)
+		--IdToggle
+		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+			if (input.KeyCode == Enum.KeyCode.Z and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Z)) then
+				if _G.GetId == true then
+					_G.GetId = false
+				else
+					_G.GetId = true
+				end
+				print(_G.GetId)
+			end
+		end)
+
+		--GetID
+		game.Players.LocalPlayer.Chatted:Connect(function(Chat)
+			if _G.GetId then
+				for i = 1 , #game.Players:GetPlayers() do
+					if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(Chat))) == string.lower(Chat) then
+						Id = game.Players:GetPlayers()[i].UserId
+						Name = game.Players:GetPlayers()[i].Name
+						Plr = game.Players:GetPlayers()[i]
+						print(Id)
+						game.StarterGui:SetCore("ChatMakeSystemMessage", {
+							Text = "Copied User Id";
+							Color = Color3.fromRGB(235,167,70);
+							Font = Enum.Font.SourceSansBold;
+							FontSize = Enum.FontSize.Size96;
+						})
+						setclipboard(Id .. " --" .. Name)
+						break
+					end
+				end
+			end
 		end)
 		getgenv().Enabled = true
 	end
