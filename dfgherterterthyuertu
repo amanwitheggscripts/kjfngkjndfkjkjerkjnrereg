@@ -1,16 +1,16 @@
 repeat wait() until game:IsLoaded()
 
 if syn then
-if isfolder('Folder') then
-    print "Folder already exists"
-else
-    makefolder('Folder')
-end
-if isfile('Folder/Lock.txt') then
-    print "Lock exists"
-else
-    writefile("Folder/Lock.txt", "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse") 
-end
+	if isfolder('Folder') then
+		print "Folder already exists"
+	else
+		makefolder('Folder')
+	end
+	if isfile('Folder/Lock.txt') then
+		print "Lock exists"
+	else
+		writefile("Folder/Lock.txt", "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse") 
+	end
 --[[if isfile('Folder/Ban.txt') then
     print "Ban exists"
 else
@@ -320,12 +320,13 @@ Hitlisted = {
 	2497722825, --scargabry
 	1478389473, --HHenrique3227
 	1829985395, --hirmanst
-	255208365 --Vision14457
+	255208365, --Vision14457
+	133808206 --Hayznimhayz
 }
 if not syn then
-    Lock = "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse"
+	Lock = "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse"
 else
-    Lock = readfile('Folder/Lock.txt')
+	Lock = readfile('Folder/Lock.txt')
 end
 if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse" then
 	_G.GrimSpam = false
@@ -340,9 +341,14 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 	_G.RemoveMe = false
 	_G.RocketRainOn = false
 	_G.GetId = false
+	_G.Heal = false
+	_G.AntiFF = false
+	for i=0,10 do
+		fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+	end
 	game.Lighting.ClockTime = "12"
 	game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-	
+
 	local function Sure()
 		local SureGui = Instance.new("ScreenGui")
 		local AreYouSure = Instance.new("Frame")
@@ -502,70 +508,102 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		local UICorner_24 = Instance.new("UICorner")
 		local UnRocketRain = Instance.new("TextButton")
 		local UICorner_25 = Instance.new("UICorner")
-		local Page2Frame = Instance.new("Frame")
+		local Next4 = Instance.new("TextButton")
 		local UICorner_26 = Instance.new("UICorner")
+		local Page2Frame = Instance.new("Frame")
+		local UICorner_27 = Instance.new("UICorner")
 		local _2 = Instance.new("TextLabel")
 		local Next2 = Instance.new("TextButton")
-		local UICorner_27 = Instance.new("UICorner")
-		local Prev1 = Instance.new("TextButton")
 		local UICorner_28 = Instance.new("UICorner")
-		local Speed = Instance.new("TextButton")
+		local Prev1 = Instance.new("TextButton")
 		local UICorner_29 = Instance.new("UICorner")
-		local WalkSpeed = Instance.new("TextBox")
+		local Speed = Instance.new("TextButton")
 		local UICorner_30 = Instance.new("UICorner")
-		local Jump = Instance.new("TextButton")
+		local WalkSpeed = Instance.new("TextBox")
 		local UICorner_31 = Instance.new("UICorner")
-		local JumpHeight = Instance.new("TextBox")
+		local Jump = Instance.new("TextButton")
 		local UICorner_32 = Instance.new("UICorner")
-		local TimeChange = Instance.new("TextButton")
+		local JumpHeight = Instance.new("TextBox")
 		local UICorner_33 = Instance.new("UICorner")
-		local PlayerName = Instance.new("TextBox")
+		local TimeChange = Instance.new("TextButton")
 		local UICorner_34 = Instance.new("UICorner")
-		local ToPlayer = Instance.new("TextButton")
+		local PlayerName = Instance.new("TextBox")
 		local UICorner_35 = Instance.new("UICorner")
-		local TimeSet = Instance.new("TextBox")
+		local ToPlayer = Instance.new("TextButton")
 		local UICorner_36 = Instance.new("UICorner")
-		local Page3Frame = Instance.new("Frame")
+		local TimeSet = Instance.new("TextBox")
 		local UICorner_37 = Instance.new("UICorner")
+		local Page3Frame = Instance.new("Frame")
+		local UICorner_38 = Instance.new("UICorner")
 		local _3 = Instance.new("TextLabel")
 		local Next3 = Instance.new("TextButton")
-		local UICorner_38 = Instance.new("UICorner")
-		local Prev2 = Instance.new("TextButton")
 		local UICorner_39 = Instance.new("UICorner")
-		local Whitelist = Instance.new("TextButton")
+		local Prev2 = Instance.new("TextButton")
 		local UICorner_40 = Instance.new("UICorner")
-		local WhitelistUser = Instance.new("TextBox")
+		local Whitelist = Instance.new("TextButton")
 		local UICorner_41 = Instance.new("UICorner")
-		local InsertWhitelist = Instance.new("TextButton")
+		local WhitelistUser = Instance.new("TextBox")
 		local UICorner_42 = Instance.new("UICorner")
-		local RemoveWhitelist = Instance.new("TextButton")
+		local InsertWhitelist = Instance.new("TextButton")
 		local UICorner_43 = Instance.new("UICorner")
-		local UnHitlist = Instance.new("TextButton")
+		local RemoveWhitelist = Instance.new("TextButton")
 		local UICorner_44 = Instance.new("UICorner")
-		local BaseProtect = Instance.new("TextButton")
+		local UnHitlist = Instance.new("TextButton")
 		local UICorner_45 = Instance.new("UICorner")
-		local GodMode = Instance.new("TextButton")
+		local BaseProtect = Instance.new("TextButton")
 		local UICorner_46 = Instance.new("UICorner")
-		local DeleteMe = Instance.new("TextButton")
+		local GodMode = Instance.new("TextButton")
 		local UICorner_47 = Instance.new("UICorner")
-		local Anchor = Instance.new("TextButton")
+		local DeleteMe = Instance.new("TextButton")
 		local UICorner_48 = Instance.new("UICorner")
-		local AntiWater = Instance.new("TextButton")
+		local Anchor = Instance.new("TextButton")
 		local UICorner_49 = Instance.new("UICorner")
-		local RemoveWalls = Instance.new("TextButton")
+		local AntiWater = Instance.new("TextButton")
 		local UICorner_50 = Instance.new("UICorner")
-		local AntiVoid = Instance.new("TextButton")
+		local RemoveWalls = Instance.new("TextButton")
 		local UICorner_51 = Instance.new("UICorner")
-		local UnWhitelist = Instance.new("TextButton")
+		local AntiVoid = Instance.new("TextButton")
 		local UICorner_52 = Instance.new("UICorner")
-		local Hitlist = Instance.new("TextButton")
+		local UnWhitelist = Instance.new("TextButton")
 		local UICorner_53 = Instance.new("UICorner")
-		local UnBaseProtect = Instance.new("TextButton")
+		local Hitlist = Instance.new("TextButton")
 		local UICorner_54 = Instance.new("UICorner")
-		local UnDeleteMe = Instance.new("TextButton")
+		local UnBaseProtect = Instance.new("TextButton")
 		local UICorner_55 = Instance.new("UICorner")
-		local UnAnchor = Instance.new("TextButton")
+		local UnDeleteMe = Instance.new("TextButton")
 		local UICorner_56 = Instance.new("UICorner")
+		local UnAnchor = Instance.new("TextButton")
+		local UICorner_57 = Instance.new("UICorner")
+		local Page5Frame = Instance.new("Frame")
+		local UICorner_58 = Instance.new("UICorner")
+		local _5 = Instance.new("TextLabel")
+		local Prev4 = Instance.new("TextButton")
+		local UICorner_59 = Instance.new("UICorner")
+		local PrevLoad = Instance.new("TextButton")
+		local UICorner_60 = Instance.new("UICorner")
+		local Loadout = Instance.new("TextLabel")
+		local UICorner_61 = Instance.new("UICorner")
+		local NextLoad = Instance.new("TextButton")
+		local UICorner_62 = Instance.new("UICorner")
+		local Load = Instance.new("TextButton")
+		local UICorner_63 = Instance.new("UICorner")
+		local Save = Instance.new("TextButton")
+		local UICorner_64 = Instance.new("UICorner")
+		local Heal = Instance.new("TextButton")
+		local UICorner_65 = Instance.new("UICorner")
+		local UnHeal = Instance.new("TextButton")
+		local UICorner_66 = Instance.new("UICorner")
+		local Martyrdom = Instance.new("TextButton")
+		local UICorner_67 = Instance.new("UICorner")
+		local UnMartyrdom = Instance.new("TextButton")
+		local UICorner_68 = Instance.new("UICorner")
+		local SafeSpot = Instance.new("TextButton")
+		local UICorner_69 = Instance.new("UICorner")
+		local AntiFF = Instance.new("TextButton")
+		local UICorner_70 = Instance.new("UICorner")
+		local UnAntiFF = Instance.new("TextButton")
+		local UICorner_71 = Instance.new("UICorner")
+
 		--Properties:
 
 		CHGui.Name = "CHGui"
@@ -945,6 +983,21 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		UICorner_25.CornerRadius = UDim.new(0, 100)
 		UICorner_25.Parent = UnRocketRain
 
+		Next4.Name = "Next4"
+		Next4.Parent = Page4Frame
+		Next4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Next4.BackgroundTransparency = 1.000
+		Next4.Position = UDim2.new(0.900958478, 0, 0.415789634, 0)
+		Next4.Size = UDim2.new(0, 23, 0, 30)
+		Next4.Font = Enum.Font.RobotoCondensed
+		Next4.Text = ">"
+		Next4.TextColor3 = Color3.fromRGB(56, 2, 100)
+		Next4.TextScaled = true
+		Next4.TextSize = 14.000
+		Next4.TextWrapped = true
+
+		UICorner_26.Parent = Next4
+
 		Page2Frame.Name = "Page2Frame"
 		Page2Frame.Parent = OutlineFrame
 		Page2Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
@@ -953,8 +1006,8 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Page2Frame.Size = UDim2.new(0, 298, 0, 174)
 		Page2Frame.Visible = false
 
-		UICorner_26.CornerRadius = UDim.new(0, 10)
-		UICorner_26.Parent = Page2Frame
+		UICorner_27.CornerRadius = UDim.new(0, 10)
+		UICorner_27.Parent = Page2Frame
 
 		_2.Name = "2"
 		_2.Parent = Page2Frame
@@ -982,7 +1035,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Next2.TextSize = 14.000
 		Next2.TextWrapped = true
 
-		UICorner_27.Parent = Next2
+		UICorner_28.Parent = Next2
 
 		Prev1.Name = "Prev1"
 		Prev1.Parent = Page2Frame
@@ -997,7 +1050,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Prev1.TextSize = 14.000
 		Prev1.TextWrapped = true
 
-		UICorner_28.Parent = Prev1
+		UICorner_29.Parent = Prev1
 
 		Speed.Name = "Speed"
 		Speed.Parent = Page2Frame
@@ -1009,7 +1062,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Speed.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Speed.TextSize = 14.000
 
-		UICorner_29.Parent = Speed
+		UICorner_30.Parent = Speed
 
 		WalkSpeed.Name = "WalkSpeed"
 		WalkSpeed.Parent = Page2Frame
@@ -1023,7 +1076,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		WalkSpeed.TextColor3 = Color3.fromRGB(118, 118, 118)
 		WalkSpeed.TextSize = 14.000
 
-		UICorner_30.Parent = WalkSpeed
+		UICorner_31.Parent = WalkSpeed
 
 		Jump.Name = "Jump"
 		Jump.Parent = Page2Frame
@@ -1035,7 +1088,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Jump.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Jump.TextSize = 14.000
 
-		UICorner_31.Parent = Jump
+		UICorner_32.Parent = Jump
 
 		JumpHeight.Name = "JumpHeight"
 		JumpHeight.Parent = Page2Frame
@@ -1049,7 +1102,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		JumpHeight.TextColor3 = Color3.fromRGB(118, 118, 118)
 		JumpHeight.TextSize = 14.000
 
-		UICorner_32.Parent = JumpHeight
+		UICorner_33.Parent = JumpHeight
 
 		TimeChange.Name = "TimeChange"
 		TimeChange.Parent = Page2Frame
@@ -1061,7 +1114,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		TimeChange.TextColor3 = Color3.fromRGB(118, 118, 118)
 		TimeChange.TextSize = 14.000
 
-		UICorner_33.Parent = TimeChange
+		UICorner_34.Parent = TimeChange
 
 		PlayerName.Name = "PlayerName"
 		PlayerName.Parent = Page2Frame
@@ -1075,7 +1128,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		PlayerName.TextColor3 = Color3.fromRGB(118, 118, 118)
 		PlayerName.TextSize = 14.000
 
-		UICorner_34.Parent = PlayerName
+		UICorner_35.Parent = PlayerName
 
 		ToPlayer.Name = "ToPlayer"
 		ToPlayer.Parent = Page2Frame
@@ -1087,7 +1140,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		ToPlayer.TextColor3 = Color3.fromRGB(118, 118, 118)
 		ToPlayer.TextSize = 14.000
 
-		UICorner_35.Parent = ToPlayer
+		UICorner_36.Parent = ToPlayer
 
 		TimeSet.Name = "TimeSet"
 		TimeSet.Parent = Page2Frame
@@ -1101,7 +1154,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		TimeSet.TextColor3 = Color3.fromRGB(118, 118, 118)
 		TimeSet.TextSize = 14.000
 
-		UICorner_36.Parent = TimeSet
+		UICorner_37.Parent = TimeSet
 
 		Page3Frame.Name = "Page3Frame"
 		Page3Frame.Parent = OutlineFrame
@@ -1111,8 +1164,8 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Page3Frame.Size = UDim2.new(0, 298, 0, 174)
 		Page3Frame.Visible = false
 
-		UICorner_37.CornerRadius = UDim.new(0, 10)
-		UICorner_37.Parent = Page3Frame
+		UICorner_38.CornerRadius = UDim.new(0, 10)
+		UICorner_38.Parent = Page3Frame
 
 		_3.Name = "3"
 		_3.Parent = Page3Frame
@@ -1140,7 +1193,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Next3.TextSize = 14.000
 		Next3.TextWrapped = true
 
-		UICorner_38.Parent = Next3
+		UICorner_39.Parent = Next3
 
 		Prev2.Name = "Prev2"
 		Prev2.Parent = Page3Frame
@@ -1155,7 +1208,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Prev2.TextSize = 14.000
 		Prev2.TextWrapped = true
 
-		UICorner_39.Parent = Prev2
+		UICorner_40.Parent = Prev2
 
 		Whitelist.Name = "Whitelist"
 		Whitelist.Parent = Page3Frame
@@ -1167,7 +1220,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Whitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Whitelist.TextSize = 14.000
 
-		UICorner_40.Parent = Whitelist
+		UICorner_41.Parent = Whitelist
 
 		WhitelistUser.Name = "WhitelistUser"
 		WhitelistUser.Parent = Page3Frame
@@ -1181,7 +1234,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		WhitelistUser.TextColor3 = Color3.fromRGB(118, 118, 118)
 		WhitelistUser.TextSize = 14.000
 
-		UICorner_41.Parent = WhitelistUser
+		UICorner_42.Parent = WhitelistUser
 
 		InsertWhitelist.Name = "InsertWhitelist"
 		InsertWhitelist.Parent = Page3Frame
@@ -1193,7 +1246,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		InsertWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		InsertWhitelist.TextSize = 14.000
 
-		UICorner_42.Parent = InsertWhitelist
+		UICorner_43.Parent = InsertWhitelist
 
 		RemoveWhitelist.Name = "RemoveWhitelist"
 		RemoveWhitelist.Parent = Page3Frame
@@ -1205,7 +1258,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		RemoveWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		RemoveWhitelist.TextSize = 14.000
 
-		UICorner_43.Parent = RemoveWhitelist
+		UICorner_44.Parent = RemoveWhitelist
 
 		UnHitlist.Name = "UnHitlist"
 		UnHitlist.Parent = Page3Frame
@@ -1218,7 +1271,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		UnHitlist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnHitlist.TextSize = 14.000
 
-		UICorner_44.Parent = UnHitlist
+		UICorner_45.Parent = UnHitlist
 
 		BaseProtect.Name = "BaseProtect"
 		BaseProtect.Parent = Page3Frame
@@ -1231,7 +1284,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		BaseProtect.TextSize = 14.000
 		BaseProtect.TextWrapped = true
 
-		UICorner_45.Parent = BaseProtect
+		UICorner_46.Parent = BaseProtect
 
 		GodMode.Name = "GodMode"
 		GodMode.Parent = Page3Frame
@@ -1243,7 +1296,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		GodMode.TextColor3 = Color3.fromRGB(118, 118, 118)
 		GodMode.TextSize = 14.000
 
-		UICorner_46.Parent = GodMode
+		UICorner_47.Parent = GodMode
 
 		DeleteMe.Name = "DeleteMe"
 		DeleteMe.Parent = Page3Frame
@@ -1255,7 +1308,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		DeleteMe.TextColor3 = Color3.fromRGB(118, 118, 118)
 		DeleteMe.TextSize = 14.000
 
-		UICorner_47.Parent = DeleteMe
+		UICorner_48.Parent = DeleteMe
 
 		Anchor.Name = "Anchor"
 		Anchor.Parent = Page3Frame
@@ -1268,7 +1321,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Anchor.TextSize = 14.000
 		Anchor.TextWrapped = true
 
-		UICorner_48.Parent = Anchor
+		UICorner_49.Parent = Anchor
 
 		AntiWater.Name = "AntiWater"
 		AntiWater.Parent = Page3Frame
@@ -1281,7 +1334,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		AntiWater.TextSize = 14.000
 		AntiWater.TextWrapped = true
 
-		UICorner_49.Parent = AntiWater
+		UICorner_50.Parent = AntiWater
 
 		RemoveWalls.Name = "RemoveWalls"
 		RemoveWalls.Parent = Page3Frame
@@ -1294,7 +1347,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		RemoveWalls.TextSize = 14.000
 		RemoveWalls.TextWrapped = true
 
-		UICorner_50.Parent = RemoveWalls
+		UICorner_51.Parent = RemoveWalls
 
 		AntiVoid.Name = "AntiVoid"
 		AntiVoid.Parent = Page3Frame
@@ -1307,7 +1360,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		AntiVoid.TextSize = 14.000
 		AntiVoid.TextWrapped = true
 
-		UICorner_51.Parent = AntiVoid
+		UICorner_52.Parent = AntiVoid
 
 		UnWhitelist.Name = "UnWhitelist"
 		UnWhitelist.Parent = Page3Frame
@@ -1320,7 +1373,8 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		UnWhitelist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnWhitelist.TextSize = 14.000
 		UnWhitelist.TextWrapped = true
-		UICorner_52.Parent = UnWhitelist
+
+		UICorner_53.Parent = UnWhitelist
 
 		Hitlist.Name = "Hitlist"
 		Hitlist.Parent = Page3Frame
@@ -1332,7 +1386,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		Hitlist.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Hitlist.TextSize = 14.000
 
-		UICorner_53.Parent = Hitlist
+		UICorner_54.Parent = Hitlist
 
 		UnBaseProtect.Name = "UnBaseProtect"
 		UnBaseProtect.Parent = Page3Frame
@@ -1346,7 +1400,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		UnBaseProtect.TextSize = 14.000
 		UnBaseProtect.TextWrapped = true
 
-		UICorner_54.Parent = UnBaseProtect
+		UICorner_55.Parent = UnBaseProtect
 
 		UnDeleteMe.Name = "UnDeleteMe"
 		UnDeleteMe.Parent = Page3Frame
@@ -1361,7 +1415,8 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		UnDeleteMe.TextSize = 14.000
 		UnDeleteMe.TextWrapped = true
 
-		UICorner_55.Parent = UnDeleteMe
+		UICorner_56.Parent = UnDeleteMe
+
 		UnAnchor.Name = "UnAnchor"
 		UnAnchor.Parent = Page3Frame
 		UnAnchor.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
@@ -1373,370 +1428,560 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		UnAnchor.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnAnchor.TextSize = 14.000
 		UnAnchor.TextWrapped = true
-		UICorner_56.Parent = UnAnchor
-		-- Scripts:
-		local function NEKI_fake_script() -- CHGui.Script 
-			local script = Instance.new('Script', CHGui)
-			--XButton
-			X.MouseButton1Down:connect(function()
-				CHGui:Remove()
-			end)
-			--Time 
-			Days = math.random(400,200000)
-			Minutes = math.random(0,59)
-			Seconds = math.random(0,59)
 
-			--Hitlisted = game.HttpService:JSONDecode(game:HttpGet('https://cielle.cat/Hitlist.json'))
+		UICorner_57.Parent = UnAnchor
 
-			--PreviousTable
-			local Previous = {}
+		Page5Frame.Name = "Page5Frame"
+		Page5Frame.Parent = OutlineFrame
+		Page5Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
+		Page5Frame.LayoutOrder = 400
+		Page5Frame.Position = UDim2.new(0.0223642178, 0, 0.042105265, 0)
+		Page5Frame.Size = UDim2.new(0, 298, 0, 174)
+		Page5Frame.Visible = false
 
-			--TargetsTable
-			local Targets = {}
+		UICorner_58.CornerRadius = UDim.new(0, 10)
+		UICorner_58.Parent = Page5Frame
 
-			--WhitelistTable
-			local Whitelisted = {"Butter_2453", "BubbaGumpWasTaken", "Zanonner", "MelangeKnavery", "cxdechxka", "Xerantheneum", "0Nach","SharpBladee","31ues","Cielle_Hellie","CentralWrld"}
+		_5.Name = "5"
+		_5.Parent = Page5Frame
+		_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		_5.BackgroundTransparency = 1.000
+		_5.Position = UDim2.new(0.832214773, 0, 0.890804589, 0)
+		_5.Size = UDim2.new(0, 67, 0, 13)
+		_5.Font = Enum.Font.SourceSans
+		_5.Text = "5"
+		_5.TextColor3 = Color3.fromRGB(42, 2, 74)
+		_5.TextScaled = true
+		_5.TextSize = 14.000
+		_5.TextWrapped = true
 
-			--TargetName
-			TargetName:GetPropertyChangedSignal("Text"):Connect(function()
-				for i = 1, #game.Players:GetPlayers() do
-					if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(TargetName.Text))) == string.lower(TargetName.Text) then
-						Target = game.Players:GetPlayers()[i].Name
-						break
-					end
+		Prev4.Name = "Prev4"
+		Prev4.Parent = Page5Frame
+		Prev4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Prev4.BackgroundTransparency = 1.000
+		Prev4.Position = UDim2.new(0.022364201, 0, 0.415789634, 0)
+		Prev4.Size = UDim2.new(0, 23, 0, 30)
+		Prev4.Font = Enum.Font.RobotoCondensed
+		Prev4.Text = "<"
+		Prev4.TextColor3 = Color3.fromRGB(56, 2, 100)
+		Prev4.TextScaled = true
+		Prev4.TextSize = 14.000
+		Prev4.TextWrapped = true
+
+		UICorner_59.Parent = Prev4
+
+		PrevLoad.Name = "PrevLoad"
+		PrevLoad.Parent = Page5Frame
+		PrevLoad.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+		PrevLoad.Position = UDim2.new(0.0973154455, 0, 0.0632181317, 0)
+		PrevLoad.Size = UDim2.new(0, 59, 0, 23)
+		PrevLoad.ZIndex = 2
+		PrevLoad.Font = Enum.Font.SourceSans
+		PrevLoad.Text = "Prev"
+		PrevLoad.TextColor3 = Color3.fromRGB(118, 118, 118)
+		PrevLoad.TextSize = 14.000
+
+		UICorner_60.Parent = PrevLoad
+
+		Loadout.Name = "Loadout"
+		Loadout.Parent = Page5Frame
+		Loadout.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+		Loadout.Position = UDim2.new(0.164429531, 0, 0.0632183552, 0)
+		Loadout.Size = UDim2.new(0, 200, 0, 23)
+		Loadout.Font = Enum.Font.SourceSans
+		Loadout.Text = "No Load Detected"
+		Loadout.TextColor3 = Color3.fromRGB(118, 118, 118)
+		Loadout.TextSize = 14.000
+
+		UICorner_61.CornerRadius = UDim.new(0, 10)
+		UICorner_61.Parent = Loadout
+
+		NextLoad.Name = "NextLoad"
+		NextLoad.Parent = Page5Frame
+		NextLoad.BackgroundColor3 = Color3.fromRGB(52, 61, 88)
+		NextLoad.Position = UDim2.new(0.704697967, 0, 0.0632181317, 0)
+		NextLoad.Size = UDim2.new(0, 59, 0, 23)
+		NextLoad.ZIndex = 2
+		NextLoad.Font = Enum.Font.SourceSans
+		NextLoad.Text = "Next"
+		NextLoad.TextColor3 = Color3.fromRGB(118, 118, 118)
+		NextLoad.TextSize = 14.000
+
+		UICorner_62.Parent = NextLoad
+
+		Load.Name = "Load"
+		Load.Parent = Page5Frame
+		Load.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Load.Position = UDim2.new(0.0973154381, 0, 0.218390718, 0)
+		Load.Size = UDim2.new(0, 115, 0, 23)
+		Load.Font = Enum.Font.SourceSans
+		Load.Text = "Load"
+		Load.TextColor3 = Color3.fromRGB(118, 118, 118)
+		Load.TextSize = 14.000
+
+		UICorner_63.Parent = Load
+
+		Save.Name = "Save"
+		Save.Parent = Page5Frame
+		Save.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Save.Position = UDim2.new(0.516778529, 0, 0.218390718, 0)
+		Save.Size = UDim2.new(0, 115, 0, 23)
+		Save.Font = Enum.Font.SourceSans
+		Save.Text = "Save"
+		Save.TextColor3 = Color3.fromRGB(118, 118, 118)
+		Save.TextSize = 14.000
+
+		UICorner_64.Parent = Save
+
+		Heal.Name = "Heal"
+		Heal.Parent = Page5Frame
+		Heal.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Heal.Position = UDim2.new(0.0973154381, 0, 0.392801136, 0)
+		Heal.Size = UDim2.new(0, 115, 0, 36)
+		Heal.Font = Enum.Font.SourceSans
+		Heal.Text = "Heal"
+		Heal.TextColor3 = Color3.fromRGB(118, 118, 118)
+		Heal.TextSize = 14.000
+
+		UICorner_65.Parent = Heal
+
+		UnHeal.Name = "UnHeal"
+		UnHeal.Parent = Page5Frame
+		UnHeal.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		UnHeal.Position = UDim2.new(0.0973154381, 0, 0.392801136, 0)
+		UnHeal.Size = UDim2.new(0, 118, 0, 36)
+		UnHeal.Visible = false
+		UnHeal.Font = Enum.Font.SourceSans
+		UnHeal.Text = "UnHeal"
+		UnHeal.TextColor3 = Color3.fromRGB(118, 118, 118)
+		UnHeal.TextSize = 14.000
+
+		UICorner_66.Parent = UnHeal
+
+		Martyrdom.Name = "Martyrdom"
+		Martyrdom.Parent = Page5Frame
+		Martyrdom.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Martyrdom.Position = UDim2.new(0.516778529, 0, 0.392801136, 0)
+		Martyrdom.Size = UDim2.new(0, 115, 0, 36)
+		Martyrdom.Font = Enum.Font.SourceSans
+		Martyrdom.Text = "Martyrdom"
+		Martyrdom.TextColor3 = Color3.fromRGB(118, 118, 118)
+		Martyrdom.TextSize = 14.000
+
+		UICorner_67.Parent = Martyrdom
+
+		UnMartyrdom.Name = "UnMartyrdom"
+		UnMartyrdom.Parent = Page5Frame
+		UnMartyrdom.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		UnMartyrdom.Position = UDim2.new(0.516778529, 0, 0.392801136, 0)
+		UnMartyrdom.Size = UDim2.new(0, 115, 0, 36)
+		UnMartyrdom.Visible = false
+		UnMartyrdom.Font = Enum.Font.SourceSans
+		UnMartyrdom.Text = "UnMartyrdom"
+		UnMartyrdom.TextColor3 = Color3.fromRGB(118, 118, 118)
+		UnMartyrdom.TextSize = 14.000
+
+		UICorner_68.Parent = UnMartyrdom
+
+		SafeSpot.Name = "SafeSpot"
+		SafeSpot.Parent = Page5Frame
+		SafeSpot.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		SafeSpot.Position = UDim2.new(0.0973154381, 0, 0.643678188, 0)
+		SafeSpot.Size = UDim2.new(0, 240, 0, 26)
+		SafeSpot.Font = Enum.Font.SourceSans
+		SafeSpot.Text = "SafeSpot"
+		SafeSpot.TextColor3 = Color3.fromRGB(118, 118, 118)
+		SafeSpot.TextSize = 14.000
+
+		UICorner_69.Parent = SafeSpot
+
+		AntiFF.Name = "AntiFF"
+		AntiFF.Parent = Page5Frame
+		AntiFF.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		AntiFF.Position = UDim2.new(0.0973154381, 0, 0.816092014, 0)
+		AntiFF.Size = UDim2.new(0, 240, 0, 26)
+		AntiFF.Font = Enum.Font.SourceSans
+		AntiFF.Text = "Anti-FF"
+		AntiFF.TextColor3 = Color3.fromRGB(118, 118, 118)
+		AntiFF.TextSize = 14.000
+
+		UICorner_70.Parent = AntiFF
+
+		UnAntiFF.Name = "UnAntiFF"
+		UnAntiFF.Parent = Page5Frame
+		UnAntiFF.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		UnAntiFF.Position = UDim2.new(0.0973154381, 0, 0.816092014, 0)
+		UnAntiFF.Size = UDim2.new(0, 240, 0, 26)
+		UnAntiFF.Visible = false
+		UnAntiFF.Font = Enum.Font.SourceSans
+		UnAntiFF.Text = "UnAnti-FF"
+		UnAntiFF.TextColor3 = Color3.fromRGB(118, 118, 118)
+		UnAntiFF.TextSize = 14.000
+
+		UICorner_71.Parent = UnAntiFF
+
+		local script = Instance.new('Script', CHGui)
+
+		--XButton
+		X.MouseButton1Down:connect(function()
+			CHGui:Remove()
+		end)
+		--Time 
+		Days = math.random(400,200000)
+		Minutes = math.random(0,59)
+		Seconds = math.random(0,59)
+
+		--Hitlisted = game.HttpService:JSONDecode(game:HttpGet('https://cielle.cat/Hitlist.json'))
+
+		--PreviousTable
+		local Previous = {}
+
+		--TargetsTable
+		local Targets = {}
+
+		--WhitelistTable
+		local Whitelisted = {"Butter_2453", "BubbaGumpWasTaken", "Zanonner", "MelangeKnavery", "cxdechxka", "Xerantheneum", "0Nach","SharpBladee","31ues","Cielle_Hellie","CentralWrld"}
+
+		--TargetName
+		TargetName:GetPropertyChangedSignal("Text"):Connect(function()
+			for i = 1, #game.Players:GetPlayers() do
+				if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(TargetName.Text))) == string.lower(TargetName.Text) then
+					Target = game.Players:GetPlayers()[i].Name
+					break
 				end
-			end)
+			end
+		end)
 
-			--WhitelistName
-			WhitelistUser:GetPropertyChangedSignal("Text"):Connect(function()
-				for i = 1, #game.Players:GetPlayers() do
-					if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(WhitelistUser.Text))) == string.lower(WhitelistUser.Text) then
-						User = game.Players:GetPlayers()[i].Name
-						break
-					end
+		--WhitelistName
+		WhitelistUser:GetPropertyChangedSignal("Text"):Connect(function()
+			for i = 1, #game.Players:GetPlayers() do
+				if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(WhitelistUser.Text))) == string.lower(WhitelistUser.Text) then
+					User = game.Players:GetPlayers()[i].Name
+					break
 				end
-			end)
+			end
+		end)
 
-			--RemoveWhitelist
-			RemoveWhitelist.MouseButton1Down:connect(function()
-				local WhitelistRemove = table.find(Whitelisted, User)
-				table.remove(Whitelisted, WhitelistRemove)
-				for i,v in pairs(Whitelisted) do
-					print(v)
+		--RemoveWhitelist
+		RemoveWhitelist.MouseButton1Down:connect(function()
+			local WhitelistRemove = table.find(Whitelisted, User)
+			table.remove(Whitelisted, WhitelistRemove)
+			for i,v in pairs(Whitelisted) do
+				print(v)
+			end
+			WhitelistUser.Text = ""
+		end)
+
+		--InsertWhitelist
+		InsertWhitelist.MouseButton1Down:connect(function()
+			if table.find(Whitelisted, User) or User == game.Players.LocalPlayer then
+				print "Already In Table"
+			else
+				table.insert(Whitelisted, User)
+			end
+			for i,v in pairs(Whitelisted) do
+				print(v)
+			end
+			WhitelistUser.Text = ""
+		end)
+
+		--ToPlrName
+		PlayerName:GetPropertyChangedSignal("Text"):Connect(function()
+			for i = 1, #game.Players:GetPlayers() do
+				if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(PlayerName.Text))) == string.lower(PlayerName.Text) then
+					Player = game.Players:GetPlayers()[i].Name
+					break
 				end
-				WhitelistUser.Text = ""
-			end)
+			end
+		end)
 
-			--InsertWhitelist
-			InsertWhitelist.MouseButton1Down:connect(function()
-				if table.find(Whitelisted, User) or User == game.Players.LocalPlayer then
-					print "Already In Table"
-				else
-					table.insert(Whitelisted, User)
-				end
-				for i,v in pairs(Whitelisted) do
-					print(v)
-				end
-				WhitelistUser.Text = ""
-			end)
+		--ToPlr
+		ToPlayer.MouseButton1Down:connect(function()
+			local PlayerName = Player
+			local plr = game.Workspace:FindFirstChild(PlayerName)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.HumanoidRootPart.CFrame * CFrame.new(-1,0,1)
+		end)
 
-			--ToPlrName
-			PlayerName:GetPropertyChangedSignal("Text"):Connect(function()
-				for i = 1, #game.Players:GetPlayers() do
-					if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(PlayerName.Text))) == string.lower(PlayerName.Text) then
-						Player = game.Players:GetPlayers()[i].Name
-						break
-					end
-				end
-			end)
-
-			--ToPlr
-			ToPlayer.MouseButton1Down:connect(function()
-				local PlayerName = Player
-				local plr = game.Workspace:FindFirstChild(PlayerName)
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.HumanoidRootPart.CFrame * CFrame.new(-1,0,1)
-			end)
-
-			--speed
-			Speed.MouseButton1Down:connect(function()
-				pcall(function()
-					while true do
-						game.RunService.RenderStepped:wait()
-						for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-							if v.Name == "Humanoid" then
-								v.WalkSpeed = WalkSpeed.Text
-							end
-						end
-					end
-				end)
-			end)
-
-			--jump
-			Jump.MouseButton1Down:connect(function()
-				pcall(function()
-					while true do
-						game.RunService.RenderStepped:wait()
-						for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-							if v.Name == "Humanoid" then
-								v.JumpPower = JumpHeight.Text
-							end
-						end
-					end
-				end)
-			end)
-
-			--TimeChange
-			TimeChange.MouseButton1Down:connect(function()
-				Time = TimeSet.Text
-				game.Lighting.TimeOfDay = Time
-			end)
-
-			--RemoveTarget
-			RemoveTarget.MouseButton1Down:connect(function()
-				local TargetRemove = table.find(Targets, Target)
-				table.remove(Targets, TargetRemove)
-				for i,v in pairs(Targets) do
-					print(v)
-				end
-				TargetName.Text = ""
-			end)
-
-			--InsertTarget
-			InsertTarget.MouseButton1Down:connect(function()
-				if table.find(Targets, Target) or Target == game.Players.LocalPlayer or table.find(SafePlayers,Target.Name)then
-					print "Already In Table"
-				else
-					table.insert(Targets, Target)
-				end
-				for i,v in pairs(Targets) do 
-					print(v)
-				end
-				TargetName.Text = ""
-			end)
-
-			--GrimSpam
-			GrimSpam.MouseButton1Down:connect(function()
-				_G.GrimSpam = true
-				while _G.GrimSpam do
+		--speed
+		Speed.MouseButton1Down:connect(function()
+			pcall(function()
+				while true do
 					game.RunService.RenderStepped:wait()
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
-					game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
-					game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
-				end
-			end)
-			GrimSpam.MouseButton1Down:connect(function()
-				UnGrimSpam.Visible = true
-				GrimSpam.Visible = false
-			end)
-
-			--UnGrimSpam
-			UnGrimSpam.MouseButton1Down:connect(function()
-				_G.GrimSpam = false
-			end)
-			UnGrimSpam.MouseButton1Down:connect(function()
-				UnGrimSpam.Visible = false
-				GrimSpam.Visible = true
-			end)
-
-			--airwalk
-			AirWalk.MouseButton1Down:connect(function()
-				mouse = game.Players.LocalPlayer:GetMouse()
-				_G.AirWalk = true
-
-
-				local WalkPart = Instance.new("Part", workspace)
-				WalkPart.Size = Vector3.new(7, 2, 3)
-				WalkPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
-				WalkPart.Transparency = 1
-				WalkPart.Anchored = true
-				WalkPart.Name = "Airwalk"
-
-
-				mouse.KeyDown:Connect(function(key)
-					if key == "2" then
-						WalkPart.Size = Vector3.new(4, -0.5, 3)
-					end
-				end)
-
-				mouse.KeyUp:Connect(function(key)
-					if key == "2" then
-						WalkPart.Size = Vector3.new(7, 2, 3)
-					end
-				end)
-
-				repeat
-					WalkPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
-					wait()
-				until _G.AirWalk == false
-				WalkPart:Destroy()
-			end)
-			AirWalk.MouseButton1Down:connect(function()
-				AirWalk.Visible = false
-				UnAirWalk.Visible = true
-			end)
-
-			--KickMessages2
-			local KickMessages2 = {
-				"DO U FART",
-
-			}
-
-			--KickMessages1
-			local KickMessages = {
-				"wow man that's mad funny!11!!1!",
-				"to think that you're such a sad excuse of a human being to even try to crash me with my own gui, yikes.",
-				"you fool, you idiot, you moron, you've been bamboozled.",
-				"oops, looks like you accidentally ate shit. too bad.",
-				("and eventually, " .. game.Players.LocalPlayer.Name .. " stopped thinking."),
-				"guys i think i found a clown, he's the one staring at this message",
-				"no",
-				"please go outside and touch grass.",
-				"function crash(CHECKPLAYERS) failed; argument CHECKPLAYERS involved a player with supreme sigma energy.",
-				"did you know that the spongebob animators use 34 frames per second on their animations instead of the regular 24-30 frames per second? to find out why, search up spongebob rule 34!",
-				"i'll forgive you if you'll inhale cyanide for me.",
-				"Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制动态网自由门 天安門 天安门 法輪功 李洪志 Free Tibet 六四天安門事件 The Tiananmen Square protests of 1989 天安門大屠殺 The Tiananmen Square Massacre 反右派鬥爭 The Anti-Rightist Struggle 大躍進政策 The Great Leap Forward 文化大革命 The Great Proletarian Cultural Revolution 人權 Human Rights 民運 Democratization 自由 Freedom 獨立 Independence 多黨制 Multi-party system 台灣 臺灣 Taiwan Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制",
-				"DO U FART",
-				"we do a little bit of trolling",
-				"You have been banned from this experience for: " .. Days .. " days, " .. Minutes .. " minutes, " .. Seconds .. " seconds",
-				"https://nhentai.net/g/220787",
-            [[here, have a really long space as a kick message.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            ]],
-				"i forgor 💀 that i used this gui's crash function to someone who has immunity",
-				"don't forget your classes!",
-				"take a breather, then take a shower, you don't have to stink, ya know.",
-				"STOP POSTING ABOUT AMONG US! I'M TIRED OF SEEING IT! MY FRIENDS ON TIKTOK SEND ME MEMES, ON DISCORD IT'S FUCKING MEMES! I was in a server, right? and ALL OF THE CHANNELS were just among us stuff. I-I showed my champion underwear to my girlfriend and t-the logo I flipped it and I said hey babe, when the underwear is sus HAHA DING DING DING DING DING DING DING DI DI DING I fucking looked at a trashcan and said THAT'S A BIT SUSSY I looked at my penis I think of an astronauts helmet and I go PENIS? MORE LIKE PENSUS AAAAAAAAAAAAAAAA",
-            [[Got ketchup mixed with lettuce cheese cuz every time
-            I wake up in the morning I got burgers on my mind
-            Ketchup, mustard, mayo, fries, lettuce it's Number Nine
-            And all these yummy burgers tasty tryna'
-            Get me off my grind, but I can't let 'em do it
-            I got burgers on my mind
-            Bitch I got burgers on my mind
-            I got burgers on my mind
-            I got burgers on my mind
-            Burgers on my mind
-            Burgers on my mind
-            I got burgers on my mind]]
-			}
-
-			--Insult
-			local Insult = KickMessages[math.random(1,#KickMessages)]
-
-			--Kicks 
-			local Kicks = KickMessages2[math.random(1,#KickMessages2)]
-
-			--unairwalk
-			UnAirWalk.MouseButton1Down:connect(function()
-				_G.AirWalk = false
-			end)
-			UnAirWalk.MouseButton1Down:connect(function()
-				UnAirWalk.Visible = false
-				AirWalk.Visible = true
-			end)
-
-			--Clicktp
-			ClickTP.MouseButton1Down:connect(function()
-				_G.ClickTp = true
-				game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-					if (input.KeyCode == Enum.KeyCode.L and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.L)) then
-						if game.Players.LocalPlayer:GetMouse().Target then 
-							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer:GetMouse().Hit.x, game.Players.LocalPlayer:GetMouse().Hit.y + 5, game.Players.LocalPlayer:GetMouse().Hit.z)
+					for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v.Name == "Humanoid" then
+							v.WalkSpeed = WalkSpeed.Text
 						end
 					end
-				end)
-			end)
-
-			--Crash
-			Crash.MouseButton1Down:connect(function()
-				Sure()
-			end)
-			
-			--IdToggle
-			game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-				if (input.KeyCode == Enum.KeyCode.Z and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Z)) then
-                    if _G.GetId == true then
-                        _G.GetId = false
-                    else
-                        _G.GetId = true
-                    end
-                    print(_G.GetId)
 				end
 			end)
-			
-            --GetID
-            game.Players.LocalPlayer.Chatted:Connect(function(Chat)
-                if _G.GetId then
-                    for i = 1 , #game.Players:GetPlayers() do
-                        if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(Chat))) == string.lower(Chat) then
-                            Id = game.Players:GetPlayers()[i].UserId
-                            Name = game.Players:GetPlayers()[i].Name
-                            Plr = game.Players:GetPlayers()[i]
-                            print(Id)
-                            game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                            Text = "Copied User Id";
-                            Color = Color3.fromRGB(235,167,70);
-                            Font = Enum.Font.SourceSansBold;
-                            FontSize = Enum.FontSize.Size96;
-                            })
-                            setclipboard(Id .. " --" .. Name)
-                            break
-                        end
-                    end
-                end
-            end)
-            
-			--Commands
-			if not table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
-				for i,v in pairs(game.Players:GetChildren()) do
-					if table.find(SafePlayers,v.UserId) then
-						v.Chatted:Connect(function(Chat)
-							if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
-								_G.GrimSpam = false
-								_G.AirWalk = false
-								_G.AntiJoin = false
-								_G.TorsoCbring = false
-								_G.KillHits = false
-								_G.BaseProtect = false
-								_G.TargetOthers = false
-								_G.KillTarget = false
-								_G.Diamond = false
-								_G.RemoveMe = false
-								game.Lighting.ClockTime = "12"
-								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-							end
-							if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
-								game.Players["LocalPlayer"]:Kick("Get Kicked")
-							end
-						end)
+		end)
+
+		--jump
+		Jump.MouseButton1Down:connect(function()
+			pcall(function()
+				while true do
+					game.RunService.RenderStepped:wait()
+					for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+						if v.Name == "Humanoid" then
+							v.JumpPower = JumpHeight.Text
+						end
+					end
+				end
+			end)
+		end)
+
+		--TimeChange
+		TimeChange.MouseButton1Down:connect(function()
+			Time = TimeSet.Text
+			game.Lighting.TimeOfDay = Time
+		end)
+
+		--RemoveTarget
+		RemoveTarget.MouseButton1Down:connect(function()
+			local TargetRemove = table.find(Targets, Target)
+			table.remove(Targets, TargetRemove)
+			for i,v in pairs(Targets) do
+				print(v)
+			end
+			TargetName.Text = ""
+		end)
+
+		--InsertTarget
+		InsertTarget.MouseButton1Down:connect(function()
+			if table.find(Targets, Target) or Target == game.Players.LocalPlayer or table.find(SafePlayers,Target.Name)then
+				print "Already In Table"
+			else
+				table.insert(Targets, Target)
+			end
+			for i,v in pairs(Targets) do 
+				print(v)
+			end
+			TargetName.Text = ""
+		end)
+
+		--GrimSpam
+		GrimSpam.MouseButton1Down:connect(function()
+			_G.GrimSpam = true
+			while _G.GrimSpam do
+				game.RunService.RenderStepped:wait()
+				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+				game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
+				game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
+				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+			end
+		end)
+		GrimSpam.MouseButton1Down:connect(function()
+			UnGrimSpam.Visible = true
+			GrimSpam.Visible = false
+		end)
+
+		--UnGrimSpam
+		UnGrimSpam.MouseButton1Down:connect(function()
+			_G.GrimSpam = false
+		end)
+		UnGrimSpam.MouseButton1Down:connect(function()
+			UnGrimSpam.Visible = false
+			GrimSpam.Visible = true
+		end)
+
+		--airwalk
+		AirWalk.MouseButton1Down:connect(function()
+			mouse = game.Players.LocalPlayer:GetMouse()
+			_G.AirWalk = true
+
+
+			local WalkPart = Instance.new("Part", workspace)
+			WalkPart.Size = Vector3.new(7, 2, 3)
+			WalkPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+			WalkPart.Transparency = 1
+			WalkPart.Anchored = true
+			WalkPart.Name = "Airwalk"
+
+
+			mouse.KeyDown:Connect(function(key)
+				if key == "2" then
+					WalkPart.Size = Vector3.new(4, -0.5, 3)
+				end
+			end)
+
+			mouse.KeyUp:Connect(function(key)
+				if key == "2" then
+					WalkPart.Size = Vector3.new(7, 2, 3)
+				end
+			end)
+
+			repeat
+				WalkPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
+				wait()
+			until _G.AirWalk == false
+			WalkPart:Destroy()
+		end)
+		AirWalk.MouseButton1Down:connect(function()
+			AirWalk.Visible = false
+			UnAirWalk.Visible = true
+		end)
+
+		--KickMessages2
+		local KickMessages2 = {
+			"DO U FART",
+
+		}
+
+		--KickMessages1
+		local KickMessages = {
+			"wow man that's mad funny!11!!1!",
+			"to think that you're such a sad excuse of a human being to even try to crash me with my own gui, yikes.",
+			"you fool, you idiot, you moron, you've been bamboozled.",
+			"oops, looks like you accidentally ate shit. too bad.",
+			("and eventually, " .. game.Players.LocalPlayer.Name .. " stopped thinking."),
+			"guys i think i found a clown, he's the one staring at this message",
+			"no",
+			"please go outside and touch grass.",
+			"function crash(CHECKPLAYERS) failed; argument CHECKPLAYERS involved a player with supreme sigma energy.",
+			"did you know that the spongebob animators use 34 frames per second on their animations instead of the regular 24-30 frames per second? to find out why, search up spongebob rule 34!",
+			"i'll forgive you if you'll inhale cyanide for me.",
+			"Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制动态网自由门 天安門 天安门 法輪功 李洪志 Free Tibet 六四天安門事件 The Tiananmen Square protests of 1989 天安門大屠殺 The Tiananmen Square Massacre 反右派鬥爭 The Anti-Rightist Struggle 大躍進政策 The Great Leap Forward 文化大革命 The Great Proletarian Cultural Revolution 人權 Human Rights 民運 Democratization 自由 Freedom 獨立 Independence 多黨制 Multi-party system 台灣 臺灣 Taiwan Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制",
+			"DO U FART",
+			"we do a little bit of trolling",
+			"You have been banned from this experience for: " .. Days .. " days, " .. Minutes .. " minutes, " .. Seconds .. " seconds",
+			"https://nhentai.net/g/220787",
+	            [[here, have a really long space as a kick message.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	            ]],
+			"i forgor 💀 that i used this gui's crash function to someone who has immunity",
+			"don't forget your classes!",
+			"take a breather, then take a shower, you don't have to stink, ya know.",
+			"STOP POSTING ABOUT AMONG US! I'M TIRED OF SEEING IT! MY FRIENDS ON TIKTOK SEND ME MEMES, ON DISCORD IT'S FUCKING MEMES! I was in a server, right? and ALL OF THE CHANNELS were just among us stuff. I-I showed my champion underwear to my girlfriend and t-the logo I flipped it and I said hey babe, when the underwear is sus HAHA DING DING DING DING DING DING DING DI DI DING I fucking looked at a trashcan and said THAT'S A BIT SUSSY I looked at my penis I think of an astronauts helmet and I go PENIS? MORE LIKE PENSUS AAAAAAAAAAAAAAAA",
+	            [[Got ketchup mixed with lettuce cheese cuz every time
+	            I wake up in the morning I got burgers on my mind
+	            Ketchup, mustard, mayo, fries, lettuce it's Number Nine
+	            And all these yummy burgers tasty tryna'
+	            Get me off my grind, but I can't let 'em do it
+	            I got burgers on my mind
+	            Bitch I got burgers on my mind
+	            I got burgers on my mind
+	            I got burgers on my mind
+	            Burgers on my mind
+	            Burgers on my mind
+	            I got burgers on my mind]]
+		}
+
+		--Insult
+		local Insult = KickMessages[math.random(1,#KickMessages)]
+
+		--Kicks 
+		local Kicks = KickMessages2[math.random(1,#KickMessages2)]
+
+		--unairwalk
+		UnAirWalk.MouseButton1Down:connect(function()
+			_G.AirWalk = false
+		end)
+		UnAirWalk.MouseButton1Down:connect(function()
+			UnAirWalk.Visible = false
+			AirWalk.Visible = true
+		end)
+
+		--Clicktp
+		ClickTP.MouseButton1Down:connect(function()
+			_G.ClickTp = true
+			game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+				if (input.KeyCode == Enum.KeyCode.L and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.L)) then
+					if game.Players.LocalPlayer:GetMouse().Target then 
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer:GetMouse().Hit.x, game.Players.LocalPlayer:GetMouse().Hit.y + 5, game.Players.LocalPlayer:GetMouse().Hit.z)
+					end
+				end
+			end)
+		end)
+
+		--Crash
+		Crash.MouseButton1Down:connect(function()
+			Sure()
+		end)
+
+		--IdToggle
+		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+			if (input.KeyCode == Enum.KeyCode.Z and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Z)) then
+				if _G.GetId == true then
+					_G.GetId = false
+				else
+					_G.GetId = true
+				end
+				print(_G.GetId)
+			end
+		end)
+
+		--GetID
+		game.Players.LocalPlayer.Chatted:Connect(function(Chat)
+			if _G.GetId then
+				for i = 1 , #game.Players:GetPlayers() do
+					if string.lower(string.sub(game.Players:GetPlayers()[i].Name, 1, string.len(Chat))) == string.lower(Chat) then
+						Id = game.Players:GetPlayers()[i].UserId
+						Name = game.Players:GetPlayers()[i].Name
+						Plr = game.Players:GetPlayers()[i]
+						print(Id)
+						game.StarterGui:SetCore("ChatMakeSystemMessage", {
+							Text = "Copied User Id";
+							Color = Color3.fromRGB(235,167,70);
+							Font = Enum.Font.SourceSansBold;
+							FontSize = Enum.FontSize.Size96;
+						})
+						setclipboard(Id .. " --" .. Name)
+						break
 					end
 				end
 			end
-			if syn then
+		end)
+
+		--Commands
+		if not table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
+			for i,v in pairs(game.Players:GetChildren()) do
+				if table.find(SafePlayers,v.UserId) then
+					v.Chatted:Connect(function(Chat)
+						if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
+							_G.GrimSpam = false
+							_G.AirWalk = false
+							_G.AntiJoin = false
+							_G.TorsoCbring = false
+							_G.KillHits = false
+							_G.BaseProtect = false
+							_G.TargetOthers = false
+							_G.KillTarget = false
+							_G.Diamond = false
+							_G.RemoveMe = false
+							game.Lighting.ClockTime = "12"
+							game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+							game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+						end
+						if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
+							game.Players["LocalPlayer"]:Kick("Get Kicked")
+						end
+					end)
+				end
+			end
+		end
+		if syn then
 			if game.Players.LocalPlayer.UserId ~= 415744081 then
 				for i,v in pairs(game.Players:GetChildren()) do
 					if v.UserId == 415744081 then
@@ -1758,37 +2003,37 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
 							end
 							if Chat == (":UnBreak " .. game.Players.LocalPlayer.Name) then
-							    writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
+								writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
 							end
 						end)
 					end
 				end
 			end
-            end
-			game.Players.PlayerAdded:Connect(function(v)
-				if table.find(SafePlayers,v.UserId) then
-					Player.Chatted:Connect(function(Chat)
-						if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
-							_G.GrimSpam = false
-							_G.AirWalk = false
-							_G.AntiJoin = false
-							_G.TorsoCbring = false
-							_G.KillHits = false
-							_G.BaseProtect = false
-							_G.TargetOthers = false
-							_G.KillTarget = false
-							_G.Diamond = false
-							_G.RemoveMe = false
-							game.Lighting.ClockTime = "12"
-							game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-							game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-						end
-						if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
-							game.Players["LocalPlayer"]:Kick("Get Kicked")
-						end
-					end)
-				end
-				if syn then
+		end
+		game.Players.PlayerAdded:Connect(function(v)
+			if table.find(SafePlayers,v.UserId) then
+				Player.Chatted:Connect(function(Chat)
+					if Chat == (":StopScripts " .. game.Players.LocalPlayer.Name) then
+						_G.GrimSpam = false
+						_G.AirWalk = false
+						_G.AntiJoin = false
+						_G.TorsoCbring = false
+						_G.KillHits = false
+						_G.BaseProtect = false
+						_G.TargetOthers = false
+						_G.KillTarget = false
+						_G.Diamond = false
+						_G.RemoveMe = false
+						game.Lighting.ClockTime = "12"
+						game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+						game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+					end
+					if Chat == (":Kick " .. game.Players.LocalPlayer.Name) then
+						game.Players["LocalPlayer"]:Kick("Get Kicked")
+					end
+				end)
+			end
+			if syn then
 				if game.Players.LocalPlayer.UserId ~= 415744081 then
 					if v.UserId == 415744081 then
 						v.Chatted:Connect(function(Chat)
@@ -1809,461 +2054,649 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
 							end
 							if Chat == (":UnBreak " .. game.Players.LocalPlayer.Name) then
-							    writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
+								writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
 							end
 						end)
 					end
 				end
-				end
-			end)
+			end
+		end)
 
-			--frame
-			frame = script.Parent.DragFrame
-			frame.Draggable = true
-			frame.Active = true
-			frame.Selectable = true
+		--frame
+		frame = script.Parent.DragFrame
+		frame.Draggable = true
+		frame.Active = true
+		frame.Selectable = true
 
-			--startmessage
-			game.StarterGui:SetCore("ChatMakeSystemMessage", {
-				Text = "Thank you for using my Gui\n Press Ctrl + B to hide Gui :)";
-				Color = Color3.fromRGB(98,71,161);
-				Font = Enum.Font.SourceSansBold;
-				FontSize = Enum.FontSize.Size96;
-			})
+		--block
+		local Block = Instance.new("Part", workspace)
+		Block.Name = "PlatformBlock"
+		Block.Position = Vector3.new(300000, 300000, 300000)
+		Block.Size = Vector3.new(10000, 3, 10000)
+		Block.Color = BrickColor.new("Maroon").Color
+		Block.CanCollide = true
+		Block.Anchored = true
 
-			--Hide
-			game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-				if (input.KeyCode == Enum.KeyCode.B and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.B)) then
-					DragFrame.Visible = not DragFrame.Visible
-				end
-			end)
+		--startmessage
+		game.StarterGui:SetCore("ChatMakeSystemMessage", {
+			Text = "Thank you for using my Gui\n Press Ctrl + B to hide Gui :)";
+			Color = Color3.fromRGB(98,71,161);
+			Font = Enum.Font.SourceSansBold;
+			FontSize = Enum.FontSize.Size96;
+		})
 
-			--Unblind
-			spawn(function()
-				while true do
-					wait()
-					for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-						if v.Name == "DarknessGui" or v.Name == "GuiMain" then
-							v:Remove()
-						end
-					end
-				end
-			end)
+		--Hide
+		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+			if (input.KeyCode == Enum.KeyCode.B and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl)) or (input.KeyCode == Enum.KeyCode.LeftControl and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.B)) then
+				DragFrame.Visible = not DragFrame.Visible
+			end
+		end)
 
-			--Next1
-			Next1.MouseButton1Down:connect(function()
-				Page1Frame.Visible = false
-				Page2Frame.Visible = true
-			end)
-
-			--Next2
-			Next2.MouseButton1Down:connect(function()
-				Page2Frame.Visible = false
-				Page3Frame.Visible = true
-			end)
-
-			--Next3
-			Next3.MouseButton1Down:connect(function()
-				Page3Frame.Visible = false
-				Page4Frame.Visible = true
-			end)
-
-			--Prev1
-			Prev1.MouseButton1Down:connect(function()
-				Page2Frame.Visible = false
-				Page1Frame.Visible = true
-			end)
-
-			--Prev2
-			Prev2.MouseButton1Down:connect(function()
-				Page3Frame.Visible = false
-				Page2Frame.Visible = true
-			end)
-
-			--Prev3
-			Prev3.MouseButton1Down:connect(function()
-				Page4Frame.Visible = false
-				Page3Frame.Visible = true
-			end)
-
-			--Whitelist
-			Whitelist.MouseButton1Down:connect(function()
-				_G.AntiJoin = true
-				if game.PlaceId == 26838733 then
-					if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
-						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
-					end
-				end
-				while _G.AntiJoin do
-					game:GetService("RunService").RenderStepped:wait()
-					pcall(function()
-						for i,v in pairs(game.Players:GetChildren()) do
-							if not table.find(Whitelisted, v.Name) then
-								if v.Character.Humanoid.Health >= 1 and v ~= game.Players.LocalPlayer then
-									game.Players.LocalPlayer.Backpack:WaitForChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
-								end
-							end
-						end
-					end)
-				end
-			end)
-			Whitelist.MouseButton1Down:connect(function()
-				Whitelist.Visible = false
-				UnWhitelist.Visible = true
-			end)
-
-			--UnWhitelist
-			UnWhitelist.MouseButton1Down:connect(function()
-				_G.AntiJoin = false
-			end)
-			UnWhitelist.MouseButton1Down:connect(function()
-				Whitelist.Visible = true
-				UnWhitelist.Visible = false
-			end)
-
-			--KrnlCbring
-			CBring.MouseButton1Down:connect(function()
-				_G.TorsoCbring = true
-				while _G.TorsoCbring do
-					game.RunService.RenderStepped:wait()
-					for i,v in pairs(game.Players:GetChildren()) do
-						for i,value in pairs(Targets) do
-							if v.Name == value and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
-								for i,val in pairs(v.Character:GetChildren()) do
-									if val:IsA("BasePart") then
-										val.Anchored = true
-										val.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame * CFrame.new(Vector3.new(1.5, 1, -1.8))
-									elseif val:IsA("Tool") then
-										val:Remove()
-									end
-								end
-							end
-						end
-					end
-				end
-			end)
-			CBring.MouseButton1Down:connect(function()
-				CBring.Visible = false
-				UnCBring.Visible = true
-			end)
-
-			--AntiVoid
-			AntiVoid.MouseButton1Down:connect(function()
-				for i,v in pairs(game.Workspace:GetDescendants()) do
-					if v:IsA("UnionOperation") then
-						v.Velocity = Vector3.new(0,0,0)
-					end
-				end
-			end)
-
-			--Hitlist
-			Hitlist.MouseButton1Down:connect(function()
-				_G.KillHits = true
-				if game.PlaceId == 26838733 then
-					if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
-						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
-					end
-				end
-				while _G.KillHits do
-					game.RunService.RenderStepped:wait()
-					pcall(function()
-						for i,v in pairs(game.Players:GetChildren()) do
-							if table.find(Hitlisted, v.UserId) and v ~= game.Players.LocalPlayer then
-								if v.Character.Humanoid.Health > 0 then
-									game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
-								end
-							end
-						end
-					end)
-				end
-			end)
-			Hitlist.MouseButton1Down:connect(function()
-				UnHitlist.Visible = true
-				Hitlist.Visible = false
-			end)
-
-			--UnHitlist
-			UnHitlist.MouseButton1Down:connect(function()
-				_G.KillHits = false
-			end)
-			UnHitlist.MouseButton1Down:connect(function()
-				UnHitlist.Visible = false
-				Hitlist.Visible = true
-			end)
-
-			--AntiWater
-			AntiWater.MouseButton1Down:connect(function()
-				for i,v in pairs(game.Workspace:GetDescendants()) do
-					if v.Name == "WaterKill" then
+		--Unblind
+		spawn(function()
+			while true do
+				wait()
+				for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+					if v.Name == "DarknessGui" or v.Name == "GuiMain" then
 						v:Remove()
 					end
 				end
-			end)
+			end
+		end)
 
-			--RemoveWalls
-			RemoveWalls.MouseButton1Down:connect(function()
-				for i,v in pairs(game.Workspace:GetDescendants()) do
-					if v.Name == "FF" or v.Name == "Fence" then
-						v:Remove()
-					end
+		--Next1
+		Next1.MouseButton1Down:connect(function()
+			Page1Frame.Visible = false
+			Page2Frame.Visible = true
+		end)
+
+		--Next2
+		Next2.MouseButton1Down:connect(function()
+			Page2Frame.Visible = false
+			Page3Frame.Visible = true
+		end)
+
+		--Next3
+		Next3.MouseButton1Down:connect(function()
+			Page3Frame.Visible = false
+			Page4Frame.Visible = true
+		end)
+
+		--Next4
+		Next4.MouseButton1Down:connect(function()
+			Page4Frame.Visible = false
+			Page5Frame.Visible = true
+		end)
+
+		--Prev1
+		Prev1.MouseButton1Down:connect(function()
+			Page2Frame.Visible = false
+			Page1Frame.Visible = true
+		end)
+
+		--Prev2
+		Prev2.MouseButton1Down:connect(function()
+			Page3Frame.Visible = false
+			Page2Frame.Visible = true
+		end)
+
+		--Prev3
+		Prev3.MouseButton1Down:connect(function()
+			Page4Frame.Visible = false
+			Page3Frame.Visible = true
+		end)
+
+		--Prev4
+		Prev4.MouseButton1Down:connect(function()
+			Page5Frame.Visible = false
+			Page4Frame.Visible = true
+		end)
+
+		--Previous2Table
+		Previous2 = {}
+
+		--Load
+		Load.MouseButton1Down:connect(function()
+			local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+			table.insert(Previous2, Position)
+			wait()
+			fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Load.Head.ClickDetector)
+			wait(0.5)
+			game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(Previous2[1])
+			table.remove(Previous2, 1)
+		end)
+
+		--Save
+		Save.MouseButton1Down:connect(function()
+			fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Save.Head.ClickDetector)
+		end)
+
+		--PrevLoad
+		PrevLoad.MouseButton1Down:connect(function()
+			fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+		end)
+
+		--NextLoad
+		NextLoad.MouseButton1Down:connect(function()
+			fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Next.ClickDetector)
+		end)
+
+		--ChangeLoadoutText
+		if not game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver:FindFirstChild("Click here to unlock this feature") then
+			Loadout.Text = ("The Current Load Is: 1")
+			for i,v in pairs(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver:GetDescendants()) do
+				if v.Name == "Torso" then
+					v.Parent.Changed:connect(function()
+						LoadNumber = string.sub(v.Parent.Name,0,2)
+						Loadout.Text = ("The Current Load Is: " .. LoadNumber)
+					end)
 				end
-			end)
+			end
+		end
 
-			--Anchor
-			Anchor.MouseButton1Down:connect(function()
-				game.Players.LocalPlayer.Character.Torso.Anchored = true
-			end)
-			Anchor.MouseButton1Down:connect(function()
-				Anchor.Visible = false
-				UnAnchor.Visible = true
-			end)
+		--safespot
+		SafeSpot.MouseButton1Down:connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(300000, 300001, 300000)
+		end)
 
-			--UnAnchor
-			UnAnchor.MouseButton1Down:connect(function()
-				game.Players.LocalPlayer.Character.Torso.Anchored = false
-			end)
-			UnAnchor.MouseButton1Down:connect(function()
-				Anchor.Visible = true
-				UnAnchor.Visible = false
-			end)
-
-			--GodMode
-			GodMode.MouseButton1Down:connect(function()
-				if game.PlaceId == 26838733 then
-					if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
-						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
-					end
+		--Whitelist
+		Whitelist.MouseButton1Down:connect(function()
+			_G.AntiJoin = true
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
 				end
-				game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, game.Players.LocalPlayer.Character.Humanoid, -math.huge)
-				wait()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
-			end)
-
-			--BaseProtect
-			BaseProtect.MouseButton1Down:connect(function()
-				_G.BaseProtect = true
-				if game.PlaceId == 26838733 then
-					if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
-						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
-					end
-				end
-				while _G.BaseProtect do
-					game.RunService.RenderStepped:wait()
+			end
+			while _G.AntiJoin do
+				game:GetService("RunService").RenderStepped:wait()
+				pcall(function()
 					for i,v in pairs(game.Players:GetChildren()) do
-						pcall(function()
-							if v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].SpawnLocation.Position).magnitude <= 40 then
-								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+						if not table.find(Whitelisted, v.Name) then
+							if v.Character.Humanoid.Health >= 1 and v ~= game.Players.LocalPlayer then
+								game.Players.LocalPlayer.Backpack:WaitForChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
 							end
-						end)
-					end
-				end
-			end)
-			BaseProtect.MouseButton1Down:connect(function()
-				BaseProtect.Visible = false
-				UnBaseProtect.Visible = true
-			end)
-
-			--UnBaseProtect
-			UnBaseProtect.MouseButton1Down:connect(function()
-				_G.BaseProtect = false
-			end)
-			UnBaseProtect.MouseButton1Down:connect(function()
-				BaseProtect.Visible = true
-				UnBaseProtect.Visible = false
-			end)
-
-			--UnKrnlCbring
-			UnCBring.MouseButton1Down:connect(function()
-				_G.TorsoCbring = false
-			end)
-			UnCBring.MouseButton1Down:connect(function()
-				UnCBring.Visible = false
-				CBring.Visible = true
-			end) 
-
-			--TargetOthers
-			Others.MouseButton1Down:connect(function()
-				_G.TargetOthers = true
-				while _G.TargetOthers do
-					wait()
-					for i, v in pairs(game.Players:GetChildren()) do
-						if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and not table.find(SafePlayers,v.UserId) then
-							table.insert(Targets, v.Name)
 						end
 					end
-				end
-			end)
-			Others.MouseButton1Down:connect(function()
-				Others.Visible = false
-				UnOthers.Visible = true
-			end)
+				end)
+			end
+		end)
+		Whitelist.MouseButton1Down:connect(function()
+			Whitelist.Visible = false
+			UnWhitelist.Visible = true
+		end)
 
-			UnOthers.MouseButton1Down:connect(function()
-				_G.TargetOthers = false
-				wait()
-				for i,v in pairs(Targets) do
-					Targets[i] = nil
-				end
-			end)
-			UnOthers.MouseButton1Down:connect(function()
-				Others.Visible = true
-				UnOthers.Visible = false
-			end)
+		--UnWhitelist
+		UnWhitelist.MouseButton1Down:connect(function()
+			_G.AntiJoin = false
+		end)
+		UnWhitelist.MouseButton1Down:connect(function()
+			Whitelist.Visible = true
+			UnWhitelist.Visible = false
+		end)
 
-			--FTI
-			FTI.MouseButton1Down:connect(function()
-				_G.KillTarget = true
-				while _G.KillTarget == true do
-					game:GetService("RunService").RenderStepped:wait()
+		--AntiFF
+		AntiFF.MouseButton1Down:connect(function()
+			_G.AntiFF = true
+			while _G.AntiFF do
+				game.RunService.RenderStepped:wait()
+				pcall(function()
 					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
-							spawn(function()
-								local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
-								if Handle then
+						if v.Character:FindFirstChild("ForceField") and not v.Character:FindFirstChild("ShieldSphere") and not v.Character:FindFirstChild("BatControls") and v ~= game.Players.LocalPlayer then
+							if not game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
+								game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+							end
+							wait()
+							game.Players.LocalPlayer.Backpack.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Character
+							local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
+							if v.Character.Humanoid.Health > 0 then
+								for i=0,5 do
+									game.RunService.RenderStepped:wait()
 									for i,c in pairs(v.Character:GetChildren()) do
 										if c:IsA("BasePart") then
-											c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game:GetService("RunService").RenderStepped.Wait(game:GetService("RunService").RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
+											c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game.RunService.RenderStepped.Wait(game.RunService.RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
 										end
 									end
 								end
-							end)
+							end
+							game.RunService.RenderStepped:wait()
+						end
+						if game.Players.LocalPlayer.Character:FindFirstChild("KorbloxSwordAndShield") then
+							game.Players.LocalPlayer.Character.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Backpack
+							game.RunService.RenderStepped:wait()
+							game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+						elseif game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
+							game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
 						end
 					end
+				end)
+			end
+		end)
+		AntiFF.MouseButton1Down:connect(function()
+			AntiFF.Visible = false
+			UnAntiFF.Visible = true
+		end)
+
+		--UnAntiFF
+		UnAntiFF.MouseButton1Down:connect(function()
+			_G.AntiFF = false
+		end)
+		UnAntiFF.MouseButton1Down:connect(function()
+			UnAntiFF.Visible = false
+			AntiFF.Visible = true
+		end)
+
+		--Heal
+		Heal.MouseButton1Down:connect(function()
+			plr = game.Players.LocalPlayer
+			hum = plr.Character.Humanoid
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
 				end
-			end)
-			FTI.MouseButton1Down:connect(function()
-				FTI.Visible = false
-				UnFTI.Visible = true
-			end)
+			end
+			_G.Heal = true
+			while _G.Heal do
+				game.RunService.RenderStepped:wait()
+				if hum.Health ~= hum.MaxHealth or hum.Health ~= math.huge then
+					plr.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7,hum,-(hum.MaxHealth - hum.Health))
+				end
+			end
+		end)
+		Heal.MouseButton1Down:connect(function()
+			Heal.Visible = false
+			UnHeal.Visible = true
+		end)
 
-			--unkilltarget
-			UnFTI.MouseButton1Down:connect(function()
-				_G.KillTarget = false
-			end)
-			UnFTI.MouseButton1Down:connect(function()
-				UnFTI.Visible = false
-				FTI.Visible = true
-			end)
+		--UnHeal
+		UnHeal.MouseButton1Down:connect(function()
+			_G.Heal = false
+		end)
+		UnHeal.MouseButton1Down:connect(function()
+			UnHeal.Visible = false
+			Heal.Visible = true
+		end)
 
-			--Diamond
-			Diamond.MouseButton1Down:connect(function()
-				if game.PlaceId == 26838733 then
-					if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
-						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+		--Martyrdom
+		Martyrdom.MouseButton1Down:connect(function()
+			_G.Martyrdom = true
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			while _G.Martyrdom do
+				game.RunService.RenderStepped:wait()
+				for i,v in pairs(game.Players:GetPlayers()) do
+					if v ~= game.Players.LocalPlayer then
+						pcall(function()
+							if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude <= 40 then
+								print((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude)
+								if game.Players.LocalPlayer.Character.Humanoid.Health <= 0 then
+									if v.Character.Humanoid.Health > 0 then
+										game.Players.LocalPlayer.Backpack:WaitForChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+									end
+								end
+							end
+						end)
 					end
 				end
-				_G.Diamond = true
-				while _G.Diamond do
-					game.RunService.RenderStepped:wait()
-					pcall(function()
-						for i,v in pairs(game.Players:GetChildren()) do
-							if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
-								if v.Character.Humanoid.Health > 0 then
-									game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+			end
+		end)
+		Martyrdom.MouseButton1Down:connect(function()
+			UnMartyrdom.Visible = true
+			Martyrdom.Visible = false
+		end)
+
+		--UnMartyrdom
+		UnMartyrdom.MouseButton1Down:connect(function()
+			_G.Martyrdom = false
+		end)
+		UnMartyrdom.MouseButton1Down:connect(function()
+			Martyrdom.Visible = true
+			UnMartyrdom.Visible = false
+		end)
+
+		--KrnlCbring
+		CBring.MouseButton1Down:connect(function()
+			_G.TorsoCbring = true
+			while _G.TorsoCbring do
+				game.RunService.RenderStepped:wait()
+				for i,v in pairs(game.Players:GetChildren()) do
+					for i,value in pairs(Targets) do
+						if v.Name == value and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
+							for i,val in pairs(v.Character:GetChildren()) do
+								if val:IsA("BasePart") then
+									val.Anchored = true
+									val.CFrame = game.Players.LocalPlayer.Character.Torso.CFrame * CFrame.new(Vector3.new(1.5, 1, -1.8))
+								elseif val:IsA("Tool") then
+									val:Remove()
 								end
 							end
 						end
-					end)
-				end
-			end)
-			Diamond.MouseButton1Down:connect(function()
-				Diamond.Visible = false
-				UnDiamond.Visible = true
-			end)
-
-			--UnDiamond
-			UnDiamond.MouseButton1Down:connect(function()
-				_G.Diamond = false
-				wait()
-			end)
-			UnDiamond.MouseButton1Down:connect(function()
-				Diamond.Visible = true
-				UnDiamond.Visible = false
-			end)
-
-			--Characterremove
-			DeleteMe.MouseButton1Down:connect(function()
-				local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-				table.insert(Previous, Position)
-				_G.RemoveMe = true
-				while _G.RemoveMe == true do
-					game:GetService("RunService").RenderStepped:wait()
-					game.Players.LocalPlayer.Character:Remove()
-				end
-			end)
-
-			DeleteMe.MouseButton1Down:connect(function()
-				UnDeleteMe.Visible = true
-				DeleteMe.Visible = false
-			end)
-
-			--UnCharacterremove
-			UnDeleteMe.MouseButton1Down:connect(function()
-				_G.RemoveMe = false
-				game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-				wait(0.5)
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Previous[1])
-				table.remove(Previous, 1)
-			end)
-			UnDeleteMe.MouseButton1Down:connect(function()
-				UnDeleteMe.Visible = false
-				DeleteMe.Visible = true
-			end)
-
-			--CheckPlayers
-			for i,v in pairs(game.Players:GetChildren()) do
-				if game.Players.LocalPlayer.Name ~= "Zanonner" then
-					if v.Name == "Zanonner" then
-						game.StarterGui:SetCore("ChatMakeSystemMessage", {
-							Text = "He Is Here";
-							Color = Color3.fromRGB(88, 88, 88);
-							Font = Enum.Font.SourceSansBold;
-							FontSize = Enum.FontSize.Size96;
-						})
-						game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 					end
 				end
-				if table.find(Hitlisted,v.UserId) then
+			end
+		end)
+		CBring.MouseButton1Down:connect(function()
+			CBring.Visible = false
+			UnCBring.Visible = true
+		end)
+
+		--AntiVoid
+		AntiVoid.MouseButton1Down:connect(function()
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v:IsA("UnionOperation") then
+					v.Velocity = Vector3.new(0,0,0)
+				end
+			end
+		end)
+
+		--Hitlist
+		Hitlist.MouseButton1Down:connect(function()
+			_G.KillHits = true
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			while _G.KillHits do
+				game.RunService.RenderStepped:wait()
+				pcall(function()
+					for i,v in pairs(game.Players:GetChildren()) do
+						if table.find(Hitlisted, v.UserId) and v ~= game.Players.LocalPlayer then
+							if v.Character.Humanoid.Health > 0 then
+								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+							end
+						end
+					end
+				end)
+			end
+		end)
+		Hitlist.MouseButton1Down:connect(function()
+			UnHitlist.Visible = true
+			Hitlist.Visible = false
+		end)
+
+		--UnHitlist
+		UnHitlist.MouseButton1Down:connect(function()
+			_G.KillHits = false
+		end)
+		UnHitlist.MouseButton1Down:connect(function()
+			UnHitlist.Visible = false
+			Hitlist.Visible = true
+		end)
+
+		--AntiWater
+		AntiWater.MouseButton1Down:connect(function()
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v.Name == "WaterKill" then
+					v:Remove()
+				end
+			end
+		end)
+
+		--RemoveWalls
+		RemoveWalls.MouseButton1Down:connect(function()
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v.Name == "FF" or v.Name == "Fence" then
+					v:Remove()
+				end
+			end
+		end)
+
+		--Anchor
+		Anchor.MouseButton1Down:connect(function()
+			game.Players.LocalPlayer.Character.Torso.Anchored = true
+		end)
+		Anchor.MouseButton1Down:connect(function()
+			Anchor.Visible = false
+			UnAnchor.Visible = true
+		end)
+
+		--UnAnchor
+		UnAnchor.MouseButton1Down:connect(function()
+			game.Players.LocalPlayer.Character.Torso.Anchored = false
+		end)
+		UnAnchor.MouseButton1Down:connect(function()
+			Anchor.Visible = true
+			UnAnchor.Visible = false
+		end)
+
+		--GodMode
+		GodMode.MouseButton1Down:connect(function()
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, game.Players.LocalPlayer.Character.Humanoid, -math.huge)
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+		end)
+
+		--BaseProtect
+		BaseProtect.MouseButton1Down:connect(function()
+			_G.BaseProtect = true
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			while _G.BaseProtect do
+				game.RunService.RenderStepped:wait()
+				for i,v in pairs(game.Players:GetChildren()) do
+					pcall(function()
+						if v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) and v.Character.Humanoid.Health >= 1 and (v.Character.HumanoidRootPart.Position - game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].SpawnLocation.Position).magnitude <= 40 then
+							game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+						end
+					end)
+				end
+			end
+		end)
+		BaseProtect.MouseButton1Down:connect(function()
+			BaseProtect.Visible = false
+			UnBaseProtect.Visible = true
+		end)
+
+		--UnBaseProtect
+		UnBaseProtect.MouseButton1Down:connect(function()
+			_G.BaseProtect = false
+		end)
+		UnBaseProtect.MouseButton1Down:connect(function()
+			BaseProtect.Visible = true
+			UnBaseProtect.Visible = false
+		end)
+
+		--UnKrnlCbring
+		UnCBring.MouseButton1Down:connect(function()
+			_G.TorsoCbring = false
+		end)
+		UnCBring.MouseButton1Down:connect(function()
+			UnCBring.Visible = false
+			CBring.Visible = true
+		end) 
+
+		--TargetOthers
+		Others.MouseButton1Down:connect(function()
+			_G.TargetOthers = true
+			while _G.TargetOthers do
+				wait()
+				for i, v in pairs(game.Players:GetChildren()) do
+					if v ~= game.Players.LocalPlayer and not table.find(Targets,v.Name) and not table.find(SafePlayers,v.UserId) then
+						table.insert(Targets, v.Name)
+					end
+				end
+			end
+		end)
+		Others.MouseButton1Down:connect(function()
+			Others.Visible = false
+			UnOthers.Visible = true
+		end)
+
+		UnOthers.MouseButton1Down:connect(function()
+			_G.TargetOthers = false
+			wait()
+			for i,v in pairs(Targets) do
+				Targets[i] = nil
+			end
+		end)
+		UnOthers.MouseButton1Down:connect(function()
+			Others.Visible = true
+			UnOthers.Visible = false
+		end)
+
+		--FTI
+		FTI.MouseButton1Down:connect(function()
+			_G.KillTarget = true
+			while _G.KillTarget == true do
+				game:GetService("RunService").RenderStepped:wait()
+				for i,v in pairs(game.Players:GetChildren()) do
+					if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
+						spawn(function()
+							local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
+							if Handle then
+								for i,c in pairs(v.Character:GetChildren()) do
+									if c:IsA("BasePart") then
+										c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game:GetService("RunService").RenderStepped.Wait(game:GetService("RunService").RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
+									end
+								end
+							end
+						end)
+					end
+				end
+			end
+		end)
+		FTI.MouseButton1Down:connect(function()
+			FTI.Visible = false
+			UnFTI.Visible = true
+		end)
+
+		--unkilltarget
+		UnFTI.MouseButton1Down:connect(function()
+			_G.KillTarget = false
+		end)
+		UnFTI.MouseButton1Down:connect(function()
+			UnFTI.Visible = false
+			FTI.Visible = true
+		end)
+
+		--Diamond
+		Diamond.MouseButton1Down:connect(function()
+			if game.PlaceId == 26838733 then
+				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
+				end
+			end
+			_G.Diamond = true
+			while _G.Diamond do
+				game.RunService.RenderStepped:wait()
+				pcall(function()
+					for i,v in pairs(game.Players:GetChildren()) do
+						if table.find(Targets, v.Name) and v ~= game.Players.LocalPlayer and not table.find(SafePlayers,v.UserId) then
+							if v.Character.Humanoid.Health > 0 then
+								game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7, v.Character.Humanoid, v.Character.Humanoid.MaxHealth)
+							end
+						end
+					end
+				end)
+			end
+		end)
+		Diamond.MouseButton1Down:connect(function()
+			Diamond.Visible = false
+			UnDiamond.Visible = true
+		end)
+
+		--UnDiamond
+		UnDiamond.MouseButton1Down:connect(function()
+			_G.Diamond = false
+			wait()
+		end)
+		UnDiamond.MouseButton1Down:connect(function()
+			Diamond.Visible = true
+			UnDiamond.Visible = false
+		end)
+
+		--Characterremove
+		DeleteMe.MouseButton1Down:connect(function()
+			local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+			table.insert(Previous, Position)
+			_G.RemoveMe = true
+			while _G.RemoveMe == true do
+				game:GetService("RunService").RenderStepped:wait()
+				game.Players.LocalPlayer.Character:Remove()
+			end
+		end)
+
+		DeleteMe.MouseButton1Down:connect(function()
+			UnDeleteMe.Visible = true
+			DeleteMe.Visible = false
+		end)
+
+		--UnCharacterremove
+		UnDeleteMe.MouseButton1Down:connect(function()
+			_G.RemoveMe = false
+			game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+			wait(0.5)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Previous[1])
+			table.remove(Previous, 1)
+		end)
+		UnDeleteMe.MouseButton1Down:connect(function()
+			UnDeleteMe.Visible = false
+			DeleteMe.Visible = true
+		end)
+
+		--CheckPlayers
+		for i,v in pairs(game.Players:GetChildren()) do
+			if game.Players.LocalPlayer.Name ~= "Zanonner" then
+				if v.Name == "Zanonner" then
 					game.StarterGui:SetCore("ChatMakeSystemMessage", {
-						Text = v.Name .. " Is Hitlisted";
-						Color = Color3.fromRGB(0,0,0);
+						Text = "He Is Here";
+						Color = Color3.fromRGB(88, 88, 88);
 						Font = Enum.Font.SourceSansBold;
 						FontSize = Enum.FontSize.Size96;
 					})
+					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 				end
 			end
-
-			--RocketRain
-			RocketRain.MouseButton1Down:connect(function()
-				_G.RocketRainOn = true
-				print '1'
-
-				if not game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") then
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103)
-				end
-				while _G.RocketRainOn do
-					game.RunService.RenderStepped:wait()
-					pcall(function()
-						game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),500,math.random(-400,400)))
-					end)
-				end
-			end)
-			RocketRain.MouseButton1Down:connect(function()
-				RocketRain.Visible = false
-				UnRocketRain.Visible = true
-			end)
-			UnRocketRain.MouseButton1Down:connect(function()
-				_G.RocketRainOn = false
-				if game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") then
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103)
-				end
-			end)
-			UnRocketRain.MouseButton1Down:connect(function()
-				RocketRain.Visible = true
-				UnRocketRain.Visible = false
-			end)
+			if table.find(Hitlisted,v.UserId) then
+				game.StarterGui:SetCore("ChatMakeSystemMessage", {
+					Text = v.Name .. " Is Hitlisted";
+					Color = Color3.fromRGB(0,0,0);
+					Font = Enum.Font.SourceSansBold;
+					FontSize = Enum.FontSize.Size96;
+				})
+			end
 		end
-		coroutine.wrap(NEKI_fake_script)()
+
+		--RocketRain
+		RocketRain.MouseButton1Down:connect(function()
+			_G.RocketRainOn = true
+			print '1'
+
+			if not game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") then
+				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103)
+			end
+			while _G.RocketRainOn do
+				game.RunService.RenderStepped:wait()
+				pcall(function()
+					game.Players.LocalPlayer.Backpack.RocketJumper.FireRocket:FireServer(Vector3.new(0,-9e9,0),Vector3.new(math.random(-400,400),500,math.random(-400,400)))
+				end)
+			end
+		end)
+		RocketRain.MouseButton1Down:connect(function()
+			RocketRain.Visible = false
+			UnRocketRain.Visible = true
+		end)
+		UnRocketRain.MouseButton1Down:connect(function()
+			_G.RocketRainOn = false
+			if game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") then
+				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103)
+			end
+		end)
+		UnRocketRain.MouseButton1Down:connect(function()
+			RocketRain.Visible = true
+			UnRocketRain.Visible = false
+		end)
 	end
 	for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
 		if v.Name == "CHGui" or v.Name == "SureGui" then
