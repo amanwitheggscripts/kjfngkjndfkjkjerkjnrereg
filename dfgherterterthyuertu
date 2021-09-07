@@ -2245,32 +2245,34 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 				game.RunService.RenderStepped:wait()
 				pcall(function()
 				    for i,v in pairs(game.Players:GetChildren()) do
-				    	if v.Character:FindFirstChild("ForceField") and not v.Character:FindFirstChild("ShieldSphere") and not v.Character:FindFirstChild("BatControls") and v ~= game.Players.LocalPlayer then
-				    		if not game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
-				    			game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
-				    		end
-				    		wait()
-				    		game.Players.LocalPlayer.Backpack.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Character
-				    		local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
-				    		if v.Character.Humanoid.Health > 0 then
-				    			for i=0,5 do
-				    				game.RunService.RenderStepped:wait()
-				    				for i,c in pairs(v.Character:GetChildren()) do
-				    					if c:IsA("BasePart") then
-				    						c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game.RunService.RenderStepped.Wait(game.RunService.RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
-				    					end
-				    				end
-				    			end
-				    		end
-				    		wait()
-				    	end
-				    end
-				    if game.Players.LocalPlayer.Character:FindFirstChild("KorbloxSwordAndShield") then
-				    	game.Players.LocalPlayer.Character.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Backpack
-				    	wait()
-				    	game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
-				    elseif game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
-				    	game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+				        if not table.find(SafePlayers,v.UserId) then
+				    	    if v.Character:FindFirstChild("ForceField") and not v.Character:FindFirstChild("ShieldSphere") and not v.Character:FindFirstChild("BatControls") and v ~= game.Players.LocalPlayer then
+				    	    	if not game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
+				    	    		game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+				    	    	end
+				    	    	wait()
+				    	    	game.Players.LocalPlayer.Backpack.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Character
+				    	    	local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
+				    	    	if v.Character.Humanoid.Health > 0 then
+				    	    		for i=0,5 do
+				    	    			game.RunService.RenderStepped:wait()
+				    	    			for i,c in pairs(v.Character:GetChildren()) do
+				    	    				if c:IsA("BasePart") then
+				        						c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game.RunService.RenderStepped.Wait(game.RunService.RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
+				        					end
+				        				end
+				        			end
+				        		end
+				        		wait()
+				        	end
+				        end
+				        if game.Players.LocalPlayer.Character:FindFirstChild("KorbloxSwordAndShield") then
+				        	game.Players.LocalPlayer.Character.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Backpack
+				        	wait()
+				        	game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+				        elseif game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
+				        	game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+				        end
 				    end
 				end)
 			end
@@ -2331,7 +2333,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 			while _G.Martyrdom do
 				game.RunService.RenderStepped:wait()
 				for i,v in pairs(game.Players:GetPlayers()) do
-					if v ~= game.Players.LocalPlayer then
+					if v ~= game.Players.LocalPlayer and not table.find(SafePlayers, v.UserId) then
 						pcall(function()
 							if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude <= 40 then
 								print((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude)
