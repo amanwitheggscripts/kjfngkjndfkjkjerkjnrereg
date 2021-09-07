@@ -2185,6 +2185,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 		end)
 
 		--ChangeLoadoutText
+		wait(1)
 		if not game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver:FindFirstChild("Click here to unlock this feature") then
 			Loadout.Text = ("The Current Load Is: 1")
 			for i,v in pairs(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver:GetDescendants()) do
