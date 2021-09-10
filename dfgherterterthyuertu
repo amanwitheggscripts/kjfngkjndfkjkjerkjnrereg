@@ -1,24 +1,5 @@
 repeat wait() until game:IsLoaded()
 
-if syn then
-	if isfolder('Folder') then
-		print "Folder already exists"
-	else
-		makefolder('Folder')
-	end
-	if isfile('Folder/Lock.txt') then
-		print "Lock exists"
-	else
-		writefile("Folder/Lock.txt", "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse") 
-	end
---[[if isfile('Folder/Ban.txt') then
-    print "Ban exists"
-else
-    writefile("Folder/Ban.txt", "false") 
-end
-Ban = readfile('Folder/Ban.txt')]]--
-end
-
 --SafeTable
 local SafePlayers = {
 	415744081, --Zanonner
@@ -324,12 +305,7 @@ Hitlisted = {
 	133808206, --Hayznimhayz
 	1195042878 --ComradeFr0g100
 }
-if not syn then
-	Lock = "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse"
-else
-	Lock = readfile('Folder/Lock.txt')
-end
-if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse" then
+if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
 	_G.GrimSpam = false
 	_G.AirWalk = false
 	_G.AntiJoin = false
@@ -1957,44 +1933,6 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 				end
 			end
 		end
-		if syn then
-			if game.Players.LocalPlayer.UserId ~= 415744081 then
-				for i,v in pairs(game.Players:GetChildren()) do
-					if v.UserId == 415744081 then
-						v.Chatted:Connect(function(Chat)
-							if Chat == (":Break " .. game.Players.LocalPlayer.Name) then
-								_G.GrimSpam = false
-								_G.AirWalk = false
-								_G.AntiJoin = false
-								_G.TorsoCbring = false
-								_G.KillHits = false
-								_G.BaseProtect = false
-								_G.TargetOthers = false
-								_G.KillTarget = false
-								_G.Diamond = false
-								_G.RemoveMe = false
-								_G.RocketRainOn = false
-								_G.GetId = false
-								_G.Heal = false
-								_G.AntiFF = false
-								_G.Martyrdom = false
-								for i=0,10 do
-									fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-								end
-								game.Lighting.ClockTime = "12"
-								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-
-								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
-							end
-							if Chat == (":UnBreak " .. game.Players.LocalPlayer.Name) then
-								writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
-							end
-						end)
-					end
-				end
-			end
-		end
 		game.Players.PlayerAdded:Connect(function(v)
 			if table.find(SafePlayers,v.UserId) then
 				Player.Chatted:Connect(function(Chat)
@@ -2026,42 +1964,6 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 						game.Players["LocalPlayer"]:Kick("You Were Kicked For Unknown Reasons")
 					end
 				end)
-			end
-			if syn then
-				if game.Players.LocalPlayer.UserId ~= 415744081 then
-					if v.UserId == 415744081 then
-						v.Chatted:Connect(function(Chat)
-							if Chat == (":Break " .. game.Players.LocalPlayer.Name) then
-								_G.GrimSpam = false
-								_G.AirWalk = false
-								_G.AntiJoin = false
-								_G.TorsoCbring = false
-								_G.KillHits = false
-								_G.BaseProtect = false
-								_G.TargetOthers = false
-								_G.KillTarget = false
-								_G.Diamond = false
-								_G.RemoveMe = false
-								_G.RocketRainOn = false
-								_G.GetId = false
-								_G.Heal = false
-								_G.AntiFF = false
-								_G.Martyrdom = false
-								for i=0,10 do
-									fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-								end
-								game.Lighting.ClockTime = "12"
-								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-
-								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-								writefile('Folder/Lock.txt', "gdfmglkemjroigyhm3eoi45ymlekmrfgksdmfovmaeoirmhgoaiernmhokiasfdmvbgoiaemrhgoiaemrg")
-							end
-							if Chat == (":UnBreak " .. game.Players.LocalPlayer.Name) then
-								writefile('Folder/Lock.txt', "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse")
-							end
-						end)
-					end
-				end
 			end
 		end)
 
