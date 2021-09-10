@@ -322,7 +322,7 @@ Hitlisted = {
 	1829985395, --hirmanst
 	255208365, --Vision14457
 	133808206, --Hayznimhayz
-	348626312 --joshua11dudeISBACK
+	1195042878 --ComradeFr0g100
 }
 if not syn then
 	Lock = "fal2c34 52icu34htiu2ch34iuth 2iu34 h5viu24h5tiluv2h4 5liuhrfj ehg2il4u5hti2u45ht iurhg ijch245iut ch245iuhgty245yse"
@@ -2244,36 +2244,34 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 			while _G.AntiFF do
 				game.RunService.RenderStepped:wait()
 				pcall(function()
-				    for i,v in pairs(game.Players:GetChildren()) do
-				        if not table.find(SafePlayers,v.UserId) then
-				    	    if v.Character:FindFirstChild("ForceField") and not v.Character:FindFirstChild("ShieldSphere") and not v.Character:FindFirstChild("BatControls") and v ~= game.Players.LocalPlayer then
-				    	    	if not game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
-				    	    		game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
-				    	    	end
-				    	    	wait()
-				    	    	game.Players.LocalPlayer.Backpack.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Character
-				    	    	local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
-				    	    	if v.Character.Humanoid.Health > 0 then
-				    	    		for i=0,5 do
-				    	    			game.RunService.RenderStepped:wait()
-				    	    			for i,c in pairs(v.Character:GetChildren()) do
-				    	    				if c:IsA("BasePart") then
-				        						c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game.RunService.RenderStepped.Wait(game.RunService.RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
-				        					end
-				        				end
-				        			end
-				        		end
-				        		wait()
-				        	end
-				        end
-				        if game.Players.LocalPlayer.Character:FindFirstChild("KorbloxSwordAndShield") then
-				        	game.Players.LocalPlayer.Character.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Backpack
-				        	wait()
-				        	game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
-				        elseif game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
-				        	game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
-				        end
-				    end
+					for i,v in pairs(game.Players:GetChildren()) do
+						if v.Character:FindFirstChild("ForceField") and not v.Character:FindFirstChild("ShieldSphere") and not v.Character:FindFirstChild("BatControls") and v ~= game.Players.LocalPlayer then
+							if not game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
+								game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+							end
+							wait()
+							game.Players.LocalPlayer.Backpack.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Character
+							local Handle = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle
+							if v.Character.Humanoid.Health > 0 then
+								for i=0,5 do
+									game.RunService.RenderStepped:wait()
+									for i,c in pairs(v.Character:GetChildren()) do
+										if c:IsA("BasePart") then
+											c = ((c.IsA(c, "BasePart") and firetouchinterest(Handle, c, 1,(game.RunService.RenderStepped.Wait(game.RunService.RenderStepped) and nil) or firetouchinterest(Handle, c, 0)) and nil) or c) or c
+										end
+									end
+								end
+							end
+							game.RunService.RenderStepped:wait()
+						end
+						if game.Players.LocalPlayer.Character:FindFirstChild("KorbloxSwordAndShield") then
+							game.Players.LocalPlayer.Character.KorbloxSwordAndShield.Parent = game.Players.LocalPlayer.Backpack
+							game.RunService.RenderStepped:wait()
+							game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+						elseif game.Players.LocalPlayer.Backpack:FindFirstChild("KorbloxSwordAndShield") then
+							game.ReplicatedStorage.Remotes.ToggleAsset:InvokeServer(68539623)
+						end
+					end
 				end)
 			end
 		end)
@@ -2293,6 +2291,8 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 
 		--Heal
 		Heal.MouseButton1Down:connect(function()
+			plr = game.Players.LocalPlayer
+			hum = plr.Character.Humanoid
 			if game.PlaceId == 26838733 then
 				if not game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword") then
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(173755801)
@@ -2301,10 +2301,8 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 			_G.Heal = true
 			while _G.Heal do
 				game.RunService.RenderStepped:wait()
-			    if game.Players.LocalPlayer.Character.Humanoid.Health ~= game.Players.LocalPlayer.Character.Humanoid.MaxHealth or game.Players.LocalPlayer.Character.Humanoid.Health ~= math.huge then
-				    pcall(function()
-				    	game.Players.LocalPlayer.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7,game.Players.LocalPlayer.Character.Humanoid,-(game.Players.LocalPlayer.Character.Humanoid.MaxHealth - game.Players.LocalPlayer.Character.Humanoid.Health))
-				    end)
+				if hum.Health ~= hum.MaxHealth or hum.Health ~= math.huge then
+					plr.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7,hum,-(hum.MaxHealth - hum.Health))
 				end
 			end
 		end)
@@ -2333,7 +2331,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 			while _G.Martyrdom do
 				game.RunService.RenderStepped:wait()
 				for i,v in pairs(game.Players:GetPlayers()) do
-					if v ~= game.Players.LocalPlayer and not table.find(SafePlayers, v.UserId) then
+					if v ~= game.Players.LocalPlayer then
 						pcall(function()
 							if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude <= 40 then
 								print((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).magnitude)
@@ -2663,7 +2661,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 					})
 				end
 			end
-			if table.find(SafePlayers,v.UserId) then
+			if table.find(SafePlayers,v.UserId) and v.UserId ~= game.Players.LocalPlayer.UserId then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
 					Text = v.Name .. " Is Cool";
 					Color = Color3.fromRGB(244, 244, 0);
@@ -2739,7 +2737,7 @@ if game.PlaceId == 26838733 and Lock == "fal2c34 52icu34htiu2ch34iuth 2iu34 h5vi
 				})
 				wait(3)
 			end
-			if table.find(SafePlayers,v.UserId) then
+			if table.find(SafePlayers,v.UserId) and v.UserId ~= game.Players.LocalPlayer.UserId then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
 					Text = v.Name .. " Is Cool";
 					Color = Color3.fromRGB(244, 244, 0);
