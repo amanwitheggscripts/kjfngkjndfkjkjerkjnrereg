@@ -318,6 +318,13 @@ Hitlisted = {
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
     if game.Players.LocalPlayer.UserId ~= 415744081 and game.Players.LocalPlayer.UserId ~= 894458609 and game.Players.LocalPlayer.UserId ~= 2422124124 and game.Players.LocalPlayer.UserId ~= 1489437710 and game.Players.LocalPlayer.UserId ~= 2587704753 and game.Players.LocalPlayer.UserId ~= 2009418204 and game.Players.LocalPlayer.UserId ~= 1985647039 then
     --local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+    local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
+    local s = {}
+    for k, v in pairs(os.date("!*t")) do
+        local temp = tostring(v)
+        if #temp == 1 then temp = "0" .. temp end
+        s[k] = temp
+    end
     local webhookcheck =
        is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
        secure_load and "Sentinel" or
@@ -337,7 +344,9 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
                                  --"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
                                  "UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
                                  "DisplayName: " .. "**" .. game.Players.LocalPlayer.DisplayName .. "**" .. "\n" ..
-                                 "JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**",
+                                 "JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**" .. "\n" ..
+                                 "DayUsed: " .. "**" .. (s.month .. "-" .. s.day .. "-" .. s.year) .. "**" ..
+                                 " Time: " .. "**" .. timestamp .. "**",
                ["type"] = "rich",
                ["color"] = tonumber(0x7269da),
                ["image"] = {
