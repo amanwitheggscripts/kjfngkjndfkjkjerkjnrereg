@@ -308,7 +308,10 @@ Hitlisted = {
 	2880233063, --jaja_forBacon
 	2880248952, --Agshsauwha
 	2880265886, --2OSecondsForIou
-	2880310529 --IHATEROBLOS5H4
+	2880310529, --IHATEROBLOS5H4
+	337512068, --MattyAmericaScorpion
+	65938182, --MattyAmericaEagle
+	1986180631 --bunkeyDaMonkey
 }
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
 	_G.GrimSpam = false
