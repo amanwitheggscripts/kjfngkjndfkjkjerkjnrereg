@@ -306,7 +306,8 @@ Hitlisted = {
 	1195042878, --ComradeFr0g100
 	2880160343, --SpeedrunHahw
 	2880233063, --jaja_forBacon
-	2880248952 --Agshsauwha
+	2880248952, --Agshsauwha
+	2880265886 --2OSecondsForIou
 }
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
 	_G.GrimSpam = false
@@ -1903,105 +1904,105 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 
 		--StopScriptsCommands
 		if not table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
-            for i,v in pairs(game.Players:GetChildren()) do
-                if table.find(SafePlayers,v.UserId) then
-                    v.Chatted:connect(function(msg)
-                        if msg:lower():sub(0, 13) == ":stopscripts " then
-                            playername = msg:lower():sub(14)
-                            for i, v in pairs(game.Players:GetChildren()) do
-                                if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
-                                    _G.GrimSpam = false
-                    				_G.AirWalk = false
-                    				_G.AntiJoin = false
-                    				_G.TorsoCbring = false
-                    				_G.KillHits = false
-                    				_G.BaseProtect = false
-                    				_G.TargetOthers = false
-                    				_G.KillTarget = false
-                    				_G.Diamond = false
-                    				_G.RemoveMe = false
-                    				_G.RocketRainOn = false
-                    				_G.GetId = false
-                    				_G.Heal = false
-                    				_G.AntiFF = false
-                    				_G.Martyrdom = false
-                    				for i=0,10 do
-                    					fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-                    				end
-                    				game.Lighting.ClockTime = "12"
-                    				game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-                    				game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-                                end
-                            end
-                        end
-                    end)
+			for i,v in pairs(game.Players:GetChildren()) do
+				if table.find(SafePlayers,v.UserId) then
+					v.Chatted:connect(function(msg)
+						if msg:lower():sub(0, 13) == ":stopscripts " then
+							playername = msg:lower():sub(14)
+							for i, v in pairs(game.Players:GetChildren()) do
+								if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
+									_G.GrimSpam = false
+									_G.AirWalk = false
+									_G.AntiJoin = false
+									_G.TorsoCbring = false
+									_G.KillHits = false
+									_G.BaseProtect = false
+									_G.TargetOthers = false
+									_G.KillTarget = false
+									_G.Diamond = false
+									_G.RemoveMe = false
+									_G.RocketRainOn = false
+									_G.GetId = false
+									_G.Heal = false
+									_G.AntiFF = false
+									_G.Martyrdom = false
+									for i=0,10 do
+										fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+									end
+									game.Lighting.ClockTime = "12"
+									game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+									game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+								end
+							end
+						end
+					end)
 				end
 			end
 		end
 		game.Players.PlayerAdded:Connect(function(v)
 			if table.find(SafePlayers,v.UserId) then
 				v.Chatted:connect(function(msg)
-                    if msg:lower():sub(0, 13) == ":stopscripts " then
-                        playername = msg:lower():sub(14)
-                        for i, v in pairs(game.Players:GetChildren()) do
-                            if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
-                                _G.GrimSpam = false
-                				_G.AirWalk = false
-                				_G.AntiJoin = false
-                				_G.TorsoCbring = false
-                				_G.KillHits = false
-                				_G.BaseProtect = false
-                				_G.TargetOthers = false
-                				_G.KillTarget = false
-                				_G.Diamond = false
-                				_G.RemoveMe = false
-                				_G.RocketRainOn = false
-                				_G.GetId = false
-                				_G.Heal = false
-                				_G.AntiFF = false
-                				_G.Martyrdom = false
-                				for i=0,10 do
-                					fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-                				end
-                				game.Lighting.ClockTime = "12"
-                				game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-                				game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-                            end
-                        end
-                    end
-                end)
+					if msg:lower():sub(0, 13) == ":stopscripts " then
+						playername = msg:lower():sub(14)
+						for i, v in pairs(game.Players:GetChildren()) do
+							if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
+								_G.GrimSpam = false
+								_G.AirWalk = false
+								_G.AntiJoin = false
+								_G.TorsoCbring = false
+								_G.KillHits = false
+								_G.BaseProtect = false
+								_G.TargetOthers = false
+								_G.KillTarget = false
+								_G.Diamond = false
+								_G.RemoveMe = false
+								_G.RocketRainOn = false
+								_G.GetId = false
+								_G.Heal = false
+								_G.AntiFF = false
+								_G.Martyrdom = false
+								for i=0,10 do
+									fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+								end
+								game.Lighting.ClockTime = "12"
+								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+							end
+						end
+					end
+				end)
 			end
 		end)
-		
+
 		--KickCommands
 		if not table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
-            for i,v in pairs(game.Players:GetChildren()) do
-                if table.find(SafePlayers,v.UserId) then
-                    v.Chatted:connect(function(msg)
-                        if msg:lower():sub(0, 6) == ":kick " then
-                            playername = msg:lower():sub(7)
-                            for i, v in pairs(game.Players:GetChildren()) do
-                                if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
-                                    game.Players["LocalPlayer"]:Kick("You Have Been Kicked For Unknown Circumstances")
-                                end
-                            end
-                        end
-                    end)
+			for i,v in pairs(game.Players:GetChildren()) do
+				if table.find(SafePlayers,v.UserId) then
+					v.Chatted:connect(function(msg)
+						if msg:lower():sub(0, 6) == ":kick " then
+							playername = msg:lower():sub(7)
+							for i, v in pairs(game.Players:GetChildren()) do
+								if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
+									game.Players["LocalPlayer"]:Kick("You Have Been Kicked For Unknown Circumstances")
+								end
+							end
+						end
+					end)
 				end
 			end
 		end
 		game.Players.PlayerAdded:Connect(function(v)
 			if table.find(SafePlayers,v.UserId) then
 				v.Chatted:connect(function(msg)
-                    if msg:lower():sub(0, 6) == ":kick " then
-                        playername = msg:lower():sub(7)
-                        for i, v in pairs(game.Players:GetChildren()) do
-                            if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
-                                game.Players["LocalPlayer"]:Kick("You Have Been Kicked For Unknown Circumstances")
-                            end
-                        end
-                    end
-                end)
+					if msg:lower():sub(0, 6) == ":kick " then
+						playername = msg:lower():sub(7)
+						for i, v in pairs(game.Players:GetChildren()) do
+							if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
+								game.Players["LocalPlayer"]:Kick("You Have Been Kicked For Unknown Circumstances")
+							end
+						end
+					end
+				end)
 			end
 		end)
 
@@ -2242,8 +2243,8 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 			while _G.Heal do
 				game.RunService.RenderStepped:wait()
 				if hum.Health ~= hum.MaxHealth or hum.Health ~= math.huge then
-				    pcall(function()
-					    plr.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7,hum,-(hum.MaxHealth - hum.Health))
+					pcall(function()
+						plr.Backpack:FindFirstChild("Diamond Blade Sword").GearScript.Controller:InvokeServer(7,hum,-(hum.MaxHealth - hum.Health))
 					end)
 				end
 			end
