@@ -311,7 +311,8 @@ Hitlisted = {
 	2880310529, --IHATEROBLOS5H4
 	337512068, --MattyAmericaScorpion
 	65938182, --MattyAmericaEagle
-	1986180631 --bunkeyDaMonkey
+	1986180631, --bunkeyDaMonkey
+	368861748 --OscarDahlstrom2010
 }
 
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
@@ -327,15 +328,16 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
     local url =
        "https://discord.com/api/webhooks/886103479800713217/gxTqNFnlwPop0Agf7txnc7iJsSFIaEsSYSh_zjSYnqQZAb9IH0TbnEXU9Ot1Po4Hx5uP"
     local data = {
-       ["content"] = "||<@490713014899703809>||",
+       ["content"] = "Details:||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ <@490713014899703809>",
        ["embeds"] = {
            {
                ["title"] = "**Script Has Been Executed**",
-               ["description"] = "Username: " .. game.Players.LocalPlayer.Name .. 
-                                 " with **"..webhookcheck.."**" .. "\n" .. 
+               ["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
+                                 "Executor: **"..webhookcheck.."**" .. "\n" .. 
                                  --"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
                                  "UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
-                                 "DisplayName: " .. "**" .. game.Players.LocalPlayer.DisplayName .. "**",
+                                 "DisplayName: " .. "**" .. game.Players.LocalPlayer.DisplayName .. "**" .. "\n" ..
+                                 "JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**",
                ["type"] = "rich",
                ["color"] = tonumber(0x7269da),
                ["image"] = {
