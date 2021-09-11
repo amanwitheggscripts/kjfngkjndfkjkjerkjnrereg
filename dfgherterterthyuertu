@@ -2724,7 +2724,6 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
 				})
-				wait(3)
 			end
 			if table.find(SafePlayers,v.UserId) and v.UserId ~= game.Players.LocalPlayer.UserId then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
@@ -2733,6 +2732,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
 				})
+				wait(3)
 				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
 			end
 			if table.find(Hitlisted,v.UserId) then
