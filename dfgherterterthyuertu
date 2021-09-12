@@ -312,7 +312,10 @@ Hitlisted = {
 	337512068, --MattyAmericaScorpion
 	65938182, --MattyAmericaEagle
 	1986180631, --bunkeyDaMonkey
-	368861748 --OscarDahlstrom2010
+	368861748, --OscarDahlstrom2010
+	2847674609, --Clomendod44
+	2847680278, --Benos9ll7
+	2860001135 --Diagon442
 }
 
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
