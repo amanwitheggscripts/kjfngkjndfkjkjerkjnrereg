@@ -17,7 +17,8 @@ local SafePlayers = {
 	531914070, --CentralWrld
 	166786785, --0Nach
 	2733519015, --Cielle_Hellie
-	421151806 --Ryan09791
+	421151806, --Ryan09791
+	1953776554 --cxdechxka
 }
 
 --Hitlist
@@ -313,11 +314,68 @@ Hitlisted = {
 	65938182, --MattyAmericaEagle
 	1986180631, --bunkeyDaMonkey
 	368861748, --OscarDahlstrom2010
-	2743134227 --proheckerman1000
+	2743134227, --proheckerman1000
+	348626312, --Joshua11dudeIsBack
+	2860001135, --Diagon442
+	2847668114, --Robo196547
+	2847670721, --Robo196587
+	2847672440, --Robo1965447
+	2847674609, --Clomendod44
+	2847676328, --Clomnendod44
+	2847678424, --Benos9117
+	2847680278, --Benos9ll7
+	2847682081, --Holo111l111111
+	2847683696, --Holo1111111l11
+	2847686360, --Holo11l1111l11
+	2860005706, --Roden8765
+	2860009469, --TinTen771
+	2860012066, --Deneo342
+	2860014189, --IppoUnion
+	2860016141, --Crowborne433
+	2860017656, --Portal8993
+	2860020954, --UUUU89834
+	2860022999, --JHF863464
+	2860024165, --FONO34325
+	2860025459, --Jobin4535
+	2860027153, --NENE84356
+	1719857761, --BeforeWonders
+	2892517576, --ZanonIsRetar
+	2892523508, --RotorCuff77
+	2847668114, --Robo196547
+	2847670721, --Robo196587
+	2847672440, --Robo1965447
+	2847674609, --Clomendod44
+	2847676328, --Clomnendod44
+	2847678424, --Benos9117
+	2847680278, --Benos9ll7
+	2847682081, --Holo111l111111
+	2847683696, --Holo1111111l11
+	2847686360, --Holo11l1111l11
+	2860001135, --Diagon442
+	2860005706, --Roden8765
+	2892523508, --RotorCuff77
+	2892550049, --ZanonLacksSkill
+	2892557175, --ZanonLacksSKill1
+	2892559986, --ZanonLacksSKill2
+	2892562336, --ZanonLacksSKill3
+	2892565530, --ZanonLacksSKill4
+	2892567939, --ZanonLacksSkill5
+	2892570070, --ZanonLacksSkill6
+	2892578129, --ZanonIsDesperate
+	2892580877, --ZanonIsDesperate1
+	2892590702, --Heton856
+	2892585440, --IcanDoThisAllDayLolz
+	2892586754, --ButYouCantLOL
+	2892589059, --BcuzUareApreschooler
+	2892597242, --WutACleverComeback
+	2892601167, --HaxCantCompensate
+	2892605128, --WithoutItUrNothing
+	2892608754, --YeahItReallyShows
+	132571927 --tkids1234
 }
 
 IpList = {
-    "97.120.157.175", "Zanonner", "177.74.229.248", "bielsamorim1", " 72.209.184.180", "Ryan09791"
+    "97.120.157.175", "Zanonner", "177.74.229.248", "bielsamorim1", " 72.209.184.180", "Ryan09791", "126.140.173.216", "Xerantheneum"
 }
 
 CrashBans = {
@@ -389,7 +447,6 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		}
 		request(abcdef)
 	end
-
 	_G.GrimSpam = false
 	_G.AirWalk = false
 	_G.AntiJoin = false
@@ -410,7 +467,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 	_G.Epsilon = false
 	_G.Chart = false
 	_G.Woods = false
-	_G.Tides = false
+	_G.Tela = false
 	_G.Wind = false
 	_G.Spam = false
 	_G.KillAura = false
@@ -503,8 +560,17 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
                             s[k] = temp
                     end
                     if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2020 then
-                        AccStatus = "Main"
-                        MainUser = game.Players.LocalPlayer.Name
+                        if table.find(IpList, tostring(ip)) then
+                            AccStatus = "Alt"
+                            for i,v in pairs(IpList) do
+                                if v == tostring(ip)  then
+                                    MainUser = IpList[i+1]
+                                end
+                            end
+                        else
+                            AccStatus = "Main"
+                            MainUser = game.Players.LocalPlayer.Name
+                        end
                     else
                         AccStatus = "Alt"
                         for i,v in pairs(IpList) do
@@ -741,7 +807,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		local Epsilon = Instance.new("TextButton")
 		local Chart = Instance.new("TextButton")
 		local Woods = Instance.new("TextButton")
-		local UnTides = Instance.new("TextButton")
+		local UnTela = Instance.new("TextButton")
 		local UnKillAura = Instance.new("TextButton")
 		local UICorner_75 = Instance.new("UICorner")
 		local UnWind = Instance.new("TextButton")
@@ -750,7 +816,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		local UnEpsilon = Instance.new("TextButton")
 		local UnChart = Instance.new("TextButton")
 		local UnWoods = Instance.new("TextButton")
-		local Tides = Instance.new("TextButton")
+		local Tela = Instance.new("TextButton")
 		local DeathPoint = Instance.new("TextButton")
 		local UICorner_76 = Instance.new("UICorner")
 		local Wind = Instance.new("TextButton")
@@ -1898,17 +1964,17 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		Woods.TextColor3 = Color3.fromRGB(118, 118, 118)
 		Woods.TextSize = 14.000
 
-		UnTides.Name = "UnTides"
-		UnTides.Parent = Page6Frame
-		UnTides.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		UnTides.BorderSizePixel = 0
-		UnTides.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
-		UnTides.Size = UDim2.new(0, 113, 0, 15)
-		UnTides.Visible = false
-		UnTides.Font = Enum.Font.SourceSans
-		UnTides.Text = "UnTides"
-		UnTides.TextColor3 = Color3.fromRGB(118, 118, 118)
-		UnTides.TextSize = 14.000
+		UnTela.Name = "UnTela"
+		UnTela.Parent = Page6Frame
+		UnTela.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		UnTela.BorderSizePixel = 0
+		UnTela.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
+		UnTela.Size = UDim2.new(0, 113, 0, 15)
+		UnTela.Visible = false
+		UnTela.Font = Enum.Font.SourceSans
+		UnTela.Text = "UnTela"
+		UnTela.TextColor3 = Color3.fromRGB(118, 118, 118)
+		UnTela.TextSize = 14.000
 
 		UnKillAura.Name = "UnKillAura"
 		UnKillAura.Parent = Page6Frame
@@ -1995,16 +2061,16 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		UnWoods.TextColor3 = Color3.fromRGB(118, 118, 118)
 		UnWoods.TextSize = 14.000
 
-		Tides.Name = "Tides"
-		Tides.Parent = Page6Frame
-		Tides.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-		Tides.BorderSizePixel = 0
-		Tides.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
-		Tides.Size = UDim2.new(0, 113, 0, 15)
-		Tides.Font = Enum.Font.SourceSans
-		Tides.Text = "Tides"
-		Tides.TextColor3 = Color3.fromRGB(118, 118, 118)
-		Tides.TextSize = 14.000
+		Tela.Name = "Tela"
+		Tela.Parent = Page6Frame
+		Tela.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+		Tela.BorderSizePixel = 0
+		Tela.Position = UDim2.new(0.0973154306, 0, 0.494252861, 0)
+		Tela.Size = UDim2.new(0, 113, 0, 15)
+		Tela.Font = Enum.Font.SourceSans
+		Tela.Text = "Tela"
+		Tela.TextColor3 = Color3.fromRGB(118, 118, 118)
+		Tela.TextSize = 14.000
 
 		DeathPoint.Name = "DeathPoint"
 		DeathPoint.Parent = Page6Frame
@@ -2366,6 +2432,15 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 									_G.Heal = false
 									_G.AntiFF = false
 									_G.Martyrdom = false
+									_G.RocketTarget = false
+                                    _G.Grimgold = false
+                                    _G.Epsilon = false
+                                	_G.Chart = false
+                                	_G.Woods = false
+                                	_G.Tela = false
+                                	_G.Wind = false
+                                	_G.Spam = false
+                                	_G.KillAura = false
 									for i=0,10 do
 										fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
 									end
@@ -3212,16 +3287,16 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 			UnWoods.Visible = false
 		end)
 
-		--Tides
-		Tides.MouseButton1Down:connect(function()
-			_G.Tides = true
-			Tides.Visible = false
-			UnTides.Visible = true
+		--Tela
+		Tela.MouseButton1Down:connect(function()
+			_G.Tela = true
+			Tela.Visible = false
+			UnTela.Visible = true
 		end)
-		UnTides.MouseButton1Down:connect(function()
-			_G.Tides = false
-			UnTides.Visible = false
-			Tides.Visible = true
+		UnTela.MouseButton1Down:connect(function()
+			_G.Tela = false
+			UnTela.Visible = false
+			Tela.Visible = true
 		end)
 
 		--Wind
@@ -3271,18 +3346,32 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 					wait()
 					game.Players.LocalPlayer.Backpack:WaitForChild("FallKnightSword").Parent = game.Players.LocalPlayer.Character
 					wait()
-					game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
-					wait(0.5)
+				    local RunService = game:GetService("RunService")
+                    local Timer = 0 
+                    local Stop = 10
+                    local RATE_PER_SECOND = 2
+                    _G.On = true
+                    RunService.RenderStepped:Connect(function(step)
+                    	local increment = RATE_PER_SECOND * step
+                    	if Timer < Stop and _G.On then
+                    	game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
+                    	game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
+                    	Timer = Timer + 1
+                    	else
+                    	    _G.On = false
+                        end
+                    end)
+                    wait(1)
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
-				elseif _G.Tides then --TidesCheck
+				elseif _G.Tela then --TelaCheck
 					wait()
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(241017568)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
 					wait()
-					game.Players.LocalPlayer.Backpack:WaitForChild("WaterSword").Parent = game.Players.LocalPlayer.Character
+					game.Players.LocalPlayer.Backpack:WaitForChild("TelamonsterTheChaosEdge").Parent = game.Players.LocalPlayer.Character
 					wait()
-					game:GetService("Players").LocalPlayer.Character.WaterSword.ServerControl:InvokeServer("KeyPress",{["Key"] = "q",["Down"] = true})
-					wait()
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(241017568)
+					game.Players.LocalPlayer.Character:WaitForChild("TelamonsterTheChaosEdge").Remote:FireServer(Enum.KeyCode.Q)
+					wait(0.75)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
 				elseif _G.Wind then --WindCheck
 					if not game.Players.LocalPlayer.Character:FindFirstChild("KOSSGustHorn") and not game.Players.LocalPlayer.Backpack:FindFirstChild("KOSSGustHorn") then
 						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(127506257)
@@ -3371,8 +3460,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 					Font = Enum.Font.SourceSansBold;
 					FontSize = Enum.FontSize.Size96;
 				})
-			end
-			if table.find(SafePlayers,v.UserId) and v.UserId ~= game.Players.LocalPlayer.UserId then
+			elseif table.find(SafePlayers,v.UserId) and v.UserId ~= game.Players.LocalPlayer.UserId then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
 					Text = v.Name .. " Is Cool";
 					Color = Color3.fromRGB(244, 244, 0);
@@ -3381,8 +3469,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 				})
 				wait(3)
 				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/w " .. v.Name ..  " :P", "All")
-			end
-			if table.find(Hitlisted,v.UserId) then
+			elseif table.find(Hitlisted,v.UserId) then
 				game.StarterGui:SetCore("ChatMakeSystemMessage", {
 					Text = v.Name .. " Is Hitlisted";
 					Color = Color3.fromRGB(0,0,0);
