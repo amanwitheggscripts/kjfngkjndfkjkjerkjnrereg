@@ -281,7 +281,6 @@ Hitlisted = {
 	2373417083, --endingarentgood
 	76257451, --WEBSITE_USER
 	650194029, --Storm_catcher7
-	1824016416, --Again_AndAgaion
 	527374713, --thebestgyu
 	1572004221, --Iwillcrashyougame
 	95123245, --TheDarkLordAlexander
@@ -376,11 +375,15 @@ Hitlisted = {
 	2892617672, --ZanonLacksSkill8
 	2892619989, --ZanonLacksSkill9
 	2892628573, --RotorCuff4344
-	2892633350 --Hehoon945
+	2892633350, --Hehoon945
+	2894866510, --AntiAudioRemover
+	2894870477, --AudioPolice
+	1681802010, --AccountStoragerat
+	1366882092 --Hiroshi_Chan0603
 }
 
 IpList = {
-	"97.120.157.175", "Zanonner", "177.74.229.248", "bielsamorim1", " 72.209.184.180", "Ryan09791", "126.140.173.216", "Xerantheneum"
+	"97.120.157.175", "Zanonner", "177.74.229.11", "bielsamorim1", " 72.209.184.180", "Ryan09791", "126.140.173.216", "Xerantheneum"
 }
 
 CrashBans = {
@@ -400,8 +403,17 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 		s[k] = temp
 	end
 	if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2020 then
-		AccStatus = "Main"
-		MainUser = game.Players.LocalPlayer.Name
+		if table.find(IpList, tostring(ip)) then
+			AccStatus = "Alt"
+			for i,v in pairs(IpList) do
+				if v == tostring(ip)  then
+					MainUser = IpList[i+1]
+				end
+			end
+		else
+			AccStatus = "Main"
+			MainUser = game.Players.LocalPlayer.Name
+		end
 	else
 		AccStatus = "Alt"
 		MainUser = "Can't Find Main"
@@ -4600,20 +4612,25 @@ local function ChGui()
 		while _G.Spam do
 			game.RunService.RenderStepped:wait()
 			if _G.Grimgold then --GrimCheck
+			    pcall(function()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
 				game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
 				game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+			    end)
 			elseif _G.Epsilon then --EpsilonCheck
+			    pcall(function()
 				wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(233520257)
 				wait()
-				game.Players.LocalPlayer.Backpack:WaitForChild("JoyfulPeriastron").Parent = game.Players.LocalPlayer.Character
+			    game.Players.LocalPlayer.Backpack:WaitForChild("JoyfulPeriastron").Parent = game.Players.LocalPlayer.Character
 				wait()
 				game.Players.LocalPlayer.Character:WaitForChild("JoyfulPeriastron").Remote:FireServer(Enum.KeyCode.Q)
 				wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(233520257)
+				end)
 			elseif _G.Chart then --ChartCheck
+			    pcall(function()
 				wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(80661504)
 				wait()
@@ -4622,7 +4639,9 @@ local function ChGui()
 				game.Players.LocalPlayer.Character:WaitForChild("ChartreusePeriastron").Remote:FireServer(Enum.KeyCode.Q)
 				wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(80661504)
+			    end)
 			elseif _G.Woods then --WoodsCheck
+			    pcall(function()
 				wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
 				wait()
@@ -4645,7 +4664,9 @@ local function ChGui()
 				end)
 				wait(1)
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
+			    end)
 			elseif _G.Tela then --TelaCheck
+			    pcall(function()
 				wait()
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
 				wait()
@@ -4654,7 +4675,9 @@ local function ChGui()
 				game.Players.LocalPlayer.Character:WaitForChild("TelamonsterTheChaosEdge").Remote:FireServer(Enum.KeyCode.Q)
 				wait(0.75)
 				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
+			    end)
 			elseif _G.Wind then --WindCheck
+			    pcall(function()
 				if not game.Players.LocalPlayer.Character:FindFirstChild("KOSSGustHorn") and not game.Players.LocalPlayer.Backpack:FindFirstChild("KOSSGustHorn") then
 					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(127506257)
 					wait()
@@ -4664,6 +4687,7 @@ local function ChGui()
 				end
 				wait(0.1)
 				game.Players.LocalPlayer.Character:WaitForChild("KOSSGustHorn").RemoteEvent:FireServer("DO THE THING!!!")
+			    end)
 			else --NoneSelected
 				print("Pick A Gear to Spam on Page 5!!")
 			end
@@ -4807,4 +4831,3 @@ else
 	end)
 	getgenv().Enabled = true
 end
-
