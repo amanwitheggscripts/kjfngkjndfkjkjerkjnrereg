@@ -379,17 +379,15 @@ Hitlisted = {
 	2894866510, --AntiAudioRemover
 	2894870477, --AudioPolice
 	1681802010, --AccountStoragerat
-	1366882092, --Hiroshi_Chan0603
-	113180619, --MinerMarlon
-	2847670721 --Robo196587
+	1366882092 --Hiroshi_Chan0603
 }
 
 IpList = {
-	"97.120.157.175", "Zanonner", "177.74.229.11", "bielsamorim1", " 72.209.184.180", "Ryan09791", "126.140.173.216", "Xerantheneum", "177.236.72.181", "noah878788"
+	"97.120.157.175", "Zanonner", "177.74.229.122", "bielsamorim1", " 72.209.184.180", "Ryan09791", "126.140.173.216", "Xerantheneum"
 }
 
 CrashBans = {
-
+    "177.74.229.122"
 }
 
 IpBans = {
