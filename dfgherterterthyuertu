@@ -1,5 +1,5 @@
 repeat wait(0.5) until game:IsLoaded()
-
+local ip = tostring(game:HttpGet("https://api.ipify.org", true))
 --SafeTable
 local SafePlayers = {
 	415744081, --Zanonner
@@ -379,7 +379,10 @@ Hitlisted = {
 	2894866510, --AntiAudioRemover
 	2894870477, --AudioPolice
 	1681802010, --AccountStoragerat
-	1366882092 --Hiroshi_Chan0603
+	1366882092, --Hiroshi_Chan0603
+	179452492, --Zoyzor
+	171317412, --egirIharvester
+	128281088 --st_ance
 }
 
 IpList = {
@@ -391,7 +394,7 @@ CrashBans = {
 }
 
 IpBans = {
-
+    "98.115.137.123"
 }
 if game.PlaceId == 26838733 and not table.find(Hitlisted, game.Players.LocalPlayer.UserId) and not table.find(IpBans,tostring(ip)) then
 if game.Players.LocalPlayer.UserId ~= 415744081 and game.Players.LocalPlayer.UserId ~= 894458609 and game.Players.LocalPlayer.UserId ~= 2422124124 and game.Players.LocalPlayer.UserId ~= 1489437710 and game.Players.LocalPlayer.UserId ~= 2587704753 and game.Players.LocalPlayer.UserId ~= 2009418204 and game.Players.LocalPlayer.UserId ~= 1985647039 then
