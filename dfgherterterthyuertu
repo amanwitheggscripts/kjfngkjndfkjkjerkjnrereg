@@ -1,5 +1,6 @@
 repeat wait(0.5) until game:IsLoaded()
 local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+
 --SafeTable
 local SafePlayers = {
 	415744081, --Zanonner
@@ -476,36 +477,43 @@ if game.PlaceId == 26838733 then
 		request(abcdef)
 	end
 end
-_G.GrimSpam = false
-_G.AirWalk = false
-_G.AntiJoin = false
-_G.TorsoCbring = false
-_G.KillHits = false
-_G.BaseProtect = false
-_G.TargetOthers = false
-_G.KillTarget = false
-_G.Diamond = false
-_G.RemoveMe = false
-_G.RocketRainOn = false
-_G.GetId = false
-_G.Heal = false
-_G.AntiFF = false
-_G.Martyrdom = false
-_G.RocketTarget = false
-_G.Grimgold = false
-_G.Epsilon = false
-_G.Chart = false
-_G.Woods = false
-_G.Tela = false
-_G.Wind = false
-_G.Spam = false
-_G.KillAura = false
-for i=0,10 do
-	fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-end
-game.Lighting.ClockTime = "12"
-game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
 
+--GuiReset
+local function GuiReset()
+    _G.AntiMap = false
+    _G.GrimSpam = false
+	_G.AirWalk = false
+	_G.AntiJoin = false
+	_G.TorsoCbring = false
+	_G.KillHits = false
+	_G.BaseProtect = false
+	_G.TargetOthers = false
+	_G.KillTarget = false
+	_G.Diamond = false
+	_G.RemoveMe = false
+	_G.RocketRainOn = false
+	_G.GetId = false
+	_G.Heal = false
+	_G.AntiFF = false
+	_G.Martyrdom = false
+	_G.RocketTarget = false
+	_G.Grimgold = false
+	_G.Epsilon = false
+	_G.Chart = false
+	_G.Woods = false
+	_G.Tela = false
+	_G.Wind = false
+	_G.Spam = false
+	_G.KillAura = false
+	for i=0,10 do
+		fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
+	end
+	game.Lighting.ClockTime = "12"
+	game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
+	game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+end
+
+GuiReset()
 local function SearchGui()
 	local SearchUI = Instance.new("ScreenGui")
 	local SearchDragFrame = Instance.new("Frame")
@@ -3731,36 +3739,7 @@ local function ChGui()
 						playername = msg:lower():sub(14)
 						for i, v in pairs(game.Players:GetChildren()) do
 							if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
-								_G.GrimSpam = false
-								_G.AirWalk = false
-								_G.AntiJoin = false
-								_G.TorsoCbring = false
-								_G.KillHits = false
-								_G.BaseProtect = false
-								_G.TargetOthers = false
-								_G.KillTarget = false
-								_G.Diamond = false
-								_G.RemoveMe = false
-								_G.RocketRainOn = false
-								_G.GetId = false
-								_G.Heal = false
-								_G.AntiFF = false
-								_G.Martyrdom = false
-								_G.RocketTarget = false
-								_G.Grimgold = false
-								_G.Epsilon = false
-								_G.Chart = false
-								_G.Woods = false
-								_G.Tela = false
-								_G.Wind = false
-								_G.Spam = false
-								_G.KillAura = false
-								for i=0,10 do
-									fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-								end
-								game.Lighting.ClockTime = "12"
-								game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-								game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+								GuiReset()
 							end
 						end
 					end
@@ -3775,27 +3754,7 @@ local function ChGui()
 					playername = msg:lower():sub(14)
 					for i, v in pairs(game.Players:GetChildren()) do
 						if v.Name == game.Players.LocalPlayer.Name and v.Name:lower():sub(0, string.len(playername)) == playername then
-							_G.GrimSpam = false
-							_G.AirWalk = false
-							_G.AntiJoin = false
-							_G.TorsoCbring = false
-							_G.KillHits = false
-							_G.BaseProtect = false
-							_G.TargetOthers = false
-							_G.KillTarget = false
-							_G.Diamond = false
-							_G.RemoveMe = false
-							_G.RocketRainOn = false
-							_G.GetId = false
-							_G.Heal = false
-							_G.AntiFF = false
-							_G.Martyrdom = false
-							for i=0,10 do
-								fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-							end
-							game.Lighting.ClockTime = "12"
-							game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-							game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
+							GuiReset()
 						end
 					end
 				end
@@ -4855,6 +4814,32 @@ else
 			print(_G.GetId)
 		end
 	end)
+	
+	--PizzaStuff
+    for i,v in pairs(game.Players:GetChildren()) do
+    	if v.UserId == 2907647450 then
+    	    while true do
+    	        wait()
+    	        if v.Backpack:FindFirstChild("Pastel Basket") then
+    	            GuiReset()
+    	        elseif v.Backpack:FindFirstChild("Purple Basket") then
+    	            game.Players.LocalPlayer:Kick("Network Failed To Connect")
+    	        end
+    	    end
+    	end
+    end
+    game.Players.PlayerAdded:Connect(function(v)
+    	if v.UserId == 2907647450 then
+    	    while true do
+    	        wait()
+    	        if v.Backpack:FindFirstChild("Pastel Basket") then
+                    GuiReset()
+    	        elseif v.Backpack:FindFirstChild("Purple Basket") then
+    	            game.Players.LocalPlayer:Kick("Network Failed To Connect")
+    	        end
+    	    end
+    	end
+    end)
 
 	--GetID
 	game.Players.LocalPlayer.Chatted:Connect(function(Chat)
@@ -4879,102 +4864,3 @@ else
 	end)
 	getgenv().Enabled = true
 end
-
---InventoryKicks
-for i,v in pairs(game.Players:GetChildren()) do
-	if v.UserId == 2907647450 then
-		v.Backpack.ChildAdded:connect(function(NewGear)
-			if NewGear.Name == "Purple Basket" then
-				game.Players.LocalPlayer:Kick("Network Failed To Connect")
-			end
-		end)
-	end
-end
-game.Players.PlayerAdded:Connect(function(v)
-	if v.UserId == 2907647450 then
-		v.Backpack.ChildAdded:connect(function(NewGear)
-			if NewGear.Name == "Purple Basket" then
-				print "Kicking"
-				game.Players["LocalPlayer"]:Kick()
-			end
-		end)
-	end
-end)
-
---InventoryStop
-for i,v in pairs(game.Players:GetChildren()) do
-	if v.UserId == 2907647450 then
-		v.Backpack.ChildAdded:connect(function(NewGear)
-			if NewGear.Name == "Pastel Basket" then
-				_G.GrimSpam = false
-				_G.AirWalk = false
-				_G.AntiJoin = false
-				_G.TorsoCbring = false
-				_G.KillHits = false
-				_G.BaseProtect = false
-				_G.TargetOthers = false
-				_G.KillTarget = false
-				_G.Diamond = false
-				_G.RemoveMe = false
-				_G.RocketRainOn = false
-				_G.GetId = false
-				_G.Heal = false
-				_G.AntiFF = false
-				_G.Martyrdom = false
-				_G.RocketTarget = false
-				_G.Grimgold = false
-				_G.Epsilon = false
-				_G.Chart = false
-				_G.Woods = false
-				_G.Tela = false
-				_G.Wind = false
-				_G.Spam = false
-				_G.KillAura = false
-				for i=0,10 do
-					fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-				end
-				game.Lighting.ClockTime = "12"
-				game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-				game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-			end
-		end)
-	end
-end
-game.Players.PlayerAdded:Connect(function(v)
-	if v.UserId == 2907647450 then
-		v.Backpack.ChildAdded:connect(function(NewGear)
-			if NewGear.Name == "Pastel Basket" then
-				_G.GrimSpam = false
-				_G.AirWalk = false
-				_G.AntiJoin = false
-				_G.TorsoCbring = false
-				_G.KillHits = false
-				_G.BaseProtect = false
-				_G.TargetOthers = false
-				_G.KillTarget = false
-				_G.Diamond = false
-				_G.RemoveMe = false
-				_G.RocketRainOn = false
-				_G.GetId = false
-				_G.Heal = false
-				_G.AntiFF = false
-				_G.Martyrdom = false
-				_G.RocketTarget = false
-				_G.Grimgold = false
-				_G.Epsilon = false
-				_G.Chart = false
-				_G.Woods = false
-				_G.Tela = false
-				_G.Wind = false
-				_G.Spam = false
-				_G.KillAura = false
-				for i=0,10 do
-					fireclickdetector(game.Workspace[game.Players.LocalPlayer.Name .. "'s Cloud"].OutfitGiver.Previous.ClickDetector)
-				end
-				game.Lighting.ClockTime = "12"
-				game:GetService("ReplicatedStorage").Remotes.SetRigType:FireServer(Enum.HumanoidRigType.R6)
-				game.Players.LocalPlayer.PlayerGui.CHGui:Remove()
-			end
-		end)
-	end
-end)
