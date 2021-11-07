@@ -4727,7 +4727,6 @@ else
     					["title"] = "**Script Has Been Executed**",
     					["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
     						"Executor: **"..webhookcheck.."**" .. "\n" .. 
-    						"DiscordID: " ..  "**" .. PasswordBar.Text .. "**" .. "\n" .. 
     						"UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
     						"User's Main: " .. "**" .. MainUser .. "**" .. "\n" ..
     						"JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**" .. "\n" ..
