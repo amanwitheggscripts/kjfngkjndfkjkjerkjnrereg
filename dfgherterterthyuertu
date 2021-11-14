@@ -1,4 +1,5 @@
 repeat wait(0.5) until game:IsLoaded()
+print '1'
 
 --SafeTable
 local SafePlayers = {
@@ -1655,6 +1656,16 @@ local function SearchGui()
 			end
 		end
 	end)
+	
+	--RenameSharks
+	spawn(function()
+	    while true do
+	        game.RunService.RenderStepped:wait()
+	        if game.Workspace:FindFirstChild('Land Shark')then
+	            game.Workspace['Land Shark'].Name = "Shark1"
+	        end
+	    end
+	end)
 
 	--DeathPoint
 	DeathPoint.MouseButton1Down:connect(function()
@@ -1998,6 +2009,8 @@ local function ChGui()
 	local UnRocketTarget = Instance.new("TextButton")
 	local UICorner_79 = Instance.new("UICorner")
 	local KillAura = Instance.new("TextButton")
+	local LandShark = Instance.new("TextButton")
+    local UnLandShark = Instance.new("TextButton")
 	local UICorner_80 = Instance.new("UICorner")
 	local Search = Instance.new("TextButton")
 	local UICorner_81 = Instance.new("UICorner")
@@ -3320,6 +3333,29 @@ local function ChGui()
 	KillAura.TextSize = 14.000
 
 	UICorner_80.Parent = KillAura
+	
+	LandShark.Name = "LandShark"
+    LandShark.Parent = Page6Frame
+    LandShark.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+    LandShark.BorderSizePixel = 0
+    LandShark.Position = UDim2.new(0.0973154306, 0, 0.666666687, 0)
+    LandShark.Size = UDim2.new(0, 113, 0, 15)
+    LandShark.Font = Enum.Font.SourceSans
+    LandShark.Text = "LandShark"
+    LandShark.TextColor3 = Color3.fromRGB(118, 118, 118)
+    LandShark.TextSize = 14.000
+    
+    UnLandShark.Name = "UnLandShark"
+    UnLandShark.Parent = Page6Frame
+    UnLandShark.BackgroundColor3 = Color3.fromRGB(56, 2, 100)
+    UnLandShark.BorderSizePixel = 0
+    UnLandShark.Position = UDim2.new(0.0973154306, 0, 0.666666687, 0)
+    UnLandShark.Size = UDim2.new(0, 113, 0, 15)
+    UnLandShark.Visible = false
+    UnLandShark.Font = Enum.Font.SourceSans
+    UnLandShark.Text = "UnLandShark"
+    UnLandShark.TextColor3 = Color3.fromRGB(118, 118, 118)
+    UnLandShark.TextSize = 14.000
 
 	Search.Name = "Search"
 	Search.Parent = OutlineFrame
@@ -3413,8 +3449,8 @@ local function ChGui()
 
 	--ToPlr
 	ToPlayer.MouseButton1Down:connect(function()
-		local PlayerName = Player
-		local plr = game.Workspace:FindFirstChild(PlayerName)
+		PlayerName = Player
+		plr = game.Workspace:FindFirstChild(PlayerName)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.HumanoidRootPart.CFrame * CFrame.new(-1,0,1)
 	end)
 
@@ -3454,7 +3490,7 @@ local function ChGui()
 
 	--RemoveTarget
 	RemoveTarget.MouseButton1Down:connect(function()
-		local TargetRemove = table.find(Targets, Target)
+		TargetRemove = table.find(Targets, Target)
 		table.remove(Targets, TargetRemove)
 		for i,v in pairs(Targets) do
 			print(v)
@@ -3481,7 +3517,7 @@ local function ChGui()
 		_G.AirWalk = true
 
 
-		local WalkPart = Instance.new("Part", workspace)
+		WalkPart = Instance.new("Part", workspace)
 		WalkPart.Size = Vector3.new(7, 2, 3)
 		WalkPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -4, 0)
 		WalkPart.Transparency = 1
@@ -3513,13 +3549,13 @@ local function ChGui()
 	end)
 
 	--KickMessages2
-	local KickMessages2 = {
+	KickMessages2 = {
 		"DO U FART",
 
 	}
 
 	--KickMessages1
-	local KickMessages = {
+	KickMessages = {
 		"wow man that's mad funny!11!!1!",
 		"to think that you're such a sad excuse of a human being to even try to crash me with my own gui, yikes.",
 		"you fool, you idiot, you moron, you've been bamboozled.",
@@ -4490,6 +4526,18 @@ local function ChGui()
 		UnWind.Visible = false
 		Wind.Visible = true
 	end)
+	
+	    --LandShark
+    LandShark.MouseButton1Down:connect(function()
+        _G.LandShark = true
+        LandShark.Visible = false
+        UnLandShark.Visible = true
+    end)
+    UnLandShark.MouseButton1Down:connect(function()
+        _G.LandShark = false
+        LandShark.Visible = true
+        UnLandShark.Visible = false
+    end)
 
 	--Spam 
 	Spam.MouseButton1Down:connect(function()
@@ -4574,6 +4622,14 @@ local function ChGui()
 					wait(0.1)
 					game.Players.LocalPlayer.Character:WaitForChild("KOSSGustHorn").RemoteEvent:FireServer("DO THE THING!!!")
 				end)
+			elseif _G.LandShark then --LandSharkCheck
+                pcall(function()
+                    game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(118281463)
+                    game.Players.LocalPlayer.Backpack:WaitForChild("LandSharkShooter").Parent = game.Players.LocalPlayer.Character
+                    repeat wait() until game.Workspace:FindFirstChild('Land Shark')
+                    game.Workspace['Land Shark'].Name = "Shark1"
+                    game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(118281463)
+                end) 
 			else --NoneSelected
 				print("Pick A Gear to Spam on Page 5!!")
 			end
